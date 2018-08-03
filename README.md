@@ -32,6 +32,7 @@ The global stylesheet is purely a collection of Stylus variables. By default, it
 but in your project, you should create your own global.styl file and use it to customize all other parts of PragmaCSS.
 
 ###Usage
+
 Note: Your project needs to have Stylus installed.
 
 First, add the module to your project:
