@@ -1,0 +1,8 @@
+{
+  "name": "pragmacss",
+  "version": "0.1.0",
+  "description": "A configurable CSS library built on stylus.",
+  "author": "Alexander Reiswich <ali@mangadojo.com>",
+  "private": true,
+  "dependencies": {}
+}

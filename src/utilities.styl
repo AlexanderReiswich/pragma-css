@@ -1,0 +1,277 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+ utilities.css
+ =============
+
+ Utilities are generic, low-level classes that serve a singular, specific purpose, but can be combined to cause
+ elements to behave in the desired fashion, usually without the need to create custom classes.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+
+/* Display and positioning
+----------------------------------------------------------------------------------------------------------------------*/
+.block
+  display block
+
+.inline
+  display inline-block
+
+.no-overflow
+  overflow hidden
+
+.relative
+  position relative
+
+.absolute
+  position absolute
+
+.hidden
+  display none
+
+/* Text
+----------------------------------------------------------------------------------------------------------------------*/
+.nowrap
+  white-space nowrap
+
+.truncate
+  display: block
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.uppercase
+  text-transform uppercase
+
+.regular
+  font-weight weight_regular
+  font-style normal
+
+.bold
+  font-weight weight_bold
+
+.underline
+  text-decoration underline
+
+.italic
+  font-style italic
+
+/* Letter spacing
+----------------------------------------------------------------------------------------------------------------------*/
+.spacing-0
+  letter-spacing standard_letter_spacing
+
+.spacing-s
+  letter-spacing letter_spacing_s
+
+.spacing-m
+  letter-spacing letter_spacing_m
+
+.spacing-l
+  letter-spacing letter_spacing_l
+
+/* Shadows
+----------------------------------------------------------------------------------------------------------------------*/
+.shadow-s
+  box-shadow shadow_s
+
+.shadow-m
+  box-shadow shadow_m
+
+.shadow-l
+  box-shadow shadow_l
+
+/* Float
+----------------------------------------------------------------------------------------------------------------------*/
+.float-left
+  float left
+
+.float-right
+  float right
+
+.clear
+  clear both
+
+/* Text alignment
+----------------------------------------------------------------------------------------------------------------------*/
+.center
+  text-align center
+
+.align-right
+  text-align right
+
+.align-left
+  text-align left
+
+/* Transition
+----------------------------------------------------------------------------------------------------------------------*/
+.transition-s
+  transition ease all .2s
+
+.transition-m
+  transition ease all .4s
+
+.transition-l
+  transition ease all .8s
+
+/* Scaling
+----------------------------------------------------------------------------------------------------------------------*/
+.scale-on-hover-1:hover
+  transform scale(1.3)
+
+.scale-on-hover-2:hover
+  transform scale(1.6)
+
+/* Vertical align
+----------------------------------------------------------------------------------------------------------------------*/
+.va-top
+  vertical-align top
+
+.va-bottom
+  vertical-align bottom
+
+.va-text-top
+  vertical-align text-top
+
+.va-text-bottom
+  vertical-align text-bottom
+
+.va-middle
+  vertical-align middle
+
+.va-baseline
+  vertical-align baseline
+
+.va-sub
+  vertical-align sub
+
+.va-super
+  vertical-align super
+
+/* Block alignment
+----------------------------------------------------------------------------------------------------------------------*/
+.center-block
+  margin-left auto
+  margin-right auto
+
+.align-v,
+.align-h,
+.align-vh
+  display -webkit-flex
+  display -ms-flexbox
+  display flex
+
+.align-v, .align-vh
+  -webkit-align-items center
+  -ms-flex-align center
+  align-items center
+
+.align-h, .align-vh
+  justify-content center
+
+/* Rounded corners
+----------------------------------------------------------------------------------------------------------------------*/
+.rounded-s
+  border-radius rounded_s
+
+.rounded-m,
+.rounded
+  border-radius rounded_m
+
+.rounded-l
+  border-radius rounded_l
+
+.rounded-full
+  border-radius 1000px
+
+.circular
+  border-radius 100%
+
+/* Mouse cursors
+----------------------------------------------------------------------------------------------------------------------*/
+.pointer
+  cursor pointer
+
+.no-pointer-events
+  pointer-events none
+
+/* Fixed positioning
+----------------------------------------------------------------------------------------------------------------------*/
+.fixed
+  position fixed
+  &.left
+    left 0
+  &.right
+    right 0
+  &.top
+    top 0
+  &.bottom
+    bottom 0
+
+/* Images
+----------------------------------------------------------------------------------------------------------------------*/
+.responsive
+  max-width 100%
+  height auto
+
+.img-pixelated
+  image-rendering pixelated
+
+/* Responsive hide
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (max-width 600px)
+  .hide-on-s
+    display none !important
+
+@media only screen and (min-width 600px) and (max-width 900px)
+  .hide-on-m
+    display none !important
+
+@media only screen and (min-width 900px) and (min-width 1200px)
+  .hide-on-l
+    display none !important
+
+@media only screen and (min-width 1200px) and (min-width 1500px)
+  .hide-on-xl
+    display none !important
+
+@media only screen and (min-width 1500px) and (min-width 1800px)
+  .hide-on-xxl
+    display none !important
+
+@media only screen and (min-width 1800px)
+  .hide-on-xxxl
+    display none !important
+
+/* Responsive show
+----------------------------------------------------------------------------------------------------------------------*/
+.show-on-s,
+.show-on-m,
+.show-on-l,
+.show-on-xl,
+.show-on-xxl,
+.show-on-xxxl
+  display none
+
+@media only screen and (max-width 600px)
+  .show-on-s
+    display inherit !important
+
+@media only screen and (min-width 601px) and (max-width 900px)
+  .show-on-m
+    display inherit !important
+
+@media only screen and (min-width 901px) and (max-width 1200px)
+  .show-on-l
+    display inherit !important
+
+@media only screen and (min-width 1201px) and (max-width 1500px)
+  .show-on-xl
+    display inherit !important
+
+@media only screen and (min-width 1501px) and (max-width 1800px)
+  .show-on-xxl
+    display inherit !important
+
+@media only screen and (min-width 1801px)
+  .show-on-xxxl
+    display inherit !important

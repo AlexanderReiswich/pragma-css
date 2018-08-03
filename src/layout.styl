@@ -1,0 +1,634 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+ layout.css
+ ==========
+
+ This stylesheet provides you with classes to position and structure your content through containers, grids,
+ fixed / fluid columns, as well as various tools to alter the spacing of your elements.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+
+/* Container
+----------------------------------------------------------------------------------------------------------------------*/
+.page-container
+  overflow hidden
+
+.container
+  margin-left auto
+  margin-right auto
+  &.w-600
+    width 600px
+  &.w-900
+    width 900px
+  &.w-1200
+    width 1200px
+  &.w-1500
+    width 1500px
+  &.w-1800
+    width 1800px
+
+@media only screen and (max-width 620px)
+  .container.w-600
+    width 100%
+    padding-left 10px
+    padding-right 10px
+
+@media only screen and (max-width 920px)
+  .container.w-900
+    width 100%
+    padding-left 10px
+    padding-right 10px
+
+@media only screen and (max-width 1220px)
+  .container.w-1200
+    width 100%
+    padding-left 10px
+    padding-right 10px
+
+@media only screen and (max-width 1520px)
+  .container.w-1500
+    width 100%
+    padding-left 10px
+    padding-right 10px
+
+@media only screen and (max-width 1820px)
+  .container.w-1800
+    width 100%
+    padding-left 10px
+    padding-right 10px
+
+/* Grid basics
+----------------------------------------------------------------------------------------------------------------------*/
+.grid
+  margin-left auto
+  margin-right auto
+  &:after
+    content ''
+    display table
+    clear both
+
+/* Grid gaps
+----------------------------------------------------------------------------------------------------------------------*/
+for i in (1..5)
+  .grid.gap-{i}
+    margin-left unit(-10 * i, 'px')
+    margin-right unit(-10 * i, 'px')
+    .col
+      padding-left unit(10 * i, 'px')
+      padding-right unit(10 * i, 'px')
+
+/* Grid column separated through vertical line
+----------------------------------------------------------------------------------------------------------------------*/
+.grid .col.separated
+  border-right 2px solid pale
+
+@media only screen and (min-width 600px)
+  .grid .col.separated-m
+    border-right 2px solid pale
+
+@media only screen and (min-width 900px)
+  .grid .col.separated-l
+    border-right 2px solid pale
+
+@media only screen and (min-width 1200px)
+  .grid .col.separated-xl
+    border-right 2px solid pale
+
+/* Grid column
+----------------------------------------------------------------------------------------------------------------------*/
+.grid .col
+  float left
+  box-sizing border-box
+  margin-left auto
+  left auto
+  right auto
+
+/* Grid columns small
+----------------------------------------------------------------------------------------------------------------------*/
+for i in (1..12)
+  .grid .col.s{i}
+    width: unit((100 / 12) * i, '%')
+
+/* Grid columns small to medium
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width 600px)
+  for i in (1..12)
+    .grid .col.m{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns medium to somewhat large
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width 900px)
+  for i in (1..12)
+    .grid .col.l{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns somewhat large to large
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width 1200px)
+  for i in (1..12)
+    .grid .col.xl{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns large to very large
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1500px)
+  for i in (1..12)
+    .grid .col.xxl{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns very large and up
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1800px)
+  for i in (1..12)
+    .grid .col.xxxl{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid column seperators
+----------------------------------------------------------------------------------------------------------------------*/
+.grid .col.separated
+      border-right grid_separation
+
+@media only screen and (min-width: 600px)
+  .grid .col.separated-m
+        border-right grid_separation
+
+@media only screen and (min-width: 900px)
+  .grid .col.separated-l
+        border-right grid_separation
+
+@media only screen and (min-width: 1200px)
+  .grid .col.separated-xl
+        border-right grid_separation
+
+@media only screen and (min-width: 1500px)
+  .grid .col.separated-xxl
+        border-right grid_separation
+
+@media only screen and (min-width: 1800px)
+  .grid .col.separated-xxxl
+        border-right grid_separation
+
+
+/* Push-offsets
+----------------------------------------------------------------------------------------------------------------------*/
+.push-0
+  margin 0
+
+.push-xs
+  margin offset_xs
+
+.push-s
+  margin offset_s
+
+.push-m
+  margin offset_m
+
+.push,
+.push-l
+  margin offset_l
+
+.push-xl
+  margin offset_xl
+
+.push-xxl
+  margin offset_xxl
+
+/* No push */
+.push-up-0, .push-v-0
+  margin-top 0
+
+.push-down-0, .push-v-0
+  margin-bottom 0
+
+.push-left-0, .push-h-0
+  margin-left 0
+
+.push-right-0, .push-h-0
+  margin-right 0
+
+/* Extra small push */
+.push-up-xs, .push-v-xs
+  margin-top offset_xs
+
+.push-down-xs,
+.push-v-xs
+  margin-bottom offset_xs
+
+.push-left-xs,
+.push-h-xs
+  margin-left offset_xs
+
+.push-right-xs,
+.push-h-xs
+  margin-right offset_xs
+
+/* Small push */
+.push-up-s,
+.push-v-s
+  margin-top offset_s
+
+.push-down-s,
+.push-v-s
+  margin-bottom offset_s
+
+.push-left-s,
+.push-h-s
+  margin-left offset_s
+
+.push-right-s,
+.push-h-s
+  margin-right offset_s
+
+/* Medium push */
+.push-up-m,
+.push-v-m
+  margin-top offset_m
+
+.push-down-m,
+.push-v-m
+  margin-bottom offset_m
+
+.push-left-m,
+.push-h-m
+  margin-left offset_m
+
+.push-right-m,
+.push-h-m
+  margin-right offset_m
+
+/* Large push, default */
+.push-up,
+.push-v,
+.push-up-l,
+.push-v-l
+  margin-top offset_l
+
+.push-down,
+.push-v,
+.push-down-l,
+.push-v-l
+  margin-bottom offset_l
+
+.push-left,
+.push-h,
+.push-left-l,
+.push-h-l
+  margin-left offset_l
+
+.push-right,
+.push-h,
+.push-right-l,
+.push-h-l
+  margin-right offset_l
+
+/* Very large push */
+.push-up-xl,
+.push-v-xl
+  margin-top offset_xl
+
+.push-down-xl,
+.push-v-xl
+  margin-bottom offset_xl
+
+.push-left-xl,
+.push-h-xl
+  margin-left offset_xl
+
+.push-right-xl,
+.push-h-xl
+  margin-right offset_xl
+
+/* Super large push */
+.push-up-xxl,
+.push-v-xxl
+  margin-top offset_xxl
+
+.push-down-xxl,
+.push-v-xxl
+  margin-bottom offset_xxl
+
+.push-left-xxl,
+.push-h-xxl
+  margin-left offset_xxl
+
+.push-right-xxl,
+.push-h-xxl
+  margin-right offset_xxl
+
+/* Pull-offsets
+----------------------------------------------------------------------------------------------------------------------*/
+.pull
+  margin offset_l
+
+.pull-up,
+.pull-v
+  margin-top offset_l
+
+.pull-down,
+.pull-v
+  margin-bottom offset_l
+
+.pull-left,
+.pull-h
+  margin-left offset_l
+
+.pull-right,
+.pull-h
+  margin-right offset_l
+
+/* Padding-offsets
+----------------------------------------------------------------------------------------------------------------------*/
+.pad-0
+  margin 0
+
+.pad-xs
+  padding offset_xs
+
+.pad-s
+  padding offset_s
+
+.pad-m
+  padding offset_m
+
+.pad,
+.pad-l
+  padding offset_l
+
+.pad-xl
+  padding offset_xl
+
+.pad-xxl
+  padding offset_xxl
+
+/* No padding */
+.pad-up-0,
+.pad-v-0
+  padding-top 0
+
+.pad-down-0,
+.pad-v-0
+  padding-bottom 0
+
+.pad-left-0,
+.pad-h-0
+  padding-left 0
+
+.pad-right-0,
+.pad-h-0
+  padding-right 0
+
+/* Extra small padding */
+.pad-up-xs,
+.pad-v-xs
+  padding-top offset_xs
+
+.pad-down-xs,
+.pad-v-xs
+  padding-bottom offset_xs
+
+.pad-left-xs,
+.pad-h-xs
+  padding-left offset_xs
+
+.pad-right-xs,
+.pad-h-xs
+  padding-right offset_xs
+
+/* Small padding */
+.pad-up-s,
+.pad-v-s
+  padding-top offset_s
+
+.pad-down-s,
+.pad-v-s
+  padding-bottom offset_s
+
+.pad-left-s,
+.pad-h-s
+  padding-left offset_s
+
+.pad-right-s,
+.pad-h-s
+  padding-right offset_s
+
+/* Medium padding */
+.pad-up-m,
+.pad-v-m
+  padding-top offset_m
+
+.pad-down-m,
+.pad-v-m
+  padding-bottom offset_m
+
+.pad-left-m,
+.pad-h-m
+  padding-left offset_m
+
+.pad-right-m,
+.pad-h-m
+  padding-right offset_m
+
+/* Large padding, default */
+.pad-up, .pad-v,
+.pad-up-l, .pad-v-l
+  padding-top offset_l
+
+.pad-down, .pad-v,
+.pad-down-l, .pad-v-l
+  padding-bottom offset_l
+
+.pad-left, .pad-h,
+.pad-left-l, .pad-h-l
+  padding-left offset_l
+
+.pad-right, .pad-h,
+.pad-right-l, .pad-h-l
+  padding-right offset_l
+
+/* Very large padding */
+.pad-up-xl,
+.pad-v-xl
+  padding-top offset_xl
+
+.pad-down-xl,
+.pad-v-xl
+  padding-bottom offset_xl
+
+.pad-left-xl,
+.pad-h-xl
+  padding-left offset_xl
+
+.pad-right-xl,
+.pad-h-xl
+  padding-right offset_xl
+
+/* Super large padding */
+.pad-up-xxl,
+.pad-v-xxl
+  padding-top offset_xxl
+
+.pad-down-xxl,
+.pad-v-xxl
+  padding-bottom offset_xxl
+
+.pad-left-xxl,
+.pad-h-xxl
+  padding-left offset_xxl
+
+.pad-right-xxl,
+.pad-h-xxl
+  padding-right offset_xxl
+
+/* Fixed / fluid columns
+----------------------------------------------------------------------------------------------------------------------*/
+.fixed-xxs,
+.fixed-xs,
+.fixed-s,
+.fixed-m,
+.fixed-l,
+.fixed-xl,
+.fixed-xxl,
+.fluid-xxs,
+.fluid-xs,
+.fluid-s,
+.fluid-m,
+.fluid-l,
+.fluid-xl,
+.fluid-xxl
+  display inline-block
+  vertical-align top
+
+.fixed-xxs
+  width fixed_xxs
+
+.fixed-xs
+  width fixed_xs
+
+.fixed-s
+  width fixed_s
+
+.fixed-m
+  width fixed_m
+
+.fixed-l
+  width fixed_l
+
+.fixed-xl
+  width fixed_xl
+
+.fixed-xxl
+  width fixed_xxl
+
+.fluid-xxs
+  width 'calc(100% - %s)' % fixed_xxs
+
+.fluid-xs
+  width 'calc(100% - %s)' % fixed_xs
+
+.fluid-s
+  width 'calc(100% - %s)' % fixed_s
+
+.fluid-m
+  width 'calc(100% - %s)' % fixed_m
+
+.fluid-l
+  width 'calc(100% - %s)' % fixed_l
+
+.fluid-xl
+  width 'calc(100% - %s)' % fixed_xl
+
+.fluid-xxl
+  width 'calc(100% - %s)' % fixed_xxl
+
+@media only screen and (max-width 600px)
+  .fixed-xxs.fold-s,
+  .fixed-xs.fold-s,
+  .fixed-s.fold-s,
+  .fixed-m.fold-s,
+  .fixed-l.fold-s,
+  .fixed-xl.fold-s,
+  .fixed-xxl.fold-s,
+  .fluid-xxs.fold-s,
+  .fluid-xs.fold-s,
+  .fluid-s.fold-s,
+  .fluid-m.fold-s,
+  .fluid-l.fold-s,
+  .fluid-xl.fold-s,
+  .fluid-xxl.fold-s
+    display block
+    width auto
+
+@media only screen and (max-width 900px)
+  .fixed-xxs.fold-m,
+  .fixed-xs.fold-m,
+  .fixed-s.fold-m,
+  .fixed-m.fold-m,
+  .fixed-l.fold-m,
+  .fixed-xl.fold-m,
+  .fixed-xxl.fold-m,
+  .fluid-xxs.fold-m,
+  .fluid-xs.fold-m,
+  .fluid-s.fold-m,
+  .fluid-m.fold-m,
+  .fluid-l.fold-m,
+  .fluid-xl.fold-m,
+  .fluid-xxl.fold-m
+    display block
+    width auto
+
+@media only screen and (max-width 1200px)
+  .fixed-xxs.fold-l,
+  .fixed-xs.fold-l,
+  .fixed-s.fold-l,
+  .fixed-m.fold-l,
+  .fixed-l.fold-l,
+  .fixed-xl.fold-l,
+  .fixed-xxl.fold-l,
+  .fluid-xxs.fold-l,
+  .fluid-xs.fold-l,
+  .fluid-s.fold-l,
+  .fluid-m.fold-l,
+  .fluid-l.fold-l,
+  .fluid-xl.fold-l,
+  .fluid-xxl.fold-l
+    display block
+    width auto
+
+@media only screen and (max-width 1500px)
+  .fixed-xxs.fold-xl,
+  .fixed-xs.fold-xl,
+  .fixed-s.fold-xl,
+  .fixed-m.fold-xl,
+  .fixed-l.fold-xl,
+  .fixed-xl.fold-xl,
+  .fixed-xxl.fold-xl,
+  .fluid-xxs.fold-xl,
+  .fluid-xs.fold-xl,
+  .fluid-s.fold-xl,
+  .fluid-m.fold-xl,
+  .fluid-l.fold-xl,
+  .fluid-xl.fold-xl,
+  .fluid-xxl.fold-xl
+    display block
+    width auto
+
+/* Width limits
+----------------------------------------------------------------------------------------------------------------------*/
+.max-width-400
+  max-width 400px
+
+.max-width-600
+  max-width 600px
+
+.max-width-900
+  max-width 900px
+
+.max-width-1200
+  max-width 1200px
+
+.max-width-1500
+  max-width 1500px
+
+.max-width-1800
+  max-width 1800px

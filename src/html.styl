@@ -1,0 +1,217 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+ html.css
+ ========
+
+ A minimal stylesheet that serves to reset and normalize the look of basic HTML elements and set reasonable defaults.
+ It also can be configured to define default global attributes to the body.
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
+
+/* HTML
+----------------------------------------------------------------------------------------------------------------------*/
+div
+  box-sizing border-box
+
+body
+  margin 0
+
+html, body
+  background-color light
+  font weight_regular standard_font_size / standard_line_height primary_font
+  color secondary
+  -webkit-text-size-adjust 100%
+  letter-spacing standard_letter_spacing
+
+a
+  background-color transparent
+  outline none
+  color link_color
+  text-decoration none
+  transition link_transition
+  &:hover
+    color link_color_hover
+    -webkit-tap-highlight-color transparent
+    text-decoration none
+
+h1, h2, h3, h4, h5, h6
+  font-weight weight_regular
+  font-size standard_font_size
+  line-height standard_line_height
+  margin 0
+
+p
+  margin 0
+
+i, em
+  font-style italic
+
+b, strong
+  font-weight weight_bold
+
+abbr[title]
+  border-bottom none
+
+sub,
+sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+sub
+  bottom -0.25em
+
+sup
+  top -0.5em
+
+img
+  border-style none
+
+button,
+input,
+optgroup,
+select,
+textarea
+  font-family inherit
+  font-size 100%
+  line-height standard_line_height
+  border none
+  background transparent
+  outline none
+  margin 0
+
+button
+  border none
+  background transparent
+  outline none
+  &:hover
+    cursor pointer
+  &:focus
+    outline none
+
+button,
+input
+  overflow visible
+
+button,
+select
+  text-transform none
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"]
+  -webkit-appearance none
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner
+  border-style none
+  padding 0
+
+progress
+  vertical-align baseline
+
+textarea
+  overflow auto
+
+[type="checkbox"],
+[type="radio"]
+  box-sizing border-box
+  padding 0
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button
+  height auto
+
+[type="search"]
+  -webkit-appearance textfield
+  outlin 0
+
+[type="search"]::-webkit-search-decoration
+  -webkit-appearance none
+
+::-webkit-file-upload-button
+  -webkit-appearance button
+  font inherit
+
+details
+  display block
+
+summary
+  display list-item
+
+template
+  display none
+
+[hidden]
+  display none
+
+/* Placeholders
+----------------------------------------------------------------------------------------------------------------------*/
+::-webkit-input-placeholder
+  color secondary
+
+:-moz-placeholder
+  color secondary
+
+::-moz-placeholder
+  color secondary
+
+:-ms-input-placeholder
+  color secondary
+
+/* Fieldsets
+----------------------------------------------------------------------------------------------------------------------*/
+fieldset
+  border none
+  padding 0
+  margin 0
+  legend
+    width 100%
+    box-sizing border-box
+    color inherit
+    display table
+    max-width 100%
+    padding 0
+    white-space normal
+
+/* Blockquote
+----------------------------------------------------------------------------------------------------------------------*/
+blockquote
+  font-size standard_font_size
+  line-height standard_line_height
+
+/* Lists
+----------------------------------------------------------------------------------------------------------------------*/
+ol
+  list-style-type decimal
+  padding 0
+
+ul
+  list-style-type square
+  padding 0
+  li
+    margin-bottom offset_xs
+    li
+      list-style-type circle
+
+dt
+  font-weight weight_bold
+
+dd, li
+  margin-left offset_s
+
+dd > *, li > *
+  margin-top 0
+
+/* Code
+----------------------------------------------------------------------------------------------------------------------*/
+pre,
+code,
+kbd,
+samp
+  display block
+  font-family monospace
