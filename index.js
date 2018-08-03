@@ -3,7 +3,7 @@ var path = require('path');
 var cache = {};
 
 module.exports = {
-    getFile: function(name) {
+    load: function(name) {
         if (!cache[name]) {
             try {
                 cache[name] = fs.readFileSync(this.getFilePath(name), 'utf-8');
@@ -13,7 +13,7 @@ module.exports = {
         }
         return cache[name];
     },
-    getFilePath: function(name) {
-        return path.resolve(__dirname, 'build', name);
+    pathTo: function(name) {
+        return path.resolve(__dirname, 'src', name + '.styl');
     }
 };
