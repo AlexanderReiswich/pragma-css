@@ -31,7 +31,7 @@ It defines colors, font-styles, form elements and buttons.
 The global stylesheet is purely a collection of Stylus variables. By default, it's filled with sensible defaults,
 but in your project, you should create your own global.styl file and use it to customize all other parts of PragmaCSS.
 
-###Usage
+### Usage
 
 Note: Your project needs to have Stylus installed.
 
