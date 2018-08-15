@@ -102,8 +102,15 @@
 .align-left
   text-align left
 
+@media only screen and (min-width 600px)
+  .center-on-small-only
+    text-align center
+
 /* Transition
 ----------------------------------------------------------------------------------------------------------------------*/
+.transition-xs
+  transition ease all .1s
+
 .transition-s
   transition ease all .2s
 
@@ -211,6 +218,10 @@
 ----------------------------------------------------------------------------------------------------------------------*/
 .responsive
   max-width 100%
+  height auto
+
+.full-width
+  width 100%
   height auto
 
 .img-pixelated
