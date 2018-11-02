@@ -257,6 +257,7 @@ table tr th:last-of-type
 | Form inputs
 |-----------------------------------------------------------------------------------------------------------------------
 */
+input,
 input[type=text],
 input[type=email],
 input[type=password],
@@ -281,6 +282,14 @@ textarea:disabled,
 select:disabled
   color input_disabled_color
   border-color input_disabled_border_color
+
+input.tight,
+input[type=text].tight,
+input[type=email].tight,
+input[type=password].tight,
+textarea.tight,
+select.tight
+  padding input_padding_tight
 
 textarea
   overflow-y hidden
