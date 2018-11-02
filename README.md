@@ -6,8 +6,17 @@
 PragmaCSS embraces both atomic and semantic principles. This means you get the flexibility of atomic CSS without the
 cryptic class names, making it intuitive to understand and memorize all available classes.
 
+Class combinations are beautiful and understandable. Just to give you a taste:
+
+```
+<h2 class="primary bold headline spacing-m push-down">Some Headline</h2>
+```
+
 PragmaCSS also provides you with attractive and reasonable base styles for the most essential elements, which you
 can customize through a Stylus variables file.
+
+By offering both a wide array of utility classes as well as plenty of UI element classes — all of which can be
+centrally configured — creating unique, customized UI's is very fast and easy.
 
 PragmaCSS is separated into five parts:
 

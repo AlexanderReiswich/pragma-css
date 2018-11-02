@@ -1,15 +1,29 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| PragmaCSS. Prototype fast, scale with confidence.
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| layout.css
+| ==========
+|
+| This stylesheet provides you with utility classes to position and structure your content through containers, grids,
+| fixed / fluid columns and various other tools to alter the spacing of your elements.
+|
+*/
 
- layout.css
- ==========
-
- This stylesheet provides you with classes to position and structure your content through containers, grids,
- fixed / fluid columns, as well as various tools to alter the spacing of your elements.
-
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
-
-/* Container
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Container
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The page-container should be used at the root of your HTML. Its purpose is to ensure that the width of your page
+| doesn't exceed 100%, which would cause undesired horizontal scrolling.
+|
+| The container class on the other hand is optional but recommended for most layouts. It centers the content area
+| and adds the proper amount of spacing on smaller screen sizes.
+| Combine it with max-width-x classes to limit its width.
+|
+*/
 .page-container
   position absolute
   width 100%
@@ -19,49 +33,89 @@
 .container
   margin-left auto
   margin-right auto
-  &.w-600
-    width 600px
-  &.w-900
-    width 900px
-  &.w-1200
-    width 1200px
-  &.w-1500
-    width 1500px
-  &.w-1800
-    width 1800px
 
 @media only screen and (max-width 620px)
-  .container.w-600
+  .container.max-width-600
     width 100%
-    padding-left 10px
-    padding-right 10px
+    padding-left page_offset_s
+    padding-right page_offset_s
 
 @media only screen and (max-width 920px)
-  .container.w-900
+  .container.max-width-900
     width 100%
-    padding-left 10px
-    padding-right 10px
+    padding-left page_offset_m
+    padding-right page_offset_m
 
 @media only screen and (max-width 1220px)
-  .container.w-1200
+  .container.max-width-1200
     width 100%
-    padding-left 10px
-    padding-right 10px
+    padding-left page_offset_l
+    padding-right page_offset_l
 
 @media only screen and (max-width 1520px)
-  .container.w-1500
+  .container.max-width-1500
     width 100%
-    padding-left 10px
-    padding-right 10px
+    padding-left page_offset_xl
+    padding-right page_offset_xl
 
 @media only screen and (max-width 1820px)
-  .container.w-1800
+  .container.max-width-1800
     width 100%
-    padding-left 10px
-    padding-right 10px
+    padding-left page_offset_xl
+    padding-right page_offset_xl
 
-/* Grid basics
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Width limits
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Width-limiting classes have been added primarily for the purpose of controlling the width of the layout container,
+| but can of course be used for many other purposes, as well.
+|
+| Since limiting the height is much less frequently required, corresponding max-height classes are not available
+| by default.
+|
+*/
+.max-width-100
+  max-width 100px
+
+.max-width-200
+  max-width 200px
+
+.max-width-300
+  max-width 300px
+
+.max-width-400
+  max-width 400px
+
+.max-width-600
+  max-width 600px
+
+.max-width-900
+  max-width 900px
+
+.max-width-1200
+  max-width 1200px
+
+.max-width-1500
+  max-width 1500px
+
+.max-width-1800
+  max-width 1800px
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The page-container should be used at the root of your HTML. Its purpose is to ensure that the width of your page
+| doesn't exceed 100%, which would cause undesired horizontal scrolling.
+|
+| The container class on the other hand is optional but recommended for most layouts. It centers the content area
+| and adds the proper amount of spacing on smaller screen sizes.
+| Combine it with max-width-x classes to limit its width.
+|
+*/
 .grid
   margin-left auto
   margin-right auto
@@ -70,8 +124,14 @@
     display table
     clear both
 
-/* Grid gaps
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid gaps
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| You can control the gap between your grid columns by setting the appropriate gap class.
+|
+*/
 for i in (1..5)
   .grid.gap-{i}
     margin-left unit(-10 * i, 'px')
@@ -80,25 +140,11 @@ for i in (1..5)
       padding-left unit(10 * i, 'px')
       padding-right unit(10 * i, 'px')
 
-/* Grid column separated through vertical line
-----------------------------------------------------------------------------------------------------------------------*/
-.grid .col.separated
-  border-right 2px solid pale
-
-@media only screen and (min-width 600px)
-  .grid .col.separated-m
-    border-right 2px solid pale
-
-@media only screen and (min-width 900px)
-  .grid .col.separated-l
-    border-right 2px solid pale
-
-@media only screen and (min-width 1200px)
-  .grid .col.separated-xl
-    border-right 2px solid pale
-
-/* Grid column
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid column
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 .grid .col
   float left
   box-sizing border-box
@@ -147,8 +193,17 @@ for i in (1..12)
     .grid .col.xxxl{i}
       width: unit((100 / 12) * i, '%')
 
-/* Grid column seperators
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid column separators
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Sometimes you want an additional visual separation between your columns. This is where the grid column separator
+| comes into play.
+|
+| It adds a vertical border after the column that has the .separated class applied to it.
+|
+*/
 .grid .col.separated
       border-right grid_separation
 
@@ -172,9 +227,14 @@ for i in (1..12)
   .grid .col.separated-xxxl
         border-right grid_separation
 
-
-/* Push-offsets
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Push offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Push classes allow you to add margins to your elements.
+|
+*/
 .push-0
   margin 0
 
@@ -319,8 +379,15 @@ for i in (1..12)
 .push-h-xxl
   margin-right offset_xxl
 
-/* Pull-offsets
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Pull offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Pull offsets are the negative version of push offsets. Since they are not frequently required, only one level
+| of strength is available by default.
+|
+*/
 .pull
   margin - offset_l
 
@@ -340,8 +407,14 @@ for i in (1..12)
 .pull-h
   margin-right - offset_l
 
-/* Padding-offsets
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Padding offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Pad classes can - unsurprisingly - be used to add padding to your elements.
+|
+*/
 .pad-0
   padding 0
 
@@ -483,8 +556,18 @@ for i in (1..12)
 .pad-h-xxl
   padding-right offset_xxl
 
-/* Fixed / fluid columns
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Fixed / fluid columns
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The purpose of this class pair is to give you an easy tool to create layouts where one column is fixed, while the
+| other one fills out the rest of the line.
+|
+| It's also easy to set break-points to determine at which screen size the columns should collapse into their own
+| single rows.
+|
+*/
 .fixed-xxs,
 .fixed-xs,
 .fixed-s,
@@ -615,23 +698,3 @@ for i in (1..12)
   .fluid-xxl.fold-xl
     display block
     width auto
-
-/* Width limits
-----------------------------------------------------------------------------------------------------------------------*/
-.max-width-400
-  max-width 400px
-
-.max-width-600
-  max-width 600px
-
-.max-width-900
-  max-width 900px
-
-.max-width-1200
-  max-width 1200px
-
-.max-width-1500
-  max-width 1500px
-
-.max-width-1800
-  max-width 1800px

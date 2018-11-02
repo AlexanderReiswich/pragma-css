@@ -1,4 +1,56 @@
-/* Colors */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| PragmaCSS. Prototype fast, scale with confidence.
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| global.css
+| ==========
+|
+| This global configuration file allows you to change the default variables that are used across the library.
+| Copy it to your project and use it as a starting point to adopt the page style to your particular requirements.
+|
+*/
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Colors
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| PragmaCSS comes with a carefully-chosen collection of colors that is wide enough to meet most projects needs,
+| but focused enough as to not make the library unnecessarily bloated and complicated.
+|
+| Colors are separated into two semantic groups: Functional and literal.
+|
+| Functional colors should be based on your project's visual identity. Normally, they are derived from your logo.
+| As the name implies, you should select their values based on their function. The first three colors are
+| hierarchically structured:
+|
+| Primary   : Usually a strong and confident signal color, think of Twitter's blue or NPM's red.
+|
+| Secondary : The main color for paragraphs of text; Should allow for good readability.
+|
+| Tertiary  : Signifies lesser significance; This is an important tool to establish a proper visual hierarchy
+|             in your designs.
+|
+| The next two colors each have specific functions:
+|
+| Pale      : This should be a color with an intentionally weak contrast. It can be used to signify unavailability,
+|             i.e. a disabled button.
+|
+| Light     : Similarly to pale, this should be an intentionally subtle color, barely visible. Nevertheless, it acts
+|             as a very important tool for UI design, as many elements such as lines require a very unobtrusive tone.
+|
+| The second semantic group - literal colors - is a collection of the most widely used base colors.
+| In a sense, these too are functional colors. A conscious decision has been made in using literal names for something
+| like red and green, as opposed to functional names like "success" and "error".
+|
+| The reason for this lies in the fact that colors have multiple meanings. Red can signify an error, but it can also
+| be used to attract attention for other reasons, or imply an other meaning, such as health, warmth and so on.
+| A functional name would be too limiting and often require us to disregard semantics.
+|
+| Using the color name *as* the functional name solves this issue.
+|
+*/
 primary = #6a98b5
 secondary = #324f66
 tertiary = #bdcdd5
@@ -13,6 +65,14 @@ c_orange = #e9a000
 c_blue = #459cf9
 c_violet = #b482f2
 
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Hover colors
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Each color has a corresponding color for its hover state.
+|
+*/
 primary_hover = secondary
 secondary_hover = primary
 tertiary_hover = secondary
@@ -27,7 +87,15 @@ c_orange_hover = secondary
 c_blue_hover = secondary
 c_violet_hover = secondary
 
-/* Margin and padding offsets */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Margin and padding offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| These values are used for all spacing related classes. Pixels are used by default due to their predictable and easily
+| calculable nature. But you are free to use relative units such as em/rem if you prefer.
+|
+*/
 offset_xs = 5px
 offset_s = 10px
 offset_m = 20px
@@ -35,19 +103,65 @@ offset_l = 30px
 offset_xl = 50px
 offset_xxl = 80px
 
-/* Fonts */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Page offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| These values allow you to define how much space you want there to be to the left and right of your content area.
+| Usually you would want more space on larger screens and as little as possible on small ones.
+|
+*/
+page_offset_s = offset_s  /*  < 620px */
+page_offset_m = offset_m  /*  < 920px */
+page_offset_l = offset_l  /* < 1220px */
+page_offset_xl = offset_l /* > 1220px */
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Font families
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| By default, only the primary font is defined, since we don't need more than one font for a generic user interface.
+| But you can of course define more font families if your project's visual identity requires more.
+|
+*/
 primary_font = Nunito, sans-serif
 
-/* Font weights */
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Font weights
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Two font weights are defined by default.
+|
+*/
 weight_regular = 400
 weight_bold = 700
 
-/* Corner radius */
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Corner radius
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Corner radius is used for classes that set the border-radius property.
+|
+*/
 rounded_s = 3px
 rounded_m = 6px
 rounded_l = 10px
 
-/* Fixed / fluid column widths */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Fixed / fluid column widths
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| These variables are specifically used for the fixed / fluid layout classes, which allow you to create two columns,
+| with one of them having a fixed width, while the other one fills out the rest of the space.
+|
+*/
 fixed_xxs = 30px
 fixed_xs = 50px
 fixed_s = 70px
@@ -56,55 +170,106 @@ fixed_l = 150px
 fixed_xl = 200px
 fixed_xxl = 300px
 
-/* Text  sizes */
-standard_font_size = 16px
-standard_line_height = 1.3
-t_hero_text = 140px
-t_headline = 64px
-t_title = 32px
-t_subtitle = 21px
-t_big = 18px
-t_normal = 16px
-t_small = 13px
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Text sizes
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 t_tiny = 11px
+t_small = 13px
+t_normal = 16px
+t_big = 18px
+t_subtitle = 21px
+t_title = 32px
+t_headline = 64px
+t_hero_text = 140px
+standard_font_size = t_normal
 
-/* Letter spacing */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Line height
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+line_height_s = 1.1
+line_height_m = 1.3
+line_height_l = 1.6
+standard_line_height = line_height_m
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Letter spacing
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 letter_spacing_s = 0.05rem
 letter_spacing_m = 0.1rem
 letter_spacing_l = 0.2rem
 standard_letter_spacing = letter_spacing_s
 
-/* Link colors */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Link colors
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 link_color = primary
 link_color_hover = secondary
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Link transition
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 link_transition = all .15s ease
 
-/* Placeholders */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Placeholders
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 placeholder_color = secondary
 
-/* Shadow */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Shadows
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 shadow_s = 0 2px 10px rgba(50, 116, 165, 0.2)
 shadow_m = 0 5px 30px rgba(50, 116, 165, 0.18)
 shadow_l = 0 0 150px rgba(50, 116, 165, 0.15)
 
-/* Horizontal rule */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Horizontal rule
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 hr_style = 1px solid rgba(145, 205, 220, .2)
 hr_thick = 3px
 hr_fat = 5px
 hr_tiny = 60px
 hr_negative = rgba(255, 255, 255, 0.4)
 
-/* Grid */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 grid_separation = 2px solid light
 
-/* Tables */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Tables
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 table_th_border = 3px solid pale
 table_td_border = 1px solid light
 table_row_hover_bg = lighten(light, 3)
 table_th_color = secondary
 table_zebra_bg = lighten(light, 2)
 
-/* Forms */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Form inputs
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 input_bg = c_white
 input_border = 3px solid light
 input_corner_radius = 6px
@@ -119,7 +284,11 @@ input_hover_border_color = pale
 input_focus_color = secondary
 input_focus_border_color = primary
 
-/* Button */
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Button
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 btn_border = 3px solid primary
 btn_color = c_white
 btn_bg = primary
@@ -133,7 +302,7 @@ btn_color = c_white
 btn_font_size = t_small
 btn_line_height = standard_font_size /* By using the font size we ensure the same height for buttons as for inputs */
 btn_padding = 12px 18px
-btn_narrow = 4px
+btn_tight = 4px
 btn_slim = 8px
 btn_fat = 16px
 btn_wide = 30px

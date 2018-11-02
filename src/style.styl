@@ -1,15 +1,24 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| PragmaCSS. Prototype fast, scale with confidence.
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| style.css
+| =========
+|
+| This stylesheet is used to customize the most essential elements of your page to the requirements of your particular
+| styleguide. It defines the appearance of colors, font-styles, form elements and buttons.
+|
+*/
 
- style.css
- =========
-
- This stylesheet is used to customize the most essential elements of your page to your particular styleguide.
- It defines colors, font-styles, form elements and buttons.
-
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
-
-/* Colors
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Colors
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The color values can be defined in your global configuration.
+|
+*/
 .primary
   color primary
 
@@ -116,8 +125,11 @@ a
 .violet-bg
   background-color c_violet
 
-/* Typography
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Typography
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 .hero-text
   font-size t_hero_text
 
@@ -141,6 +153,15 @@ a
 
 .tiny
   font-size t_tiny
+
+.line-height-s
+  line-height line_height_s
+
+.line-height-m
+  line-height line_height_m
+
+.line-height-l
+  line-height line_height_l
 
 @media only screen and (max-width 1200px)
   .hero-text
@@ -172,8 +193,11 @@ a
   .title
     font-size round(t_title * .7)
 
-/* Horizontal rule
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Horizontal rule
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 hr
   background none
   border none
@@ -193,8 +217,11 @@ hr
   &.negative
     border-bottom-color hr_negative
 
-/* Tables
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Tables
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 table
   border-collapse collapse
   text-align left
@@ -225,8 +252,11 @@ table tr td:last-of-type,
 table tr th:last-of-type
   padding-right 0
 
-/* Form inputs
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Form inputs
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 input[type=text],
 input[type=email],
 input[type=password],
@@ -238,7 +268,7 @@ select
   outline none
   width 100%
   font-size input_font_size
-  line-height  input_line_height
+  line-height input_line_height
   padding input_padding
   box-shadow none
   box-sizing border-box
@@ -273,8 +303,11 @@ select:focus
   color input_focus_color
   border-color input_focus_border_color
 
-/* Buttons
-----------------------------------------------------------------------------------------------------------------------*/
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Buttons
+|-----------------------------------------------------------------------------------------------------------------------
+*/
 .btn, a.btn
   display inline-block
   border btn_border
@@ -462,9 +495,9 @@ select:focus
   &.fat
     padding-top btn_fat
     padding-bottom btn_fat
-  &.narrow
-    padding-left btn_narrow
-    padding-right btn_narrow
+  &.tight
+    padding-left btn_tight
+    padding-right btn_tight
   &.wide
     padding-left btn_wide
     padding-right btn_wide
