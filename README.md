@@ -1,6 +1,13 @@
 # PragmaCSS
 
+<br>
+
 > A configurable CSS library built on stylus.
+
+<br>
+
+**Warning:** PragmaCSS is in early development and should not be used for production.<br>
+All class names are potentially subject to changes.
 
 \
 PragmaCSS embraces both atomic and semantic principles. This means you get the flexibility of atomic CSS without the
