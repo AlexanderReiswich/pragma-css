@@ -6,8 +6,8 @@
 | style.css
 | =========
 |
-| This stylesheet is used to customize the most essential elements of your page to the requirements of your particular
-| styleguide. It defines the appearance of colors, font-styles, form elements and buttons.
+| This stylesheet offers the requirements of your particular
+| styleguide. It defines the appearance of colors and font-styles.
 |
 */
 
@@ -19,6 +19,8 @@
 | The color values can be defined in your global configuration.
 |
 */
+
+/* Text colors */
 .primary
   color primary
 
@@ -58,6 +60,7 @@
 .violet
   color c_violet
 
+/* link colors */
 a
   &.primary:hover
       color primary_hover
@@ -86,6 +89,47 @@ a
   &.violet:hover
       color c_violet_hover
 
+/* Hover state text color overrides */
+.primary
+  color primary
+
+.secondary
+  color secondary
+
+.tertiary
+  color tertiary
+
+.pale
+  color pale
+
+.light
+  color light
+
+.white
+  color c_white
+
+.black
+  color c_black
+
+.red
+  color c_red
+
+.green
+  color c_green
+
+.yellow
+  color c_yellow
+
+.orange
+  color c_orange
+
+.blue
+  color c_blue
+
+.violet
+  color c_violet
+
+/* Background colors */
 .primary-bg
   background-color primary
 
@@ -192,378 +236,3 @@ a
 
   .title
     font-size round(t_title * .7)
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Horizontal rule
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-hr
-  background none
-  border none
-  border-bottom hr_style
-  width auto
-  height 0
-  overflow hidden
-  box-sizing content-box
-  &.dashed
-    border-bottom-style dashed
-  &.thick
-    border-width hr_thick
-  &.fat
-    border-width hr_fat
-  &.tiny
-    width hr_tiny
-  &.negative
-    border-bottom-color hr_negative
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Tables
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-table
-  border-collapse collapse
-  text-align left
-  width 100%
-  tr
-    th
-      color table_th_color
-      font-weight weight_bold
-      padding 10px 8px
-      border-bottom table_th_border
-    td
-      padding 10px 8px
-      border-bottom table_td_border
-  tbody tr
-    &:hover td
-      background-color table_row_hover_bg
-    &:last-child td
-      border-bottom none
-  &.zebra
-    tr:nth-of-type(even) td
-      background-color table_zebra_bg
-
-table tr td:first-of-type,
-table tr th:first-of-type
-  padding-left 0
-
-table tr td:last-of-type,
-table tr th:last-of-type
-  padding-right 0
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Form inputs
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-input,
-input[type=text],
-input[type=email],
-input[type=password],
-textarea,
-select
-  background-color input_bg
-  border input_border
-  border-radius input_corner_radius
-  outline none
-  width 100%
-  font-size input_font_size
-  line-height input_line_height
-  padding input_padding
-  box-shadow none
-  box-sizing border-box
-  transition input_transition
-
-input[type=text]:disabled,
-input[type=email]:disabled,
-input[type=password]:disabled,
-textarea:disabled,
-select:disabled
-  color input_disabled_color
-  border-color input_disabled_border_color
-
-input.tight,
-input[type=text].tight,
-input[type=email].tight,
-input[type=password].tight,
-textarea.tight,
-select.tight
-  padding input_padding_tight
-
-textarea
-  overflow-y hidden
-  resize none
-  transition height 0, width 0
-
-input[type=text]:hover,
-input[type=email]:hover,
-input[type=password]:hover,
-textarea:hover,
-select:hover
-  color input_hover_color
-  border-color input_hover_border_color
-
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-textarea:focus,
-select:focus
-  color input_focus_color
-  border-color input_focus_border_color
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Buttons
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.btn, a.btn
-  display inline-block
-  border btn_border
-  background btn_bg
-  border-radius btn_corner_radius
-  font-size btn_font_size
-  line-height  btn_line_height
-  padding btn_padding
-  transition btn_transition
-  letter-spacing btn_letter_spacing
-  text-transform btn_text_transform
-  text-align center
-  color btn_color
-  outline 0
-  vertical-align middle
-  -webkit-tap-highlight-color transparent
-  box-sizing border-box
-    cursor pointer
-  &:hover
-    background btn_hover_bg
-    border-color btn_hover_border_color
-    text-decoration none
-    color btn_hover_color
-  &:focus
-    background btn_focus_bg
-    border-color btn_focus_border_color
-  &.secondary-bg
-    background secondary
-    border-color secondary
-    &:hover
-      background secondary_hover
-      border-color secondary_hover
-    &:focus
-      border-color secondary_hover
-  &.tertiary-bg
-    background tertiary
-    border-color tertiary
-    &:hover
-      background tertiary_hover
-      border-color tertiary_hover
-    &:focus
-      border-color tertiary_hover
-  &.pale-bg
-    background pale
-    border-color pale
-    &:hover
-      background pale_hover
-      border-color pale_hover
-    &:focus
-      border-color pale_hover
-  &.light-bg
-    background light
-    border-color light
-    &:hover
-      background light_hover
-      border-color light_hover
-    &:focus
-      border-color light_hover
-  &.white-bg
-    background c_white
-    border-color c_white
-    &.primary
-      color primary
-    &.secondary
-      color secondary
-    &.tertiary
-      color tertiary
-    &.pale
-      color pale
-    &.light
-      color light
-    &.black
-      color c_black
-    &.red
-      color c_red
-    &.orange
-      color c_orange
-    &.green
-      color c_green
-    &.blue
-      color c_blue
-    &.violet
-      color c_violet
-    &:hover
-      background c_white_hover
-      border-color c_white_hover
-    &:focus
-      border-color c_white_hover
-  &.black-bg
-    background c_black
-    border-color c_black
-    &:hover
-      background c_black_hover
-      border-color c_black_hover
-    &:focus
-      border-color c_black_hover
-  &.red-bg
-    background c_red
-    border-color c_red
-    &:hover
-      background c_red_hover
-      border-color c_red_hover
-    &:focus
-      border-color c_red_hover
-  &.orange-bg
-    background c_orange
-    border-color c_orange
-    &:hover
-      background c_orange_hover
-      border-color c_orange_hover
-    &:focus
-      border-color c_orange_hover
-  &.green-bg
-    background c_green
-    border-color c_green
-    &:hover
-      background c_green_hover
-      border-color c_green_hover
-    &:focus
-      border-color c_green_hover
-  &.blue-bg
-    background c_blue
-    border-color c_blue
-    &:hover
-      background c_blue_hover
-      border-color c_blue_hover
-    &:focus
-      border-color c_blue_hover
-  &.violet-bg
-    background c_violet
-    border-color c_violet
-    &:hover
-      background c_violet_hover
-      border-color c_violet_hover
-    &:focus
-      border-color c_violet_hover
-  &.ghost
-    background transparent
-    &.secondary, &.secondary-bg
-      border-color secondary
-      color secondary
-    &.tertiary, &.tertiary-bg
-      border-color tertiary
-      color tertiary
-    &.pale, &.pale-bg
-      border-color pale
-      color pale
-    &.light, &.light-bg
-      border-color light
-      color light
-    &.white, &.white-bg
-      border-color c_white
-      color c_white
-    &.black, &.black-bg
-      border-color c_black
-      color c_black
-    &.red, &.red-bg
-      border-color c_red
-      color c_red
-    &.orange, &.orange-bg
-      border-color c_orange
-      color c_orange
-    &.green, &.green-bg
-      border-color c_green
-      color c_green
-    &.blue, &.blue-bg
-      border-color c_blue
-      color c_blue
-    &.violet, &.violet-bg
-      border-color c_violet
-      color c_violet
-  &.ghost:hover, &.ghost:focus
-    background transparent
-  &.blank, &.blank:hover, &.blank:focus
-    border-color transparent
-    background transparent
-    color primary
-    &:hover, &:focus
-      color primary_hover
-  &.block
-    width 100%
-  &.tight
-    padding-top btn_tight
-    padding-bottom btn_tight
-  &.fat
-    padding-top btn_fat
-    padding-bottom btn_fat
-  &.slim
-    padding-left btn_slim
-    padding-right btn_slim
-  &.wide
-    padding-left btn_wide
-    padding-right btn_wide
-  &.primary
-    color primary
-    &:hover
-      color primary_hover
-  &.secondary
-    color secondary
-    &:hover
-      color secondary_hover
-  &.tertiary
-    color tertiary
-    &:hover
-      color tertiary_hover
-  &.pale
-    color pale
-    &:hover
-      color pale_hover
-  &.light
-    color light
-    &:hover
-      color light_hover
-  &.black
-    color c_black
-    &:hover
-      color black_hover
-  &.red
-    color c_red
-    &:hover
-      color red_hover
-  &.orange
-    color c_orange
-    &:hover
-      color orange_hover
-  &.green
-    color c_green
-    &:hover
-      color green_hover
-  &.blue
-    color c_blue
-    &:hover
-      color blue_hover
-  &.violet
-    color c_violet
-    &:hover
-      color violet_hover
-
-.btn.disabled,
-.btn:disabled,
-.btn.disabled:hover,
-.btn:disabled:hover
-  background-color btn_disabled_bg !important
-  color btn_disabled_color !important
-  border-color btn_disabled_border_color !important
-  cursor default
-
-.btn.disabled *,
-.btn:disabled *
-  pointer-events none

@@ -27,25 +27,29 @@ centrally configured — creating unique, customized UI's is very fast and easy.
 
 PragmaCSS is separated into five parts:
 
+**global.styl**\
+The global stylesheet is purely a collection of Stylus variables. By default, it's filled with sensible defaults,
+but in your project, you should create your own global.styl file and use it to customize all other parts of PragmaCSS.
+
 **html.styl**\
 A minimal stylesheet that serves to reset and normalize the look of basic HTML elements and set reasonable defaults.
 It also can be configured to define default global attributes to the body.
 
-**utilities.styl**\
-This file containts generic, low-level classes that serve a singular, specific purpose, but can be combined to cause
-elements to behave in the desired fashion, usually without the need to create custom classes.
-
-**layout.styl**\
-This stylesheet provides you with classes to position and structure your content through containers, grids,
-fixed / fluid columns, as well as various tools to alter the spacing of your elements.
+**ui.styl**\
+This file containts a base collection of classes for concrete UI elements such as buttons and form inputs. It
+should be loaded before the other stylesheets so that the utility classes can be used as overrides.
 
 **style.styl**\
 The style file is used to customize the most essential elements of your page to your particular styleguide.
 It defines colors, font-styles, form elements and buttons.
 
-**global.styl**\
-The global stylesheet is purely a collection of Stylus variables. By default, it's filled with sensible defaults,
-but in your project, you should create your own global.styl file and use it to customize all other parts of PragmaCSS.
+**utilities.styl**\
+This file containts generic, low-level classes that serve a singular, specific purpose, but can be combined for
+great effect - thus eliminating the need to create custom classes in many cases.
+
+**layout.styl**\
+This stylesheet provides you with classes to position and structure your content through containers, grids,
+fixed / fluid columns, as well as various tools to alter the spacing of your elements.
 
 ### Usage
 
