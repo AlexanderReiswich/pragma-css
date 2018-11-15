@@ -323,14 +323,17 @@ table
     td
       padding 10px 8px
       border-bottom table_td_border
-  tbody tr
-    &:hover td
-      background-color table_row_hover_bg
-    &:last-child td
+  tbody tr:last-child
+    td
       border-bottom none
   &.zebra
     tr:nth-of-type(even) td
       background-color table_zebra_bg
+  &.hoverable
+    tbody tr:hover td
+      background-color table_row_hover_bg
+  &.table-fixed
+    table-layout fixed
 
 table tr td:first-of-type,
 table tr th:first-of-type
