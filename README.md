@@ -6,12 +6,12 @@
 
 <br>
 
-**Warning:** PragmaCSS is in early development and should not be used for production.<br>
+**Warning:** PragmaCSS is in early development and should not be used in production.<br>
 All class names are potentially subject to changes.
 
 \
-PragmaCSS embraces both atomic and semantic principles. This means you get the flexibility of atomic CSS without the
-cryptic class names, making it intuitive to understand and memorize all available classes.
+PragmaCSS embraces both atomic and semantic principles. This means you get the flexibility of atomic CSS without an
+overload of cryptic class names, thus making it intuitive to understand and memorize all available classes.
 
 Class combinations are beautiful and understandable. Just to give you a taste:
 
@@ -24,6 +24,10 @@ can customize through a Stylus variables file.
 
 By offering both a wide array of utility classes as well as plenty of UI element classes — all of which can be
 centrally configured — creating unique, customized UI's is very fast and easy.
+
+PragmaCSS does not offer a utility class for every possible CSS property. It embraces the philosophy of using the
+right tool for every particular job; Every now and then utility classes won't be the best option. Writing custom
+classes may be a much simpler and better solution then.
 
 PragmaCSS is separated into five parts:
 

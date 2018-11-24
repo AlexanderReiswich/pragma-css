@@ -238,6 +238,9 @@ for i in (1..12)
 .push-0
   margin 0
 
+.push-auto
+  margin auto
+
 .push-xs
   margin offset_xs
 
@@ -269,6 +272,23 @@ for i in (1..12)
 
 .push-right-0, .push-h-0
   margin-right 0
+
+/* Margin auto */
+.push-up-auto,
+.push-v-auto
+  margin-top auto
+
+.push-down-auto,
+.push-v-auto
+  margin-bottom auto
+
+.push-left-auto,
+.push-h-auto
+  margin-left auto
+
+.push-right-auto,
+.push-h-auto
+  margin-right auto
 
 /* Extra small push */
 .push-up-xs, .push-v-xs
@@ -384,8 +404,8 @@ for i in (1..12)
 | Pull offsets
 |-----------------------------------------------------------------------------------------------------------------------
 |
-| Pull offsets are the negative version of push offsets. Since they are not frequently required, only one level
-| of strength is available by default.
+| Pull offsets are the negative version of push offsets. Since they are not frequently required, only one offset level
+| is available by default.
 |
 */
 .pull
@@ -562,7 +582,7 @@ for i in (1..12)
 |-----------------------------------------------------------------------------------------------------------------------
 |
 | The purpose of this class pair is to give you an easy tool to create layouts where one column is fixed, while the
-| other one fills out the rest of the line.
+| other one fills out the rest of the line, without the need of an additional container element.
 |
 | It's also easy to set break-points to determine at which screen size the columns should collapse into their own
 | single rows.
