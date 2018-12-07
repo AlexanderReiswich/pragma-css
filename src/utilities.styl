@@ -6,94 +6,433 @@
 | utilities.css
 | =============
 |
-| Utilities are generic, low-level classes that serve a specific, singular purpose, but can be combined to cause
-| elements to behave in the desired fashion, usually without the need to create custom classes.
+| Utilities are generic, low-level classes that serve a specific, singular purpose. They can be combined to achieve
+| a particular result without the need to create custom classes.
 |
 */
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Display and positioning
+| Reset
 |-----------------------------------------------------------------------------------------------------------------------
+|
+| PragmaCSS applies default styling to particular elements for your convenience, but sometimes you may need
+| to completely change how a basic element looks like. For these situations, you can use the .reset class in order to
+| set the font size, weight and family, as well as the line-height, color, letter-spacing and text-transformations to
+| their default values. Then you can just use utility or custom classes to customize the element to your liking.
+|
 */
-.block
-  display block
-
-.inline
-  display inline-block
-
-.no-overflow
-  overflow hidden
-
-.relative
-  position relative
-
-.absolute
-  position absolute
-
-.hidden
-  display none
+.reset
+  font font_weight_regular standard_font_size / standard_line_height primary_font
+  color dark
+  text-transform none
+  letter-spacing standard_letter_spacing
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Text
+| Text colors
 |-----------------------------------------------------------------------------------------------------------------------
 */
-.nowrap
-  white-space nowrap
+.primary
+  color primary
 
-.truncate
-  display: block
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
+.dark
+  color dark
+
+.soft
+  color soft
+
+.pale
+  color pale
+
+.light
+  color light
+
+.white
+  color c_white
+
+.black
+  color c_black
+
+.red
+  color c_red
+
+.green
+  color c_green
+
+.yellow
+  color c_yellow
+
+.orange
+  color c_orange
+
+.blue
+  color c_blue
+
+.violet
+  color c_violet
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Link colors
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+a
+  &.primary:hover
+    color primary_hover
+  &.dark:hover
+    color dark_hover
+  &.soft:hover
+    color soft_hover
+  &.pale:hover
+    color pale_hover
+  &.light:hover
+    color light_hover
+  &.white:hover
+    color c_white_hover
+  &.black:hover
+    color c_black_hover
+  &.red:hover
+    color c_red_hover
+  &.green:hover
+    color c_green_hover
+  &.yellow:hover
+    color c_yellow_hover
+  &.orange:hover
+    color c_orange_hover
+  &.blue:hover
+    color c_blue_hover
+  &.violet:hover
+    color c_violet_hover
+
+/* Hover state overrides for text color */
+.primary-on-hover:hover,
+a.primary-on-hover:hover
+  color primary !important
+
+.dark-on-hover:hover,
+a.dark-on-hover:hover
+  color dark !important
+
+.soft-on-hover:hover,
+a.soft-on-hover:hover
+  color soft !important
+
+.pale-on-hover:hover,
+a.pale-on-hover:hover
+  color pale !important
+
+.light-on-hover:hover,
+a.light-on-hover:hover
+  color light !important
+
+.white-on-hover:hover,
+a.white-on-hover:hover
+  color c_white !important
+
+.black-on-hover:hover,
+a.black-on-hover:hover
+  color c_black !important
+
+.red-on-hover:hover,
+a.red-on-hover:hover
+  color c_red !important
+
+.green-on-hover:hover,
+a.green-on-hover:hover
+  color c_green !important
+
+.yellow-on-hover:hover,
+a.yellow-on-hover:hover
+  color c_yellow !important
+
+.orange-on-hover:hover,
+a.orange-on-hover:hover
+  color c_orange !important
+
+.blue-on-hover:hover,
+a.blue-on-hover:hover
+  color c_blue !important
+
+.violet-on-hover:hover,
+a.violet-on-hover:hover
+  color c_violet !important
+
+/* Background colors */
+.primary-bg
+  background-color primary
+
+.dark-bg
+  background-color dark
+
+.soft-bg
+  background-color soft
+
+.pale-bg
+  background-color pale
+
+.light-bg
+  background-color light
+
+.white-bg
+  background-color c_white
+
+.black-bg
+  background-color c_black
+
+.red-bg
+  background-color c_red
+
+.green-bg
+  background-color c_green
+
+.yellow-bg
+  background-color c_yellow
+
+.orange-bg
+  background-color c_orange
+
+.blue-bg
+  background-color c_blue
+
+.violet-bg
+  background-color c_violet
+
+/* Hover state overrides for background color */
+.primary-bg-on-hover:hover
+  background-color primary !important
+
+.dark-bg-on-hover:hover
+  background-color dark !important
+
+.soft-bg-on-hover:hover
+  background-color soft !important
+
+.pale-bg-on-hover:hover
+  background-color pale !important
+
+.light-bg-on-hover:hover
+  background-color light !important
+
+.white-bg-on-hover:hover
+  background-color c_white !important
+
+.black-bg-on-hover:hover
+  background-color c_black !important
+
+.red-bg-on-hover:hover
+  background-color c_red !important
+
+.green-bg-on-hover:hover
+  background-color c_green !important
+
+.yellow-bg-on-hover:hover
+  background-color c_yellow !important
+
+.orange-bg-on-hover:hover
+  background-color c_orange !important
+
+.blue-bg-on-hover:hover
+  background-color c_blue !important
+
+.violet-bg-on-hover:hover
+  background-color c_violet !important
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Font sizes
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.size-4xl
+  font-size font_size_4xl
+
+.size-3xl
+  font-size font_size_3xl
+
+.size-2xl
+  font-size font_size_2xl
+
+.size-xl
+  font-size font_size_xl
+
+.size-l
+  font-size font_size_l
+
+.size-m
+  font-size font_size_m
+
+.size-s
+  font-size font_size_s
+
+.size-xs
+  font-size font_size_xs
+
+.tight-s
+  line-height tighten_line_height_s
+
+.tight-m, .tight
+  line-height tighten_line_height_m
+
+.tight-l
+  line-height tighten_line_height_l
+
+.loose-s
+  line-height loosen_line_height_s
+
+.loose-m
+  line-height loosen_line_height_m
+
+.loose-l
+  line-height loosen_line_height_l
+
+@media only screen and (max-width breakpoint_xl)
+  .size-4xl
+    font-size round(font_size_4xl * .8)
+
+  .size-3xl
+    font-size round(font_size_3xl * .9)
+
+@media only screen and (max-width breakpoint_l)
+  .size-4xl
+    font-size round(font_size_4xl * .7)
+
+  .size-3xl
+    font-size round(font_size_3xl * .8)
+
+  .size-2xl
+    font-size round(font_size_2xl * .9)
+
+@media only screen and (max-width breakpoint_m)
+  .size-4xl
+    font-size round(font_size_4xl * .6)
+
+  .size-3xl
+    font-size round(font_size_3xl * .7)
+
+  .size-2xl
+    font-size round(font_size_2xl * .8)
+
+  .size-xl
+    font-size round(font_size_2xl * .9)
+
+@media only screen and (max-width breakpoint_s)
+  .size-4xl
+    font-size round(font_size_4xl * .5)
+
+  .size-3xl
+    font-size round(font_size_3xl * .6)
+
+  .size-2xl
+    font-size round(font_size_2xl * .7)
+
+  .size-xl
+    font-size round(font_size_2xl * .8)
+
+  .size-l
+    font-size round(font_size_2xl * .9)
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Text style
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.bold
+  font-weight font_weight_bold
 
 .uppercase
   text-transform uppercase
 
-.regular
-  font-weight weight_regular
-  font-style normal
+.lowercase
+  text-transform lowercase
 
-.bold
-  font-weight weight_bold
+.capitalize
+  text-transform capitalize
+
+.normal-case
+  text-transform none
+
+.italic
+  font-style italic
 
 .underline
   text-decoration underline
 
-.italic
-  font-style italic
+.regular
+  font-weight font_weight_regular
+  font-style normal
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Letter spacing
 |-----------------------------------------------------------------------------------------------------------------------
 */
-.spacing-0
+.extend-s
+  letter-spacing extend_letter_spacing_s
+
+.extend-m
+  letter-spacing extend_letter_spacing_m
+
+.extend-l
+  letter-spacing extend_letter_spacing_l
+
+.extend-0
   letter-spacing 0
-
-.spacing-s
-  letter-spacing letter_spacing_s
-
-.spacing-m
-  letter-spacing letter_spacing_m
-
-.spacing-l
-  letter-spacing letter_spacing_l
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Shadows
+| Display
 |-----------------------------------------------------------------------------------------------------------------------
 */
-.shadow-s
-  box-shadow shadow_s
+.block
+  display block !important
 
-.shadow-m
-  box-shadow shadow_m
+.inline
+  display inline-block !important
 
-.shadow-l
-  box-shadow shadow_l
+.flex
+  display flex !important
+
+.hide, .hidden
+  display none !important
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Positioning
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.relative
+  position relative
+
+.absolute
+  position absolute
+
+.fixed
+  position fixed
+  &.top, .absolute.top
+    top 0
+  &.right, .absolute.right
+    right 0
+  &.bottom, .absolute.bottom
+    bottom 0
+  &.left, .absolute.left
+    left 0
+
+.no-overflow
+  overflow hidden
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Text alignment
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.center
+  text-align center
+
+.align-right
+  text-align right
+
+.align-left
+  text-align left
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -111,67 +450,7 @@
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Text alignment
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.center
-  text-align center
-
-.align-right
-  text-align right
-
-.align-left
-  text-align left
-
-@media only screen and (max-width 600px)
-  .center-on-s
-    text-align center
-
-@media only screen and (max-width 900px)
-  .center-on-m
-    text-align center
-
-@media only screen and (max-width 1200px)
-  .center-on-l
-    text-align center
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Transitions
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.transition-xs
-  transition ease all .1s
-
-.transition-s
-  transition ease all .2s
-
-.transition-m
-  transition ease all .4s
-
-.transition-l
-  transition ease all .8s
-
-.transition-xl
-  transition ease all .15s
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Scaling on hover
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.scale-on-hover-s:hover
-  transform scale(1.1)
-
-.scale-on-hover-m:hover
-  transform scale(1.3)
-
-.scale-on-hover-l:hover
-  transform scale(1.6)
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Vertical align
+| Vertical text alignment
 |-----------------------------------------------------------------------------------------------------------------------
 */
 .va-top
@@ -200,6 +479,20 @@
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
+| Block text
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.nowrap
+  white-space nowrap
+
+.truncate
+  display: block
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
 | Block alignment
 |-----------------------------------------------------------------------------------------------------------------------
 */
@@ -212,8 +505,10 @@
 .align-vh,
 .space-evenly,
 .space-around,
-.space-between
+.space-between,
+.wrap
   display flex
+  align-items baseline
 
 .align-v, .align-vh
   align-items center
@@ -229,6 +524,866 @@
 
 .space-between
   justify-content space-between
+
+.wrap
+  flex-wrap wrap
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Container
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The page-container should be used at the root of your HTML. Its purpose is to ensure that the width of your page
+| doesn't exceed 100%, which would cause undesired horizontal scrolling.
+|
+| The container class on the other hand is optional but recommended for most layouts. It centers the content area
+| and adds the proper amount of spacing on smaller screen sizes.
+| Combine it with max-width-xl classes to limit its width.
+|
+*/
+.page-container
+  position absolute
+  width 100%
+  height 100%
+  overflow auto
+
+.container
+  margin-left auto
+  margin-right auto
+
+@media only screen and (max-width unit(breakpoint_s + (page_offset_s * 2), 'px'))
+  .container.max-width-s
+    width 100%
+    padding-left page_offset_s
+    padding-right page_offset_s
+
+@media only screen and (max-width unit(breakpoint_m + (page_offset_m * 2), 'px'))
+  .container.max-width-m
+    width 100%
+    padding-left page_offset_m
+    padding-right page_offset_m
+
+@media only screen and (max-width unit(breakpoint_l + (page_offset_l * 2), 'px'))
+  .container.max-width-l
+    width 100%
+    padding-left page_offset_l
+    padding-right page_offset_l
+
+@media only screen and (max-width unit(breakpoint_xl + (page_offset_x * 2), 'px'))
+  .container.max-width-xl
+    width 100%
+    padding-left page_offset_x
+    padding-right page_offset_x
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Width limits
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Width-limiting classes have been added primarily for the purpose of controlling the width of the layout container,
+| but can of course be used for many other purposes, as well.
+|
+| Since limiting the height is much less frequently required, corresponding max-height classes are not available
+| by default.
+|
+*/
+.max-width-s
+  max-width breakpoint_s
+
+.max-width-m
+  max-width breakpoint_m
+
+.max-width-l
+  max-width breakpoint_l
+
+.max-width-xl
+  max-width breakpoint_xl
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Fixed widths
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The following classes allow you to set the width of your elements to a particular value.
+|
+| As you may notice, width classes violate the usual convention of size suffixes such as xs, s, m, etc.
+| Additionally, the name is abbreviated with a single letter to differentiate it even further.
+|
+| The reason for this decision lies in the fact that widths are more useful when linked to actual pixel values
+| as opposed to abstractions.
+|
+| You are encouraged to add your own width classes with the values that you need.
+|
+| It's worth pointing out that there is no counterpart for **height** by default, because setting a fixed
+| height is not as common. You are of course free to simply add your own height classes if you need them.
+|
+*/
+.w-30
+  width 30px
+
+.w-50
+  width 50px
+
+.w-70
+  width 70px
+
+.w-100
+  width 100px
+
+.w-150
+  width 150px
+
+.w-200
+  width 200px
+
+.w-250
+  width 250px
+
+.w-300
+  width 300px
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Width and height utilities
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.full
+  width 100%
+
+.width-auto
+  width auto
+
+.height-auto
+  width auto
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The grid system allows you to responsively divide your content into rows of up to 12 columns.
+| Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic.
+| There are no offset classes and it is based on classical floats instead of flexbox.
+|
+| This is intentional, because we believe that grids shouldn't be used for complex or unusual layouts.
+| Custom CSS or other tools will serve you better in such cases.
+|
+*/
+.grid
+  margin-left auto
+  margin-right auto
+  &:after
+    content ''
+    display table
+    clear both
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid gaps
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| You can control the gap between your grid columns by setting the appropriate gap class.
+|
+*/
+.grid.gap-s
+  margin-left - grid_gap_s
+  margin-right - grid_gap_s
+  .col
+    padding-left grid_gap_s
+    padding-right grid_gap_s
+
+.grid.gap-m, .grid.gap
+  margin-left - grid_gap_m
+  margin-right - grid_gap_m
+  .col
+    padding-left grid_gap_m
+    padding-right grid_gap_m
+
+.grid.gap-l
+  margin-left - grid_gap_l
+  margin-right - grid_gap_l
+  .col
+    padding-left grid_gap_l
+    padding-right grid_gap_l
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid column
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.grid .col
+  float left
+  box-sizing border-box
+  margin-left auto
+  left auto
+  right auto
+
+/* Grid columns
+----------------------------------------------------------------------------------------------------------------------*/
+for i in (1..12)
+  .grid .col.s{i}
+    width: unit((100 / 12) * i, '%')
+
+/* Grid columns for screen sizes 600px and above
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width breakpoint_s)
+  for i in (1..12)
+    .grid .col.m{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns for screen sizes 900px and above
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width breakpoint_m)
+  for i in (1..12)
+    .grid .col.l{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns for screen sizes 1200px and above
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width breakpoint_l)
+  for i in (1..12)
+    .grid .col.x{i}
+      width: unit((100 / 12) * i, '%')
+
+/* Grid columns for screen sizes 1500px and above
+----------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width breakpoint_xl)
+  for i in (1..12)
+    .grid .col.xl{i}
+      width: unit((100 / 12) * i, '%')
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Grid column separators
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Sometimes you want an additional visual separation between your columns. This is where the grid column separator
+| comes into play.
+|
+| It adds a vertical border after the column that has the .separated class applied to it.
+|
+*/
+.grid .col.separated
+  border-right grid_separation
+
+@media only screen and (max-width breakpoint_s)
+  .grid .col.separated-s
+    border-right grid_separation
+
+@media only screen and (min-width unit(breakpoint_s + 1, 'px')) and (max-width breakpoint_m)
+  .grid .col.separated-m
+    border-right grid_separation
+
+@media only screen and (min-width unit(breakpoint_m + 1, 'px'))
+  .grid .col.separated-l
+    border-right grid_separation
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Push offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Push classes allow you to add margins to your elements.
+|
+*/
+.push-xs
+  margin offset_xs
+
+.push-s
+  margin offset_s
+
+.push,
+.push-m
+  margin offset_m
+
+.push-l
+  margin offset_l
+
+.push-xl
+  margin offset_xl
+
+.push-xxl
+  margin offset_xxl
+
+.push-0
+  margin 0
+
+.push-auto
+  margin auto
+
+/* Extra small push */
+.push-up-xs, .push-v-xs
+  margin-top offset_xs
+
+.push-down-xs,
+.push-v-xs
+  margin-bottom offset_xs
+
+.push-left-xs,
+.push-h-xs
+  margin-left offset_xs
+
+.push-right-xs,
+.push-h-xs
+  margin-right offset_xs
+
+/* Small push */
+.push-up-s,
+.push-v-s
+  margin-top offset_s
+
+.push-down-s,
+.push-v-s
+  margin-bottom offset_s
+
+.push-left-s,
+.push-h-s
+  margin-left offset_s
+
+.push-right-s,
+.push-h-s
+  margin-right offset_s
+
+/* Medium push */
+.push-up,
+.push-v,
+.push-up-m,
+.push-v-m
+  margin-top offset_m
+
+.push-down,
+.push-v,
+.push-down-m,
+.push-v-m
+  margin-bottom offset_m
+
+.push-left,
+.push-h,
+.push-left-m,
+.push-h-m
+  margin-left offset_m
+
+.push-right,
+.push-h,
+.push-right-m,
+.push-h-m
+  margin-right offset_m
+
+/* Large push, default */
+.push-up-l,
+.push-v-l
+  margin-top offset_l
+
+.push-down-l,
+.push-v-l
+  margin-bottom offset_l
+
+.push-left-l,
+.push-h-l
+  margin-left offset_l
+
+.push-right-l,
+.push-h-l
+  margin-right offset_l
+
+/* Very large push */
+.push-up-xl,
+.push-v-xl
+  margin-top offset_xl
+
+.push-down-xl,
+.push-v-xl
+  margin-bottom offset_xl
+
+.push-left-xl,
+.push-h-xl
+  margin-left offset_xl
+
+.push-right-xl,
+.push-h-xl
+  margin-right offset_xl
+
+/* Super large push */
+.push-up-xxl,
+.push-v-xxl
+  margin-top offset_xxl
+
+.push-down-xxl,
+.push-v-xxl
+  margin-bottom offset_xxl
+
+.push-left-xxl,
+.push-h-xxl
+  margin-left offset_xxl
+
+.push-right-xxl,
+.push-h-xxl
+  margin-right offset_xxl
+
+/* No push */
+.push-up-0, .push-v-0
+  margin-top 0
+
+.push-down-0, .push-v-0
+  margin-bottom 0
+
+.push-left-0, .push-h-0
+  margin-left 0
+
+.push-right-0, .push-h-0
+  margin-right 0
+
+/* Margin auto */
+.push-up-auto,
+.push-v-auto
+  margin-top auto
+
+.push-down-auto,
+.push-v-auto
+  margin-bottom auto
+
+.push-left-auto,
+.push-h-auto
+  margin-left auto
+
+.push-right-auto,
+.push-h-auto
+  margin-right auto
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Pull offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Pull classes add negative margins to elements, allowing you to offset padding when necessary.
+|
+*/
+
+/* Extra small pull */
+.pull-up-xs
+  margin-top - offset_xs
+
+.pull-down-xs
+  margin-bottom - offset_xs
+
+.pull-left-xs,
+.pull-h-xs
+  margin-left - offset_xs
+
+.pull-right-xs,
+.pull-h-xs
+  margin-right - offset_xs
+
+/* Small pull */
+.pull-up-s
+  margin-top - offset_s
+
+.pull-down-s
+  margin-bottom - offset_s
+
+.pull-left-s,
+.pull-h-s
+  margin-left - offset_s
+
+.pull-right-s,
+.pull-h-s
+  margin-right - offset_s
+
+/* Medium pull */
+.pull-up
+.pull-up-m
+  margin-top - offset_m
+
+.pull-down
+.pull-down-m
+  margin-bottom - offset_m
+
+.pull-left,
+.pull-h,
+.pull-left-m,
+.pull-h-m
+  margin-left - offset_m
+
+.pull-right,
+.pull-h,
+.pull-right-m,
+.pull-h-m
+  margin-right - offset_m
+
+/* Large pull, default */
+.pull-up-l
+  margin-top - offset_l
+
+.pull-down-l
+  margin-bottom - offset_l
+
+.pull-left-l,
+.pull-h-l
+  margin-left - offset_l
+
+.pull-right-l,
+.pull-h-l
+  margin-right - offset_l
+
+/* Very large pull */
+.pull-up-xl
+  margin-top - offset_xl
+
+.pull-down-xl
+  margin-bottom - offset_xl
+
+.pull-left-xl,
+.pull-h-xl
+  margin-left - offset_xl
+
+.pull-right-xl,
+.pull-h-xl
+  margin-right - offset_xl
+
+/* Super large pull */
+.pull-up-xxl
+  margin-top - offset_xxl
+
+.pull-down-xxl
+  margin-bottom - offset_xxl
+
+.pull-left-xxl,
+.pull-h-xxl
+  margin-left - offset_xxl
+
+.pull-right-xxl,
+.pull-h-xxl
+  margin-right - offset_xxl
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Padding offsets
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Pad classes can - unsurprisingly - be used to add padding to your elements.
+|
+*/
+.pad-xs
+  padding offset_xs
+
+.pad-s
+  padding offset_s
+
+.pad,
+.pad-m
+  padding offset_m
+
+.pad-l
+  padding offset_l
+
+.pad-xl
+  padding offset_xl
+
+.pad-xxl
+  padding offset_xxl
+
+.pad-0
+  padding 0
+
+/* Extra small padding */
+.pad-up-xs,
+.pad-v-xs
+  padding-top offset_xs
+
+.pad-down-xs,
+.pad-v-xs
+  padding-bottom offset_xs
+
+.pad-left-xs,
+.pad-h-xs
+  padding-left offset_xs
+
+.pad-right-xs,
+.pad-h-xs
+  padding-right offset_xs
+
+/* Small padding */
+.pad-up-s,
+.pad-v-s
+  padding-top offset_s
+
+.pad-down-s,
+.pad-v-s
+  padding-bottom offset_s
+
+.pad-left-s,
+.pad-h-s
+  padding-left offset_s
+
+.pad-right-s,
+.pad-h-s
+  padding-right offset_s
+
+/* Medium padding */
+.pad-up,
+.pad-v,
+.pad-up-m,
+.pad-v-m
+  padding-top offset_m
+
+.pad-down,
+.pad-v,
+.pad-down-m,
+.pad-v-m
+  padding-bottom offset_m
+
+.pad-left,
+.pad-h,
+.pad-left-m,
+.pad-h-m
+  padding-left offset_m
+
+.pad-right,
+.pad-h,
+.pad-right-m,
+.pad-h-m
+  padding-right offset_m
+
+/* Large padding, default */
+.pad-up-l,
+.pad-v-l
+  padding-top offset_l
+
+.pad-down-l,
+.pad-v-l
+  padding-bottom offset_l
+
+.pad-left-l,
+.pad-h-l
+  padding-left offset_l
+
+.pad-right-l,
+.pad-h-l
+  padding-right offset_l
+
+/* Very large padding */
+.pad-up-xl,
+.pad-v-xl
+  padding-top offset_xl
+
+.pad-down-xl,
+.pad-v-xl
+  padding-bottom offset_xl
+
+.pad-left-xl,
+.pad-h-xl
+  padding-left offset_xl
+
+.pad-right-xl,
+.pad-h-xl
+  padding-right offset_xl
+
+/* Super large padding */
+.pad-up-xxl,
+.pad-v-xxl
+  padding-top offset_xxl
+
+.pad-down-xxl,
+.pad-v-xxl
+  padding-bottom offset_xxl
+
+.pad-left-xxl,
+.pad-h-xxl
+  padding-left offset_xxl
+
+.pad-right-xxl,
+.pad-h-xxl
+  padding-right offset_xxl
+
+/* No padding */
+.pad-up-0,
+.pad-v-0
+  padding-top 0
+
+.pad-down-0,
+.pad-v-0
+  padding-bottom 0
+
+.pad-left-0,
+.pad-h-0
+  padding-left 0
+
+.pad-right-0,
+.pad-h-0
+  padding-right 0
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Border
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.border-primary,
+.border-dark,
+.border-soft,
+.border-pale,
+.border-light,
+.border-white,
+.border-black,
+.border-red,
+.border-green,
+.border-yellow,
+.border-orange,
+.border-blue,
+.border-violet
+  border-style border_default_style
+  border-width border_default_width
+
+.border-top-s,
+.border-top,
+.border-top-m,
+.border-top-l,
+.border-right-s,
+.border-right,
+.border-right-m,
+.border-right-l,
+.border-bottom-s,
+.border-bottom,
+.border-bottom-m,
+.border-bottom-l,
+.border-left-s,
+.border-left,
+.border-left-m,
+.border-left-l
+  border-color border_default_color
+  border-style border_default_style
+  border-width 0
+
+.border
+.border-s,
+.border-m,
+.border-l
+  border-color border_default_color
+  border-style border_default_style
+  border-width border_default_width
+
+.border-xs
+  border-width border_xs
+
+.border-s
+  border-width border_s
+
+.border-m
+  border-width border_m
+
+.border-l
+  border-width border_l
+
+.border-top-xs
+  border-top-width border_xs
+
+.border-top-s
+  border-top-width border_s
+
+.border-top,
+.border-top-m
+  border-top-width border_m
+
+.border-top-l
+  border-top-width border_l
+
+.border-right-xs
+  border-right-width border_xs
+
+.border-right-s
+  border-right-width border_s
+
+.border-right,
+.border-right-m
+  border-right-width border_m
+
+.border-right-l
+  border-right-width border_l
+
+.border-bottom-xs
+  border-bottom-width border_xs
+
+.border-bottom-s
+  border-bottom-width border_s
+
+.border-bottom,
+.border-bottom-m
+  border-bottom-width border_m
+
+.border-bottom-l
+  border-bottom-width border_l
+
+.border-left-xs
+  border-left-width border_xs
+
+.border-left-s
+  border-left-width border_s
+
+.border-left,
+.border-left-m
+  border-left-width border_m
+
+.border-left-l
+  border-left-width border_l
+
+.border-top-0
+  border-top-width 0
+
+.border-right-0
+  border-right-width 0
+
+.border-bottom-0
+  border-bottom-width 0
+
+.border-left-0
+  border-left-width 0
+
+.border-primary
+  border-color primary
+
+.border-dark
+  border-color dark
+
+.border-soft
+  border-color soft
+
+.border-pale
+  border-color pale
+
+.border-light
+  border-color light
+
+.border-white
+  border-color c_white
+
+.border-black
+  border-color c_black
+
+.border-red
+  border-color c_red
+
+.border-green
+  border-color c_green
+
+.border-yellow
+  border-color c_yellow
+
+.border-orange
+  border-color c_orange
+
+.border-blue
+  border-color c_blue
+
+.border-violet
+  border-color c_violet
+
+.solid
+  border-style solid
+
+.dashed
+  border-style dashed
+
+.dotted
+  border-style dotted
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -251,6 +1406,78 @@
 .circular
   border-radius 100%
 
+.rounded-0
+  border-radius 0
+
+.rounded-0-top-left
+  border-top-left-radius 0
+
+.rounded-0-top-right
+  border-top-right-radius 0
+
+.rounded-0-bottom-right
+  border-bottom-right-radius 0
+
+.rounded-0-bottom-left
+  border-bottom-left-radius 0
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Shadows
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.shadow-s
+  box-shadow shadow_s
+
+.shadow-m
+  box-shadow shadow_m
+
+.shadow-l
+  box-shadow shadow_l
+
+.shadow-s-on-hover:hover
+  box-shadow shadow_s
+
+.shadow-m-on-hover:hover
+  box-shadow shadow_m
+
+.shadow-l-on-hover:hover
+  box-shadow shadow_l
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Transitions
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.tween-xs
+  transition ease all transition_xs
+
+.tween-s
+  transition ease all transition_s
+
+.tween-m, .tween
+  transition ease all transition_m
+
+.tween-l
+  transition ease all transition_l
+
+.tween-xl
+  transition ease all transition_xl
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Scaling
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.scale-on-hover-s:hover
+  transform scale(scale_on_hover_s)
+
+.scale-on-hover-m:hover
+  transform scale(scale_on_hover_m)
+
+.scale-on-hover-l:hover
+  transform scale(scale_on_hover_l)
+
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Mouse cursors
@@ -259,24 +1486,11 @@
 .pointer
   cursor pointer
 
+.cursor-default
+  cursor default
+
 .no-pointer-events
   pointer-events none
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Fixed positioning
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.fixed
-  position fixed
-  &.left
-    left 0
-  &.right
-    right 0
-  &.top
-    top 0
-  &.bottom
-    bottom 0
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -291,71 +1505,331 @@
   width 100%
   height auto
 
-.img-pixelated
+.pixelate
   image-rendering pixelated
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Responsive hide
+| Responsive modifiers
 |-----------------------------------------------------------------------------------------------------------------------
 */
-@media only screen and (max-width 600px)
-  .hide-on-s
+@media only screen and (max-width breakpoint_s)
+  .hide-on-s,
+  .hide-on-sm,
+  .hide-on-sml
     display none !important
 
-@media only screen and (min-width 600px) and (max-width 900px)
-  .hide-on-m
+  .inline-on-s,
+  .inline-on-sm,
+  .inline-on-sml
+    display inline-block !important
+
+  .block-on-s,
+  .block-on-sm,
+  .block-on-sml
+    display block !important
+
+  .flex-on-s,
+  .flex-on-sm,
+  .flex-on-sml
+    display flex !important
+
+  .float-left-on-s,
+  .float-left-on-sm,
+  .float-left-on-sml
+    float left
+
+  .float-right-on-s,
+  .float-right-on-sm,
+  .float-right-on-sml
+    float right
+
+  .center-on-s,
+  .center-on-sm,
+  .center-on-sml
+    text-align center
+
+  .align-left-on-s,
+  .align-left-on-sm,
+  .align-left-on-sml
+    text-align left
+
+  .align-right-on-s,
+  .align-right-on-sm,
+  .align-right-on-sml
+    text-align right
+
+@media only screen and (min-width unit(breakpoint_s + 1, 'px')) and (max-width breakpoint_m)
+  .hide-on-m,
+  .hide-on-sm,
+  .hide-on-ml,
+  .hide-on-sml,
+  .hide-on-mlx
     display none !important
 
-@media only screen and (min-width 900px) and (min-width 1200px)
-  .hide-on-l
+  .inline-on-m,
+  .inline-on-sm,
+  .inline-on-ml,
+  .inline-on-sml,
+  .inline-on-mlx
+    display inline-block !important
+
+  .block-on-m,
+  .block-on-sm,
+  .block-on-ml,
+  .block-on-sml,
+  .block-on-mlx
+    display block !important
+
+  .flex-on-m,
+  .flex-on-sm,
+  .flex-on-ml,
+  .flex-on-sml,
+  .flex-on-mlx
+    display flex !important
+
+  .float-left-on-m,
+  .float-left-on-sm,
+  .float-left-on-ml,
+  .float-left-on-sml,
+  .float-left-on-mlx
+    float left
+
+  .float-right-on-m,
+  .float-right-on-sm,
+  .float-right-on-ml,
+  .float-right-on-sml,
+  .float-right-on-mlx
+    float right
+
+  .center-on-m,
+  .center-on-sm,
+  .center-on-ml,
+  .center-on-sml,
+  .center-on-mlx
+    text-align center
+
+  .align-left-on-m,
+  .align-left-on-sm,
+  .align-left-on-ml,
+  .align-left-on-sml,
+  .align-left-on-mlx
+    text-align left
+
+  .align-right-on-m,
+  .align-right-on-sm,
+  .align-right-on-ml,
+  .align-right-on-sml,
+  .align-right-on-mlx
+    text-align right
+
+  .wrap-on-m,
+  .wrap-on-sm,
+  .wrap-on-ml,
+  .wrap-on-sml,
+  .wrap-on-mlx
+    flex-wrap wrap
+
+@media only screen and (min-width unit(breakpoint_m + 1, 'px')) and (max-width breakpoint_l)
+  .hide-on-l,
+  .hide-on-ml,
+  .hide-on-lx,
+  .hide-on-sml,
+  .hide-on-mlx,
+  .hide-on-lxp
     display none !important
 
-@media only screen and (min-width 1200px) and (min-width 1500px)
-  .hide-on-xl
+  .inline-on-l,
+  .inline-on-ml,
+  .inline-on-lx,
+  .inline-on-sml,
+  .inline-on-mlx,
+  .inline-on-lxp
+    display inline-block !important
+
+  .block-on-l,
+  .block-on-ml,
+  .block-on-lx,
+  .block-on-sml,
+  .block-on-mlx,
+  .block-on-lxp
+    display block !important
+
+  .flex-on-l,
+  .flex-on-ml,
+  .flex-on-lx,
+  .flex-on-sml,
+  .flex-on-mlx,
+  .flex-on-lxp
+    display flex !important
+
+  .float-left-on-l,
+  .float-left-on-ml,
+  .float-left-on-lx,
+  .float-left-on-sml,
+  .float-left-on-mlx,
+  .float-left-on-lxp
+    float left
+
+  .float-right-on-l,
+  .float-right-on-ml,
+  .float-right-on-lx,
+  .float-right-on-sml,
+  .float-right-on-mlx,
+  .float-right-on-lxp
+    float right
+
+  .center-on-l,
+  .center-on-ml,
+  .center-on-lx,
+  .center-on-sml,
+  .center-on-mlx,
+  .center-on-lxp
+    text-align center
+
+  .align-left-on-l,
+  .align-left-on-ml,
+  .align-left-on-lx,
+  .align-left-on-sml,
+  .align-left-on-mlx,
+  .align-left-on-lxp
+    text-align left
+
+  .align-right-on-l,
+  .align-right-on-ml,
+  .align-right-on-lx,
+  .align-right-on-sml,
+  .align-right-on-mlx,
+  .align-right-on-lxp
+    text-align right
+
+  .wrap-on-l,
+  .wrap-on-ml,
+  .wrap-on-lx,
+  .wrap-on-sml,
+  .wrap-on-mlx,
+  .wrap-on-lxp
+    flex-wrap wrap
+
+@media only screen and (min-width unit(breakpoint_l + 1, 'px')) and (max-width breakpoint_xl)
+  .hide-on-x,
+  .hide-on-lx,
+  .hide-on-xp,
+  .hide-on-mlx,
+  .hide-on-lxp
     display none !important
 
-@media only screen and (min-width 1500px) and (min-width 1800px)
-  .hide-on-xxl
+  .inline-on-x,
+  .inline-on-lx,
+  .inline-on-xp,
+  .inline-on-mlx,
+  .inline-on-lxp
+    display inline-block !important
+
+  .block-on-x,
+  .block-on-lx,
+  .block-on-xp,
+  .block-on-mlx,
+  .block-on-lxp
+    display block !important
+
+  .flex-on-x,
+  .flex-on-lx,
+  .flex-on-xp,
+  .flex-on-mlx,
+  .flex-on-lxp
+    display flex !important
+
+  .float-left-on-x,
+  .float-left-on-lx,
+  .float-left-on-xp,
+  .float-left-on-mlx,
+  .float-left-on-lxp
+    float left
+
+  .float-right-on-x,
+  .float-right-on-lx,
+  .float-right-on-xp,
+  .float-right-on-mlx,
+  .float-right-on-lxp
+    float right
+
+  .center-on-x,
+  .center-on-lx,
+  .center-on-xp,
+  .center-on-mlx,
+  .center-on-lxp
+    text-align center
+
+  .align-left-on-x,
+  .align-left-on-lx,
+  .align-left-on-xp,
+  .align-left-on-mlx,
+  .align-left-on-lxp
+    text-align left
+
+  .align-right-on-x,
+  .align-right-on-lx,
+  .align-right-on-xp,
+  .align-right-on-mlx,
+  .align-right-on-lxp
+    text-align right
+
+  .wrap-on-x,
+  .wrap-on-lx,
+  .wrap-on-xp,
+  .wrap-on-mlx,
+  .wrap-on-lxp
+    flex-wrap wrap
+
+@media only screen and (min-width unit(breakpoint_xl + 1, 'px'))
+  .hide-on-p,
+  .hide-on-xp,
+  .hide-on-lxp
     display none !important
 
-@media only screen and (min-width 1800px)
-  .hide-on-xxxl
-    display none !important
+  .inline-on-p,
+  .inline-on-xp,
+  .inline-on-lxp
+    display inline-block !important
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Responsive show
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.show-on-s,
-.show-on-m,
-.show-on-l,
-.show-on-xl,
-.show-on-xxl,
-.show-on-xxxl
-  display none
+  .block-on-p,
+  .block-on-xp,
+  .block-on-lxp
+    display block !important
 
-@media only screen and (max-width 600px)
-  .show-on-s
-    display inherit !important
+  .flex-on-p,
+  .flex-on-xp,
+  .flex-on-lxp
+    display flex !important
 
-@media only screen and (min-width 601px) and (max-width 900px)
-  .show-on-m
-    display inherit !important
+  .float-left-on-p,
+  .float-left-on-xp,
+  .float-left-on-lxp
+    float left
 
-@media only screen and (min-width 901px) and (max-width 1200px)
-  .show-on-l
-    display inherit !important
+  .float-right-on-p,
+  .float-right-on-xp,
+  .float-right-on-lxp
+    float right
 
-@media only screen and (min-width 1201px) and (max-width 1500px)
-  .show-on-xl
-    display inherit !important
+  .center-on-p,
+  .center-on-xp,
+  .center-on-lxp
+    text-align center
 
-@media only screen and (min-width 1501px) and (max-width 1800px)
-  .show-on-xxl
-    display inherit !important
+  .align-left-on-p,
+  .align-left-on-xp,
+  .align-left-on-lxp
+    text-align left
 
-@media only screen and (min-width 1801px)
-  .show-on-xxxl
-    display inherit !important
+  .align-right-on-p,
+  .align-right-on-xp,
+  .align-right-on-lxp
+    text-align right
+
+  .wrap-on-p,
+  .wrap-on-xp,
+  .wrap-on-lxp
+    flex-wrap wrap
+

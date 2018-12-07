@@ -7,7 +7,7 @@
 | ==========
 |
 | This global configuration file allows you to change the default variables that are used across the library.
-| Copy it to your project and use it as a starting point to adopt the page style to your particular requirements.
+| Copy it to your project and use it as a starting point to adopt the UI style to your particular requirements.
 |
 */
 
@@ -17,25 +17,25 @@
 |-----------------------------------------------------------------------------------------------------------------------
 |
 | PragmaCSS comes with a carefully-chosen collection of colors that is wide enough to meet most projects needs,
-| but focused enough as to not make the library unnecessarily bloated and complicated.
+| but focused enough as to not make the library unnecessarily bloated.
 |
 | Colors are separated into two semantic groups: Functional and literal.
 |
-| Functional colors should be based on your project's visual identity. Normally, they are derived from your logo.
-| As the name implies, you should select their values based on their function. The first three colors are
-| hierarchically structured:
+| Functional colors should be based on your project's visual identity. Usually they'll be derived from your logo.
+| As the name implies, you should select their values based on their function.
 |
-| Primary   : Usually a strong and confident signal color, think of Twitter's blue or NPM's red.
+| Primary   : The leading color; Usually a confident signal color. Think of Twitter's blue or NPM's red.
+|             Often used to signify interactive elements such as links and buttons, or to highlight their importance.
+|             If your CI includes more than one main color, it's recommended to add a secondary and tertiary class.
+|             But as many projects only have one main color, they are not included by default.
 |
-| Secondary : The main color for paragraphs of text; Should allow for good readability.
+| Dark      : The main color for paragraphs of text; Should allow for good readability.
 |
-| Tertiary  : Signifies lesser significance; This is an important tool to establish a proper visual hierarchy
-|             in your designs.
+| Soft      : Signifies lesser relevance, i.e. for footnotes; This is an important tool to establish a proper
+|             visual hierarchy in your designs.
 |
-| The next two colors each have specific functions:
-|
-| Pale      : This should be a color with an intentionally weak contrast. It can be used to signify unavailability,
-|             i.e. a disabled button.
+| Pale      : This should be a color with an intentionally weak contrast, but still readable in text. It can be
+|             used to signify unavailability, i.e. a disabled button.
 |
 | Light     : Similarly to pale, this should be an intentionally subtle color, barely visible. Nevertheless, it acts
 |             as a very important tool for UI design, as many elements such as lines require a very unobtrusive tone.
@@ -51,19 +51,20 @@
 | Using the color name *as* the functional name solves this issue.
 |
 */
-primary = #6a98b5
-secondary = #324f66
-tertiary = #bdcdd5
-pale = #cfdce7
-light = #edf5f9
+primary = #41b883
+dark = #35495e
+soft = #889fab
+pale = #bed1d4
+light = #f2f5f3
 c_white = #fff
 c_black = #333
 c_red = #f76776
 c_green = #bcd84a
 c_yellow = #f2df5e
-c_orange = #e9a000
+c_orange = #ffa535
 c_blue = #459cf9
 c_violet = #b482f2
+default_color = dark
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -73,19 +74,51 @@ c_violet = #b482f2
 | Each color has a corresponding color for its hover state.
 |
 */
-primary_hover = secondary
-secondary_hover = primary
-tertiary_hover = secondary
-pale_hover = tertiary
-light_hover = c_white
-c_white_hover = c_black
-c_black_hover = secondary
-c_red_hover = secondary
-c_green_hover = secondary
-c_yellow_hover = secondary
-c_orange_hover = secondary
-c_blue_hover = secondary
-c_violet_hover = secondary
+primary_hover = dark
+dark_hover = primary
+soft_hover = dark
+pale_hover = soft
+light_hover = darken(light, 30)
+c_white_hover = light
+c_black_hover = primary
+c_red_hover = darken(c_red, 30)
+c_green_hover = darken(c_green, 30)
+c_yellow_hover = darken(c_yellow, 30)
+c_orange_hover = darken(c_orange, 30)
+c_blue_hover = darken(c_blue, 30)
+c_violet_hover = darken(c_violet, 30)
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Border
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+border_xs = 1px
+border_s = 2px
+border_m = 3px
+border_l = 5px
+border_default_style = solid
+border_default_width = border_m
+border_default_color = light
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Breakpoints
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| By default, breakpoints are spread over five 300px intervals, starting at 600px.
+| There is no special reasoning for this choice. We simply don't think there is any need to consider specific
+| screen sizes and making things unnecessarily complicated.
+|
+| Assume that a screen for every possible width exists and simply ensure that your layouts work at every scale.
+|
+| But if you need a particular set of breakpoints you can define them here.
+|
+*/
+breakpoint_s = 600px
+breakpoint_m = 900px
+breakpoint_l = 1200px
+breakpoint_xl = 1500px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -105,6 +138,16 @@ offset_xxl = 80px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
+| Background color
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| This variable sets the background color for the entire page.
+|
+*/
+body_background = c_white
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
 | Page offsets
 |-----------------------------------------------------------------------------------------------------------------------
 |
@@ -112,10 +155,10 @@ offset_xxl = 80px
 | Usually you would want more space on larger screens and as little as possible on small ones.
 |
 */
-page_offset_s = offset_s  /*  < 620px */
-page_offset_m = offset_m  /*  < 920px */
-page_offset_l = offset_l  /* < 1220px */
-page_offset_xl = offset_l /* > 1220px */
+page_offset_s = offset_s  /* < 600px */
+page_offset_m = offset_m  /* < 900px */
+page_offset_l = offset_l  /* < 1200px */
+page_offset_x = offset_xl /* < 1500px */
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -136,8 +179,97 @@ primary_font = Nunito, sans-serif
 | Two font weights are defined by default.
 |
 */
-weight_regular = 400
-weight_bold = 700
+font_weight_regular = 400
+font_weight_bold = 700
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Text sizes
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+font_size_xs = 11px
+font_size_s = 13px
+font_size_m = 16px
+font_size_l = 18px
+font_size_xl = 21px
+font_size_2xl = 32px
+font_size_3xl = 64px
+font_size_4xl = 140px
+standard_font_size = font_size_m
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Line height
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+tighten_line_height_l = 0.9
+tighten_line_height_m = 1.1
+tighten_line_height_s = 1.2
+standard_line_height = 1.4
+loosen_line_height_s = 1.5
+loosen_line_height_m = 1.7
+loosen_line_height_l = 1.9
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Letter spacing
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+extend_letter_spacing_s = 0.05em
+extend_letter_spacing_m = 0.1em
+extend_letter_spacing_l = 0.2em
+standard_letter_spacing = extend_letter_spacing_m
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Link colors
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+link_color = primary
+link_color_hover = dark
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Link transition
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+link_transition = all .15s ease
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Placeholders
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+placeholder_color = dark
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Shadows
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+shadow_s = 0 2px 10px rgba(50, 116, 165, 0.2)
+shadow_m = 0 5px 30px rgba(50, 116, 165, 0.18)
+shadow_l = 0 0 150px rgba(50, 116, 165, 0.2)
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Scale on hover
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+scale_on_hover_s = 1.05
+scale_on_hover_m = 1.1
+scale_on_hover_l = 1.2
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Transitions
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+transition_xs = .07s
+transition_s = .12s
+transition_m = .2s
+transition_l = .4s
+transition_xl = .8s
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -153,96 +285,14 @@ rounded_l = 10px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Fixed / fluid column widths
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| These variables are specifically used for the fixed / fluid layout classes, which allow you to create two columns,
-| with one of them having a fixed width, while the other one fills out the rest of the space.
-|
-*/
-fixed_xxs = 30px
-fixed_xs = 50px
-fixed_s = 70px
-fixed_m = 100px
-fixed_l = 150px
-fixed_xl = 200px
-fixed_xxl = 300px
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text sizes
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-t_tiny = 11px
-t_small = 13px
-t_normal = 16px
-t_big = 18px
-t_subtitle = 21px
-t_title = 32px
-t_headline = 64px
-t_hero_text = 140px
-standard_font_size = t_normal
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Line height
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-line_height_s = 1.1
-line_height_m = 1.3
-line_height_l = 1.6
-standard_line_height = line_height_m
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Letter spacing
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-letter_spacing_s = 0.05rem
-letter_spacing_m = 0.1rem
-letter_spacing_l = 0.2rem
-standard_letter_spacing = letter_spacing_s
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Link colors
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-link_color = primary
-link_color_hover = secondary
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Link transition
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-link_transition = all .15s ease
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Placeholders
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-placeholder_color = secondary
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Shadows
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-shadow_s = 0 2px 10px rgba(50, 116, 165, 0.2)
-shadow_m = 0 5px 30px rgba(50, 116, 165, 0.18)
-shadow_l = 0 0 150px rgba(50, 116, 165, 0.15)
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
 | Horizontal rule
 |-----------------------------------------------------------------------------------------------------------------------
 */
 hr_style = 1px solid rgba(145, 205, 220, .2)
-hr_thick = 3px
-hr_fat = 5px
-hr_tiny = 60px
+hr_s = 1px
+hr_m = 3px
+hr_l = 5px
+hr_short = 60px
 hr_negative = rgba(255, 255, 255, 0.4)
 
 /*
@@ -251,6 +301,9 @@ hr_negative = rgba(255, 255, 255, 0.4)
 |-----------------------------------------------------------------------------------------------------------------------
 */
 grid_separation = 2px solid light
+grid_gap_s = 5px
+grid_gap_m = 10px
+grid_gap_l = 20px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -260,8 +313,72 @@ grid_separation = 2px solid light
 table_th_border = 3px solid pale
 table_td_border = 1px solid light
 table_row_hover_bg = lighten(light, 3)
-table_th_color = secondary
+table_th_color = dark
 table_zebra_bg = lighten(light, 2)
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Text styles
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+
+/* Hero text */
+hero_text_font_size = font_size_4xl
+hero_text_font_weight = font_weight_bold
+hero_text_letter_spacing = extend_letter_spacing_m
+hero_text_text_transform = uppercase
+hero_text_line_height = tighten_line_height_l
+hero_text_margin = 0 0 offset_l 0
+
+/* Headline */
+headline_font_size = font_size_3xl
+headline_font_weight = font_weight_bold
+headline_letter_spacing = extend_letter_spacing_m
+headline_text_transform = uppercase
+headline_line_height = tighten_line_height_m
+headline_margin = 0 0 offset_l 0
+
+/* Title */
+title_font_size = font_size_2xl
+title_font_weight = font_weight_bold
+title_letter_spacing = extend_letter_spacing_s
+title_text_transform = none
+title_line_height = tighten_line_height_s
+title_margin = 0 0 offset_l 0
+
+/* Subtitle */
+subtitle_font_size = font_size_xl
+subtitle_font_weight = font_weight_bold
+subtitle_letter_spacing = extend_letter_spacing_s
+subtitle_text_transform = none
+subtitle_line_height = standard_line_height
+subtitle_margin = 0 0 offset_m 0
+
+/* Big text */
+big_font_size = font_size_l
+big_font_weight = font_weight_regular
+big_letter_spacing = extend_letter_spacing_s
+big_text_transform = none
+big_line_height = loosen_line_height_s
+big_margin = 0 0 offset_m 0
+
+/* Small text */
+small_font_size = font_size_s
+small_font_weight = font_weight_regular
+small_letter_spacing = extend_letter_spacing_s
+small_text_transform = none
+small_line_height = tighten_line_height_s
+small_margin = 0 0 offset_m 0
+small_color = soft
+
+/* Label */
+label_font_size = font_size_s
+label_font_weight = font_weight_bold
+label_letter_spacing = extend_letter_spacing_l
+label_text_transform = uppercase
+label_line_height = tighten_line_height_s
+label_margin = 0 0 offset_xs 0
+label_color = soft
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -272,15 +389,19 @@ input_bg = c_white
 input_border = 3px solid light
 input_corner_radius = 6px
 input_font_size = standard_font_size
-input_line_height = standard_line_height
+input_line_height = 1
 input_padding = 12px 10px
 input_padding_narrow = 6px 10px
 input_transition = all 0.2s
 input_disabled_color = pale
 input_disabled_border_color = light
-input_hover_color = darken(secondary, 30)
+
+/* Form input hover state */
+input_hover_color = darken(dark, 30)
 input_hover_border_color = pale
-input_focus_color = secondary
+
+/* Form input focus state */
+input_focus_color = dark
 input_focus_border_color = primary
 
 /*
@@ -288,26 +409,64 @@ input_focus_border_color = primary
 | Button
 |-----------------------------------------------------------------------------------------------------------------------
 */
-btn_border = 3px solid primary
+
+/* Base button */
+btn_corner_radius = 6px
+btn_font_size = font_size
+btn_line_height = 1
+btn_padding = 12px 18px
+btn_transition = all .3s ease
+btn_letter_spacing = extend_letter_spacing_l
+btn_text_transform = uppercase
+
+/* Base button regular state */
 btn_color = c_white
 btn_bg = primary
-btn_hover_border_color = secondary
-btn_hover_bg = secondary
-btn_focus_border_color = secondary
-btn_focus_bg = inherit
+btn_border = 3px solid primary
+btn_shadow = none
+btn_filter = none
+
+/* Base button focus state */
+btn_focus_color = c_white
+btn_focus_bg = primary
+btn_focus_border_color = dark
+btn_focus_shadow = none
+btn_focus_filter = none
+
+/* Base button hover state */
 btn_hover_color = c_white
-btn_corner_radius = 6px
-btn_color = c_white
-btn_font_size = t_small
-btn_line_height = standard_font_size /* By using the font size we ensure the same height for buttons as for inputs */
-btn_padding = 12px 18px
-btn_slim = 4px
-btn_narrow = 8px
-btn_extended = 16px
-btn_wide = 30px
-btn_transition = all .3s ease
-btn_letter_spacing = letter_spacing_s
-btn_text_transform = uppercase
+btn_hover_bg = dark
+btn_hover_border_color = dark
+btn_hover_shadow = none
+btn_hover_filter = none
+
+/* Base button active state */
+btn_active_color = c_white
+btn_active_bg = dark
+btn_active_border_color = dark
+btn_active_shadow = none
+btn_active_filter = contrast(120%) saturate(130%) brightness(80%)
+
+/* Base button disabled */
+btn_disabled_color = soft
 btn_disabled_bg = pale
-btn_disabled_color = tertiary
 btn_disabled_border_color = pale
+btn_shadow = none
+btn_filter = none
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Size control
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The following classes give you control over the width and height of buttons and input fields.
+|
+*/
+
+size_xs = 2px
+size_s = 6px
+size_m = 12px
+size_l = 18px
+size_xl = 28px
+size_2xl = 42px
+size_3xl = 60px

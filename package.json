@@ -1,13 +1,21 @@
 {
   "name": "pragma-css",
-  "version": "0.2.54",
+  "version": "0.3.00",
   "repository": {
     "type": "git",
     "url": "https://github.com/AlexanderReiswich/pragma-css.git"
   },
-  "description": "A configurable CSS library built on stylus.",
+  "description": "A pragmatic CSS framework to facilitate the creation of custom UI and style systems.",
   "author": "Alexander Reiswich <ali@mangadojo.com>",
   "license": "MIT",
   "main": "index.js",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.24",
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
 }

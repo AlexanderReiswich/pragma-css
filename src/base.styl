@@ -1,0 +1,741 @@
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| PragmaCSS. Prototype fast, scale with confidence.
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| base.css
+| ======
+|
+| This stylesheet offers solid base classes for the most essential ui elements, such as form elements and buttons.
+| Classes from style.css can be used to further customize them.
+|
+*/
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| HTML
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| This section takes care of the default appearance of all common HTML tags.
+|
+*/
+div
+  box-sizing border-box
+
+body
+  margin 0
+
+html, body
+  background-color body_background
+  font font_weight_regular standard_font_size / standard_line_height primary_font
+  color dark
+  -webkit-text-size-adjust 100%
+  letter-spacing standard_letter_spacing
+
+a
+  background-color transparent
+  outline none
+  color link_color
+  text-decoration none
+  transition link_transition
+  &:hover
+    color link_color_hover
+    -webkit-tap-highlight-color transparent
+    text-decoration none
+
+h1, h2, h3, h4, h5, h6
+  font-weight font_weight_regular
+  font-size standard_font_size
+  line-height standard_line_height
+  margin 0
+
+p
+  margin 0
+
+i, em
+  font-style italic
+
+b, strong
+  font-weight font_weight_bold
+
+abbr[title]
+  border-bottom none
+
+sub,
+sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+sub
+  bottom -0.25em
+
+sup
+  top -0.5em
+
+img
+  border-style none
+
+button,
+input,
+optgroup,
+select,
+textarea
+  font-family inherit
+  font-size 100%
+  line-height standard_line_height
+  border none
+  background transparent
+  outline none
+  margin 0
+
+button
+  border none
+  background transparent
+  outline none
+  &:hover
+    cursor pointer
+  &:focus
+    outline none
+
+button,
+input
+  overflow visible
+
+button,
+select
+  text-transform none
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"]
+  -webkit-appearance none
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner
+  border-style none
+  padding 0
+
+progress
+  vertical-align baseline
+
+textarea
+  overflow auto
+
+[type="checkbox"],
+[type="radio"]
+  box-sizing border-box
+  padding 0
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button
+  height auto
+
+[type="search"]
+  -webkit-appearance textfield
+  outline 0
+
+[type="search"]::-webkit-search-decoration
+  -webkit-appearance none
+
+::-webkit-file-upload-button
+  -webkit-appearance button
+  font inherit
+
+details
+  display block
+
+summary
+  display list-item
+
+template
+  display none
+
+[hidden]
+  display none
+
+/* Placeholders
+----------------------------------------------------------------------------------------------------------------------*/
+::-webkit-input-placeholder
+  color placeholder_color
+
+:-moz-placeholder
+  color placeholder_color
+
+::-moz-placeholder
+  color placeholder_color
+
+:-ms-input-placeholder
+  color placeholder_color
+
+/* Field sets
+----------------------------------------------------------------------------------------------------------------------*/
+fieldset
+  border none
+  padding 0
+  margin 0
+  legend
+    width 100%
+    box-sizing border-box
+    color inherit
+    display table
+    max-width 100%
+    padding 0
+    white-space normal
+
+/* Blockquote
+----------------------------------------------------------------------------------------------------------------------*/
+blockquote
+  font-size standard_font_size
+  line-height standard_line_height
+
+/* Lists
+----------------------------------------------------------------------------------------------------------------------*/
+ol
+  list-style-type decimal
+  padding 0
+
+ul
+  list-style-type square
+  padding 0
+  li
+    margin-bottom offset_xs
+    li
+      list-style-type circle
+
+dt
+  font-weight font_weight_bold
+
+dd, li
+  margin-left offset_s
+
+dd > *, li > *
+  margin-top 0
+
+/* Code
+----------------------------------------------------------------------------------------------------------------------*/
+pre,
+code,
+kbd,
+samp
+  display block
+  font-family monospace
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Horizontal rule
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+hr
+  background none
+  border none
+  border-bottom hr_style
+  width auto
+  height 0
+  overflow hidden
+  box-sizing content-box
+  &.dotted
+    border-bottom-style dashed
+  &.dashed
+    border-bottom-style dashed
+  &.s
+    border-width hr_m
+  &.m
+    border-width hr_m
+  &.l
+    border-width hr_l
+  &.short
+    width hr_short
+  &.negative
+    border-bottom-color hr_negative
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Tables
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+table
+  border-collapse collapse
+  text-align left
+  width 100%
+  tr
+    th
+      color table_th_color
+      font-weight font_weight_bold
+      padding 10px 8px
+      border-bottom table_th_border
+    td
+      padding 10px 8px
+      border-bottom table_td_border
+  tbody tr:last-child
+    td
+      border-bottom none
+  &.zebra
+    tr:nth-of-type(even) td
+      background-color table_zebra_bg
+  &.hoverable
+    tbody tr:hover td
+      background-color table_row_hover_bg
+  &.table-fixed
+    table-layout fixed
+
+table tr td:first-of-type,
+table tr th:first-of-type
+  padding-left 0
+
+table tr td:last-of-type,
+table tr th:last-of-type
+  padding-right 0
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Form inputs
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+input,
+input[type=text],
+input[type=email],
+input[type=password],
+textarea,
+select
+  background-color input_bg
+  border input_border
+  border-radius input_corner_radius
+  outline none
+  width 100%
+  font-size input_font_size
+  line-height input_line_height
+  padding input_padding
+  box-shadow none
+  box-sizing border-box
+  transition input_transition
+
+input,
+input[type=text]:disabled,
+input[type=email]:disabled,
+input[type=password]:disabled,
+textarea:disabled,
+select:disabled
+  color input_disabled_color
+  border-color input_disabled_border_color
+
+textarea
+  overflow-y hidden
+  resize none
+  transition height 0, width 0
+
+input,
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=password]:hover,
+textarea:hover,
+select:hover
+  color input_hover_color
+  border-color input_hover_border_color
+
+input,
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus,
+select:focus
+  color input_focus_color
+  border-color input_focus_border_color
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Text styles
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| PragmaCSS provides you with a small number of commonly used font styles for your convenience.
+| You can easily extend them via utility classes.
+|
+*/
+.hero-text
+  font-size hero_text_font_size
+  font-weight hero_text_font_weight
+  letter-spacing hero_text_letter_spacing
+  text-transform hero_text_text_transform
+  line-height hero_text_line_height
+  margin hero_text_margin
+
+.headline
+  font-size headline_font_size
+  font-weight headline_font_weight
+  letter-spacing headline_letter_spacing
+  text-transform headline_text_transform
+  line-height headline_line_height
+  margin headline_margin
+
+.title
+  font-size title_font_size
+  font-weight title_font_weight
+  letter-spacing title_letter_spacing
+  text-transform title_text_transform
+  line-height title_line_height
+  margin title_margin
+
+.subtitle
+  font-size subtitle_font_size
+  font-weight subtitle_font_weight
+  letter-spacing subtitle_letter_spacing
+  text-transform subtitle_text_transform
+  line-height subtitle_line_height
+  margin subtitle_margin
+
+.big
+  font-size big_font_size
+  font-weight big_font_weight
+  letter-spacing big_letter_spacing
+  text-transform big_text_transform
+  line-height big_line_height
+  margin big_margin
+
+.small
+  font-size small_font_size
+  font-weight small_font_weight
+  letter-spacing small_letter_spacing
+  text-transform small_text_transform
+  line-height small_line_height
+  margin small_margin
+  color small_color
+
+.label, label
+  font-size label_font_size
+  font-weight label_font_weight
+  letter-spacing label_letter_spacing
+  text-transform label_text_transform
+  line-height label_line_height
+  margin label_margin
+  color label_color
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Buttons
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Utility classes allow you to create all sorts of buttons, but chances are that you don't want to individually
+| define the appearance of every single button in your project. Most likely, the majority of buttons in your project
+| will have one particular look and feel, with a few modifications for specific situations.
+|
+| The .btn class aims to give you an easy way to do exactly that. You can configure most of the buttons appearance
+| through global variables. Additionally, the following modifiers can be used:
+|
+| Blank    : Transparent background
+| Ghost    : Transparent background with a border
+| Disabled : Disabled appearance
+|
+*/
+.btn, a.btn
+  display inline-block
+  box-sizing border-box
+  color btn_color
+  background btn_bg
+  border btn_border
+  border-radius btn_corner_radius
+  font-size btn_font_size
+  line-height  btn_line_height
+  letter-spacing btn_letter_spacing
+  text-transform btn_text_transform
+  text-align center
+  padding btn_padding
+  vertical-align middle
+  transition btn_transition
+  outline 0
+  -webkit-tap-highlight-color transparent
+  cursor pointer
+  box-shadow btn_shadow
+  text-decoration none
+  filter btn_filter
+  &:focus
+    color btn_focus_color
+    background btn_focus_bg
+    border-color btn_focus_border_color
+    filter btn_focus_filter
+  &:hover
+    color btn_hover_color
+    background btn_hover_bg
+    border-color btn_hover_border_color
+    filter btn_hover_filter
+  &:active
+    color btn_active_color
+    background btn_active_bg
+    border-color btn_active_border_color
+    filter btn_active_filter
+  &.dark-bg
+    color white
+    background dark
+    border-color dark
+    &:focus
+      border-color dark_hover
+    &:hover
+      background dark_hover
+      border-color dark_hover
+  &.soft-bg
+    color white
+    background soft
+    border-color soft
+    &:hover
+      background soft_hover
+      border-color soft_hover
+    &:focus
+      border-color soft_hover
+  &.pale-bg
+    color dark
+    background pale
+    border-color pale
+    &:hover
+      background pale_hover
+      border-color pale_hover
+    &:focus
+      border-color dark
+  &.light-bg
+    color dark
+    background light
+    border-color light
+    &:hover
+      color dark
+      background white
+      border-color white
+    &:focus
+      border-color light_hover
+  &.white-bg
+    color dark
+    background c_white
+    border-color c_white
+    &.primary
+      color primary
+      &:hover
+        color primary_hover
+    &.dark
+      color dark
+      &:hover
+        color dark_hover
+    &.soft
+      color soft
+      &:hover
+        color soft_hover
+    &.black
+      color c_black
+      &:hover
+        color c_black_hover
+    &.red
+      color c_red
+      &:hover
+        color c_red_hover
+    &.orange
+      color c_orange
+      &:hover
+        color c_orange_hover
+    &.green
+      color c_green
+      &:hover
+        color c_green_hover
+    &.blue
+      color c_blue
+      &:hover
+        color c_blue_hover
+    &.violet
+      color c_violet
+      &:hover
+        color c_violet_hover
+    &:hover
+      color primary
+      background c_white_hover
+      border-color c_white_hover
+    &:focus
+      border-color pale
+  &.black-bg
+    color white
+    background c_black
+    border-color c_black
+    &:hover
+      background c_black_hover
+      border-color c_black_hover
+    &:focus
+      border-color c_black_hover
+  &.red-bg
+    color white
+    background c_red
+    border-color c_red
+    &:hover
+      background c_red_hover
+      border-color c_red_hover
+    &:focus
+      border-color c_red_hover
+  &.orange-bg
+    color white
+    background c_orange
+    border-color c_orange
+    &:hover
+      background c_orange_hover
+      border-color c_orange_hover
+    &:focus
+      border-color c_orange_hover
+  &.green-bg
+    color white
+    background c_green
+    border-color c_green
+    &:hover
+      background c_green_hover
+      border-color c_green_hover
+    &:focus
+      border-color c_green_hover
+  &.yellow-bg
+    color dark
+    background c_yellow
+    border-color c_yellow
+    &:hover
+      background c_yellow_hover
+      border-color c_yellow_hover
+    &:focus
+      border-color c_yellow_hover
+  &.blue-bg
+    color white
+    background c_blue
+    border-color c_blue
+    &:hover
+      background c_blue_hover
+      border-color c_blue_hover
+    &:focus
+      border-color c_blue_hover
+  &.violet-bg
+    color white
+    background c_violet
+    border-color c_violet
+    &:hover
+      background c_violet_hover
+      border-color c_violet_hover
+    &:focus
+      border-color c_violet_hover
+  &.ghost
+    color primary
+    background transparent
+    border-color primary
+    &.dark, &.dark-bg
+      border-color dark
+      color dark
+      &:hover
+        border-color dark_hover
+        color dark_hover
+    &.soft, &.soft-bg
+      border-color soft
+      color soft
+    &.pale, &.pale-bg
+      border-color pale
+      color pale
+    &.light, &.light-bg
+      border-color light
+      color light
+    &.white, &.white-bg
+      border-color c_white
+      color c_white
+      &:hover
+        border-color light
+        color light
+    &.black, &.black-bg
+      border-color c_black
+      color c_black
+    &.red, &.red-bg
+      border-color c_red
+      color c_red
+    &.orange, &.orange-bg
+      border-color c_orange
+      color c_orange
+    &.green, &.green-bg
+      border-color c_green
+      color c_green
+    &.yellow, &.yellow-bg
+      border-color c_yellow
+      color c_yellow
+    &.blue, &.blue-bg
+      border-color c_blue
+      color c_blue
+    &.violet, &.violet-bg
+      border-color c_violet
+      color c_violet
+    &:hover, &:focus
+      color primary_hover
+      background transparent
+      border-color primary_hover
+  &.blank, &.blank:hover, &.blank:focus
+    border-color transparent
+    background transparent
+    color primary
+    &:hover, &:focus
+      color primary_hover
+
+.btn
+  &.disabled,
+  &:disabled,
+  &.disabled:hover,
+  &:disabled:hover
+    background-color btn_disabled_bg !important
+    color btn_disabled_color !important
+    border-color btn_disabled_border_color !important
+    cursor default
+
+.btn
+  &.disabled *,
+  &:disabled *
+    pointer-events none
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Size control
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| The following classes give you control over the width and height of buttons and input fields.
+|
+*/
+.v-xs, .vh-xs
+  padding-top size_xs
+  padding-bottom size_xs
+
+.v-s, .vh-s
+  padding-top size_s
+  padding-bottom size_s
+
+.v-m, .vh-m
+  padding-top size_m
+  padding-bottom size_m
+
+.v-l, .vh-l
+  padding-top size_l
+  padding-bottom size_l
+
+.v-xl, .vh-xl
+  padding-top size_xl
+  padding-bottom size_xl
+
+.h-xs, .vh-xs
+  padding-left size_xs
+  padding-right size_xs
+
+.h-s, .vh-s
+  padding-left size_s
+  padding-right size_s
+
+.h-m, .vh-m
+  padding-left size_m
+  padding-right size_m
+
+.h-l, .vh-l
+  padding-left size_l
+  padding-right size_l
+
+.h-xl, .vh-xl
+  padding-left size_xl
+  padding-right size_xl
+
+.h-2xl
+  padding-left size_2xl
+  padding-right size_2xl
+
+.h-3xl
+  padding-left size_3xl
+  padding-right size_3xl
