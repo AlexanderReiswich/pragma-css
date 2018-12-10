@@ -20,19 +20,15 @@
     width 100px
     height 100px
     border-width 16px
-    border-top-color #00d9c1
-    border-right-color #cbeff2 !important
-    border-bottom-color #cbeff2 !important
-    border-left-color #cbeff2 !important
+    border-color #cbeff2 !important
+    border-top-color #00d9c1 !important
 
   .spinner.my-custom-spinner-2
     width 120px
     height 120px
     border-width 10px 10px  0 0
-    border-top-color #95ea42
-    border-right-color transparent !important
-    border-bottom-color transparent !important
-    border-left-color transparent !important
+    border-color transparent !important
+    border-top-color #95ea42 !important
 
   .spinner.my-custom-spinner-3
     width 120px

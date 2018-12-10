@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  base: '/pragma-css/',
+  // base: '/pragma-css/',
   contentLoading: true,
   title: 'PragmaCSS',
   description: 'A pragmatic CSS framework to facilitate the creation of custom UI and style systems.',

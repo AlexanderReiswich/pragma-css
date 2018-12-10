@@ -519,16 +519,16 @@ The `.responsive` class forces images to resize in order to fit the available sp
 
 <br>
 
-### .full-width
+### .responsive-full
 
 This class behaves similarly to `.responsive`, except that it always fills out the available horizontal space.
 
-<img :src="$withBase('/logo.png')" alt="Responsive image" class="full-width block centered">
+<img :src="$withBase('/logo.png')" alt="Responsive image" class="responsive-full block centered">
 
 ```html
 <img src="/logo.png"
   alt="Full width responsive image"
-  class="full-width block centered">
+  class="responsive-full block centered">
 ```
 
 <br>
@@ -540,16 +540,16 @@ is not always desirable.
 
 To disable this effect, apply the `.pixelate` class.
 
-<img :src="$withBase('/qr_code.png')" alt="Responsive image" class="pixelate full-width block centered">
+<img :src="$withBase('/qr_code.png')" alt="Responsive image" class="pixelate responsive-full block centered">
 
 ```html
 <img src="/qr_code.png"
   alt="Full width responsive image"
-  class="pixelate full-width block centered">
+  class="pixelate responsive-full block centered">
 ```
 
 <br>
 
 For comparison, this is the same scaled up image without the `.pixelated` class:
 
-<img :src="$withBase('/qr_code.png')" alt="Responsive image" class="full-width block centered">
+<img :src="$withBase('/qr_code.png')" alt="Responsive image" class="responsive-full block centered">

@@ -6,7 +6,7 @@
 
 <br>
 
-**Official documentation:** [https://github.com/AlexanderReiswich/pragma-css.git](https://github.com/AlexanderReiswich/pragma-css.git)
+**Official documentation:** [https://alexanderreiswich.github.io/](https://alexanderreiswich.github.io/)
 
 <br>
 

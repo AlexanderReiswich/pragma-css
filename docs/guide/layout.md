@@ -67,8 +67,7 @@ use the page-container class.
 ## Grid system
 
 The grid system allows you to responsively divide your content into rows of up to 12 columns.
-Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic.
-There are no offset classes and it is based on classical floats instead of flexbox.
+Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic, as there are no offset classes.
 
 This is intentional, because we believe that grids shouldn't be used for complex or unusual layouts.
 Utility classes and custom CSS will serve you better in those cases.
@@ -167,9 +166,9 @@ Use push classes to add margins to your elements.
 
 <spacing name="push" :pad="true" suffix="-xl"/>
 
-#### Extremely large push - xxl
+#### Extremely large push - 2xl
 
-<spacing name="push" :pad="true" suffix="-xxl"/>
+<spacing name="push" :pad="true" suffix="-2xl"/>
 
 #### No push
 
@@ -212,9 +211,9 @@ how negative margins work.
 
 <spacing-pull name="pull" suffix="-xl" outer="pad-xl"/>
 
-#### Extremely large pull - xxl
+#### Extremely large pull - 2xl
 
-<spacing-pull name="pull" suffix="-xxl" outer="pad-xxl"/>
+<spacing-pull name="pull" suffix="-2xl" outer="pad-2xl"/>
 
 
 ### Pad
@@ -241,9 +240,9 @@ Pad classes allow you to add padding to your elements.
 
 <spacing name="pad" suffix="-xl" :outline="true"/>
 
-#### Extremely large pad - xxl
+#### Extremely large pad - 2xl
 
-<spacing name="pad" suffix="-xxl" :outline="true"/>
+<spacing name="pad" suffix="-2xl" :outline="true"/>
 
 #### No pad
 

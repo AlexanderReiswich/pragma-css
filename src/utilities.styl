@@ -553,6 +553,7 @@ a
 .container
   margin-left auto
   margin-right auto
+  box-sizing border-box
 
 @media only screen and (max-width unit(breakpoint_s + (page_offset_s * 2), 'px'))
   .container.max-width-s
@@ -607,57 +608,66 @@ a
 | Fixed widths
 |-----------------------------------------------------------------------------------------------------------------------
 |
-| The following classes allow you to set the width of your elements to a particular value.
-|
-| As you may notice, width classes violate the usual convention of size suffixes such as xs, s, m, etc.
-| Additionally, the name is abbreviated with a single letter to differentiate it even further.
-|
-| The reason for this decision lies in the fact that widths are more useful when linked to actual pixel values
-| as opposed to abstractions.
-|
-| You are encouraged to add your own width classes with the values that you need.
-|
-| It's worth pointing out that there is no counterpart for **height** by default, because setting a fixed
-| height is not as common. You are of course free to simply add your own height classes if you need them.
+| The following classes allow you to set the width of your elements to a particular pixel value.
+| You can configure your own width values in the global configuration.
 |
 */
-.w-30
-  width 30px
+for w in widths
+  .width-{w}
+    width unit(w, 'px')
 
-.w-50
-  width 50px
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Max-widths
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Same as fixed widths, but for max-width.
+|
+*/
+for mw in max_widths
+  .max-width-{mw}
+    max-width unit(mw, 'px')
 
-.w-70
-  width 70px
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Fixed heights
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Same as fixed widths, but for height.
+|
+*/
+for h in heights
+  .height-{h}
+    height unit(h, 'px')
 
-.w-100
-  width 100px
-
-.w-150
-  width 150px
-
-.w-200
-  width 200px
-
-.w-250
-  width 250px
-
-.w-300
-  width 300px
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Max-heights
+|-----------------------------------------------------------------------------------------------------------------------
+|
+| Same as fixed heights, but for max-height.
+|
+*/
+for mh in max_heights
+  .max-height-{mh}
+    max-height unit(mh, 'px')
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Width and height utilities
 |-----------------------------------------------------------------------------------------------------------------------
 */
-.full
+.full-width, .full
   width 100%
+
+.full-height
+  height 100%
 
 .width-auto
   width auto
 
 .height-auto
-  width auto
+  height auto
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -665,20 +675,15 @@ a
 |-----------------------------------------------------------------------------------------------------------------------
 |
 | The grid system allows you to responsively divide your content into rows of up to 12 columns.
-| Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic.
-| There are no offset classes and it is based on classical floats instead of flexbox.
+| Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic, as there are no offset classes.
 |
 | This is intentional, because we believe that grids shouldn't be used for complex or unusual layouts.
 | Custom CSS or other tools will serve you better in such cases.
 |
 */
 .grid
-  margin-left auto
-  margin-right auto
-  &:after
-    content ''
-    display table
-    clear both
+  display flex
+  flex-wrap wrap
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -715,11 +720,7 @@ a
 |-----------------------------------------------------------------------------------------------------------------------
 */
 .grid .col
-  float left
-  box-sizing border-box
-  margin-left auto
-  left auto
-  right auto
+  align-items stretch
 
 /* Grid columns
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -793,8 +794,8 @@ for i in (1..12)
 .push-xl
   margin offset_xl
 
-.push-xxl
-  margin offset_xxl
+.push-2xl
+  margin offset_2xl
 
 .push-0
   margin 0
@@ -895,21 +896,21 @@ for i in (1..12)
   margin-right offset_xl
 
 /* Super large push */
-.push-up-xxl,
-.push-v-xxl
-  margin-top offset_xxl
+.push-up-2xl,
+.push-v-2xl
+  margin-top offset_2xl
 
-.push-down-xxl,
-.push-v-xxl
-  margin-bottom offset_xxl
+.push-down-2xl,
+.push-v-2xl
+  margin-bottom offset_2xl
 
-.push-left-xxl,
-.push-h-xxl
-  margin-left offset_xxl
+.push-left-2xl,
+.push-h-2xl
+  margin-left offset_2xl
 
-.push-right-xxl,
-.push-h-xxl
-  margin-right offset_xxl
+.push-right-2xl,
+.push-h-2xl
+  margin-right offset_2xl
 
 /* No push */
 .push-up-0, .push-v-0
@@ -1032,19 +1033,19 @@ for i in (1..12)
   margin-right - offset_xl
 
 /* Super large pull */
-.pull-up-xxl
-  margin-top - offset_xxl
+.pull-up-2xl
+  margin-top - offset_2xl
 
-.pull-down-xxl
-  margin-bottom - offset_xxl
+.pull-down-2xl
+  margin-bottom - offset_2xl
 
-.pull-left-xxl,
-.pull-h-xxl
-  margin-left - offset_xxl
+.pull-left-2xl,
+.pull-h-2xl
+  margin-left - offset_2xl
 
-.pull-right-xxl,
-.pull-h-xxl
-  margin-right - offset_xxl
+.pull-right-2xl,
+.pull-h-2xl
+  margin-right - offset_2xl
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -1070,8 +1071,8 @@ for i in (1..12)
 .pad-xl
   padding offset_xl
 
-.pad-xxl
-  padding offset_xxl
+.pad-2xl
+  padding offset_2xl
 
 .pad-0
   padding 0
@@ -1170,21 +1171,21 @@ for i in (1..12)
   padding-right offset_xl
 
 /* Super large padding */
-.pad-up-xxl,
-.pad-v-xxl
-  padding-top offset_xxl
+.pad-up-2xl,
+.pad-v-2xl
+  padding-top offset_2xl
 
-.pad-down-xxl,
-.pad-v-xxl
-  padding-bottom offset_xxl
+.pad-down-2xl,
+.pad-v-2xl
+  padding-bottom offset_2xl
 
-.pad-left-xxl,
-.pad-h-xxl
-  padding-left offset_xxl
+.pad-left-2xl,
+.pad-h-2xl
+  padding-left offset_2xl
 
-.pad-right-xxl,
-.pad-h-xxl
-  padding-right offset_xxl
+.pad-right-2xl,
+.pad-h-2xl
+  padding-right offset_2xl
 
 /* No padding */
 .pad-up-0,
@@ -1500,7 +1501,7 @@ for i in (1..12)
   max-width 100%
   height auto
 
-.full-width
+.responsive-full
   width 100%
   height auto
 

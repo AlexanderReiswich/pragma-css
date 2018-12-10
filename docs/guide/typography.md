@@ -359,9 +359,11 @@ For these situations, you can use the `.reset` class in order to set the font si
 as well as the line-height, color, letter-spacing and text-transformations to their default values. 
 Then you can just use utility or custom classes to customize the element to your liking.
 
-<label>Regular label</label>
-<br>
-<label class="reset blue">Custom label</label>
+<div>
+  <label>Regular label</label>
+  <br>
+  <label class="reset blue">Custom label</label>
+</div>
 
 ```html
 <label>Regular label</label>

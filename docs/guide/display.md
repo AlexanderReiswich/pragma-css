@@ -75,7 +75,7 @@ This useful class sets the overflow property to **hidden**.
 
 ### .centered
 
-<div class="centered w-200 rounded light-bg pad-m push-down">
+<div class="centered width-200 rounded light-bg pad-m push-down">
   The .centered class sets the left and right margin to <b>auto</b>, thus centering the block
   element horizontally.
 </div>
@@ -85,10 +85,10 @@ This useful class sets the overflow property to **hidden**.
 ### .align-v
 
 <div class="align-v rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-  <div class="centered w-200 rounded dark-bg light pad-s push-s">
+  <div class="centered width-200 rounded dark-bg light pad-s push-s">
     The .align-v class uses flexbox to vertically align the elements within its parent container.
   </div>
-  <div class="centered w-200 rounded primary-bg light pad-s push-s">
+  <div class="centered width-200 rounded primary-bg light pad-s push-s">
     ...Whether one or more.
   </div>
 </div>
@@ -98,10 +98,10 @@ This useful class sets the overflow property to **hidden**.
 ### .align-h
 
 <div class="align-h rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-  <div class="w-200 rounded dark-bg light pad-s push-s">
+  <div class="width-200 rounded dark-bg light pad-s push-s">
     The .align-h class uses flexbox to horizontally align the elements within its parent container.
   </div>
-  <div class="w-200 rounded primary-bg light pad-s push-s">
+  <div class="width-200 rounded primary-bg light pad-s push-s">
     ...Whether one or more.
   </div>
 </div>
@@ -111,10 +111,10 @@ This useful class sets the overflow property to **hidden**.
 ### .align-vh
 
 <div class="align-vh rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-  <div class="w-200 rounded dark-bg light pad-s push-s">
+  <div class="width-200 rounded dark-bg light pad-s push-s">
     The .align-vh class uses flexbox to align the elements within its parent container in both directions.
   </div>
-  <div class="w-200 rounded primary-bg light pad-s push-s">
+  <div class="width-200 rounded primary-bg light pad-s push-s">
     ...Whether one or more.
   </div>
 </div>
@@ -236,69 +236,145 @@ it manually.
 
 ## Fixed width
 
-The following classes allow you to set the width of your elements to a particular value.
+The following classes allow you to set the width of your elements to a particular pixel value.
 
-<div class="w-30 rounded light-bg primary pad-v-s push-v-m size-xs bold center">
-  .w-30
+<div class="width-30 rounded light-bg primary pad-v-s push-v-m size-xs bold center">
+  .width-30
 </div>
 
-<div class="w-50 rounded light-bg primary pad-v-s push-v-m size-xs bold center">
-  .w-50
+<div class="width-50 rounded light-bg primary pad-v-s push-v-m size-xs bold center">
+  .width-50
 </div>
 
-<div class="w-70 rounded light-bg primary pad-v-s push-v-m size-s bold center">
-  .w-70
+<div class="width-70 rounded light-bg primary pad-v-s push-v-m size-s bold center">
+  .width-70
 </div>
 
-<div class="w-100 rounded light-bg primary pad-s push-v-m bold center">
-  .w-100
+<div class="width-100 rounded light-bg primary pad-s push-v-m bold center">
+  .width-100
 </div>
 
-<div class="w-150 rounded light-bg primary pad-s push-v-m size-l bold center">
-  .w-150
+<div class="width-150 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .width-150
 </div>
 
-<div class="w-200 rounded light-bg primary pad-s push-v-m size-l bold center">
-  .w-200
+<div class="width-200 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .width-200
 </div>
 
-<div class="w-250 rounded light-bg primary pad-s push-v-m size-l bold center">
-  .w-250
+<div class="width-250 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .width-250
 </div>
 
-<div class="w-300 rounded light-bg primary pad-s push-v-m size-l bold center">
-  .w-300
+<div class="width-300 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .width-300
 </div>
 
-As you may notice, width classes violate the usual convention of size suffixes such as xs, s, m, etc.
+<div class="width-400 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .width-400
+</div>
 
-Additionally, the name is abbreviated with a single letter to differentiate it even further.
+<div class="width-500 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .width-500
+</div>
 
-The reason for this decision lies in the fact that widths are more useful when linked to actual pixel values
-as opposed to abstractions.
+You can configure your own width values in the global configuration.
 
-You are encouraged to add your own width classes with the values that you need.
+<br>
 
-It's worth pointing out that there is no counterpart for **height** by default, because setting a fixed
-height is not as common. You are of course free to simply add your own height classes if you need them.
+## Max-width
+
+In addition to width, max-width classes are also available, and can be configured just the same.
+
+<div class="max-width-100 rounded light-bg primary pad-s push-v-m bold center">
+  .max-width-100
+</div>
+
+<div class="max-width-200 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .max-width-200
+</div>
+
+<div class="max-width-300 rounded light-bg primary pad-s push-v-m size-l bold center">
+  .max-width-300
+</div>
+
+<br>
+
+## Height
+
+Height classes are also available, even though fewer are available by default.
+
+<div class="height-30 rounded light-bg primary pad-s push-v-m bold center">
+  .height-30
+</div>
+
+<div class="height-50 rounded light-bg primary pad-s push-v-m bold center">
+  .height-50
+</div>
+
+<div class="height-70 rounded light-bg primary pad-s push-v-m bold center">
+  .height-70
+</div>
+
+<div class="height-100 rounded light-bg primary pad-s push-v-m bold center">
+  .height-100
+</div>
+
+<br>
+
+## Max-height
+
+Same as the height classes, but for max-height.
+
+<div class="max-height-30 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+  <lorem length="5"/>
+</div>
+
+<div class="max-height-50 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+  <lorem length="5"/>
+</div>
+
+<div class="max-height-70 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+  <lorem length="5"/>
+</div>
+
+<div class="max-height-100 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+  <lorem length="5"/>
+</div>
 
 <br>
 
 ## Width and height utilities
 
-### .full
+### .full-width
 
 Sets the width of an element to 100%.
 
-Note: There is no equivalent class for height, since setting height to 100% is very rarely required.
-
 <div class="light-bg pad-m rounded center full">
-  .full
+  .full-width (or just .full)
 </div>
 
 ```html
 <div class="full">
-  .full
+  .full-width (or just .full)
+</div>
+```
+
+### .full-height
+
+Sets the height of an element to 100%.
+
+<div class="light-bg pad-m rounded center full-height">
+  .full-height
+</div>
+
+::: tip Note
+The need to set height to 100% is quite rare, which is why .full is a shorthand for full width.
+:::
+
+```html
+<div class="full-height">
+  .full-height
 </div>
 ```
 
@@ -308,13 +384,29 @@ Note: There is no equivalent class for height, since setting height to 100% is v
 
 Sets the width of an element to **auto**.
 
-<div class="light-bg pad-m rounded w-100 inline width-auto">
+<div class="light-bg pad-m rounded width-100 inline width-auto">
   .width-auto
 </div>
 
 ```html
-<div class="width-auto">
+<div class="width-100 width-auto">
   .width-auto
+</div>
+```
+
+<br>
+
+### .height-auto
+
+Sets the height of an element to **auto**.
+
+<div class="light-bg pad-m rounded height-100 inline height-auto">
+  .height-auto
+</div>
+
+```html
+<div class="height-100 height-auto">
+  .height-auto
 </div>
 ```
 
@@ -328,7 +420,7 @@ This class can be useful to prevent particular word combinations from breaking a
 Common use cases are currencies <span class="nowrap">(USD<span class="yellow yellow-bg">+</span>999.00)</span> or
 company names <span class="nowrap">(Black<span class="yellow yellow-bg">+</span>&<span class="yellow yellow-bg">+</span>Decker)</span>.
 
-<div class="light-bg pad-m rounded w-100">
+<div class="light-bg pad-m rounded width-100">
   <lorem length="2" class="nowrap"/>
 </div>
 

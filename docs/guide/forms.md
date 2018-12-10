@@ -7,8 +7,10 @@ very extensible for all kinds of purposes.
 
 All input elements are styled by default, so you don't have to apply any classes
 
-<label for="text_input">Input label</label>
-<input placeholder="Text input..." id="text_input">
+<div>
+  <label for="text_input">Input label</label>
+  <input placeholder="Text input..." id="text_input">
+</div>
 
 ```html
 <label for="text_input">Input label</label>

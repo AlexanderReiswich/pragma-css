@@ -11,32 +11,50 @@ The spinner is a small inline loading indicator that can easily be added to butt
 Simply add the appropriate suffix to change the size of the spinner to one of the available sizes:
 
 #### .spinner-s
-<i class="spinner-s"></i> <span class="size-s">Something is loading...</span>
+
+<div>
+  <i class="spinner-s"></i> <span class="size-s">Something is loading...</span>
+</div>
 
 ---
 
 #### .spinner-m (or just .spinner)
-<i class="spinner"></i> Something is loading...
+
+<div>
+  <i class="spinner"></i> Something is loading...
+</div>
 
 ---
 
 #### .spinner-l
-<i class="spinner-l"></i> <span class="big">Something is loading...</span>
+
+<div>
+  <i class="spinner-l"></i> <span class="big">Something is loading...</span>
+</div>
 
 ---
 
 #### .spinner-xl
-<i class="spinner-xl"></i>
+
+<div>
+  <i class="spinner-xl"></i>
+</div>
 
 ---
 
 #### .spinner-2xl
-<i class="spinner-2xl"></i>
+
+<div>
+  <i class="spinner-2xl"></i>
+</div>
 
 ---
 
 #### .spinner-3xl
-<i class="spinner-3xl"></i>
+
+<div>
+  <i class="spinner-3xl"></i>
+</div>
 
 ```html
 <i class="spinner-s"></i>
@@ -113,8 +131,8 @@ By the way, it's also possible to tweak the border width by applying the corresp
 ### Customization
 
 You can extend the spinner with your own custom classes for further customization. Just keep in mind that
-you need to apply the `!important` rule to the border-color on the right, bottom and left side whenever you want
-to change it.
+you need to apply the `!important` rule to the border-color whenever you want to change it. This is necessary
+in order to ensure that the secondary border does not get affected when we apply a border-color utility class.
 
 <custom-spinner/>
 
@@ -123,19 +141,15 @@ to change it.
   width 100px
   height 100px
   border-width 16px
-  border-top-color #00d9c1
-  border-right-color #cbeff2 !important
-  border-bottom-color #cbeff2 !important
-  border-left-color #cbeff2 !important
+  border-color #cbeff2 !important
+  border-top-color #00d9c1 !important
 
 .spinner.my-custom-spinner-2
   width 120px
   height 120px
   border-width 10px 10px  0 0
-  border-right-color transparent !important
-  border-bottom-color transparent !important
-  border-left-color transparent !important
-  border-top-color #95ea42
+  border-color transparent !important
+  border-top-color #95ea42 !important
 
 .spinner.my-custom-spinner-3
   width 120px
