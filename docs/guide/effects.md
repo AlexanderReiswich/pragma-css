@@ -1,37 +1,43 @@
 # Effects
 
-Various utility classes are available to add commonly required effects such as rounded corners, shadows
+Various utility classes are available to add commonly utilized effects such as rounded corners, shadows
 and transitions to your elements.
 
 ## Border
 
 You can add a basic border on all sides with the following classes.
 
-<div class="inline border-s soft bold center extend-m pad-m push-up-s push-right-m">
-.border-s
-</div>
 
-<div class="inline border soft bold center extend-m pad-m push-up-s push-right-m">
-.border-m (or .border)
-</div>
-
-<div class="inline border-l dark bold center extend-m pad-m push-up-s push-right-m">
-.border-l
-</div>
-
+<div class="align-vh space-between wrap push-v-xl pull-right-m">
+  <div class="inline border-s border-primary soft bold center extend-m pad-m push-up-s push-right-m va-top">
+    .border-s
+  </div>
+  <div class="inline border border-primary soft bold center extend-m pad-m push-up-s push-right-m va-top">
+    .border-m<br>(or .border)
+  </div>
+  <div class="inline border-l border-primary soft bold center extend-m pad-m push-up-s push-right-m va-top">
+    .border-l
+  </div>
+  <div class="inline border-xl border-primary dark bold center extend-m pad-m push-up-s push-right-m va-top">
+    .border-xl
+  </div>
 </div>
 
 ```html
-<div class="border-s">
+<div class="border-s border-primary">
   .border-s
 </div>
 
-<div class="border">
+<div class="border border-primary">
   .border-m (or .border)
 </div>
 
-<div class="border-l">
+<div class="border border-primary">
   .border-l
+</div>
+
+<div class="border-xl border-primary">
+  .border-xl
 </div>
 ```
 
@@ -71,25 +77,27 @@ You can add borders to specific sides:
     </div>
 </div>
 
-It's also possible to further refine these classes with size suffixes, i.e.: `.border-top-l`, `.border-bottom-s`, etc.
-
 ```html
-<div class="border-top">
+<div class="border-top border-dark">
   .border-top
 </div>
 
-<div class="border-right">
+<div class="border-right border-dark">
   .border-right
 </div>
 
-<div class="border-bottom">
+<div class="border-bottom border-dark">
   .border-bottom
 </div>
 
-<div class="border-left">
+<div class="border-left border-dark">
   .border-left
 </div>
 ```
+
+::: tip GOOD TO KNOW
+You can of course further refine all border classes with size suffixes, i.e.: `.border-top-l`, `.border-bottom-s`, etc.
+:::
 
 <br>
 
@@ -99,12 +107,12 @@ It's possible to remove borders on specific sides, as well:
 
 <div class="grid gap-l">
     <div class="push-down col s12 m6">
-        <div class="border border-top-0 border-dark pad-m light-bg dark bold center extend-s">
+        <div class="border border-dark border-top-0 border-dark pad-m light-bg dark bold center extend-s">
             .border.border-top-0
         </div>
     </div>
     <div class="push-down col s12 m6">
-        <div class="border border-right-0 border-dark pad-m light-bg dark bold center extend-s">
+        <div class="border border-dark border-right-0 border-dark pad-m light-bg dark bold center extend-s">
             .border-right-0
         </div>
     </div>
@@ -112,31 +120,31 @@ It's possible to remove borders on specific sides, as well:
 
 <div class="grid gap-l">
     <div class="push-down col s12 m6">
-        <div class="border border-bottom-0 border-dark pad-m light-bg dark bold center extend-s">
+        <div class="border border-dark border-bottom-0 border-dark pad-m light-bg dark bold center extend-s">
             .border.border-bottom-0
         </div>
     </div>
     <div class="push-down col s12 m6">
-        <div class="border border-left-0 border-dark pad-m light-bg dark bold center extend-s">
+        <div class="border border-dark border-left-0 border-dark pad-m light-bg dark bold center extend-s">
             .border-left-0
         </div>
     </div>
 </div>
 
 ```html
-<div class="border border-top-0">
+<div class="border border-dark border-top-0">
   .border.border-top-0
 </div>
 
-<div class="border border-right-0">
+<div class="border border-dark border-right-0">
   .border.border-right-0
 </div>
 
-<div class="border border-bottom-0">
+<div class="border border-dark border-bottom-0">
   .border.border-bottom-0
 </div>
 
-<div class="border border-left-0">
+<div class="border border-dark border-left-0">
   .border.border-left-0
 </div>
 ```
@@ -230,7 +238,7 @@ All available colors can be assigned to borders.
 
 ### Border styles
 
-The default border style is set as a global variable, but it's possible to explicitly set it
+The default border style is predefined in a global variable, but can be explicitly set
 via the following classes:
 
 <div class="border-primary solid dark bold center extend-m pad-m push-down">
@@ -297,7 +305,7 @@ These classes add roundness to an elements corners.
 
 <br>
 
-You can reset the corner roundness with the following classes:
+You can also negate corner roundness for specific sides via the following classes:
 
 <div class="rounded-full rounded-0 orange-bg white bold pad-m push-down-m push-right-s">
     .rounded-0
@@ -341,8 +349,8 @@ You can reset the corner roundness with the following classes:
 
 ## Shadows
 
-The following classes add a box shadow to your element. You can customize the exact shadow amount via
-global variables.
+The following group of classes adds a box shadow to your element.
+You can customize the general shadow style via global variables.
 
 <div class="shadow-s rounded inline white-bg dark bold pad-m push-v-m push-right-xl">
     .shadow-s
@@ -362,10 +370,11 @@ global variables.
 <div class="shadow-l">.shadow-l</div>
 ```
 
+<br>
 
 ### Shadow on hover
 
-You can also apply shadows on hover:
+You can also apply shadows on hover only:
 
 <div class="shadow-s-on-hover rounded inline white-bg dark bold pad-m push-v-m push-right-xl cursor-default">
     .shadow-s-on-hover
@@ -389,18 +398,18 @@ You can also apply shadows on hover:
 
 ## Scale on hover
 
-These classes will increase the size of an element when you position the mouse cursor over it.<br>
+These classes will increase the size of an element when you move the mouse cursor over it.<br>
 
-<div class="scale-on-hover-s rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
-    .scale-on-hover-s
-</div>
-
-<div class="scale-on-hover-m rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
-    .scale-on-hover-m
-</div>
-
-<div class="scale-on-hover-l rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
-    .scale-on-hover-l
+<div class="space-between wrap pull-right-s push-v-xl">
+    <div class="scale-on-hover-s rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-on-hover-s
+    </div>
+    <div class="scale-on-hover-m rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-on-hover-m
+    </div>
+    <div class="scale-on-hover-l rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-on-hover-l
+    </div>
 </div>
 
 ```html
@@ -413,33 +422,33 @@ These classes will increase the size of an element when you position the mouse c
 
 ## Transitions
 
-These classes add transitions to your elements.
+`.tween` classes add transitions to your elements.
+
+<div class="space-between wrap pull-right-s">
+    <div class="tween-xs rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+        .tween-xs
+    </div>
+    <div class="tween-s rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+        .tween-s
+    </div>
+    <div class="tween-m rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+        .tween-m
+    </div>
+    <div class="tween-l rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+        .tween-l
+    </div>
+    <div class="tween-xl rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+        .tween-xl
+    </div>
+</div>
 
 ::: tip GOOD TO KNOW
-In case you're not familiar with the term "tweening":
-It's commonly used in animation to describe the "filler-frames" **between** keyframes, which is exactly
-what happens when you apply CSS transitions.<br>
+In case the name "tweening" doesn't ring a bell:
+It's a common term used in the animation industry to describe the transitional frames be**tween** keyframes,
+which is exactly what happens when you apply CSS transitions.
+
+It's just much nicer than writing "transition" all the time.
 :::
-
-<div class="tween-xs rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
-    .tween-xs
-</div>
-
-<div class="tween-s rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
-    .tween-s
-</div>
-
-<div class="tween-m rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
-    .tween-m
-</div>
-
-<div class="tween-l rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
-    .tween-l
-</div>
-
-<div class="tween-xl rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
-    .tween-xl
-</div>
 
 ```html
 <div class="tween-xs">.tween-xs</div>
@@ -467,6 +476,13 @@ These classes help you enforce certain mouse cursor behaviors.
     .no-pointer-events
 </div>
 
+<br>
+
+<div class="cursor-forbidden tween rounded inline pale-bg white bold pad-m push-v-s">
+    .cursor-forbidden
+</div>
+
+
 ```html
 <div class="pointer">
   .pointer
@@ -479,6 +495,10 @@ These classes help you enforce certain mouse cursor behaviors.
 <div class="no-pointer-events">
   .no-pointer-events
 </div>
+
+<div class="cursor-forbidden">
+  .cursor-forbidden
+</div>
 ```
 
 <br>
@@ -487,7 +507,7 @@ These classes help you enforce certain mouse cursor behaviors.
 
 ### .responsive
 
-This class ensures that your image scales down to fit the available space on smaller screens.
+The `.responsive` class forces images to resize in order to fit the available space on smaller screens.
 
 <img :src="$withBase('/logo.png')" alt="Responsive image" class="responsive block centered">
 
@@ -503,20 +523,22 @@ This class ensures that your image scales down to fit the available space on sma
 
 This class behaves similarly to `.responsive`, except that it always fills out the available horizontal space.
 
-<img :src="$withBase('/qr_code.png')" alt="Responsive image" class="full-width block centered">
+<img :src="$withBase('/logo.png')" alt="Responsive image" class="full-width block centered">
 
 ```html
-<img src="/qr_code.png"
+<img src="/logo.png"
   alt="Full width responsive image"
   class="full-width block centered">
 ```
 
 <br>
 
-### .responsive
+### .pixelate
 
-When images are scaled up, modern browsers will use anti-aliasing to smooth out the individual pixels.
-To disable this effect, use the `.pixelate` class.
+When images are scaled up, modern browsers will use anti-aliasing to smooth out individual pixels, which
+is not always desirable.
+
+To disable this effect, apply the `.pixelate` class.
 
 <img :src="$withBase('/qr_code.png')" alt="Responsive image" class="pixelate full-width block centered">
 
@@ -525,3 +547,9 @@ To disable this effect, use the `.pixelate` class.
   alt="Full width responsive image"
   class="pixelate full-width block centered">
 ```
+
+<br>
+
+For comparison, this is the same scaled up image without the `.pixelated` class:
+
+<img :src="$withBase('/qr_code.png')" alt="Responsive image" class="full-width block centered">

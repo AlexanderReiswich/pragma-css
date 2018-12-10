@@ -106,56 +106,43 @@ a
     color c_violet_hover
 
 /* Hover state overrides for text color */
-.primary-on-hover:hover,
-a.primary-on-hover:hover
+.primary-on-hover:hover
   color primary !important
 
-.dark-on-hover:hover,
-a.dark-on-hover:hover
+.dark-on-hover:hover
   color dark !important
 
-.soft-on-hover:hover,
-a.soft-on-hover:hover
+.soft-on-hover:hover
   color soft !important
 
-.pale-on-hover:hover,
-a.pale-on-hover:hover
+.pale-on-hover:hover
   color pale !important
 
-.light-on-hover:hover,
-a.light-on-hover:hover
+.light-on-hover:hover
   color light !important
 
-.white-on-hover:hover,
-a.white-on-hover:hover
+.white-on-hover:hover
   color c_white !important
 
-.black-on-hover:hover,
-a.black-on-hover:hover
+.black-on-hover:hover
   color c_black !important
 
-.red-on-hover:hover,
-a.red-on-hover:hover
+.red-on-hover:hover
   color c_red !important
 
-.green-on-hover:hover,
-a.green-on-hover:hover
+.green-on-hover:hover
   color c_green !important
 
-.yellow-on-hover:hover,
-a.yellow-on-hover:hover
+.yellow-on-hover:hover
   color c_yellow !important
 
-.orange-on-hover:hover,
-a.orange-on-hover:hover
+.orange-on-hover:hover
   color c_orange !important
 
-.blue-on-hover:hover,
-a.blue-on-hover:hover
+.blue-on-hover:hover
   color c_blue !important
 
-.violet-on-hover:hover,
-a.violet-on-hover:hover
+.violet-on-hover:hover
   color c_violet !important
 
 /* Background colors */
@@ -287,49 +274,49 @@ a.violet-on-hover:hover
 
 @media only screen and (max-width breakpoint_xl)
   .size-4xl
-    font-size round(font_size_4xl * .8)
+    font-size round(font_size_4xl * .9)
+
+  .size-3xl
+    font-size round(font_size_3xl * .95)
+
+@media only screen and (max-width breakpoint_l)
+  .size-4xl
+    font-size round(font_size_4xl * .85)
 
   .size-3xl
     font-size round(font_size_3xl * .9)
 
-@media only screen and (max-width breakpoint_l)
+  .size-2xl
+    font-size round(font_size_2xl * .95)
+
+@media only screen and (max-width breakpoint_m)
   .size-4xl
-    font-size round(font_size_4xl * .7)
+    font-size round(font_size_4xl * .75)
+
+  .size-3xl
+    font-size round(font_size_3xl * .85)
+
+  .size-2xl
+    font-size round(font_size_2xl * .9)
+
+  .size-xl
+    font-size round(font_size_xl * .95)
+
+@media only screen and (max-width breakpoint_s)
+  .size-4xl
+    font-size round(font_size_4xl * .65)
 
   .size-3xl
     font-size round(font_size_3xl * .8)
 
   .size-2xl
-    font-size round(font_size_2xl * .9)
-
-@media only screen and (max-width breakpoint_m)
-  .size-4xl
-    font-size round(font_size_4xl * .6)
-
-  .size-3xl
-    font-size round(font_size_3xl * .7)
-
-  .size-2xl
-    font-size round(font_size_2xl * .8)
+    font-size round(font_size_2xl * .85)
 
   .size-xl
-    font-size round(font_size_2xl * .9)
-
-@media only screen and (max-width breakpoint_s)
-  .size-4xl
-    font-size round(font_size_4xl * .5)
-
-  .size-3xl
-    font-size round(font_size_3xl * .6)
-
-  .size-2xl
-    font-size round(font_size_2xl * .7)
-
-  .size-xl
-    font-size round(font_size_2xl * .8)
+    font-size round(font_size_xl * .9)
 
   .size-l
-    font-size round(font_size_2xl * .9)
+    font-size round(font_size_l * .95)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -506,6 +493,10 @@ a.violet-on-hover:hover
 .space-evenly,
 .space-around,
 .space-between,
+.flex-start,
+.flex-end,
+.column-reverse,
+.row-reverse,
 .wrap
   display flex
   align-items baseline
@@ -524,6 +515,18 @@ a.violet-on-hover:hover
 
 .space-between
   justify-content space-between
+
+.flex-start
+  justify-content flex-start
+
+.flex-end
+  justify-content flex-end
+
+.column-reverse
+  flex-direction column-reverse
+
+.row-reverse
+  flex-direction row-reverse
 
 .wrap
   flex-wrap wrap
@@ -765,18 +768,6 @@ for i in (1..12)
 */
 .grid .col.separated
   border-right grid_separation
-
-@media only screen and (max-width breakpoint_s)
-  .grid .col.separated-s
-    border-right grid_separation
-
-@media only screen and (min-width unit(breakpoint_s + 1, 'px')) and (max-width breakpoint_m)
-  .grid .col.separated-m
-    border-right grid_separation
-
-@media only screen and (min-width unit(breakpoint_m + 1, 'px'))
-  .grid .col.separated-l
-    border-right grid_separation
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -1217,6 +1208,8 @@ for i in (1..12)
 | Border
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
+/* Border color defaults */
 .border-primary,
 .border-dark,
 .border-soft,
@@ -1231,38 +1224,31 @@ for i in (1..12)
 .border-blue,
 .border-violet
   border-style border_default_style
-  border-width border_default_width
 
-.border-top-s,
-.border-top,
-.border-top-m,
-.border-top-l,
-.border-right-s,
-.border-right,
-.border-right-m,
-.border-right-l,
-.border-bottom-s,
-.border-bottom,
-.border-bottom-m,
-.border-bottom-l,
-.border-left-s,
-.border-left,
-.border-left-m,
-.border-left-l
+/* Border width defaults */
+[class^='border-top'],
+[class*=' border-top'],
+[class^='border-right'],
+[class*=' border-right'],
+[class^='border-bottom'],
+[class*=' border-bottom'],
+[class^='border-left']
+[class*=' border-left']
   border-color border_default_color
   border-style border_default_style
   border-width 0
 
+/* Border defaults */
 .border
 .border-s,
 .border-m,
-.border-l
-  border-color border_default_color
-  border-style border_default_style
+.border-l,
+.border-xl
   border-width border_default_width
 
-.border-xs
-  border-width border_xs
+/* Border widths */
+.border-0
+  border-width 0
 
 .border-s
   border-width border_s
@@ -1273,9 +1259,10 @@ for i in (1..12)
 .border-l
   border-width border_l
 
-.border-top-xs
-  border-top-width border_xs
+.border-xl
+  border-width border_xl
 
+/* Border top */
 .border-top-s
   border-top-width border_s
 
@@ -1286,9 +1273,10 @@ for i in (1..12)
 .border-top-l
   border-top-width border_l
 
-.border-right-xs
-  border-right-width border_xs
+.border-top-xl
+  border-top-width border_xl
 
+/* Border right */
 .border-right-s
   border-right-width border_s
 
@@ -1299,9 +1287,10 @@ for i in (1..12)
 .border-right-l
   border-right-width border_l
 
-.border-bottom-xs
-  border-bottom-width border_xs
+.border-right-xl
+  border-right-width border_xl
 
+/* Border bottom */
 .border-bottom-s
   border-bottom-width border_s
 
@@ -1312,9 +1301,10 @@ for i in (1..12)
 .border-bottom-l
   border-bottom-width border_l
 
-.border-left-xs
-  border-left-width border_xs
+.border-bottom-xl
+  border-bottom-width border_xl
 
+/* Border left */
 .border-left-s
   border-left-width border_s
 
@@ -1325,6 +1315,10 @@ for i in (1..12)
 .border-left-l
   border-left-width border_l
 
+.border-left-xl
+  border-left-width border_xl
+
+/* Border zero */
 .border-top-0
   border-top-width 0
 
@@ -1337,6 +1331,7 @@ for i in (1..12)
 .border-left-0
   border-left-width 0
 
+/* Border colors */
 .border-primary
   border-color primary
 
@@ -1376,6 +1371,7 @@ for i in (1..12)
 .border-violet
   border-color c_violet
 
+/* Border styles */
 .solid
   border-style solid
 
@@ -1489,6 +1485,9 @@ for i in (1..12)
 .cursor-default
   cursor default
 
+.cursor-forbidden
+  cursor no-drop
+
 .no-pointer-events
   pointer-events none
 
@@ -1558,6 +1557,11 @@ for i in (1..12)
   .align-right-on-sm,
   .align-right-on-sml
     text-align right
+
+  .separated-on-s,
+  .separated-on-sm,
+  .separated-on-sml
+    border-right grid_separation
 
 @media only screen and (min-width unit(breakpoint_s + 1, 'px')) and (max-width breakpoint_m)
   .hide-on-m,
@@ -1629,6 +1633,13 @@ for i in (1..12)
   .wrap-on-sml,
   .wrap-on-mlx
     flex-wrap wrap
+
+  .separated-on-m,
+  .separated-on-sm,
+  .separated-on-ml,
+  .separated-on-sml,
+  .separated-on-mlx
+    border-right grid_separation
 
 @media only screen and (min-width unit(breakpoint_m + 1, 'px')) and (max-width breakpoint_l)
   .hide-on-l,
@@ -1711,6 +1722,14 @@ for i in (1..12)
   .wrap-on-lxp
     flex-wrap wrap
 
+  .separated-on-l,
+  .separated-on-ml,
+  .separated-on-lx,
+  .separated-on-sml,
+  .separated-on-mlx,
+  .separated-on-lxp
+    border-right grid_separation
+
 @media only screen and (min-width unit(breakpoint_l + 1, 'px')) and (max-width breakpoint_xl)
   .hide-on-x,
   .hide-on-lx,
@@ -1782,6 +1801,13 @@ for i in (1..12)
   .wrap-on-lxp
     flex-wrap wrap
 
+  .separated-on-x,
+  .separated-on-lx,
+  .separated-on-xp,
+  .separated-on-mlx,
+  .separated-on-lxp
+    border-right grid_separation
+
 @media only screen and (min-width unit(breakpoint_xl + 1, 'px'))
   .hide-on-p,
   .hide-on-xp,
@@ -1832,4 +1858,9 @@ for i in (1..12)
   .wrap-on-xp,
   .wrap-on-lxp
     flex-wrap wrap
+
+  .separated-on-p,
+  .separated-on-xp,
+  .separated-on-lxp
+    border-right grid_separation
 

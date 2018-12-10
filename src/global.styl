@@ -24,7 +24,7 @@
 | Functional colors should be based on your project's visual identity. Usually they'll be derived from your logo.
 | As the name implies, you should select their values based on their function.
 |
-| Primary   : The leading color; Usually a confident signal color. Think of Twitter's blue or NPM's red.
+| Primary   : The leading color; Usually a confident signal color. Think of Twitter's blue or YouTube's red.
 |             Often used to signify interactive elements such as links and buttons, or to highlight their importance.
 |             If your CI includes more than one main color, it's recommended to add a secondary and tertiary class.
 |             But as many projects only have one main color, they are not included by default.
@@ -93,10 +93,10 @@ c_violet_hover = darken(c_violet, 30)
 | Border
 |-----------------------------------------------------------------------------------------------------------------------
 */
-border_xs = 1px
-border_s = 2px
-border_m = 3px
-border_l = 5px
+border_s = 1px
+border_m = 2px
+border_l = 3px
+border_xl = 5px
 border_default_style = solid
 border_default_width = border_m
 border_default_color = light
@@ -191,7 +191,7 @@ font_size_xs = 11px
 font_size_s = 13px
 font_size_m = 16px
 font_size_l = 18px
-font_size_xl = 21px
+font_size_xl = 24px
 font_size_2xl = 32px
 font_size_3xl = 64px
 font_size_4xl = 140px
@@ -222,18 +222,13 @@ standard_letter_spacing = extend_letter_spacing_m
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
-| Link colors
+| Links
 |-----------------------------------------------------------------------------------------------------------------------
 */
 link_color = primary
 link_color_hover = dark
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Link transition
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-link_transition = all .15s ease
+link_transition = all .2s ease
+link_decoration = none
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -412,7 +407,7 @@ input_focus_border_color = primary
 
 /* Base button */
 btn_corner_radius = 6px
-btn_font_size = font_size
+btn_font_size = font_size_s
 btn_line_height = 1
 btn_padding = 12px 18px
 btn_transition = all .3s ease

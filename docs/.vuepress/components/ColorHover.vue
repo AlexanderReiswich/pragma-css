@@ -80,7 +80,7 @@
       .light-bg-on-hover
     </div>
 
-    <div class="tween light dark-on-hover dark-bg white-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark light-bg white-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .white-bg-on-hover
     </div>
 
@@ -104,11 +104,11 @@
       .blue-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg green-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark light-bg green-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .green-bg-on-hover
     </div>
 
-    <div class="tween light dark-on-hover dark-bg yellow-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark light-bg yellow-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .yellow-bg-on-hover
     </div>
 

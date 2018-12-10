@@ -2,9 +2,9 @@
 
   <div class="grid gap-s">
 
-    <div class="col s12 m6 separated-m separated-l">
+    <div class="col s12 m6 separated-on-mlx separated-on-p">
       <div class="tertiary pad-v pad-h-s center">
-        col<br/>s12 m6 separated-m separated-l
+        col<br/>s12 m6 separated-on-mlx separated-on-p
       </div>
     </div>
 

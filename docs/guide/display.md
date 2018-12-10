@@ -9,17 +9,20 @@ The following utility classes allow you to set various aspects of how your block
 
 As one might expect, this sets display to **block**.
 
+---
 
 ### .inline
 
 Contrary to expectations, `.inline` actually sets the display property to **inline-block** as opposed to just inline,
 for the simple reason that it's the much more frequently required one of the two.
 
+---
 
 ### .flex
 
 Sets display to **flex**.
 
+---
 
 ### .hide
 
@@ -37,6 +40,7 @@ All display classes can be extended with breakpoint modifiers, such as **.block-
 
 As the name implies, sets the position attribute to **relative**.
 
+---
 
 ### .absolute
 
@@ -48,6 +52,7 @@ use the following classes:
 `.bottom`
 `.left`
 
+---
 
 ### .fixed
 
@@ -58,6 +63,7 @@ Sets position to **fixed**. To position it according to your requirements, you c
 `.bottom`
 `.left`
 
+---
 
 ### .no-overflow
 
@@ -65,115 +71,158 @@ This useful class sets the overflow property to **hidden**.
 
 <br>
 
-## Block alignment
+## Block alignment (Flexbox)
 
 ### .centered
 
 <div class="centered w-200 rounded light-bg pad-m push-down">
-    The .centered class sets the left and right margin to <b>auto</b>, thus centering the block
-    element horizontally.
+  The .centered class sets the left and right margin to <b>auto</b>, thus centering the block
+  element horizontally.
 </div>
 
+---
 
 ### .align-v
 
 <div class="align-v rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-
-<div class="centered w-200 rounded dark-bg light pad-s push-s">
+  <div class="centered w-200 rounded dark-bg light pad-s push-s">
     The .align-v class uses flexbox to vertically align the elements within its parent container.
-</div>
-
-<div class="centered w-200 rounded primary-bg light pad-s push-s">
+  </div>
+  <div class="centered w-200 rounded primary-bg light pad-s push-s">
     ...Whether one or more.
+  </div>
 </div>
 
-</div>
-
+---
 
 ### .align-h
 
 <div class="align-h rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-
-<div class="w-200 rounded dark-bg light pad-s push-s">
+  <div class="w-200 rounded dark-bg light pad-s push-s">
     The .align-h class uses flexbox to horizontally align the elements within its parent container.
-</div>
-
-<div class="w-200 rounded primary-bg light pad-s push-s">
+  </div>
+  <div class="w-200 rounded primary-bg light pad-s push-s">
     ...Whether one or more.
+  </div>
 </div>
 
-</div>
-
+---
 
 ### .align-vh
 
 <div class="align-vh rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-
-<div class="w-200 rounded dark-bg light pad-s push-s">
-    The .align-vh class uses flexbox to align the elements within its parent container on both axis.
-</div>
-
-<div class="w-200 rounded primary-bg light pad-s push-s">
+  <div class="w-200 rounded dark-bg light pad-s push-s">
+    The .align-vh class uses flexbox to align the elements within its parent container in both directions.
+  </div>
+  <div class="w-200 rounded primary-bg light pad-s push-s">
     ...Whether one or more.
+  </div>
 </div>
 
-</div>
-
+---
 
 ### .space-evenly
 
 <div class="space-evenly rounded light-bg pad-m push-up-s push-down">
-
-<div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg light pad-s push-s">
     Some Item
-</div>
-
-<div class="rounded dark-bg light pad-s push-s">
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
     Another item
-</div>
-
-<div class="rounded dark-bg light pad-s push-s">
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
     And a third item item
+  </div>
 </div>
 
-</div>
-
+---
 
 ### .space-around
 
 <div class="space-around rounded light-bg pad-m push-up-s push-down">
-
-<div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg light pad-s push-s">
     Some Item
-</div>
-
-<div class="rounded dark-bg light pad-s push-s">
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
     Another item
-</div>
-
-<div class="rounded dark-bg light pad-s push-s">
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
     And a third item item
+  </div>
 </div>
 
-</div>
-
+---
 
 ### .space-between
 
 <div class="space-between rounded light-bg pad-m push-up-s push-down">
-
-<div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg light pad-s push-s">
     Some Item
-</div>
-
-<div class="rounded dark-bg light pad-s push-s">
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
     Another item
-</div>
-
-<div class="rounded dark-bg light pad-s push-s">
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
     And a third item item
+  </div>
 </div>
 
+---
+
+### .flex-start
+
+<div class="space-between flex-start rounded light-bg pad-m push-up-s push-down">
+  <div class="rounded dark-bg light pad-s push-s">
+    Some Item
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
+    Another item
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
+    And a third item item
+  </div>
+</div>
+
+---
+
+### .flex-end
+
+<div class="space-between flex-end rounded light-bg pad-m push-up-s push-down">
+  <div class="rounded dark-bg light pad-s push-s">
+    Some Item
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
+    Another item
+  </div>
+  <div class="rounded dark-bg light pad-s push-s">
+    And a third item item
+  </div>
+</div>
+
+---
+
+### .column-reverse
+
+<div class="space-between column-reverse rounded light-bg pad-h-m pad-v-s">
+  <div class="full rounded dark-bg light pad-v push-v-s center">
+    Upper column
+  </div>
+  <div class="full rounded primary-bg light pad-v push-v-s center">
+    Lower column
+  </div>
+</div>
+
+---
+
+### .row-reverse
+
+<div class="space-between row-reverse rounded light-bg pad-m push-up-s push-down">
+  <div class="full rounded dark-bg light pad-s push-s center">
+    Left column
+  </div>
+  <div class="full rounded primary-bg light pad-s push-s center">
+    Right column
+  </div>
 </div>
 
 <br>
@@ -190,35 +239,35 @@ it manually.
 The following classes allow you to set the width of your elements to a particular value.
 
 <div class="w-30 rounded light-bg primary pad-v-s push-v-m size-xs bold center">
-.w-30
+  .w-30
 </div>
 
 <div class="w-50 rounded light-bg primary pad-v-s push-v-m size-xs bold center">
-.w-50
+  .w-50
 </div>
 
 <div class="w-70 rounded light-bg primary pad-v-s push-v-m size-s bold center">
-.w-70
+  .w-70
 </div>
 
 <div class="w-100 rounded light-bg primary pad-s push-v-m bold center">
-.w-100
+  .w-100
 </div>
 
 <div class="w-150 rounded light-bg primary pad-s push-v-m size-l bold center">
-.w-150
+  .w-150
 </div>
 
 <div class="w-200 rounded light-bg primary pad-s push-v-m size-l bold center">
-.w-200
+  .w-200
 </div>
 
 <div class="w-250 rounded light-bg primary pad-s push-v-m size-l bold center">
-.w-250
+  .w-250
 </div>
 
 <div class="w-300 rounded light-bg primary pad-s push-v-m size-l bold center">
-.w-300
+  .w-300
 </div>
 
 As you may notice, width classes violate the usual convention of size suffixes such as xs, s, m, etc.
@@ -244,27 +293,28 @@ Sets the width of an element to 100%.
 Note: There is no equivalent class for height, since setting height to 100% is very rarely required.
 
 <div class="light-bg pad-m rounded center full">
-    .full
+  .full
 </div>
 
 ```html
 <div class="full">
-    .full
+  .full
 </div>
 ```
 
+<br>
 
 ### .width-auto
 
 Sets the width of an element to **auto**.
 
 <div class="light-bg pad-m rounded w-100 inline width-auto">
-    .width-auto
+  .width-auto
 </div>
 
 ```html
 <div class="width-auto">
-    .width-auto
+  .width-auto
 </div>
 ```
 
@@ -274,27 +324,28 @@ Sets the width of an element to **auto**.
 
 ### .nowrap
 
-This class can be useful to prevent particular word combinations from breaking at awkward and undesired places,
-for example currencies <span class="nowrap">(USD<span class="yellow yellow-bg">+</span>999.00)</span> or company
-names <span class="nowrap">(Black<span class="yellow yellow-bg">+</span>&<span class="yellow yellow-bg">+</span>Decker)</span>.
+This class can be useful to prevent particular word combinations from breaking at awkward and undesired points.
+Common use cases are currencies <span class="nowrap">(USD<span class="yellow yellow-bg">+</span>999.00)</span> or
+company names <span class="nowrap">(Black<span class="yellow yellow-bg">+</span>&<span class="yellow yellow-bg">+</span>Decker)</span>.
 
 <div class="light-bg pad-m rounded w-100">
-    <lorem length="2" class="nowrap"/>
+  <lorem length="2" class="nowrap"/>
 </div>
 
 ```html
 <div>
-    <div class="nowrap">Lorem ipsum...</div>
+  <div class="nowrap">Lorem ipsum dolor sit amet</div>
 </div>
 ```
 
+<br>
 
 ### .truncate
 
 If you want to ensure long text fits in one line without breaking or getting cut off, apply the .truncate class
 to elegantly end it with an ellipsis.
 
-<lorem length="4" class="truncate bold blue"/>
+<lorem length="4" class="truncate big bold blue"/>
 
 ```html
 <div class="truncate">Lorem ipsum...</div>
@@ -305,15 +356,15 @@ to elegantly end it with an ellipsis.
 ## Text alignment
 
 <div class="center bold pad-m light-bg rounded push-up-s">
-.center
+  .center
 </div>
 
 <div class="align-right bold pad-m light-bg rounded push-up-s">
-.align-right
+  .align-right
 </div>
 
 <div length="5" class="align-left bold pad-m light-bg rounded push-up-s">
-.align-left
+  .align-left
 </div>
 
 ```html
@@ -339,13 +390,13 @@ All alignment classes can be extended with breakpoint modifiers, such as **.alig
 ## Float
 
 <lorem length="5" class="push-up-s">
-    <div class="float-left push-right-s pad-m light-bg rounded bold extend-s">.float-left</div>
+  <div class="float-left push-right-s pad-m light-bg rounded bold extend-s">.float-left</div>
 </lorem>
 
 <br>
 
 <lorem length="5" class="push-up-s">
-    <div class="float-right push-left-s pad-m light-bg rounded bold extend-s">.float-right</div>
+  <div class="float-right push-left-s pad-m light-bg rounded bold extend-s">.float-right</div>
 </lorem>
 
 ```html
@@ -363,6 +414,7 @@ Lorem ipsum...
 All float classes can be extended with breakpoint modifiers, such as **.float-left-on-mlx** and **.float-right-s**.
 :::
 
+<br>
 
 ### Clear float
 
@@ -385,65 +437,68 @@ Clear the effects of preceding floating elements with `.clear`.
 The vertical alignment utility classes are useful to align non-text elements such as buttons or icons
 within a line of text.
 
+<br>
+<br>
+
 <div>
-    <div class="va-top btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-top</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-top btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-top</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-bottom btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-bottom</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-bottom btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-bottom</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-text-top btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-text-top</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-text-top btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-text-top</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-text-bottom btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-text-bottom</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-text-bottom btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-text-bottom</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-middle btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-middle</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-middle btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-middle</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-baseline btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-baseline</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-baseline btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-baseline</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-sub btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-sub</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-sub btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-sub</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 
 ---
 
 <div>
-    <div class="va-super btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-super</div>
-    <div class="inline">Lorem ipsum.</div>
-    <div class="inline title tight-l">Lorem ipsum.</div>
+  <div class="va-super btn tight bold normal-case size-m push-right-s push-down-s cursor-default">.va-super</div>
+  <div class="inline">Lorem ipsum.</div>
+  <div class="inline title tight-l">Lorem ipsum.</div>
 </div>
 

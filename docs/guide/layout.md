@@ -1,6 +1,8 @@
 # Layout & Grid
 
-PragmaCSS offers a manageable amount of layout-related utility classes,
+PragmaCSS offers a handful of layout-related utility classes. Specific UI layout classes (i.e. sidebar, navbar, etc.)
+are not included, as that is outside the scope of a style framework. You can use utility classes and custom
+styles to set up the page layout.
 
 <br>
 
@@ -9,8 +11,8 @@ PragmaCSS offers a manageable amount of layout-related utility classes,
 The `.page-container` class literally acts as a container around the entire page. It should be applied to
 the root element of your HTML.
 
-The main purpose of this class relates to the grid system. It ensures that no horizontal scroll-bar
-pops up due to the use of negative margins.
+This class has no obvious visual effect; It's main purpose relates to the grid system and pull-classes.
+It ensures that no undesired horizontal scroll-bar appears due to the use of negative margins.
 
 <br>
 
@@ -19,8 +21,8 @@ pops up due to the use of negative margins.
 The `.container` class should wrap the content area of your page. It will be centered and behave properly on
 smaller screen sizes (padding will be added to the sides).
 
-This class should not receive a background color, border or anything like that. It's purely intended to be
-used for layout purposes.
+This class should not receive a background color, border or anything like that. It's purely intended properly
+fit the content area on all screen sizes.
 
 By default, the `.container` class uses up the entire screen width, creating what's known as a fluid layout.
 
@@ -55,6 +57,13 @@ A simple example of the recommended HTML structure:
 
 <br>
 
+::: tip NOTE
+You don't have to use the .container class if you utilize some special kind of layout. But you should always
+use the page-container class.
+:::
+
+<br>
+
 ## Grid system
 
 The grid system allows you to responsively divide your content into rows of up to 12 columns.
@@ -62,7 +71,7 @@ Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic
 There are no offset classes and it is based on classical floats instead of flexbox.
 
 This is intentional, because we believe that grids shouldn't be used for complex or unusual layouts.
-Custom CSS or other tools will serve you better in such cases.
+Utility classes and custom CSS will serve you better in those cases.
 
 <br>
 
@@ -108,16 +117,15 @@ You can also define the vertical gaps between the columns:
 In addition to just gaps, you can also add a border separator to each individual column via the
 **.separated** class.
 
-You can use the modifiers **s**, **m** and **l** in order to define the screen size at which the border
-should be visible. For example, if you only want it to be visible on small screens, use **.separated-s**.
-If you want it to be visible on medium screens and up, use **.separated-m.separated-l**.
+The breakpoint system is supported. For example, if you only want it to be visible on small screens,
+use **.separated-on-s**.
 
 <grid-separated/>
 
 ```html
 <div class="grid gap-s">
-  <div class="col s12 m6 separated-m separated-l">
-    col s12 m6 separated-m separated-l
+  <div class="col s12 m6 separated-on-mlx separated-on-p">
+    col s12 m6 separated-on-mlx separated-on-p
   </div>
   <div class="col s12 m6">
     col s12 m6
@@ -165,7 +173,7 @@ Use push classes to add margins to your elements.
 
 #### No push
 
-These classes are meant to be used to override already assigned push classes.
+These classes are meant to be used as overrides for already assigned push classes.
 For example, if you want to add margin to all sides except to the left, you can add the following class combo:
 **push push-left-0**
 
@@ -181,7 +189,7 @@ Similar to push-0, except that the margin is set to auto as opposed to 0.
 ### Pull
 
 Pull classes add negative margins to elements, allowing you to offset padding when necessary.
-Be aware that there's not a corresponding pull for every push class. This is due to inherent limitations in
+Be aware that there's no corresponding pull for every push class. This is due to inherent limitations in
 how negative margins work.
 
 #### Very small pull - xs
@@ -239,7 +247,7 @@ Pad classes allow you to add padding to your elements.
 
 #### No pad
 
-These classes are meant to be used as an override for already added pad classes.
+These classes are meant to be used as overrides for already added pad classes.
 For example, if you want to have padding on all sides except on the left, you can add the following class combo:
 **pad pad-left-0**
 

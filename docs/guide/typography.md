@@ -2,39 +2,58 @@
 
 ## Text styles
 
-<div class="bold push-down">.bold</div>
+### .bold
+<div class="bold push-down push-left">Be bold</div>
 
-<div class="italic push-down">.italic</div>
+---
 
-<div class="underline push-down">.underline</div>
+### .italic
+<div class="italic push-down push-left">Italicize all the letters</div>
 
-<div class="uppercase push-down">.uppercase</div>
+---
 
-<div class="lowercase push-down">.lowercase</div>
+### .underline
+<div class="underline push-down push-left">Underline everything</div>
 
-<div class="capitalize push-down">.capitalize</div>
+---
 
-<div class="normal-case push-down">.normal-case</div>
+### .uppercase
+<div class="uppercase push-down push-left">Uppercase dramatically</div>
+
+---
+
+### .lowercase
+<div class="lowercase push-down push-left">Lowercase When Necessary</div>
+
+---
+
+### .capitalize
+<div class="capitalize push-down push-left">Capitalize elegantly</div>
+
+---
+
+### .normal-case
+<div class="normal-case push-down push-left">Return to normal case</div>
 
 ```html
-<div class="bold">.bold</div>
+<div class="bold">Be bold</div>
 
-<div class="italic">.italic</div>
+<div class="italic">Italicize all the letters</div>
 
-<div class="underline">.underline</div>
+<div class="underline">Underline everything</div>
 
-<div class="uppercase">.uppercase</div>
+<div class="uppercase">Uppercase dramatically</div>
 
-<div class="lowercase">.lowercase</div>
+<div class="lowercase">Lowercase When Necessary</div>
 
-<div class="capitalize">.capitalize</div>
+<div class="capitalize">Capitalize elegantly</div>
 
-<div class="normal-case">.normal-case</div>
+<div class="normal-case">Return to normal case</div>
 ```
 
 <br>
 
-To cancel any applied bold and/or italic styles, use the class `.regular`.
+To revert any applied bold and/or italic styles, use the class `.regular`.
 
 <span class="bold italic">
   bold bold bold <span class="regular">Just regular text</span> italic italic
@@ -52,10 +71,23 @@ To cancel any applied bold and/or italic styles, use the class `.regular`.
 
 A utility class is available to increase letter spacing.
 
-<div class="extend-0 big bold push-down">.extend-0</div>
-<div class="extend-s big bold push-down">.extend-s</div>
-<div class="extend-m big bold push-down">.extend-m</div>
-<div class="extend-l big bold push-down">.extend-l</div>
+### .extend-0
+<div class="extend-0 push-down push-left">No letter spacing</div>
+
+---
+
+### .extend-s
+<div class="extend-s push-down push-left">Slight letter spacing</div>
+
+---
+
+### .extend-m
+<div class="extend-m push-down push-left">Medium letter spacing</div>
+
+---
+
+### .extend-l
+<div class="extend-l push-down push-left">Large letter spacing</div>
 
 ::: tip GOOD TO KNOW
 Letter spacing utilizes the **em** unit by default, which is recommended
@@ -180,7 +212,7 @@ Line height is defined without a unit by default in order to ensure proportional
 ### .tight-s
 
 <div class="tight-s size-s soft extend-s">
-    Slightly reduced line height can look appealing for short paragraphs of small text, i.e. an image caption.
+    Slightly reduced line height tends to work well for short paragraphs of small text, i.e. an image caption.
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
 </div>
 
@@ -238,11 +270,12 @@ So `.tight-l` creates tighter text blocks than `.tight-s`.
 </div>
 ```
 
+<br>
 
 ## Convenience text styles
 
 PragmaCSS provides you with a small number of commonly used font styles for your convenience.
-You can easily extend them via utility classes.
+You can style them with global variables and easily extend them via utility classes.
 
 ### .hero-text
 
@@ -315,6 +348,7 @@ The .label class is also applied to the actual HTML label element by default.
 <div class="label">Your label</div>
 ```
 
+<br>
 
 ## Resetting text styles
 

@@ -1,10 +1,11 @@
 {
   "name": "pragma-css",
-  "version": "0.3.00",
+  "version": "0.3.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/AlexanderReiswich/pragma-css.git"
   },
+  "homepage": "https://alexanderreiswich.github.io/",
   "description": "A pragmatic CSS framework to facilitate the creation of custom UI and style systems.",
   "author": "Alexander Reiswich <ali@mangadojo.com>",
   "license": "MIT",
@@ -16,6 +17,7 @@
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "deploy.sh"
   }
 }

@@ -25,12 +25,15 @@ Creating a simple button with default styling is easy as pie; Simply apply the `
 
 ## Size modifiers
 
-Changing the width and height of a button is very straightforward. Just add the following classes the
+Changing the width and height of a button is very straightforward. Just add the following classes to the
 main `.btn` class in order to adjust the vertical or horizontal dimensions of your button&mdash;or both:
 
 ### Vertical size modifiers
 
 <div class="space-between wrap">
+  <button class="btn v-0 bold lowercase push-down-s">
+    .v-0
+  </button>
   <button class="btn v-xs bold lowercase push-down-s">
     .v-xs
   </button>
@@ -49,6 +52,8 @@ main `.btn` class in order to adjust the vertical or horizontal dimensions of yo
 </div>
 
 ```html
+<button class="btn v-0">.v-0</button>
+
 <button class="btn v-xs">.v-xs</button>
 
 <button class="btn v-s">.v-s</button>
@@ -63,6 +68,10 @@ main `.btn` class in order to adjust the vertical or horizontal dimensions of yo
 <br>
 
 ### Horizontal size modifiers
+
+<button class="btn h-0 bold lowercase push-down-s block">
+  .h-0
+</button>
 
 <button class="btn h-xs bold lowercase push-down-s block">
   .h-xs
@@ -86,7 +95,14 @@ main `.btn` class in order to adjust the vertical or horizontal dimensions of yo
   .h-3xl
 </button>
 
+::: tip NOTE
+There are two additional levels of scale for horizontal size modifiers that are not available for their
+vertical counterparts. This is because buttons with more horizontal than vertical spacing are common.
+:::
+
 ```html
+<button class="btn h-0">.h-0</button>
+
 <button class="btn h-xs">.h-xs</button>
 
 <button class="btn h-s">.h-s</button>
@@ -107,6 +123,9 @@ main `.btn` class in order to adjust the vertical or horizontal dimensions of yo
 ### Combined size modifiers
 
 <div class="space-between wrap">
+    <button class="btn vh-0 bold lowercase push-down-s">
+      .vh-0
+    </button>
     <button class="btn vh-xs bold lowercase push-down-s">
       .vh-xs
     </button>
@@ -316,53 +335,70 @@ If you either add the `.disabled` class or the `disabled` property to your butto
 
 ## Ghost buttons
 
-Due to their unobtrusive look, Ghost buttons convey a very subtle call to action. Nevertheless, they
-serve a very important role, as they help to establish a clear visual hierarchy which can help the user
-navigate successfully through your site.
+Due to their unobtrusive look, Ghost buttons convey a comparatively subtle call to action. Nevertheless, they
+serve an important role, as they help to establish a clear visual hierarchy which provides your users
+with more clarity while navigating your site.
 
 Naturally, it's possible to also apply all available colors to ghost buttons:
 
 <div class="pad-up-m push-down center">
   <button class="btn ghost push-down-m push-h-m">
     .btn.ghost
-  </button>
+  </button><br>
   <button class="btn ghost dark push-down-m push-h-m">
     .btn.ghost.dark
-  </button>
+  </button><br>
   <button class="btn ghost soft push-down-m push-h-m">
     .btn.ghost.soft
-  </button>
+  </button><br>
   <button class="btn ghost pale push-down-m push-h-m">
     .btn.ghost.pale
-  </button>
+  </button><br>
   <button class="btn ghost black push-down-m push-h-m">
     .btn.ghost.black
-  </button>
+  </button><br>
   <button class="btn ghost red push-down-m push-h-m">
     .btn.ghost.red
-  </button>
+  </button><br>
   <button class="btn ghost orange push-down-m push-h-m">
     .btn.ghost.orange
-  </button>
+  </button><br>
   <button class="btn ghost green push-down-m push-h-m">
     .btn.ghost.green
-  </button>
+  </button><br>
   <button class="btn ghost yellow push-down-m push-h-m">
     .btn.ghost.yellow
-  </button>
+  </button><br>
   <button class="btn ghost blue push-down-m push-h-m">
     .btn.ghost.blue
-  </button>
+  </button><br>
   <button class="btn ghost violet push-down-m push-h-m">
     .btn.ghost.violet
   </button>
 </div>
 
 <div class="dark-bg pad-left pad-up-m push-down rounded-m center">
+  <button class="btn ghost light push-down-m push-right">
+    .btn.ghost.light
+  </button><br>
   <button class="btn ghost white push-down-m push-right">
-    .btn.ghost
+    .btn.ghost.white
   </button>
 </div>
+
+```html
+<button class="btn ghost">.btn.ghost</button>
+<button class="btn ghost dark">.btn.ghost.dark</button>
+<button class="btn ghost soft">.btn.ghost.soft</button>
+<button class="btn ghost pale">.btn.ghost.pale</button>
+<button class="btn ghost black">.btn.ghost.black</button>
+<button class="btn ghost red">.btn.ghost.red</button>
+<button class="btn ghost orange">.btn.ghost.orange</button>
+<button class="btn ghost green">.btn.ghost.green</button>
+<button class="btn ghost yellow">.btn.ghost.yellow</button>
+<button class="btn ghost blue">.btn.ghost.blue</button>
+<button class="btn ghost violet">.btn.ghost.violet</button>
+```
 
 <br>
 
@@ -371,10 +407,10 @@ Naturally, it's possible to also apply all available colors to ghost buttons:
 You can add the `border` utility classes in order to control the width and style of the border.
 
 <div class="pad-up-m push-down center">
-  <button class="btn ghostborder-xs push-down-m push-h-m ">
-    .btn.ghost.border-xs
+  <button class="btn ghost border-0 push-down-m push-h-m ">
+    .btn.ghost.border-0
   </button>
-  <button class="btn ghost border-s push-down-m push-h-m">
+  <button class="btn ghost border-s push-down-m push-h-m ">
     .btn.ghost.border-s
   </button>
   <button class="btn ghost border-m push-down-m push-h-m">
@@ -383,58 +419,117 @@ You can add the `border` utility classes in order to control the width and style
   <button class="btn ghost border-l push-down-m push-h-m">
     .btn.ghost.border-l
   </button>
+  <button class="btn ghost border-xl push-down-m push-h-m">
+    .btn.ghost.border-xl
+  </button>
 </div>
 
 ```html
-<button class="btn ghost border-xs">.ghost.border-xs</button>
-<button class="btn ghost border-s">.ghost.border-s</button>
-<button class="btn ghost border-m">.ghost.border-m</button>
-<button class="btn ghost border-l">.ghost.border-l</button>
+<button class="btn ghost border-s">.btn.ghost.border-s</button>
+<button class="btn ghost border-m">.btn.ghost.border-m</button>
+<button class="btn ghost border-l">.btn.ghost.border-l</button>
+<button class="btn ghost border-xl">.btn.ghost.border-xl</button>
+```
+
+<br>
+
+## Loading indicator
+
+You can add an element with a `.spinner` class inside of the button in order to indicate a loading state.
+
+<div class="space-between wrap push-v">
+  <button class="btn push-v-m no-pointer-events">
+    <i class="spinner-s negative border-white push-right-xs"></i> Loading...
+  </button>
+  <button class="btn ghost blue push-v-m no-pointer-events">
+    <i class="spinner-l border-blue border-l va-text-top push-h"></i>
+  </button>
+  <button class="btn light-bg push-v-m reset no-pointer-events">
+    <i class="spinner-l va-text-top push-right-xs"></i> Loading...
+  </button>
+</div>
+
+```html
+<button class="btn push-v-m no-pointer-events">
+  <i class="spinner-s negative border-white push-right-xs"></i>
+  Loading...
+</button>
+
+<button class="btn ghost blue push-v-m no-pointer-events">
+  <i class="spinner-l border-blue border-l va-text-top push-h"></i>
+</button>
+
+<button class="btn light-bg push-v-m reset no-pointer-events">
+  <i class="spinner-l va-text-top push-right-xs"></i>
+  Loading...
+</button>
 ```
 
 <br>
 
 ## Utility class overrides
 
-Buttons are compatible with other utility classes, which allows you to easily customize them further:
+Buttons are compatible with most utility classes. This allows you to easily customize them further in
+countless ways. Here are a few examples:
 
 
 ### .btn.reset
-<button class="btn reset push-down-m">
+<button class="btn reset push-s">
   Button
 </button>
+
+---
 
 ### .btn.rounded-0
-<button class="btn rounded-0 push-down-m">
+<button class="btn rounded-0 push-s">
   Button
 </button>
+
+---
 
 ### .btn.rounded-l
-<button class="btn rounded-l push-down-m">
+<button class="btn rounded-l push-s">
   Button
 </button>
+
+---
+
+### .btn.rounded-full
+<button class="btn rounded-full push-s">
+  Button
+</button>
+
+---
 
 ### .btn.size-xl.bold
-<button class="btn size-xl bold push-down-m">
+<button class="btn size-xl bold push-s">
   Button
 </button>
 
-### .btn.border-dark.border-xs.dashed
-<button class="btn border-dark border-xs dashed push-down-m">
+---
+
+### .btn.ghost.border-s.dashed
+<button class="btn ghost border-s dashed push-s">
   Button
 </button>
+
+---
 
 ### .btn.scale-on-hover-s
-<button class="btn scale-on-hover-s push-down-m">
+<button class="btn scale-on-hover-s push-s">
   Button
 </button>
+
+---
 
 ### .btn.white-bg.white-bg-on-hover.shadow-s.shadow-m-on-hover
-<button class="btn white-bg primary white-bg-on-hover dark-on-hover shadow-s shadow-m-on-hover push-down-m">
+<button class="btn white-bg primary white-bg-on-hover dark-on-hover shadow-s shadow-m-on-hover push-s">
   Button
 </button>
 
+---
+
 ### .btn.full
-<button class="btn full push-down-m">
+<button class="btn full push-v-m">
   Button
 </button>

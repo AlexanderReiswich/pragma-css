@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  base: '/pragma-css/',
   contentLoading: true,
   title: 'PragmaCSS',
   description: 'A pragmatic CSS framework to facilitate the creation of custom UI and style systems.',
@@ -33,21 +34,12 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/ms-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#35495e' }]
   ],
-  // theme: '@vuepress/theme-default',
   themeConfig: {
     repo: 'AlexanderReiswich/pragma-css',
-    /* nav: [
-      {
-        text: 'Languages',
-        items: [
-          { text: 'Group1', items: ['test'] },
-          { text: 'Group2', items: ['test'] }
-        ]
-      }
-    ],*/
     sidebar: {
       '/guide/': [
         ['', 'Introduction'],
+        ['install', 'Installation'],
         ['overview', 'Overview'],
         ['colors', 'Color styles'],
         ['typography', 'Typography'],
@@ -57,73 +49,20 @@ module.exports = {
         ['effects', 'Effects'],
         ['buttons', 'Buttons'],
         ['forms', 'Form elements'],
+        ['ui', 'UI elements'],
       ],
-
-      // fallback
       '/': [
         ''
       ]
-    },
-    /*sidebar: [
-      ['/', 'Start'],
-      {
-        title: 'Guide',
-        collapsable: false,
-        children: [
-          '/'
-        ]
-      },
-      ['/guide', 'Introduction'],
-      ['/guide/overview', 'Overview'],
-      ['/guide/colors', 'Color styles'],
-    ]*/
+    }
   },
   plugins: {
-    // '@vuepress/i18n-ui': !ctx.isProd,
     '@vuepress/plugin-back-to-top': true,
     '@vuepress/plugin-register-components': true,
     '@vuepress/active-header-links': true,
-    '@vuepress/search': true,
-    /*'@vuepress/pwa': {
-      serviceWorker: true,
-      updatePopup: true
-    },
-    '@vuepress/plugin-medium-zoom': true,
-    '@vuepress/notification': true,
-    'flowchart': true,
-    '@vuepress/google-analytics': {
-      ga: 'UA-XXXXXXXXX-X'
-    }*/
+    '@vuepress/search': true
   },
   configureWebpack: (config, isServer) => {
     config.resolve.alias['src'] = path.resolve(__dirname, './../../src')
-
-    // console.log(config.resolve.alias)
-
-    /*config.module.rules[config.module.rules.length - 1].use = [
-      'stylus-loader',
-      {
-        loader: 'stylus-resources-loader',
-        options: {
-          // Provide path to the file with resources
-          resources: './src/global.styl'
-        }
-      }
-    ]*/
-
-    // Apply loader
-    /*config.module.rules.push({
-      test: /\.styl$/,
-      use: [
-        'stylus-loader',
-        {
-          loader: 'stylus-resources-loader',
-          options: {
-            // Provide path to the file with resources
-            resources: './src/global.styl'
-          }
-        }
-      ]
-    })*/
   }
 }

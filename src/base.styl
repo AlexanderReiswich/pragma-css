@@ -36,7 +36,7 @@ a
   background-color transparent
   outline none
   color link_color
-  text-decoration none
+  text-decoration link_decoration
   transition link_transition
   &:hover
     color link_color_hover
@@ -200,12 +200,21 @@ ol
   padding 0
 
 ul
-  list-style-type square
+  list-style-type circle
   padding 0
   li
     margin-bottom offset_xs
     li
-      list-style-type circle
+      list-style-type square
+
+ul.inline-list
+  list-style none
+  li
+    display inline-block
+    margin-bottom 0
+    margin-left 0
+    li
+      list-style none
 
 dt
   font-weight font_weight_bold
@@ -259,6 +268,7 @@ hr
 |-----------------------------------------------------------------------------------------------------------------------
 */
 table
+  display table
   border-collapse collapse
   text-align left
   width 100%
@@ -328,7 +338,7 @@ textarea
   resize none
   transition height 0, width 0
 
-input,
+input:hover,
 input[type=text]:hover,
 input[type=email]:hover,
 input[type=password]:hover,
@@ -337,7 +347,7 @@ select:hover
   color input_hover_color
   border-color input_hover_border_color
 
-input,
+input:focus,
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
@@ -413,6 +423,52 @@ select:focus
   margin label_margin
   color label_color
 
+@media only screen and (max-width breakpoint_xl)
+  .hero-text
+    font-size round(font_size_4xl * .9)
+
+  .headline
+    font-size round(font_size_3xl * .95)
+
+@media only screen and (max-width breakpoint_l)
+  .hero-text
+    font-size round(font_size_4xl * .85)
+
+  .headline
+    font-size round(font_size_3xl * .9)
+
+  .title
+    font-size round(font_size_2xl * .95)
+
+@media only screen and (max-width breakpoint_m)
+  .hero-text
+    font-size round(font_size_4xl * .75)
+
+  .headline
+    font-size round(font_size_3xl * .85)
+
+  .title
+    font-size round(font_size_2xl * .9)
+
+  .subtitle
+    font-size round(font_size_xl * .95)
+
+@media only screen and (max-width breakpoint_s)
+  .hero-text
+    font-size round(font_size_4xl * .65)
+
+  .headline
+    font-size round(font_size_3xl * .8)
+
+  .title
+    font-size round(font_size_2xl * .85)
+
+  .subtitle
+    font-size round(font_size_xl * .9)
+
+  .big
+    font-size round(font_size_l * .95)
+
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Buttons
@@ -423,11 +479,7 @@ select:focus
 | will have one particular look and feel, with a few modifications for specific situations.
 |
 | The .btn class aims to give you an easy way to do exactly that. You can configure most of the buttons appearance
-| through global variables. Additionally, the following modifiers can be used:
-|
-| Blank    : Transparent background
-| Ghost    : Transparent background with a border
-| Disabled : Disabled appearance
+| through global variables.
 |
 */
 .btn, a.btn
@@ -503,52 +555,6 @@ select:focus
       border-color white
     &:focus
       border-color light_hover
-  &.white-bg
-    color dark
-    background c_white
-    border-color c_white
-    &.primary
-      color primary
-      &:hover
-        color primary_hover
-    &.dark
-      color dark
-      &:hover
-        color dark_hover
-    &.soft
-      color soft
-      &:hover
-        color soft_hover
-    &.black
-      color c_black
-      &:hover
-        color c_black_hover
-    &.red
-      color c_red
-      &:hover
-        color c_red_hover
-    &.orange
-      color c_orange
-      &:hover
-        color c_orange_hover
-    &.green
-      color c_green
-      &:hover
-        color c_green_hover
-    &.blue
-      color c_blue
-      &:hover
-        color c_blue_hover
-    &.violet
-      color c_violet
-      &:hover
-        color c_violet_hover
-    &:hover
-      color primary
-      background c_white_hover
-      border-color c_white_hover
-    &:focus
-      border-color pale
   &.black-bg
     color white
     background c_black
@@ -612,62 +618,139 @@ select:focus
       border-color c_violet_hover
     &:focus
       border-color c_violet_hover
+  &.white-bg
+    color dark
+    background c_white
+    border-color c_white
+  &.blank
+    color primary
+    &.blank:hover, &.blank:focus
+      color primary_hover
+  &.white-bg.primary, &.blank.primary
+    color primary
+    &:hover, &.blank.primary:hover
+      color primary_hover
+  &.white-bg.dark, &.blank.dark
+    color dark
+    &:hover, &.blank.dark:hover
+      color dark_hover
+  &.white-bg.soft, &.blank.soft
+    color soft
+    &:hover, &.blank.soft:hover
+      color soft_hover
+  &.white-bg.black, &.blank.black
+    color c_black
+    &:hover, &.blank.black:hover
+      color c_black_hover
+  &.white-bg.red, &.blank.red
+    color c_red
+    &:hover, &.blank.red:hover
+      color c_red_hover
+  &.white-bg.orange, &.blank.orange
+    color c_orange
+    &:hover, &.blank.orange:hover
+      color c_orange_hover
+  &.white-bg.green, &.blank.green
+    color c_green
+    &:hover, &.blank.green:hover
+      color c_green_hover
+  &.white-bg.blue, &.blank.blue
+    color c_blue
+    &:hover, &.blank.blue:hover
+      color c_blue_hover
+  &.white-bg.violet, &.blank.violet
+    color c_violet
+    &:hover, &.blank.violet:hover
+      color c_violet_hover
+  &.white-bg:hover, &.blank:hover
+    color primary
+    background c_white_hover
+    border-color c_white_hover
+  &.white-bg:focus, &.blank:focus
+    border-color pale
+  &.blank, &.blank:hover, &.blank:focus
+    border-color transparent
+    background transparent
   &.ghost
     color primary
     background transparent
     border-color primary
+    &:hover, &:focus
+      color primary_hover
+      background transparent
+      border-color primary_hover
     &.dark, &.dark-bg
       border-color dark
       color dark
-      &:hover
+      &:hover, &:focus
         border-color dark_hover
         color dark_hover
     &.soft, &.soft-bg
       border-color soft
       color soft
+      &:hover, &:focus
+        border-color soft_hover
+        color soft_hover
     &.pale, &.pale-bg
       border-color pale
       color pale
+      &:hover, &:focus
+        border-color pale_hover
+        color pale_hover
     &.light, &.light-bg
       border-color light
       color light
+      &:hover, &:focus
+        border-color light_hover
+        color light_hover
     &.white, &.white-bg
       border-color c_white
       color c_white
-      &:hover
-        border-color light
-        color light
+      &:hover, &:focus
+        border-color c_white_hover
+        color c_white_hover
     &.black, &.black-bg
       border-color c_black
       color c_black
+      &:hover, &:focus
+        border-color c_black_hover
+        color c_black_hover
     &.red, &.red-bg
       border-color c_red
       color c_red
+      &:hover, &:focus
+        border-color c_red_hover
+        color c_red_hover
     &.orange, &.orange-bg
       border-color c_orange
       color c_orange
+      &:hover, &:focus
+        border-color c_orange_hover
+        color c_orange_hover
     &.green, &.green-bg
       border-color c_green
       color c_green
+      &:hover, &:focus
+        border-color c_green_hover
+        color c_green_hover
     &.yellow, &.yellow-bg
       border-color c_yellow
       color c_yellow
+      &:hover, &:focus
+        border-color c_yellow_hover
+        color c_yellow_hover
     &.blue, &.blue-bg
       border-color c_blue
       color c_blue
+      &:hover, &:focus
+        border-color c_blue_hover
+        color c_blue_hover
     &.violet, &.violet-bg
       border-color c_violet
       color c_violet
-    &:hover, &:focus
-      color primary_hover
-      background transparent
-      border-color primary_hover
-  &.blank, &.blank:hover, &.blank:focus
-    border-color transparent
-    background transparent
-    color primary
-    &:hover, &:focus
-      color primary_hover
+      &:hover, &:focus
+        border-color c_violet_hover
+        color c_violet_hover
 
 .btn
   &.disabled,
@@ -684,6 +767,10 @@ select:focus
   &:disabled *
     pointer-events none
 
+.btn [class^='spinner'],
+.btn [class*=' spinner']
+  top 0
+
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Size control
@@ -692,6 +779,10 @@ select:focus
 | The following classes give you control over the width and height of buttons and input fields.
 |
 */
+.v-0, .vh-0
+  padding-top 0
+  padding-bottom 0
+
 .v-xs, .vh-xs
   padding-top size_xs
   padding-bottom size_xs
@@ -711,6 +802,10 @@ select:focus
 .v-xl, .vh-xl
   padding-top size_xl
   padding-bottom size_xl
+
+.h-0, .vh-0
+  padding-left 0
+  padding-right 0
 
 .h-xs, .vh-xs
   padding-left size_xs
@@ -739,3 +834,61 @@ select:focus
 .h-3xl
   padding-left size_3xl
   padding-right size_3xl
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Spinner loader
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+[class^='spinner'],
+[class*=' spinner']
+  position relative
+  display inline-block
+  width 12px
+  height 12px
+  top 2px
+  border-radius 100%
+  border-width 2px
+  border-style solid
+  border-right-color rgba(0,0,0,0.08) !important
+  border-bottom-color rgba(0,0,0,0.08) !important
+  border-left-color rgba(0,0,0,0.08) !important
+  border-top-color primary
+  transition .3s all cubic-bezier(.48,.01,.54,1)
+  animation spinner-rotation 1.6s cubic-bezier(.41, .26, .2, .62)
+  animation-iteration-count infinite
+
+.spinner-s
+  width 8px
+  height 8px
+
+.spinner-l
+  width 16px
+  height 16px
+
+.spinner-xl
+  width 42px
+  height 42px
+  border-width 3px
+
+.spinner-2xl
+  width 80px
+  height 80px
+  border-width 5px
+
+.spinner-3xl
+  width 150px
+  height 150px
+  border-width 5px
+
+[class^='spinner'].negative,
+[class*=' spinner'].negative
+  border-right-color rgba(255,255,255,0.12) !important
+  border-bottom-color rgba(255,255,255,0.12) !important
+  border-left-color rgba(255,255,255,0.12) !important
+
+@keyframes spinner-rotation
+  0%
+    transform rotate(0)
+  to
+    transform rotate(2turn)
