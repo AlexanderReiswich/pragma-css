@@ -26,17 +26,15 @@ fit the content area on all screen sizes.
 
 By default, the `.container` class uses up the entire screen width, creating what's known as a fluid layout.
 
-You can limit its width with the help of the following classes:
+You can limit its width with the help of the max-width classes (which you can define in the global variables):
 
-`.max-width-s` (600px by default)</div>
+`.max-width-600`</div>
 
-`.max-width-m` (900px by default)</div>
+`.max-width-900`</div>
 
-`.max-width-l` (1200px by default)</div>
+`.max-width-1200`</div>
 
-`.max-width-xl` (1500px by default)</div>
-
-These widths are based on the breakpoint variables that you can customize in the global configuration.
+`.max-width-1500`</div>
 
 A simple example of the recommended HTML structure:
 

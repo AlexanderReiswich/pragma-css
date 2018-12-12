@@ -2,9 +2,9 @@
 layout: HomeLayout
 ---
 
-<img :src="$withBase('/hero.svg')" alt="PragmaCSS logo" class="block centered max-width-s">
+<img :src="$withBase('/hero.svg')" alt="PragmaCSS logo" class="block centered max-width-600">
 
-<div class="soft size-xl center centered max-width-s push-v-xl">
+<div class="soft size-xl center centered max-width-600 push-v-xl">
   A pragmatic CSS framework for the rapid creation of custom UI and style systems
 </div>
 

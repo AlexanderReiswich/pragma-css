@@ -541,7 +541,7 @@ a
 |
 | The container class on the other hand is optional but recommended for most layouts. It centers the content area
 | and adds the proper amount of spacing on smaller screen sizes.
-| Combine it with max-width-xl classes to limit its width.
+| Combine it with max-width classes to limit its width.
 |
 */
 .page-container
@@ -554,54 +554,33 @@ a
   margin-left auto
   margin-right auto
   box-sizing border-box
+  padding-left $page-padding-on-p
+  padding-right $page-padding-on-p
+  width 'calc(100% - %s)' % ($page-padding-on-p * 2)
 
-@media only screen and (max-width unit($breakpoint-s + ($page-offset-s * 2), 'px'))
-  .container.max-width-s
-    width 100%
-    padding-left $page-offset-s
-    padding-right $page-offset-s
+@media only screen and (max-width $breakpoint-xl)
+  .container
+    padding-left $page-padding-on-x
+    padding-right $page-padding-on-x
+    width 'calc(100% - %s)' % ($page-padding-on-x * 2)
 
-@media only screen and (max-width unit($breakpoint-m + ($page-offset-m * 2), 'px'))
-  .container.max-width-m
-    width 100%
-    padding-left $page-offset-m
-    padding-right $page-offset-m
+@media only screen and (max-width $breakpoint-l)
+  .container
+    padding-left $page-padding-on-l
+    padding-right $page-padding-on-l
+    width 'calc(100% - %s)' % ($page-padding-on-l * 2)
 
-@media only screen and (max-width unit($breakpoint-l + ($page-offset-l * 2), 'px'))
-  .container.max-width-l
-    width 100%
-    padding-left $page-offset-l
-    padding-right $page-offset-l
+@media only screen and (max-width $breakpoint-m)
+  .container
+    padding-left $page-padding-on-m
+    padding-right $page-padding-on-m
+    width 'calc(100% - %s)' % ($page-padding-on-m * 2)
 
-@media only screen and (max-width unit($breakpoint-xl + ($page-offset-xl * 2), 'px'))
-  .container.max-width-xl
-    width 100%
-    padding-left $page-offset-xl
-    padding-right $page-offset-xl
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Width limits
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Width-limiting classes have been added primarily for the purpose of controlling the width of the layout container,
-| but can of course be used for many other purposes, as well.
-|
-| Since limiting the height is much less frequently required, corresponding max-height classes are not available
-| by default.
-|
-*/
-.max-width-s
-  max-width $breakpoint-s
-
-.max-width-m
-  max-width $breakpoint-m
-
-.max-width-l
-  max-width $breakpoint-l
-
-.max-width-xl
-  max-width $breakpoint-xl
+@media only screen and (max-width $breakpoint-s)
+  .container
+    padding-left $page-padding-on-s
+    padding-right $page-padding-on-s
+    width 'calc(100% - %s)' % ($page-padding-on-s * 2)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------

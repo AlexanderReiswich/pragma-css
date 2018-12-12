@@ -2,7 +2,7 @@
 
   <div class="page-container">
 
-    <article class="container max-width-l push-up-2xl">
+    <article class="container max-width-1200 push-up-2xl">
       <Content class="custom"/>
     </article>
 
