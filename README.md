@@ -39,7 +39,7 @@ the global configuration. It also contains classes for common UI elements such a
 It's important to load this file before utilities.styl so that you can override it with the utility classes.
 
 #### your-custom-styles.styl
-This file doesn't actually exist in PragmaCSS, but it probably should in your project. If it does, then this is
+This is a placeholder for your own styles. Naturally, it can be a single file or multiple, but this is
 the place where it should be loaded&mdash;after base.styl and before utilities.styl. This way you can easily
 override all base styles and then still use utility classes to customize your own classes from the HTML.
 
@@ -55,7 +55,7 @@ npm install pragma-css
 
 ### Usage
 
-Note: Your project needs to have Stylus installed.
+Note: Your project needs to have [Stylus](http://stylus-lang.com) installed.
 
 Simply import the stylus files inside your stylus index file:
 

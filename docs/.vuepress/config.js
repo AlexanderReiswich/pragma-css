@@ -25,9 +25,9 @@ module.exports = {
 
     // Icons for Android devices
     ['link', { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icons/android-icon-192x192.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/android-icon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/android-icon-36x36.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icons/android-icon-96x96.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/android-icon-16x16.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon-16x16.png' }],
 
     // Icons for MS devices
     ['link', { rel: 'mask-icon', href: '/icons/favicon-16x16.png', color: '#41b883' }],

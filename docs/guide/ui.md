@@ -141,8 +141,8 @@ in order to ensure that the secondary border does not get affected when we apply
   width 100px
   height 100px
   border-width 16px
-  border-color #cbeff2 !important
-  border-top-color #00d9c1 !important
+  border-color #00d9c1 !important
+  border-top-color transparent !important
 
 .spinner.my-custom-spinner-2
   width 120px

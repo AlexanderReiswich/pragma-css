@@ -15,6 +15,7 @@ npm install pragma-css
 
 ::: tip NOTE
 Your project needs to have Stylus installed.
+For further details please visit the [Stylus website](http://stylus-lang.com).
 :::
 
 <br>

@@ -3,53 +3,53 @@
 @import '~src/utilities.styl'
 
 h1
-  font-size font_size_2xl
-  font-weight font_weight_bold
-  letter-spacing extend_letter_spacing_l
+  font-size $font-size-2xl
+  font-weight $font-weight-bold
+  letter-spacing $extend-letter-spacing-l
   text-transform uppercase
-  margin-bottom offset_xl
+  margin-bottom $offset-xl
 
 h2,
 .page .content:not(.custom) > h2
-  font-size font_size_xl
-  font-weight font_weight_regular
-  letter-spacing extend_letter_spacing_m
-  margin-bottom offset_l
-  padding-bottom offset_s
-  border-bottom 2px solid dark
+  font-size $font-size-xl
+  font-weight $font-weight-regular
+  letter-spacing $extend-letter-spacing-m
+  margin-bottom $offset-l
+  padding-bottom $offset-s
+  border-bottom 2px solid $dark
 
 h3,
 .page .content:not(.custom) > h3
-  font-size font_size_l
-  font-weight font_weight_bold
-  letter-spacing extend_letter_spacing_s
-  margin-bottom offset_s
-  margin-top offset_m
+  font-size $font-size-l
+  font-weight $font-weight-bold
+  letter-spacing $extend-letter-spacing-s
+  margin-bottom $offset-s
+  margin-top $offset-m
   padding-top 0
-  color primary
+  color $primary
 
 h4,
 .page .content:not(.custom) > h4
-  font-size font_size_l
-  font-weight font_weight_bold
-  margin-bottom offset_m
-  margin-top offset_m
+  font-size $font-size-l
+  font-weight $font-weight-bold
+  margin-bottom $offset-m
+  margin-top $offset-m
   padding-top 0
 
 h5
-  font-size font_size_l
-  font-weight font_weight_regular
+  font-size $font-size-l
+  font-weight $font-weight-regular
 
 h6
-  font-size font_size_m
-  font-weight font_weight_bold
+  font-size $font-size-m
+  font-weight $font-weight-bold
 
 .content:not(.custom) a:hover
   text-decoration inherit
 
 p
-  margin offset_s 0 offset_m 0
-  line-height loosen_line_height_s
+  margin $offset-s 0 $offset-m 0
+  line-height $loosen-line-height-s
 
 .content:not(.custom)
   padding-top 5rem
@@ -58,11 +58,11 @@ p
   display inline-block
 
 .navbar .site-name
-  color primary
-  font-weight font_weight_bold
+  color $primary
+  font-weight $font-weight-bold
 
 .page-nav .inner
-  border-top 2px solid light
+  border-top 2px solid $light
 
 .navbar
   border-width 2px
@@ -79,7 +79,7 @@ ul li li
 
 a.sidebar-link
   border-left none
-  font-size font_size_l
+  font-size $font-size-l
   padding 12px 12px 12px 16px
   margin-left 0
 
@@ -93,21 +93,21 @@ a.sidebar-link
   padding 0
 
 .sidebar-sub-headers a.sidebar-link
-  color soft
-  font-size font_size_s
-  padding-left offset_l
+  color $soft
+  font-size $font-size-s
+  padding-left $offset-l
 
 .sidebar-sub-headers li:last-child a.sidebar-link
-  padding-bottom offset_l
+  padding-bottom $offset-l
 
 .sidebar-sub-headers a.sidebar-link.active
-  font-weight font_weight_bold
-  color primary
+  font-weight $font-weight-bold
+  color $primary
 
 ul li li a.sidebar-link:before
   content ''
   position absolute
-  background primary
+  background $primary
   border-radius 2px
   transition .15s ease all
   top 8px
@@ -122,26 +122,26 @@ ul li li a.sidebar-link.active:before
   left 6px
   width 4px
   height 12px
-  background primary
+  background $primary
 
 .search-box input
-  border 2px light solid
+  border 2px $light solid
 
 .content hr
-  border-top 3px solid light
+  border-top 3px solid $light
   margin 30px 0
 
 .content a.header-anchor
   padding-right 0
 
 .subtitle
-  font-size font_size_xl
+  font-size $font-size-xl
 
 .big
-  font-size font_size_l
+  font-size $font-size-l
 
 table
-  display table
+  display table !important
 
 table tr
   border-top none
@@ -151,4 +151,21 @@ table td
   border none
 
 .custom-block.tip
-  background light
+  background $light
+
+
+/* Temp overrides */
+.content.custom img.max-width-s
+  max-width 600px
+
+.btn.size-l
+  font-size 18px
+
+.btn.h-xl, .btn.vh-xl
+  padding-left 28px
+  padding-right 28px
+
+.btn.v-l, .btn.vh-l
+  padding-top 18px
+  padding-bottom 18px
+

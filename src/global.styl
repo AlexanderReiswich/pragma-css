@@ -51,55 +51,48 @@
 | Using the color name *as* the functional name solves this issue.
 |
 */
-primary = #41b883
-dark = #35495e
-soft = #889fab
-pale = #bed1d4
-light = #f2f5f3
-c_white = #fff
-c_black = #333
-c_red = #f76776
-c_green = #bcd84a
-c_yellow = #f2df5e
-c_orange = #ffa535
-c_blue = #459cf9
-c_violet = #b482f2
-default_color = dark
+$primary = #41b883
+$dark = #35495e
+$soft = #889fab
+$pale = #bed1d4
+$light = #f2f5f3
+$white = #fff
+$black = #333
+$red = #f76776
+$green = #bcd84a
+$yellow = #f2df5e
+$orange = #ffa535
+$blue = #459cf9
+$violet = #b482f2
+$default-color = $dark
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Hover colors
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Each color has a corresponding color for its hover state.
-|
-*/
-primary_hover = dark
-dark_hover = primary
-soft_hover = dark
-pale_hover = soft
-light_hover = darken(light, 30)
-c_white_hover = light
-c_black_hover = primary
-c_red_hover = darken(c_red, 30)
-c_green_hover = darken(c_green, 30)
-c_yellow_hover = darken(c_yellow, 30)
-c_orange_hover = darken(c_orange, 30)
-c_blue_hover = darken(c_blue, 30)
-c_violet_hover = darken(c_violet, 30)
+/* Hover colors */
+$primary-hover = $dark
+$dark-hover = $primary
+$soft-hover = $dark
+$pale-hover = $soft
+$light-hover = darken($light, 30)
+$white-hover = $light
+$black-hover = $primary
+$red-hover = darken($red, 30)
+$green-hover = darken($green, 30)
+$yellow-hover = darken($yellow, 30)
+$orange-hover = darken($orange, 30)
+$blue-hover = darken($blue, 30)
+$violet-hover = darken($violet, 30)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Border
 |-----------------------------------------------------------------------------------------------------------------------
 */
-border_s = 1px
-border_m = 2px
-border_l = 3px
-border_xl = 5px
-border_default_style = solid
-border_default_width = border_m
-border_default_color = light
+$border-s = 1px
+$border-m = 2px
+$border-l = 3px
+$border-xl = 5px
+$border-default-style = solid
+$border-default-width = $border-m
+$border-default-color = $light
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -115,10 +108,10 @@ border_default_color = light
 | But if you need a particular set of breakpoints you can define them here.
 |
 */
-breakpoint_s = 600px
-breakpoint_m = 900px
-breakpoint_l = 1200px
-breakpoint_xl = 1500px
+$breakpoint-s = 600px
+$breakpoint-m = 900px
+$breakpoint-l = 1200px
+$breakpoint-xl = 1500px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -129,22 +122,22 @@ breakpoint_xl = 1500px
 | calculable nature. But you are free to use relative units such as em/rem if you prefer.
 |
 */
-offset_xs = 5px
-offset_s = 10px
-offset_m = 20px
-offset_l = 30px
-offset_xl = 50px
-offset_2xl = 80px
+$offset-xs = 5px
+$offset-s = 10px
+$offset-m = 20px
+$offset-l = 30px
+$offset-xl = 50px
+$offset-2xl = 80px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Widths
 |-----------------------------------------------------------------------------------------------------------------------
 */
-widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500
-max_widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500
-heights = 30, 50, 70, 100
-max_heights = 30, 50, 70, 100
+$widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500
+$max-widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500
+$heights = 30, 50, 70, 100
+$max-heights = 30, 50, 70, 100
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -154,7 +147,7 @@ max_heights = 30, 50, 70, 100
 | This variable sets the background color for the entire page.
 |
 */
-body_background = c_white
+$body-background = $white
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -165,10 +158,10 @@ body_background = c_white
 | Usually you would want more space on larger screens and as little as possible on small ones.
 |
 */
-page_offset_s = offset_s
-page_offset_m = offset_m
-page_offset_l = offset_l
-page_offset_x = offset_xl
+$page-offset-s = $offset-s
+$page-offset-m = $offset-m
+$page-offset-l = $offset-l
+$page-offset-xl = $offset-xl
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -179,7 +172,7 @@ page_offset_x = offset_xl
 | But you can of course define more font families if your project's visual identity requires more.
 |
 */
-primary_font = Nunito, sans-serif
+$primary-font = Nunito, sans-serif
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -189,92 +182,92 @@ primary_font = Nunito, sans-serif
 | Two font weights are defined by default.
 |
 */
-font_weight_regular = 400
-font_weight_bold = 700
+$font-weight-regular = 400
+$font-weight-bold = 700
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Text sizes
 |-----------------------------------------------------------------------------------------------------------------------
 */
-font_size_xs = 11px
-font_size_s = 13px
-font_size_m = 16px
-font_size_l = 18px
-font_size_xl = 24px
-font_size_2xl = 32px
-font_size_3xl = 64px
-font_size_4xl = 140px
-standard_font_size = font_size_m
+$font-size-xs = 11px
+$font-size-s = 13px
+$font-size-m = 16px
+$font-size-l = 18px
+$font-size-xl = 24px
+$font-size-2xl = 32px
+$font-size-3xl = 64px
+$font-size-4xl = 140px
+$standard-font-size = $font-size-m
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Line height
 |-----------------------------------------------------------------------------------------------------------------------
 */
-tighten_line_height_l = 0.9
-tighten_line_height_m = 1.1
-tighten_line_height_s = 1.2
-standard_line_height = 1.4
-loosen_line_height_s = 1.5
-loosen_line_height_m = 1.7
-loosen_line_height_l = 1.9
+$tighten-line-height-l = 0.9
+$tighten-line-height-m = 1.1
+$tighten-line-height-s = 1.2
+$standard-line-height = 1.4
+$loosen-line-height-s = 1.5
+$loosen-line-height-m = 1.7
+$loosen-line-height-l = 1.9
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Letter spacing
 |-----------------------------------------------------------------------------------------------------------------------
 */
-extend_letter_spacing_s = 0.05em
-extend_letter_spacing_m = 0.1em
-extend_letter_spacing_l = 0.2em
-standard_letter_spacing = extend_letter_spacing_m
+$extend-letter-spacing-s = 0.05em
+$extend-letter-spacing-m = 0.1em
+$extend-letter-spacing-l = 0.2em
+$standard-letter-spacing = $extend-letter-spacing-m
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Links
 |-----------------------------------------------------------------------------------------------------------------------
 */
-link_color = primary
-link_color_hover = dark
-link_transition = all .2s ease
-link_decoration = none
+$link-color = $primary
+$link-color-hover = $dark
+$link-transition = all .2s ease
+$link-decoration = none
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Placeholders
 |-----------------------------------------------------------------------------------------------------------------------
 */
-placeholder_color = dark
+$placeholder-color = $dark
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Shadows
 |-----------------------------------------------------------------------------------------------------------------------
 */
-shadow_s = 0 2px 10px rgba(50, 116, 165, 0.2)
-shadow_m = 0 5px 30px rgba(50, 116, 165, 0.18)
-shadow_l = 0 0 150px rgba(50, 116, 165, 0.2)
+$shadow-s = 0 2px 10px rgba(50, 116, 165, 0.2)
+$shadow-m = 0 5px 30px rgba(50, 116, 165, 0.18)
+$shadow-l = 0 0 150px rgba(50, 116, 165, 0.2)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Scale on hover
 |-----------------------------------------------------------------------------------------------------------------------
 */
-scale_on_hover_s = 1.05
-scale_on_hover_m = 1.1
-scale_on_hover_l = 1.2
+$scale-on-hover-s = 1.05
+$scale-on-hover-m = 1.1
+$scale-on-hover-l = 1.2
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Transitions
 |-----------------------------------------------------------------------------------------------------------------------
 */
-transition_xs = .07s
-transition_s = .12s
-transition_m = .2s
-transition_l = .4s
-transition_xl = .8s
+$transition-xs = .07s
+$transition-s = .12s
+$transition-m = .2s
+$transition-l = .4s
+$transition-xl = .8s
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -284,42 +277,42 @@ transition_xl = .8s
 | Corner radius is used for classes that set the border-radius property.
 |
 */
-rounded_s = 3px
-rounded_m = 6px
-rounded_l = 10px
+$rounded-s = 3px
+$rounded-m = 6px
+$rounded-l = 10px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Horizontal rule
 |-----------------------------------------------------------------------------------------------------------------------
 */
-hr_style = 1px solid rgba(145, 205, 220, .2)
-hr_s = 1px
-hr_m = 3px
-hr_l = 5px
-hr_short = 60px
-hr_negative = rgba(255, 255, 255, 0.4)
+$hr-style = 1px solid rgba(145, 205, 220, .2)
+$hr-s = 1px
+$hr-m = 3px
+$hr-l = 5px
+$hr-short = 60px
+$hr-negative = rgba(255, 255, 255, 0.4)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Grid
 |-----------------------------------------------------------------------------------------------------------------------
 */
-grid_separation = 2px solid rgba(53, 73, 94, .08)
-grid_gap_s = 5px
-grid_gap_m = 10px
-grid_gap_l = 20px
+$grid-separation = 2px solid rgba(53, 73, 94, .08)
+$grid-gap-s = 5px
+$grid-gap-m = 10px
+$grid-gap-l = 20px
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Tables
 |-----------------------------------------------------------------------------------------------------------------------
 */
-table_th_border = 3px solid pale
-table_td_border = 1px solid light
-table_row_hover_bg = lighten(light, 3)
-table_th_color = dark
-table_zebra_bg = lighten(light, 2)
+$table-th-border = 3px solid $pale
+$table-td-border = 1px solid $light
+$table-row-hover-bg = lighten($light, 3)
+$table-th-color = $dark
+$table-zebra-bg = lighten($light, 2)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -328,86 +321,90 @@ table_zebra_bg = lighten(light, 2)
 */
 
 /* Hero text */
-hero_text_font_size = font_size_4xl
-hero_text_font_weight = font_weight_bold
-hero_text_letter_spacing = extend_letter_spacing_m
-hero_text_text_transform = uppercase
-hero_text_line_height = tighten_line_height_l
-hero_text_margin = 0 0 offset_l 0
+$hero-text-font-size = $font-size-4xl
+$hero-text-font-weight = $font-weight-bold
+$hero-text-letter-spacing = $extend-letter-spacing-m
+$hero-text-text-transform = uppercase
+$hero-text-line-height = $tighten-line-height-l
+$hero-text-margin = 0 0 $offset-l 0
+$hero-text-color = $default-color
 
 /* Headline */
-headline_font_size = font_size_3xl
-headline_font_weight = font_weight_bold
-headline_letter_spacing = extend_letter_spacing_m
-headline_text_transform = uppercase
-headline_line_height = tighten_line_height_m
-headline_margin = 0 0 offset_l 0
+$headline-font-size = $font-size-3xl
+$headline-font-weight = $font-weight-bold
+$headline-letter-spacing = $extend-letter-spacing-m
+$headline-text-transform = uppercase
+$headline-line-height = $tighten-line-height-m
+$headline-margin = 0 0 $offset-l 0
+$headline-color = $default-color
 
 /* Title */
-title_font_size = font_size_2xl
-title_font_weight = font_weight_bold
-title_letter_spacing = extend_letter_spacing_s
-title_text_transform = none
-title_line_height = tighten_line_height_s
-title_margin = 0 0 offset_l 0
+$title-font-size = $font-size-2xl
+$title-font-weight = $font-weight-bold
+$title-letter-spacing = $extend-letter-spacing-s
+$title-text-transform = none
+$title-line-height = $tighten-line-height-s
+$title-margin = 0 0 $offset-l 0
+$title-color = $default-color
 
 /* Subtitle */
-subtitle_font_size = font_size_xl
-subtitle_font_weight = font_weight_bold
-subtitle_letter_spacing = extend_letter_spacing_s
-subtitle_text_transform = none
-subtitle_line_height = standard_line_height
-subtitle_margin = 0 0 offset_m 0
+$subtitle-font-size = $font-size-xl
+$subtitle-font-weight = $font-weight-bold
+$subtitle-letter-spacing = $extend-letter-spacing-s
+$subtitle-text-transform = none
+$subtitle-line-height = $standard-line-height
+$subtitle-margin = 0 0 $offset-m 0
+$subtitle-color = $default-color
 
 /* Big text */
-big_font_size = font_size_l
-big_font_weight = font_weight_regular
-big_letter_spacing = extend_letter_spacing_s
-big_text_transform = none
-big_line_height = loosen_line_height_s
-big_margin = 0 0 offset_m 0
+$big-font-size = $font-size-l
+$big-font-weight = $font-weight-regular
+$big-letter-spacing = $extend-letter-spacing-s
+$big-text-transform = none
+$big-line-height = $loosen-line-height-s
+$big-margin = 0 0 $offset-m 0
+$big-color = $default-color
 
 /* Small text */
-small_font_size = font_size_s
-small_font_weight = font_weight_regular
-small_letter_spacing = extend_letter_spacing_s
-small_text_transform = none
-small_line_height = tighten_line_height_s
-small_margin = 0 0 offset_m 0
-small_color = soft
+$small-font-size = $font-size-s
+$small-font-weight = $font-weight-regular
+$small-letter-spacing = $extend-letter-spacing-s
+$small-text-transform = none
+$small-line-height = $tighten-line-height-s
+$small-margin = 0 0 $offset-m 0
+$small-color = $soft
 
 /* Label */
-label_font_size = font_size_s
-label_font_weight = font_weight_bold
-label_letter_spacing = extend_letter_spacing_l
-label_text_transform = uppercase
-label_line_height = tighten_line_height_s
-label_margin = 0 0 offset_xs 0
-label_color = soft
+$label-font-size = $font-size-s
+$label-font-weight = $font-weight-bold
+$label-letter-spacing = $extend-letter-spacing-l
+$label-text-transform = uppercase
+$label-line-height = $tighten-line-height-s
+$label-margin = 0 0 $offset-xs 0
+$label-color = $soft
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Form inputs
 |-----------------------------------------------------------------------------------------------------------------------
 */
-input_bg = c_white
-input_border = 3px solid light
-input_corner_radius = 6px
-input_font_size = standard_font_size
-input_line_height = 1
-input_padding = 12px 10px
-input_padding_narrow = 6px 10px
-input_transition = all 0.2s
-input_disabled_color = pale
-input_disabled_border_color = light
+$input-bg = $white
+$input-border = 3px solid $light
+$input-corner-radius = 6px
+$input-font-size = $standard-font-size
+$input-line-height = 1
+$input-padding = 12px 10px
+$input-transition = all 0.2s
+$input-disabled-color = $pale
+$input-disabled-border-color = $light
 
 /* Form input hover state */
-input_hover_color = darken(dark, 30)
-input_hover_border_color = pale
+$input-hover-color = darken($dark, 30)
+$input-hover-border-color = $pale
 
 /* Form input focus state */
-input_focus_color = dark
-input_focus_border_color = primary
+$input-focus-color = $dark
+$input-focus-border-color = $primary
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -416,48 +413,48 @@ input_focus_border_color = primary
 */
 
 /* Base button */
-btn_corner_radius = 6px
-btn_font_size = font_size_s
-btn_line_height = 1
-btn_padding = 12px 18px
-btn_transition = all .3s ease
-btn_letter_spacing = extend_letter_spacing_l
-btn_text_transform = uppercase
+$btn-corner-radius = 6px
+$btn-font-size = $font-size-s
+$btn-line-height = 1
+$btn-padding = 12px 18px
+$btn-transition = all .3s ease
+$btn-letter-spacing = $extend-letter-spacing-l
+$btn-text-transform = uppercase
 
 /* Base button regular state */
-btn_color = c_white
-btn_bg = primary
-btn_border = 3px solid primary
-btn_shadow = none
-btn_filter = none
+$btn-color = $white
+$btn-bg = $primary
+$btn-border = 3px solid $primary
+$btn-shadow = none
+$btn-filter = none
 
 /* Base button focus state */
-btn_focus_color = c_white
-btn_focus_bg = primary
-btn_focus_border_color = dark
-btn_focus_shadow = none
-btn_focus_filter = none
+$btn-focus-color = $white
+$btn-focus-bg = $primary
+$btn-focus-border-color = $dark
+$btn-focus-shadow = none
+$btn-focus-filter = none
 
 /* Base button hover state */
-btn_hover_color = c_white
-btn_hover_bg = dark
-btn_hover_border_color = dark
-btn_hover_shadow = none
-btn_hover_filter = none
+$btn-hover-color = $white
+$btn-hover-bg = $dark
+$btn-hover-border-color = $dark
+$btn-hover-shadow = none
+$btn-hover-filter = none
 
 /* Base button active state */
-btn_active_color = c_white
-btn_active_bg = dark
-btn_active_border_color = dark
-btn_active_shadow = none
-btn_active_filter = contrast(120%) saturate(130%) brightness(80%)
+$btn-active-color = $white
+$btn-active-bg = $dark
+$btn-active-border-color = $dark
+$btn-active-shadow = none
+$btn-active-filter = contrast(120%) saturate(130%) brightness(80%)
 
 /* Base button disabled */
-btn_disabled_color = soft
-btn_disabled_bg = pale
-btn_disabled_border_color = pale
-btn_shadow = none
-btn_filter = none
+$btn-disabled-color = $soft
+$btn-disabled-bg = $pale
+$btn-disabled-border-color = $pale
+$btn-disabled-shadow = none
+$btn-disabled-filter = none
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -468,10 +465,10 @@ btn_filter = none
 |
 */
 
-size_xs = 2px
-size_s = 6px
-size_m = 12px
-size_l = 18px
-size_xl = 28px
-size_2xl = 42px
-size_3xl = 60px
+$size-xs = 2px
+$size-s = 6px
+$size-m = 12px
+$size-l = 18px
+$size-xl = 28px
+$size-2xl = 42px
+$size-3xl = 60px

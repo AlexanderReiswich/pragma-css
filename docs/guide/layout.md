@@ -67,10 +67,8 @@ use the page-container class.
 ## Grid system
 
 The grid system allows you to responsively divide your content into rows of up to 12 columns.
-Unlike some other modern grid systems, the PragmaCSS grid is fairly minimalistic, as there are no offset classes.
-
-This is intentional, because we believe that grids shouldn't be used for complex or unusual layouts.
-Utility classes and custom CSS will serve you better in those cases.
+PragmaCSS grid does not offer offset classes, since it's preferable to use other (flexbox-)utility classes or
+custom CSS for complex or unusual layouts.
 
 <br>
 

@@ -17,7 +17,7 @@ the global configuration. It also contains classes for common UI elements such a
 It's important to load this file before utilities.styl so that you can override it with the utility classes.
 
 ### your-custom-styles.styl
-This file doesn't actually exist in PragmaCSS, but it probably should in your project. If it does, then this is
+This is a placeholder for your own styles. Naturally, it can be a single file or multiple, but this is
 the place where it should be loaded&mdash;after base.styl and before utilities.styl. This way you can easily
 override all base styles and then still use utility classes to customize your own classes from the HTML.
 
@@ -92,7 +92,7 @@ Is the class name nice and terse? Single words are always preferable to multi-pa
 Would people naturally use this class name if they had to guess?
 
 #### Grammar
-Does the class name follow proper grammar?
+Does the class name follow proper grammar and sound like proper English?
 
 <br>
 
@@ -106,3 +106,9 @@ explanation. A class such as `.red-on-hover` on the other hand is entirely self-
 cost of a few more characters.
 
 PragmaCSS is entirely kebab-cased, with lower-case letters only. There are no double-dashes or double-underscores.
+
+<br>
+
+### Stylus variables
+
+Stylus variables are prefixed with the `$` character and are generally much more verbose than class names.

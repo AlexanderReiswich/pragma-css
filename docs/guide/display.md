@@ -326,19 +326,19 @@ Height classes are also available, even though fewer are available by default.
 
 Same as the height classes, but for max-height.
 
-<div class="max-height-30 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+<div class="max-height-30 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
 
-<div class="max-height-50 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+<div class="max-height-50 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
 
-<div class="max-height-70 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+<div class="max-height-70 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
 
-<div class="max-height-100 rounded light-bg primary pad-s push-v-m bold center no-overflow">
+<div class="max-height-100 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
 
