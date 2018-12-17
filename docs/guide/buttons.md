@@ -439,29 +439,110 @@ You can add an element with a `.spinner` class inside of the button in order to 
 
 <div class="space-between wrap push-v">
   <button class="btn push-v-m no-pointer-events">
-    <i class="spinner-s negative border-white push-right-xs"></i> Loading...
+    <i class="spinner-m negative border-white push-right-s"></i> Loading...
   </button>
-  <button class="btn ghost blue push-v-m no-pointer-events">
+  <button class="btn ghost blue v-l push-v-m no-pointer-events">
     <i class="spinner-l border-blue border-l va-text-top push-h"></i>
   </button>
   <button class="btn light-bg push-v-m reset no-pointer-events">
-    <i class="spinner-l va-text-top push-right-xs"></i> Loading...
+    <i class="spinner-l va-text-top push-right-s"></i> Loading...
   </button>
 </div>
 
 ```html
 <button class="btn push-v-m no-pointer-events">
-  <i class="spinner-s negative border-white push-right-xs"></i>
+  <i class="spinner-m negative border-white push-right-s"></i>
   Loading...
 </button>
 
-<button class="btn ghost blue push-v-m no-pointer-events">
+<button class="btn ghost blue v-l push-v-m no-pointer-events">
   <i class="spinner-l border-blue border-l va-text-top push-h"></i>
 </button>
 
 <button class="btn light-bg push-v-m reset no-pointer-events">
-  <i class="spinner-l va-text-top push-right-xs"></i>
+  <i class="spinner-l va-text-top push-right-s"></i>
   Loading...
+</button>
+```
+
+<br>
+
+## Icons
+
+Naturally it's possible to add anything you like inside of buttons, including icons.
+Here are a few examples using our transformicons:
+
+<div class="space-between wrap push-v">
+  <button class="btn orange-bg push-v-m pad-left-s">
+    <div class="tico-m push-right-s">
+      <i class="tico-check white"><span/></i>
+    </div> Saved
+  </button>
+  <button class="btn green-bg push-v-m pad-left-s">
+    <div class="tico-m push-right-s">
+      <i class="tico-plus white"><span/></i>
+    </div> Add
+  </button>
+  <button class="btn ghost push-v-m pad-left-s">
+    <div class="tico-m push-right-s">
+      <i class="tico-chevron-right primary"><span/></i>
+    </div> Continue
+  </button>
+</div>
+
+<div class="space-between wrap push-v">
+  <button class="btn blue-bg size-m push-v-m pad-left-s">
+    <div class="tico-l push-right-s">
+      <i class="tico-check white"><span/></i>
+    </div> size-l
+  </button>
+  <button class="btn blue-bg size-l push-v-m pad-left-s">
+    <div class="tico-xl push-right-s">
+      <i class="tico-check white"><span/></i>
+    </div> size-xl
+  </button>
+  <button class="btn blue-bg size-xl push-v-m pad-left-s">
+    <div class="tico-2xl push-right-s">
+      <i class="tico-check white"><span/></i>
+    </div> size-2xl
+  </button>
+</div>
+
+```html
+<button class="btn orange-bg">
+  <div class="tico-m push-right-s">
+    <i class="tico-check white"><span/></i>
+  </div> Saved
+</button>
+
+<button class="btn green-bg">
+  <div class="tico-m push-right-s">
+    <i class="tico-plus white"><span/></i>
+  </div> Add
+</button>
+
+<button class="btn ghost">
+  <div class="tico-m push-right-s">
+    <i class="tico-chevron-right primary"><span/></i>
+  </div> Continue
+</button>
+
+<button class="btn blue-bg size-m">
+  <div class="tico-l push-right-s">
+    <i class="tico-check white"><span/></i>
+  </div> size-l
+</button>
+
+<button class="btn blue-bg size-l">
+  <div class="tico-xl push-right-s">
+    <i class="tico-check white"><span/></i>
+  </div> size-xl
+</button>
+
+<button class="btn blue-bg size-xl">
+  <div class="tico-2xl push-right-s">
+    <i class="tico-check white"><span/></i>
+  </div> size-2xl
 </button>
 ```
 
@@ -515,8 +596,8 @@ countless ways. Here are a few examples:
 
 ---
 
-### .btn.scale-on-hover-s
-<button class="btn scale-on-hover-s push-s">
+### .btn.scale-s-on-hover
+<button class="btn scale-s-on-hover push-s">
   Button
 </button>
 

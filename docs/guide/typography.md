@@ -350,6 +350,16 @@ The .label class is also applied to the actual HTML label element by default.
 
 <br>
 
+## Blockquotes
+
+Blockquotes have default styling applied which you can customize via the corresponding stylus variables.
+
+<blockquote>
+  <lorem length="3"/>
+</blockquote>
+
+<br>
+
 ## Resetting text styles
 
 PragmaCSS applies default styling to particular elements for your convenience, but sometimes you may need

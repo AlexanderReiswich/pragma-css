@@ -1,15 +1,14 @@
-/*
-|-----------------------------------------------------------------------------------------------------------------------
+/*======================================================================================================================
 | PragmaCSS. Prototype fast, scale with confidence.
-|-----------------------------------------------------------------------------------------------------------------------
+|=======================================================================================================================
 |
 | base.css
-| ======
+| --------
 |
 | This stylesheet offers solid base classes for the most essential ui elements, such as form elements and buttons.
 | Classes from style.css can be used to further customize them.
 |
-*/
+`---------------------------------------------------------------------------------------------------------------------*/
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -27,10 +26,10 @@ body
 
 html, body
   background-color $body-background
-  font $font-weight-regular $standard-font-size / $standard-line-height $primary-font
+  font $font-weight-regular $default-font-size / $default-line-height $primary-font
   color $default-color
   -webkit-text-size-adjust 100%
-  letter-spacing $standard-letter-spacing
+  letter-spacing $default-letter-spacing
 
 a
   background-color transparent
@@ -45,12 +44,13 @@ a
 
 h1, h2, h3, h4, h5, h6
   font-weight $font-weight-regular
-  font-size $standard-font-size
-  line-height $standard-line-height
+  font-size $default-font-size
+  line-height $default-line-height
   margin 0
 
 p
   margin 0
+  line-height $paragraph-line-height
 
 i, em
   font-style italic
@@ -84,7 +84,7 @@ select,
 textarea
   font-family inherit
   font-size 100%
-  line-height $standard-line-height
+  line-height $default-line-height
   border none
   background transparent
   outline none
@@ -187,11 +187,17 @@ fieldset
     padding 0
     white-space normal
 
-/* Blockquote
+/* Block-Quote
 ----------------------------------------------------------------------------------------------------------------------*/
-blockquote
-  font-size $standard-font-size
-  line-height $standard-line-height
+blockquote {
+  font $blockquote-font-weight $blockquote-font-size / $blockquote-font-line-height $blockquote-font-family
+  font-style $blockquote-font-style
+  letter-spacing $blockquote-letter-spacing
+  color $blockquote-color
+  margin $blockquote-margin
+  padding $blockquote-padding
+  overflow-wrap break-word
+}
 
 /* Lists
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -224,15 +230,6 @@ dd, li
 
 dd > *, li > *
   margin-top 0
-
-/* Code
-----------------------------------------------------------------------------------------------------------------------*/
-pre,
-code,
-kbd,
-samp
-  display block
-  font-family monospace
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -307,9 +304,6 @@ table tr th:last-of-type
 |-----------------------------------------------------------------------------------------------------------------------
 */
 input,
-input[type=text],
-input[type=email],
-input[type=password],
 textarea,
 select
   background-color $input-bg
@@ -325,9 +319,6 @@ select
   transition $input-transition
 
 input,
-input[type=text]:disabled,
-input[type=email]:disabled,
-input[type=password]:disabled,
 textarea:disabled,
 select:disabled
   color $input-disabled-color
@@ -335,26 +326,154 @@ select:disabled
 
 textarea
   overflow-y hidden
-  resize none
-  transition height 0, width 0
+  resize vertical
+  transition height 0s, width 0s
 
 input:hover,
-input[type=text]:hover,
-input[type=email]:hover,
-input[type=password]:hover,
 textarea:hover,
 select:hover
   color $input-hover-color
   border-color $input-hover-border-color
 
 input:focus,
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
 textarea:focus,
 select:focus
   color $input-focus-color
   border-color $input-focus-border-color
+
+/* Input icon
+----------------------------------------------------------------------------------------------------------------------*/
+.input-icon
+  position relative
+
+.input-icon input
+  padding-left $default-font-size + ($size-m * 2) + ($input-border * 2)
+
+.input-icon > :not(input)
+  position absolute
+  display flex
+  align-items center
+  justify-content center
+  width $default-font-size + ($size-m * 2) + ($input-border * 2)
+  top 0
+  bottom 0
+  left 0
+
+.input-icon input + div > [class*='tico-'] span,
+.input-icon input + div > [class*='tico-'] span:before
+.input-icon input + div > [class*='tico-'] span:after
+  color $soft
+  border-color $soft
+  background-color $soft
+
+.input-icon input:hover + div > [class*='tico-'] span,
+.input-icon input:hover + div > [class*='tico-'] span:before
+.input-icon input:hover + div > [class*='tico-'] span:after
+  color $dark
+  border-color $dark
+  background-color $dark
+
+.input-icon input:focus + div > [class*='tico-'] span,
+.input-icon input:focus + div > [class*='tico-'] span:before
+.input-icon input:focus + div > [class*='tico-'] span:after
+  color $primary
+  border-color $primary
+  background-color $primary
+
+.input-icon [class^='spinner'],
+.input-icon [class*=' spinner']
+  top 0
+
+/* Checkbox and Radio
+----------------------------------------------------------------------------------------------------------------------*/
+.checkbox,
+.radio
+  font-weight $font-weight-regular
+  letter-spacing $extend-letter-spacing-s
+  text-transform none
+
+.checkbox input[type=checkbox],
+.radio input[type=radio]
+  position fixed
+  opacity 0
+  z-index -9
+
+.checkbox-indicator,
+.radio-indicator
+  position relative
+  display inline-block
+  width 20px
+  height 20px
+  margin-right 5px
+  background-color $input-bg
+  border $input-border
+  border-radius $input-corner-radius
+  vertical-align text-bottom
+  transition $input-transition
+
+/* Checkbox indicator */
+.checkbox-indicator:before,
+.checkbox-indicator:after
+  position absolute
+  content ''
+  width 5px
+  border-radius $transformicon-corner-radius
+  background $primary
+  transition .4s all cubic-bezier(0,.9,.45,1)
+  transform-origin bottom
+  opacity 0
+
+.checkbox-indicator:before
+  transform rotate(-45deg) scaleY(0) translate(10px, -5px)
+  height 10px
+  left 7px
+  top 5px
+
+.checkbox-indicator:after
+  transform rotate(45deg) scaleY(0) translate(-5px, -10px)
+  height 23px
+  left 5px
+  top -7px
+
+.checkbox input[type=checkbox]:checked + .checkbox-indicator:before
+  transform rotate(-45deg) scaleY(1) translate(0, 0)
+  opacity 1
+
+.checkbox input[type=checkbox]:checked + .checkbox-indicator:after
+  transform rotate(45deg) scaleY(1) translate(0, 0)
+  opacity 1
+
+.checkbox input[type=checkbox]:hover + .checkbox-indicator,
+.radio input[type=radio]:hover + .radio-indicator
+  border-color $pale
+
+.checkbox input[type=checkbox]:focus + .checkbox-indicator,
+.radio input[type=radio]:focus + .radio-indicator
+  border-color $soft
+
+.checkbox input[type=checkbox]:checked:focus + .checkbox-indicator
+  border-color $pale
+
+/* Radio indicator */
+.radio-indicator
+  border-radius 100%
+
+.radio-indicator:before
+  position absolute
+  content ''
+  width 14px
+  height 14px
+  top 3px
+  left 3px
+  background $primary
+  border-radius 100%
+  transition .4s all cubic-bezier(0,.9,.45,1)
+  opacity 0
+  transform scaleY(.4)
+
+.radio input[type=radio]:checked + .radio-indicator:before
+  opacity 1
+  transform scaleY(1)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -488,7 +607,11 @@ select:focus
 |
 */
 .btn, a.btn
-  display inline-block
+  display inline-flex
+  align-self center
+  align-content center
+  align-items center
+  justify-content center
   box-sizing border-box
   color $btn-color
   background $btn-bg
@@ -499,7 +622,8 @@ select:focus
   letter-spacing $btn-letter-spacing
   text-transform $btn-text-transform
   text-align center
-  padding $btn-padding
+  min-height $default-font-size + ($size-m * 2) + ($input-border * 2) - 8
+  padding 4px $btn-padding-h
   vertical-align middle
   transition $btn-transition
   outline 0
@@ -790,28 +914,34 @@ select:focus
 |
 */
 .v-0, .vh-0
+  min-height $default-font-size + ($size-xs * 2)
   padding-top 0
   padding-bottom 0
 
 .v-xs, .vh-xs
-  padding-top $size-xs
-  padding-bottom $size-xs
+  min-height $default-font-size + ($size-xs * 2) + ($input-border * 2) - 2
+  padding-top 1px
+  padding-bottom 1px
 
 .v-s, .vh-s
-  padding-top $size-s
-  padding-bottom $size-s
+  min-height $default-font-size + ($size-s * 2) + ($input-border * 2) - 4
+  padding-top 2px
+  padding-bottom 2px
 
 .v-m, .vh-m
-  padding-top $size-m
-  padding-bottom $size-m
+  min-height $default-font-size + ($size-m * 2) + ($input-border * 2) - 8
+  padding-top 4px
+  padding-bottom 4px
 
 .v-l, .vh-l
-  padding-top $size-l
-  padding-bottom $size-l
+  min-height $default-font-size + ($size-l * 2) + ($input-border * 2) - 8
+  padding-top 4px
+  padding-bottom 4px
 
 .v-xl, .vh-xl
-  padding-top $size-xl
-  padding-bottom $size-xl
+  min-height $default-font-size + ($size-xl * 2) + ($input-border * 2) - 12
+  padding-top 6px
+  padding-bottom 6px
 
 .h-0, .vh-0
   padding-left 0
@@ -845,6 +975,56 @@ select:focus
   padding-left $size-3xl
   padding-right $size-3xl
 
+/* Size control for input icon
+----------------------------------------------------------------------------------------------------------------------*/
+.input-icon input.v-0,
+.input-icon input.vh-0
+  padding-left $default-font-size + ($input-border * 2)
+
+.input-icon input.v-xs,
+.input-icon input.vh-xs
+  padding-left $default-font-size + ($size-xs * 2) + ($input-border * 2) - 4
+
+.input-icon input.v-s,
+.input-icon input.vh-s
+  padding-left $default-font-size + ($size-s * 2) + ($input-border * 2) - 4
+
+.input-icon input.v-m,
+.input-icon input.vh-m
+  padding-left $default-font-size + ($size-m * 2) + ($input-border * 2) - 4
+
+.input-icon input.v-l,
+.input-icon input.vh-l
+  padding-left $default-font-size + ($size-l * 2) + ($input-border * 2) - 4
+
+.input-icon input.v-xl,
+.input-icon input.vh-xl
+  padding-left $default-font-size + ($size-xl * 2) + ($input-border * 2) - 4
+
+.input-icon input.v-0 + :not(input),
+.input-icon input.vh-0 + :not(input)
+  width $default-font-size + ($size-xs * 2)
+
+.input-icon input.v-xs + :not(input),
+.input-icon input.vh-xs + :not(input)
+  width $default-font-size + ($size-xs * 2) + ($input-border * 2)
+
+.input-icon input.v-s + :not(input),
+.input-icon input.vh-s + :not(input)
+  width $default-font-size + ($size-s * 2) + ($input-border * 2)
+
+.input-icon input.v-m + :not(input),
+.input-icon input.vh-m + :not(input)
+  width $default-font-size + ($size-m * 2) + ($input-border * 2)
+
+.input-icon input.v-l + :not(input),
+.input-icon input.vh-l + :not(input)
+  width $default-font-size + ($size-l * 2) + ($input-border * 2)
+
+.input-icon input.v-xl + :not(input),
+.input-icon input.vh-xl + :not(input)
+  width $default-font-size + ($size-xl * 2) + ($input-border * 2)
+
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Spinner loader
@@ -873,12 +1053,12 @@ select:focus
   height 8px
 
 .spinner-l
-  width 16px
-  height 16px
+  width 18px
+  height 18px
 
 .spinner-xl
-  width 42px
-  height 42px
+  width 30px
+  height 30px
   border-width 3px
 
 .spinner-2xl
@@ -902,3 +1082,452 @@ select:focus
     transform rotate(0)
   to
     transform rotate(2turn)
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Transformicons
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+[class*='tico-']
+  position relative
+  display inline-block
+  width 30px
+  height 30px
+  transition .3s all ease
+  vertical-align middle
+  transform-origin center
+  text-align left !important
+
+[class*='tico-'] span,
+[class*='tico-'] span:before,
+[class*='tico-'] span:after
+  position absolute
+  content ''
+  background $dark
+  border-color $dark
+  border-radius $transformicon-corner-radius
+  border-width 4px
+  border-style none
+  width 4px
+  transition .3s all ease
+
+[class*='tico-'].tico-thin span,
+[class*='tico-'].tico-thin span:before,
+[class*='tico-'].tico-thin span:after
+  width 2px
+  border-width 2px
+
+[class*='tico-'] > i
+  position absolute
+  left 0
+  right 0
+  top 0
+  bottom 0
+  margin auto
+
+.tico-s
+  transform scale(0.4)
+  width 12px
+  height 12px
+
+.tico-s > i
+  top -6px
+  left -6px
+
+.tico-m
+  transform scale(0.5)
+  width 15px
+  height 15px
+
+.tico-m > i
+  top -6px
+  left -6px
+
+.tico-l
+  transform scale(0.68)
+  width 20px
+  height 20px
+
+.tico-l > i
+  top -2px
+  left -2px
+
+.tico-xl
+  transform scale(1)
+
+.tico-2xl
+  transform scale(1.45)
+  width 44px
+  height 44px
+
+.tico-3xl
+  transform scale(2)
+  width 60px
+  height 60px
+
+/* Hamburger icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-hamburger span,
+.tico-hamburger span:before,
+.tico-hamburger span:after
+  height 26px
+
+.tico-hamburger span
+  transform translate(13px, -6px) rotate(-90deg)
+
+.tico-hamburger span:before
+  transform translateX(-8px)
+
+.tico-hamburger span:after
+  transform translateX(-16px)
+
+/* Search icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-search span,
+.tico-search span:before,
+.tico-search span:after
+  height 10px
+  transform translate(2px, 10px)
+
+.tico-search span
+  height 8px
+  width 8px
+  background transparent !important
+  border-style solid
+  border-radius 100%
+  transform rotate(45deg) translate(10px, -3px)
+
+.tico-search span:after
+  opacity 0
+
+.tico-search.tico-thin span
+  width 8px
+
+.tico-search.tico-thin span:before
+  transform translate(3px, 9px)
+
+/* Edit icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-edit span,
+.tico-edit span:before,
+.tico-edit span:after
+  width 6px
+  transform rotate(45deg) translate(13px, -2px)
+
+.tico-edit span
+  height 18px
+  border-radius 0
+
+.tico-edit span:before
+  height 4px
+  border-radius $transformicon-corner-radius $transformicon-corner-radius 0 0
+  transform translate(0, -5.5px)
+
+.tico-edit span:after
+  transform rotate(45deg) translate(12.2px, 11px)
+  height 4.2px
+  width 4.2px
+  border-radius 0
+
+.tico-edit.tico-thin span
+  transform rotate(45deg) translate(13px, -4px)
+  width 3px
+
+.tico-edit.tico-thin span:before
+  height 3px
+  width 3px
+  transform translate(0, -4.5px)
+
+.tico-edit.tico-thin span:after
+  transform translate(1px, 17px)
+  height 3px
+  width 1px
+
+/* Close icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-close span,
+.tico-close span:before,
+.tico-close span:after
+  height 21px
+  transform rotate(-90deg) translate(0, 0)
+
+.tico-close span
+  transform rotate(45deg) translate(12px, -6px)
+
+.tico-close span:after
+  opacity 0
+
+/* Plus icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-plus span,
+.tico-plus span:before,
+.tico-plus span:after
+  height 21px
+  transform translate(0, 0)
+
+.tico-plus span
+  transform rotate(0) translate(13px, 4.5px)
+
+.tico-plus span:before
+  transform rotate(-90deg)
+
+.tico-plus span:after
+  opacity 0
+
+/* Minus icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-minus span,
+.tico-minus span:before,
+.tico-minus span:after
+  height 21px
+
+.tico-minus span
+  transform rotate(-90deg) translate(-4.5px, 13px)
+
+.tico-minus span:before
+  opacity 0
+
+.tico-minus span:after
+  opacity 0
+
+/* Options icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-options span,
+.tico-options span:before,
+.tico-options span:after
+  transform translate(0, 0)
+
+.tico-options span
+  height 4px
+  transform translate(13px, 5.5px)
+
+.tico-options span:before
+  height 4px
+  transform translate(0, 7.5px)
+
+.tico-options span:after
+  height 4px
+  transform translate(0, 14.5px)
+
+.tico-options.tico-thin span,
+.tico-options.tico-thin span:before,
+.tico-options.tico-thin span:after
+  height 3px
+
+/* Alert icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-alert span,
+.tico-alert span:before,
+.tico-alert span:after
+  transform translate(0, 0)
+
+.tico-alert span
+  height 14px
+  transform translate(13px, 4.5px)
+
+.tico-alert span:before
+  height 4px
+  transform translate(0, 16.5px)
+
+.tico-alert span:after
+  opacity 0
+
+.tico-alert.tico-thin span:before
+  height 3px
+
+/* Info icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-info span,
+.tico-info span:before,
+.tico-info span:after
+  transform translate(0, 0)
+
+.tico-info span
+  height 4px
+  transform translate(13px, 5.5px)
+
+.tico-info span:before
+  height 12px
+  transform translate(0, 6.5px)
+
+.tico-info span:after
+  height 5px
+  transform rotate(90deg) translate(6px, 1.5px)
+
+.tico-info.tico-thin span
+  height 3px
+
+.tico-info.tico-thin span:before
+  transform translate(0, 5.5px)
+
+.tico-info.tico-thin span:after
+  transform rotate(90deg) translate(4px, 1.5px)
+
+/* Check icon
+----------------------------------------------------------------------------------------------------------------------*/
+.tico-check span,
+.tico-check span:before,
+.tico-check span:after
+  height 10px
+  transform rotate(-90deg) translate(-11px, -4px)
+
+.tico-check span
+  height 18px
+  transform rotate(45deg) translate(15px, -7px)
+
+.tico-check span:after
+  opacity 0
+
+.tico-check.tico-thin span
+  transform rotate(45deg) translate(16px, -8px)
+
+.tico-check.tico-thin span:before
+  transform rotate(-90deg) translate(-13px, -4px)
+
+/* Chevron icon
+----------------------------------------------------------------------------------------------------------------------*/
+[class*='tico-chevron'] span,
+[class*='tico-chevron'] span:before,
+[class*='tico-chevron'] span:after
+  height 14px
+  transform rotate(-90deg) translate(5px, -5px)
+
+[class*='tico-chevron'] span
+  transform rotate(-45deg) translate(7px, 16px)
+
+[class*='tico-chevron'] span:after
+  opacity 0
+
+[class*='tico-chevron'].tico-thin span
+  transform rotate(-45deg) translate(9px, 17px)
+
+[class*='tico-chevron'].tico-thin span:before
+  transform rotate(-90deg) translate(6px, -6px)
+
+
+/* Arrow icon
+----------------------------------------------------------------------------------------------------------------------*/
+[class*='tico-arrow'] span,
+[class*='tico-arrow'] span:before,
+[class*='tico-arrow'] span:after
+  height 18px
+
+[class*='tico-arrow'] span
+  transform translate(13px, 6px)
+
+[class*='tico-arrow'] span:before
+  transform rotate(-45deg) translate(3.5px, 0.5px)
+  height 12px
+
+[class*='tico-arrow'] span:after
+  transform rotate(45deg) translate(-3.5px, 0.5px)
+  height 12px
+
+[class*='tico-arrow'].tico-thin span
+  transform translate(13px, 6px)
+
+[class*='tico-arrow'].tico-thin span:before
+  height 10px
+  transform rotate(-45deg) translate(3.5px, 0.5px)
+
+[class*='tico-arrow'].tico-thin span:after
+  height 10px
+  transform rotate(45deg) translate(-3.5px, 0.5px)
+
+/* Rotation adjustments
+----------------------------------------------------------------------------------------------------------------------*/
+
+/* Right */
+.tico-chevron-right,
+.tico-arrow-right
+  transform rotate(90deg)
+
+/* Down */
+.tico-chevron-down
+.tico-arrow-down
+  transform rotate(180deg)
+
+/*Left */
+.tico-chevron-left,
+.tico-arrow-left
+  transform rotate(-90deg)
+
+/* Transformicon colors
+----------------------------------------------------------------------------------------------------------------------*/
+[class*='tico-'].primary span,
+[class*='tico-'].primary span:before,
+[class*='tico-'].primary span:after
+  background $primary
+  border-color $primary
+
+[class*='tico-'].dark span,
+[class*='tico-'].dark span:before,
+[class*='tico-'].dark span:after
+  background $dark
+  border-color $dark
+
+[class*='tico-'].soft span,
+[class*='tico-'].soft span:before,
+[class*='tico-'].soft span:after
+  background $soft
+  border-color $soft
+
+[class*='tico-'].pale span,
+[class*='tico-'].pale span:before,
+[class*='tico-'].pale span:after
+  background $pale
+  border-color $pale
+
+[class*='tico-'].light span,
+[class*='tico-'].light span:before,
+[class*='tico-'].light span:after
+  background $light
+  border-color $light
+
+[class*='tico-'].white span,
+[class*='tico-'].white span:before,
+[class*='tico-'].white span:after
+  background $white
+  border-color $white
+
+[class*='tico-'].black span,
+[class*='tico-'].black span:before,
+[class*='tico-'].black span:after
+  background $black
+  border-color $black
+
+[class*='tico-'].red span,
+[class*='tico-'].red span:before,
+[class*='tico-'].red span:after
+  background $red
+  border-color $red
+
+[class*='tico-'].green span,
+[class*='tico-'].green span:before,
+[class*='tico-'].green span:after
+  background $green
+  border-color $green
+
+[class*='tico-'].yellow span,
+[class*='tico-'].yellow span:before,
+[class*='tico-'].yellow span:after
+  background $yellow
+  border-color $yellow
+
+[class*='tico-'].orange span,
+[class*='tico-'].orange span:before,
+[class*='tico-'].orange span:after
+  background $orange
+  border-color $orange
+
+[class*='tico-'].blue span,
+[class*='tico-'].blue span:before,
+[class*='tico-'].blue span:after
+  background $blue
+  border-color $blue
+
+[class*='tico-'].violet span,
+[class*='tico-'].violet span:before,
+[class*='tico-'].violet span:after
+  background $violet
+  border-color $violet

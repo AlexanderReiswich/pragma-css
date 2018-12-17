@@ -1,15 +1,14 @@
-/*
-|-----------------------------------------------------------------------------------------------------------------------
+/*======================================================================================================================
 | PragmaCSS. Prototype fast, scale with confidence.
-|-----------------------------------------------------------------------------------------------------------------------
+|=======================================================================================================================
 |
 | utilities.css
-| =============
+| -------------
 |
 | Utilities are generic, low-level classes that serve a specific, singular purpose. They can be combined to achieve
-| a particular result without the need to create custom classes.
+| more complex effects without the need to create custom classes.
 |
-*/
+`---------------------------------------------------------------------------------------------------------------------*/
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -23,10 +22,10 @@
 |
 */
 .reset
-  font $font-weight-regular $standard-font-size / $standard-line-height $primary-font
+  font $font-weight-regular $default-font-size / $default-line-height $primary-font
   color $dark
   text-transform none
-  letter-spacing $standard-letter-spacing
+  letter-spacing $default-letter-spacing
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -554,33 +553,24 @@ a
   margin-left auto
   margin-right auto
   box-sizing border-box
-  padding-left $page-padding-on-p
-  padding-right $page-padding-on-p
-  width 'calc(100% - %s)' % ($page-padding-on-p * 2)
+  width $page-width-on-p
+  overflow-x hidden
 
 @media only screen and (max-width $breakpoint-xl)
   .container
-    padding-left $page-padding-on-x
-    padding-right $page-padding-on-x
-    width 'calc(100% - %s)' % ($page-padding-on-x * 2)
+    width $page-width-on-x
 
 @media only screen and (max-width $breakpoint-l)
   .container
-    padding-left $page-padding-on-l
-    padding-right $page-padding-on-l
-    width 'calc(100% - %s)' % ($page-padding-on-l * 2)
+    width $page-width-on-l
 
 @media only screen and (max-width $breakpoint-m)
   .container
-    padding-left $page-padding-on-m
-    padding-right $page-padding-on-m
-    width 'calc(100% - %s)' % ($page-padding-on-m * 2)
+    width $page-width-on-m
 
 @media only screen and (max-width $breakpoint-s)
   .container
-    padding-left $page-padding-on-s
-    padding-right $page-padding-on-s
-    width 'calc(100% - %s)' % ($page-padding-on-s * 2)
+    width $page-width-on-s
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -707,28 +697,28 @@ for i in (1..12)
 
 /* Grid columns for screen sizes 600px and above
 ----------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (min-width $breakpoint-s)
+@media only screen and (min-width unit($breakpoint-s + 1, 'px'))
   for i in (1..12)
     .grid .col.m{i}
       width: unit((100 / 12) * i, '%')
 
 /* Grid columns for screen sizes 900px and above
 ----------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (min-width $breakpoint-m)
+@media only screen and (min-width unit($breakpoint-m + 1, 'px'))
   for i in (1..12)
     .grid .col.l{i}
       width: unit((100 / 12) * i, '%')
 
 /* Grid columns for screen sizes 1200px and above
 ----------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (min-width $breakpoint-l)
+@media only screen and (min-width unit($breakpoint-l + 1, 'px'))
   for i in (1..12)
     .grid .col.x{i}
       width: unit((100 / 12) * i, '%')
 
 /* Grid columns for screen sizes 1500px and above
 ----------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (min-width $breakpoint-xl)
+@media only screen and (min-width unit($breakpoint-xl + 1, 'px'))
   for i in (1..12)
     .grid .col.xl{i}
       width: unit((100 / 12) * i, '%')
@@ -1443,14 +1433,84 @@ for i in (1..12)
 | Scaling
 |-----------------------------------------------------------------------------------------------------------------------
 */
-.scale-on-hover-s:hover
-  transform scale($scale-on-hover-s)
+.scale-s
+  transform scale($scale-s)
 
-.scale-on-hover-m:hover
-  transform scale($scale-on-hover-m)
+.scale-m
+  transform scale($scale-m)
 
-.scale-on-hover-l:hover
-  transform scale($scale-on-hover-l)
+.scale-l
+  transform scale($scale-l)
+
+.scale-s-on-hover:hover
+  transform scale($scale-s)
+
+.scale-m-on-hover:hover
+  transform scale($scale-m)
+
+.scale-l-on-hover:hover
+  transform scale($scale-l)
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Opacity
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.opacity-0
+  opacity 0
+
+.opacity-25
+  opacity .25
+
+.opacity-50
+  opacity .50
+
+.opacity-75
+  opacity .75
+
+.opacity-100
+  opacity 1
+
+.opacity-0-on-hover:hover
+  opacity 0
+
+.opacity-25-on-hover:hover
+  opacity .25
+
+.opacity-50-on-hover:hover
+  opacity .50
+
+.opacity-75-on-hover:hover
+  opacity .75
+
+.opacity-100-on-hover:hover
+  opacity 1
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Rotation
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+.rotate-45
+  transform rotate(45deg)
+
+.rotate-90
+  transform rotate(90deg)
+
+.rotate-135
+  transform rotate(135deg)
+
+.rotate-180
+  transform rotate(180deg)
+
+.rotate-225
+  transform rotate(225deg)
+
+.rotate-270
+  transform rotate(270deg)
+
+.rotate-315
+  transform rotate(315deg)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------

@@ -45,7 +45,7 @@ h6
   font-weight $font-weight-bold
 
 .content:not(.custom) a:hover
-  text-decoration inherit
+  text-decoration inherit !important
 
 p
   margin $offset-s 0 $offset-m 0
@@ -72,6 +72,10 @@ p
 
 .sidebar ul li
   margin-bottom 0
+
+ul, ol {
+  padding-left 1.2em
+}
 
 ul li li
   position relative
@@ -166,6 +170,9 @@ table td
   padding-right 28px
 
 .btn.v-l, .btn.vh-l
-  padding-top 18px
-  padding-bottom 18px
+  min-height $default-font-size + ($size-l * 2) + ($input-border * 2) - 8
+  padding-top 4px
+  padding-bottom 4px
 
+blockquote
+  border-left none

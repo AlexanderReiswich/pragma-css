@@ -101,11 +101,12 @@ Does the class name follow proper grammar and sound like proper English?
 CSS supports lower- and uppercase letters, as well as dashes and underscores. However, utilizing all possibilities
 adds a level of abstract complexity that is hard to justify.
 
-For example, using double dashes to signify mouse states such as `.red--hover` is not self-evident without
+For example, using double-dashes to signify mouse states such as `.red--hover` is not self-evident without
 explanation. A class such as `.red-on-hover` on the other hand is entirely self-explanatory, at a negligible
 cost of a few more characters.
 
-PragmaCSS is entirely kebab-cased, with lower-case letters only. There are no double-dashes or double-underscores.
+PragmaCSS class names are lower-cased and hyphenated (kebab-case). Underscores or special conventions
+(double-dashes, double-underscores, etc.) are not used.
 
 <br>
 

@@ -396,26 +396,109 @@ You can also apply shadows on hover only:
 
 <br>
 
-## Scale on hover
+## Scaling
 
-These classes will increase the size of an element when you move the mouse cursor over it.<br>
+The `.scale-x` classes can be used to "zoom-in" on elements, without actually changing their influence on
+the layout around them.
 
 <div class="space-between wrap pull-right-s push-v-xl">
-    <div class="scale-on-hover-s rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
-        .scale-on-hover-s
+    <div class="scale-s rounded inline blue-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-s
     </div>
-    <div class="scale-on-hover-m rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
-        .scale-on-hover-m
+    <div class="scale-m rounded inline blue-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-m
     </div>
-    <div class="scale-on-hover-l rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
-        .scale-on-hover-l
+    <div class="scale-l rounded inline blue-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-l
     </div>
 </div>
 
 ```html
-<div class="scale-on-hover-s">.scale-on-hover-s</div>
-<div class="scale-on-hover-m">.scale-on-hover-m</div>
-<div class="scale-on-hover-l">.scale-on-hover-l</div>
+<div class="scale-s">.scale-s</div>
+<div class="scale-m">.scale-m</div>
+<div class="scale-l">.scale-l</div>
+```
+
+You can also apply these classes on mouse-over:<br>
+
+<div class="space-between wrap pull-right-s push-v-xl">
+    <div class="scale-s-on-hover rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-s-on-hover
+    </div>
+    <div class="scale-m-on-hover rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-m-on-hover
+    </div>
+    <div class="scale-l-on-hover rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+        .scale-l-on-hover
+    </div>
+</div>
+
+```html
+<div class="scale-s-on-hover">.scale-s-on-hover</div>
+<div class="scale-m-on-hover">.scale-m-on-hover</div>
+<div class="scale-l-on-hover">.scale-l-on-hover</div>
+```
+
+<br>
+
+## Opacity
+
+The opacity utility classes can be used to add transparency in multiple levels of strength.
+
+<div class="push-v">
+    <div class="rounded primary bold pad-m push-up-s cursor-default">
+        .opacity-0
+    </div>
+    <div class="opacity-25 rounded primary-bg light bold pad-m push-up-s cursor-default">
+        .opacity-25
+    </div>
+    <div class="opacity-50 rounded primary-bg light bold pad-m push-up-s cursor-default">
+        .opacity-50
+    </div>
+    <div class="opacity-75 rounded primary-bg light bold pad-m push-up-s cursor-default">
+        .opacity-75
+    </div>
+    <div class="opacity-100 rounded primary-bg light bold pad-m push-up-s cursor-default">
+        .opacity-100
+    </div>
+</div>
+
+```html
+<div class="opacity-0">.opacity-0</div>
+<div class="opacity-25">.opacity-25</div>
+<div class="opacity-50">.opacity-50</div>
+<div class="opacity-75">.opacity-75</div>
+<div class="opacity-100">.opacity-100</div>
+```
+
+<br>
+
+It's also possible to change opacity on hover:
+
+<div class="push-v">
+    <div class="opacity-0-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+        .opacity-0-on-hover
+    </div>
+    <div class="opacity-25-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+        .opacity-25-on-hover
+    </div>
+    <div class="opacity-50-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+        .opacity-50-on-hover
+    </div>
+    <div class="opacity-75-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+        .opacity-75-on-hover
+    </div>
+    <div class="opacity-100-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+        .opacity-100-on-hover
+    </div>
+</div>
+
+```html
+<div class="opacity-0-on-hover">.opacity-0-on-hover</div>
+<div class="opacity-25-on-hover">.opacity-25-on-hover</div>
+<div class="opacity-50-on-hover">.opacity-50-on-hover</div>
+<div class="opacity-75-on-hover">.opacity-75-on-hover</div>
+<div class="opacity-100-on-hover">.opacity-100-on-hover</div>
 ```
 
 <br>
@@ -425,19 +508,19 @@ These classes will increase the size of an element when you move the mouse curso
 `.tween` classes add transitions to your elements.
 
 <div class="space-between wrap pull-right-s">
-    <div class="tween-xs rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+    <div class="tween-xs rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-xs
     </div>
-    <div class="tween-s rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+    <div class="tween-s rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-s
     </div>
-    <div class="tween-m rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+    <div class="tween-m rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-m
     </div>
-    <div class="tween-l rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+    <div class="tween-l rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-l
     </div>
-    <div class="tween-xl rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-on-hover-m push-right-s push-down-m cursor-default">
+    <div class="tween-xl rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-xl
     </div>
 </div>
@@ -447,7 +530,7 @@ In case the name "tweening" doesn't ring a bell:
 It's a common term used in the animation industry to describe the transitional frames be**tween** keyframes,
 which is exactly what happens when you apply CSS transitions.
 
-It's just much nicer than writing "transition" all the time.
+Compared to "transition", "tween" is much easier to type, which is why it has been chosen instead.
 :::
 
 ```html
@@ -456,6 +539,68 @@ It's just much nicer than writing "transition" all the time.
 <div class="tween-m">.tween-m</div>
 <div class="tween-l">.tween-l</div>
 <div class="tween-xl">.tween-xl</div>
+```
+
+<br>
+
+## Rotation
+
+The `.rotate` classes can be used to rotate elements clockwise.
+
+::: warning NOTE
+Please keep in mind that it's not possible to use the rotation classes in combination with scaling classes
+:::
+
+### .rotate-45
+
+<div class="rotate-45 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+### .rotate-90
+
+<div class="rotate-90 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+### .rotate-135
+
+<div class="rotate-135 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+### .rotate-180
+
+<div class="rotate-180 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+### .rotate-225
+
+<div class="rotate-225 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+### .rotate-270
+
+<div class="rotate-270 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+### .rotate-315
+
+<div class="rotate-315 rounded inline blue-bg white bold small pad-m push-v-l">
+  ROTATE
+</div>
+
+```html
+<div class="rotate-45">.cw-45</div>
+<div class="rotate-90">.cw-90</div>
+<div class="rotate-135">.cw-135</div>
+<div class="rotate-180">.cw-180</div>
+<div class="rotate-225">.cw-225</div>
+<div class="rotate-270">.cw-270</div>
+<div class="rotate-315">.cw-315</div>
 ```
 
 <br>

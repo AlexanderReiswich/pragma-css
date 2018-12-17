@@ -1,15 +1,14 @@
-/*
-|-----------------------------------------------------------------------------------------------------------------------
+/*======================================================================================================================
 | PragmaCSS. Prototype fast, scale with confidence.
-|-----------------------------------------------------------------------------------------------------------------------
+|=======================================================================================================================
 |
 | global.css
-| ==========
+| ----------
 |
-| This global configuration file allows you to change the default variables that are used across the library.
-| Copy it to your project and use it as a starting point to adopt the UI style to your particular requirements.
+| The global configuration file allows you to tweak the available UI and utility classes to adopt them to your needs.
+| Simply copy it to your project and start hacking.
 |
-*/
+`---------------------------------------------------------------------------------------------------------------------*/
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -51,6 +50,7 @@
 | Using the color name *as* the functional name solves this issue.
 |
 */
+
 $primary = #41b883
 $dark = #35495e
 $soft = #889fab
@@ -86,6 +86,7 @@ $violet-hover = darken($violet, 30)
 | Border
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $border-s = 1px
 $border-m = 2px
 $border-l = 3px
@@ -108,6 +109,7 @@ $border-default-color = $light
 | But if you need a particular set of breakpoints you can define them here.
 |
 */
+
 $breakpoint-s = 600px
 $breakpoint-m = 900px
 $breakpoint-l = 1200px
@@ -122,6 +124,7 @@ $breakpoint-xl = 1500px
 | calculable nature. But you are free to use relative units such as em/rem if you prefer.
 |
 */
+
 $offset-xs = 5px
 $offset-s = 10px
 $offset-m = 20px
@@ -134,6 +137,7 @@ $offset-2xl = 80px
 | Widths
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500
 $max-widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500, 600, 900, 1200, 1500
 $heights = 30, 50, 70, 100
@@ -147,6 +151,7 @@ $max-heights = 30, 50, 70, 100
 | This variable sets the background color for the entire page.
 |
 */
+
 $body-background = $white
 
 /*
@@ -158,11 +163,12 @@ $body-background = $white
 | Usually you would want more space on larger screens and as little as possible on small ones.
 |
 */
-$page-padding-on-s = $offset-s
-$page-padding-on-m = $offset-m
-$page-padding-on-l = $offset-m
-$page-padding-on-x = $offset-m
-$page-padding-on-p = $offset-m
+
+$page-width-on-s = 95%
+$page-width-on-m = 95%
+$page-width-on-l = 95%
+$page-width-on-x = 95%
+$page-width-on-p = 95%
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -173,6 +179,7 @@ $page-padding-on-p = $offset-m
 | But you can of course define more font families if your project's visual identity requires more.
 |
 */
+
 $primary-font = Nunito, sans-serif
 
 /*
@@ -183,6 +190,7 @@ $primary-font = Nunito, sans-serif
 | Two font weights are defined by default.
 |
 */
+
 $font-weight-regular = 400
 $font-weight-bold = 700
 
@@ -191,6 +199,7 @@ $font-weight-bold = 700
 | Text sizes
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $font-size-xs = 11px
 $font-size-s = 13px
 $font-size-m = 16px
@@ -199,36 +208,40 @@ $font-size-xl = 24px
 $font-size-2xl = 32px
 $font-size-3xl = 64px
 $font-size-4xl = 140px
-$standard-font-size = $font-size-m
+$default-font-size = $font-size-m
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Line height
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $tighten-line-height-l = 0.9
 $tighten-line-height-m = 1.1
 $tighten-line-height-s = 1.2
-$standard-line-height = 1.4
+$default-line-height = 1.4
 $loosen-line-height-s = 1.5
 $loosen-line-height-m = 1.7
 $loosen-line-height-l = 1.9
+$paragraph-line-height = $loosen-line-height-s
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Letter spacing
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $extend-letter-spacing-s = 0.05em
 $extend-letter-spacing-m = 0.1em
 $extend-letter-spacing-l = 0.2em
-$standard-letter-spacing = $extend-letter-spacing-m
+$default-letter-spacing = $extend-letter-spacing-m
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Links
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $link-color = $primary
 $link-color-hover = $dark
 $link-transition = all .2s ease
@@ -239,13 +252,31 @@ $link-decoration = none
 | Placeholders
 |-----------------------------------------------------------------------------------------------------------------------
 */
-$placeholder-color = $dark
+
+$placeholder-color = $pale
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Block-Quote
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+
+$blockquote-font-family = serif
+$blockquote-font-size = $font-size-2xl
+$blockquote-font-line-height = $loosen-line-height-m
+$blockquote-font-weight = bold
+$blockquote-font-style = italic
+$blockquote-letter-spacing = 0
+$blockquote-color = $soft
+$blockquote-margin = $offset-2xl 0 $offset-l 0
+$blockquote-padding = 0 0 0 $offset-2xl
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Shadows
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $shadow-s = 0 2px 10px rgba(50, 116, 165, 0.2)
 $shadow-m = 0 5px 30px rgba(50, 116, 165, 0.18)
 $shadow-l = 0 0 150px rgba(50, 116, 165, 0.2)
@@ -255,15 +286,17 @@ $shadow-l = 0 0 150px rgba(50, 116, 165, 0.2)
 | Scale on hover
 |-----------------------------------------------------------------------------------------------------------------------
 */
-$scale-on-hover-s = 1.05
-$scale-on-hover-m = 1.1
-$scale-on-hover-l = 1.2
+
+$scale-s = 1.05
+$scale-m = 1.1
+$scale-l = 1.2
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
 | Transitions
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $transition-xs = .07s
 $transition-s = .12s
 $transition-m = .2s
@@ -278,6 +311,7 @@ $transition-xl = .8s
 | Corner radius is used for classes that set the border-radius property.
 |
 */
+
 $rounded-s = 3px
 $rounded-m = 6px
 $rounded-l = 10px
@@ -287,6 +321,7 @@ $rounded-l = 10px
 | Horizontal rule
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $hr-style = 1px solid rgba(145, 205, 220, .2)
 $hr-s = 1px
 $hr-m = 3px
@@ -299,6 +334,7 @@ $hr-negative = rgba(255, 255, 255, 0.4)
 | Grid
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $grid-separation = 2px solid rgba(53, 73, 94, .08)
 $grid-gap-s = 5px
 $grid-gap-m = 10px
@@ -309,6 +345,7 @@ $grid-gap-l = 20px
 | Tables
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $table-th-border = 3px solid $pale
 $table-td-border = 1px solid $light
 $table-row-hover-bg = lighten($light, 3)
@@ -353,7 +390,7 @@ $subtitle-font-size = $font-size-xl
 $subtitle-font-weight = $font-weight-bold
 $subtitle-letter-spacing = $extend-letter-spacing-s
 $subtitle-text-transform = none
-$subtitle-line-height = $standard-line-height
+$subtitle-line-height = $default-line-height
 $subtitle-margin = 0 0 $offset-m 0
 $subtitle-color = $default-color
 
@@ -389,10 +426,11 @@ $label-color = $soft
 | Form inputs
 |-----------------------------------------------------------------------------------------------------------------------
 */
+
 $input-bg = $white
 $input-border = 3px solid $light
 $input-corner-radius = 6px
-$input-font-size = $standard-font-size
+$input-font-size = $default-font-size
 $input-line-height = 1
 $input-padding = 12px 10px
 $input-transition = all 0.2s
@@ -417,7 +455,7 @@ $input-focus-border-color = $primary
 $btn-corner-radius = 6px
 $btn-font-size = $font-size-s
 $btn-line-height = 1
-$btn-padding = 12px 18px
+$btn-padding-h = 18px
 $btn-transition = all .3s ease
 $btn-letter-spacing = $extend-letter-spacing-l
 $btn-text-transform = uppercase
@@ -473,3 +511,11 @@ $size-l = 18px
 $size-xl = 28px
 $size-2xl = 42px
 $size-3xl = 60px
+
+/*
+|-----------------------------------------------------------------------------------------------------------------------
+| Transformicons
+|-----------------------------------------------------------------------------------------------------------------------
+*/
+
+$transformicon-corner-radius = 6px

@@ -47,6 +47,7 @@ module.exports = {
         ['display', 'Display & Position'],
         ['layout', 'Layout & Grid'],
         ['effects', 'Effects'],
+        ['transformicons', 'Transformicons'],
         ['buttons', 'Buttons'],
         ['forms', 'Form elements'],
         ['ui', 'UI elements'],
