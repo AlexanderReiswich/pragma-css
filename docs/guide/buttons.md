@@ -554,8 +554,8 @@ Buttons are compatible with most utility classes. This allows you to easily cust
 countless ways. Here are a few examples:
 
 
-### .btn.reset
-<button class="btn reset push-s">
+### .btn.reset.light-bg
+<button class="btn reset light-bg push-s">
   Button
 </button>
 
@@ -589,8 +589,16 @@ countless ways. Here are a few examples:
 
 ---
 
-### .btn.ghost.border-s.dashed
-<button class="btn ghost border-s dashed push-s">
+### .btn.ghost.bold.border-s.dashed
+<button class="btn ghost bold border-s dashed push-s">
+  Button
+</button>
+
+
+---
+
+### .btn.ghost.border-s.rounded-full.size-l.v-l.h-xl
+<button class="btn ghost border-s rounded-full size-l v-l h-xl">
   Button
 </button>
 

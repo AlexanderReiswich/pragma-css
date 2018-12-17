@@ -85,6 +85,7 @@ textarea
   font-family inherit
   font-size 100%
   line-height $default-line-height
+  color $dark
   border none
   background transparent
   outline none
@@ -318,12 +319,6 @@ select
   box-sizing border-box
   transition $input-transition
 
-input,
-textarea:disabled,
-select:disabled
-  color $input-disabled-color
-  border-color $input-disabled-border-color
-
 textarea
   overflow-y hidden
   resize vertical
@@ -340,6 +335,20 @@ textarea:focus,
 select:focus
   color $input-focus-color
   border-color $input-focus-border-color
+
+/* Disabled states */
+input:disabled,
+textarea:disabled,
+select:disabled
+  background-color $input-disabled-border-color
+  color $input-disabled-color
+  border-color $input-disabled-border-color
+
+input:disabled:hover,
+textarea:disabled:hover,
+select:disabled:hover
+  color $input-disabled-color
+  border-color $input-disabled-border-color
 
 /* Input icon
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -392,6 +401,10 @@ select:focus
   letter-spacing $extend-letter-spacing-s
   text-transform none
 
+.checkbox *,
+.radio *
+  vertical-align middle
+
 .checkbox input[type=checkbox],
 .radio input[type=radio]
   position fixed
@@ -402,13 +415,13 @@ select:focus
 .radio-indicator
   position relative
   display inline-block
+  top -2px
   width 20px
   height 20px
   margin-right 5px
   background-color $input-bg
   border $input-border
   border-radius $input-corner-radius
-  vertical-align text-bottom
   transition $input-transition
 
 /* Checkbox indicator */
@@ -424,13 +437,13 @@ select:focus
   opacity 0
 
 .checkbox-indicator:before
-  transform rotate(-45deg) scaleY(0) translate(10px, -5px)
+  transform rotate(-45deg) scaleY(.2) translate(10px, -5px)
   height 10px
   left 7px
   top 5px
 
 .checkbox-indicator:after
-  transform rotate(45deg) scaleY(0) translate(-5px, -10px)
+  transform rotate(45deg) scaleY(.2) translate(-5px, -10px)
   height 23px
   left 5px
   top -7px
@@ -469,11 +482,54 @@ select:focus
   border-radius 100%
   transition .4s all cubic-bezier(0,.9,.45,1)
   opacity 0
-  transform scaleY(.4)
+  transform scale(.2)
 
 .radio input[type=radio]:checked + .radio-indicator:before
   opacity 1
-  transform scaleY(1)
+  transform scale(1)
+
+/* Checkbox and Radio size-controls */
+.checkbox-indicator.size-xs,
+.radio-indicator.size-xs
+  transform scale(0.6)
+  margin -3px 0 -3px -4px
+
+.checkbox-indicator.size-s,
+.radio-indicator.size-s
+  transform scale(0.77)
+  margin -2px 0 -2px -2px
+
+.checkbox-indicator.size-m,
+.radio-indicator.size-m
+  transform scale(1)
+
+.checkbox-indicator.size-l,
+.radio-indicator.size-l
+  transform scale(1.23)
+  margin 5px 12px 5px 3px
+
+.checkbox-indicator.size-xl,
+.radio-indicator.size-xl
+  transform scale(1.6)
+  margin 10px 18px 10px 7px
+
+/* Disabled states */
+.checkbox input[type=checkbox]:disabled + .checkbox-indicator,
+.radio input[type=radio]:disabled + .radio-indicator
+  pointer-events none
+
+.checkbox input[type=checkbox]:disabled + .checkbox-indicator:before,
+.radio input[type=radio]:disabled + .radio-indicator:before
+  background $light
+
+.checkbox input[type=checkbox]:disabled + .checkbox-indicator:after,
+.radio input[type=radio]:disabled + .radio-indicator:after
+  background $light
+
+.checkbox input[type=checkbox]:disabled:hover + .checkbox-indicator,
+.radio input[type=radio]:disabled:hover + .radio-indicator
+  border-color $light
+
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -979,51 +1035,51 @@ select:focus
 ----------------------------------------------------------------------------------------------------------------------*/
 .input-icon input.v-0,
 .input-icon input.vh-0
-  padding-left $default-font-size + ($input-border * 2)
+  padding-left $default-font-size + $input-border
 
 .input-icon input.v-xs,
 .input-icon input.vh-xs
-  padding-left $default-font-size + ($size-xs * 2) + ($input-border * 2) - 4
+  padding-left $default-font-size + $input-border + ($size-xs * 2) - 2
 
 .input-icon input.v-s,
 .input-icon input.vh-s
-  padding-left $default-font-size + ($size-s * 2) + ($input-border * 2) - 4
+  padding-left $default-font-size + $input-border + ($size-s * 2) - 4
 
 .input-icon input.v-m,
 .input-icon input.vh-m
-  padding-left $default-font-size + ($size-m * 2) + ($input-border * 2) - 4
+  padding-left $default-font-size + $input-border + ($size-m * 2) - 8
 
 .input-icon input.v-l,
 .input-icon input.vh-l
-  padding-left $default-font-size + ($size-l * 2) + ($input-border * 2) - 4
+  padding-left $default-font-size + $input-border + ($size-l * 2) - 8
 
 .input-icon input.v-xl,
 .input-icon input.vh-xl
-  padding-left $default-font-size + ($size-xl * 2) + ($input-border * 2) - 4
+  padding-left $default-font-size + $input-border + ($size-xl * 2) - 12
 
 .input-icon input.v-0 + :not(input),
 .input-icon input.vh-0 + :not(input)
-  width $default-font-size + ($size-xs * 2)
+  width $default-font-size + $input-border + ($size-xs * 2)
 
 .input-icon input.v-xs + :not(input),
 .input-icon input.vh-xs + :not(input)
-  width $default-font-size + ($size-xs * 2) + ($input-border * 2)
+  width $default-font-size + $input-border + ($size-xs * 2)
 
 .input-icon input.v-s + :not(input),
 .input-icon input.vh-s + :not(input)
-  width $default-font-size + ($size-s * 2) + ($input-border * 2)
+  width $default-font-size + ($size-s * 2)
 
 .input-icon input.v-m + :not(input),
 .input-icon input.vh-m + :not(input)
-  width $default-font-size + ($size-m * 2) + ($input-border * 2)
+  width $default-font-size + ($size-m * 2)
 
 .input-icon input.v-l + :not(input),
 .input-icon input.vh-l + :not(input)
-  width $default-font-size + ($size-l * 2) + ($input-border * 2)
+  width $default-font-size + ($size-l * 2)
 
 .input-icon input.v-xl + :not(input),
 .input-icon input.vh-xl + :not(input)
-  width $default-font-size + ($size-xl * 2) + ($input-border * 2)
+  width $default-font-size + ($size-xl * 2)
 
 /*
 |-----------------------------------------------------------------------------------------------------------------------
@@ -1093,7 +1149,7 @@ select:focus
   display inline-block
   width 30px
   height 30px
-  transition .3s all ease
+  transition .4s all cubic-bezier(0,.9,.45,1)
   vertical-align middle
   transform-origin center
   text-align left !important
@@ -1109,7 +1165,7 @@ select:focus
   border-width 4px
   border-style none
   width 4px
-  transition .3s all ease
+  transition .4s all cubic-bezier(0,.9,.45,1)
 
 [class*='tico-'].tico-thin span,
 [class*='tico-'].tico-thin span:before,
