@@ -1,61 +1,53 @@
-/*======================================================================================================================
-| PragmaCSS. Prototype fast, scale with confidence.
-|=======================================================================================================================
-|
-| global.css
-| ----------
-|
-| The global configuration file allows you to tweak the available UI and utility classes to adopt them to your needs.
-| Simply copy it to your project and start hacking.
-|
-`---------------------------------------------------------------------------------------------------------------------*/
-
 /*
-|-----------------------------------------------------------------------------------------------------------------------
-| Colors
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| PragmaCSS comes with a carefully-chosen collection of colors that is wide enough to meet most projects needs,
-| but focused enough as to not make the library unnecessarily bloated.
-|
-| Colors are separated into two semantic groups: Functional and literal.
-|
-| Functional colors should be based on your project's visual identity. Usually they'll be derived from your logo.
-| As the name implies, you should select their values based on their function.
-|
-| Primary   : The leading color; Usually a confident signal color. Think of Twitter's blue or YouTube's red.
-|             Often used to signify interactive elements such as links and buttons, or to highlight their importance.
-|             If your CI includes more than one main color, it's recommended to add a secondary and tertiary class.
-|             But as many projects only have one main color, they are not included by default.
-|
-| Dark      : The main color for paragraphs of text; Should allow for good readability.
-|
-| Soft      : Signifies lesser relevance, i.e. for footnotes; This is an important tool to establish a proper
-|             visual hierarchy in your designs.
-|
-| Pale      : This should be a color with an intentionally weak contrast, but still readable in text. It can be
-|             used to signify unavailability, i.e. a disabled button.
-|
-| Light     : Similarly to pale, this should be an intentionally subtle color, barely visible. Nevertheless, it acts
-|             as a very important tool for UI design, as many elements such as lines require a very unobtrusive tone.
-|
-| The second semantic group - literal colors - is a collection of the most widely used base colors.
-| In a sense, these too are functional colors. A conscious decision has been made in using literal names for something
-| like red and green, as opposed to functional names like "success" and "error".
-|
-| The reason for this lies in the fact that colors have multiple meanings. Red can signify an error, but it can also
-| be used to attract attention for other reasons, or imply an other meaning, such as health, warmth and so on.
-| A functional name would be too limiting and often require us to disregard semantics.
-|
-| Using the color name *as* the functional name solves this issue.
-|
-*/
+ * PragmaCSS / global.styl
+ * =======================
+ *
+ * The global configuration file allows you to tweak the available UI and utility classes to adopt them to your needs.
+ * Simply copy it to your project and start hacking.
+ *
+ */
 
+
+/* Colors
+----------------------------------------------------------------------------------------------------------------------*/
+
+// Enable / disable colors
+$colors = {
+  primary  : true
+  secondary: true
+  tertiary : true
+  dark     : true
+  muted    : true
+  subtle   : true
+  light    : true
+  white    : true
+  black    : true
+  red      : true
+  green    : true
+  yellow   : true
+  orange   : true
+  blue     : true
+  violet   : true
+}
+
+// Brand colors
 $primary = #41b883
-$dark = #35495e
-$soft = #889fab
-$pale = #bed1d4
-$light = #f2f5f3
+$secondary = #51bedf
+$tertiary = #8f4998
+
+// Utility colors
+$dark = rgba(0, 25, 51, 0.8)
+$muted = rgba(15, 64, 88, 0.5)
+$subtle = rgba(0, 84, 100, 0.26)
+$light = rgba(33, 29, 0, 0.045)
+
+// Utility colors forced variants
+$dark-forced = #33465b
+$muted-forced = #879fab
+$subtle-forced = #bcd1d6
+$light-forced = #f4f4f3
+
+// Literal colors
 $white = #fff
 $black = #333
 $red = #f76776
@@ -64,142 +56,157 @@ $yellow = #f2df5e
 $orange = #ffa535
 $blue = #459cf9
 $violet = #b482f2
+
+// Hover colors
+$primary-hover = $dark-forced
+$secondary-hover = $dark-forced
+$tertiary-hover = $dark-forced
+$dark-hover = $primary
+$muted-hover = $dark-forced
+$subtle-hover = $muted-forced
+$light-hover = darken($light-forced, 30%)
+$white-hover = $light-forced
+$black-hover = $dark-forced
+$red-hover = darken($red, 30%)
+$green-hover = darken($green, 30%)
+$yellow-hover = darken($yellow, 30%)
+$orange-hover = darken($orange, 30%)
+$blue-hover = darken($blue, 30%)
+$violet-hover = darken($violet, 30%)
+
+// Default color
 $default-color = $dark
 
-/* Hover colors */
-$primary-hover = $dark
-$dark-hover = $primary
-$soft-hover = $dark
-$pale-hover = $soft
-$light-hover = darken($light, 30)
-$white-hover = $light
-$black-hover = $primary
-$red-hover = darken($red, 30)
-$green-hover = darken($green, 30)
-$yellow-hover = darken($yellow, 30)
-$orange-hover = darken($orange, 30)
-$blue-hover = darken($blue, 30)
-$violet-hover = darken($violet, 30)
+// Background color for the entire HTML body
+$body-background = $white
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Border
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
-$border-s = 1px
-$border-m = 2px
-$border-l = 3px
-$border-xl = 5px
-$border-default-style = solid
-$border-default-width = $border-m
-$border-default-color = $light
+/* Inverted colors
+----------------------------------------------------------------------------------------------------------------------*/
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Breakpoints
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| By default, breakpoints are spread over five 300px intervals, starting at 600px.
-| There is no special reasoning for this choice. We simply don't think there is any need to consider specific
-| screen sizes and making things unnecessarily complicated.
-|
-| Assume that a screen for every possible width exists and simply ensure that your layouts work at every scale.
-|
-| But if you need a particular set of breakpoints you can define them here.
-|
-*/
+// Brand colors
+$primary-inverted = #41b883
+$secondary-inverted = #51bedf
+$tertiary-inverted = #cc7be8
 
+// Utility colors
+$dark-inverted = rgba(248, 255, 252, 0.8)
+$muted-inverted = rgba(247, 255, 249, 0.5)
+$subtle-inverted = rgba(247, 255, 237, 0.27)
+$light-inverted = rgba(250, 255, 237, 0.12)
+
+// Hover colors
+$primary-hover-inverted = $light-forced
+$secondary-hover-inverted = $light-forced
+$tertiary-hover-inverted = $light-forced
+$dark-hover-inverted = $primary
+$muted-hover-inverted = $light-forced
+$subtle-hover-inverted = $light-forced
+$light-hover-inverted = lighten($light-forced, 40%)
+$white-hover-inverted = $light-forced
+$black-hover-inverted = $light-forced
+$red-hover-inverted = lighten($red, 40%)
+$green-hover-inverted = lighten($green, 40%)
+$yellow-hover-inverted = lighten($yellow, 40%)
+$orange-hover-inverted = lighten($orange, 40%)
+$blue-hover-inverted = lighten($blue, 40%)
+$violet-hover-inverted = lighten($violet, 40%)
+
+
+/* Breakpoints
+----------------------------------------------------------------------------------------------------------------------*/
 $breakpoint-s = 600px
 $breakpoint-m = 900px
 $breakpoint-l = 1200px
 $breakpoint-xl = 1500px
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Margin and padding offsets
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| These values are used for all spacing related classes. Pixels are used by default due to their predictable and easily
-| calculable nature. But you are free to use relative units such as em/rem if you prefer.
-|
-*/
 
-$offset-xs = 5px
-$offset-s = 10px
-$offset-m = 20px
-$offset-l = 30px
-$offset-xl = 50px
-$offset-2xl = 80px
+/* Margin and padding offsets
+----------------------------------------------------------------------------------------------------------------------*/
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Widths
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+// Enable / disable offset groups
+$offsets = {
+  push     : true
+  push-on-m: true
+  push-on-s: true
+  pull     : true
+  pull-on-m: true
+  pull-on-s: true
+  pad      : true
+  pad-on-m : true
+  pad-on-s : true
+}
 
+// Standard offsets
+$offset-xs = unit(5 * 1, 'px')
+$offset-s = unit(5 * 2, 'px')
+$offset-m = unit(5 * 4, 'px')
+$offset-l = unit(5 * 6, 'px')
+$offset-xl = unit(5 * 10, 'px')
+$offset-2xl = unit(5 * 16, 'px')
+
+// Offsets for medium screen sizes
+$offset-xs-on-m = unit(4 * 1, 'px')
+$offset-s-on-m = unit(4 * 2, 'px')
+$offset-m-on-m = unit(4 * 4, 'px')
+$offset-l-on-m = unit(4 * 6, 'px')
+$offset-xl-on-m = unit(4 * 10, 'px')
+$offset-2xl-on-m = unit(4 * 16, 'px')
+
+// Offsets for small screen sizes
+$offset-xs-on-s = unit(3 * 1, 'px')
+$offset-s-on-s = unit(3 * 2, 'px')
+$offset-m-on-s = unit(3 * 4, 'px')
+$offset-l-on-s = unit(3 * 6, 'px')
+$offset-xl-on-s = unit(3 * 10, 'px')
+$offset-2xl-on-s = unit(3 * 16, 'px')
+
+
+/* Widths and heights
+----------------------------------------------------------------------------------------------------------------------*/
 $widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500
 $max-widths = 30, 50, 70, 100, 150, 200, 250, 300, 400, 500, 600, 900, 1200, 1500
 $heights = 30, 50, 70, 100
 $max-heights = 30, 50, 70, 100
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Background color
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| This variable sets the background color for the entire page.
-|
-*/
 
-$body-background = $white
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Page padding
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| These variables determine the amount of empty space to the left and right of your content area.
-| Usually you would want more space on larger screens and as little as possible on small ones.
-|
-*/
-
+/* Page container width
+----------------------------------------------------------------------------------------------------------------------*/
 $page-width-on-s = 95%
 $page-width-on-m = 95%
 $page-width-on-l = 95%
 $page-width-on-x = 95%
 $page-width-on-p = 95%
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Font families
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| By default, only the primary font is defined, since we don't need more than one font for a generic user interface.
-| But you can of course define more font families if your project's visual identity requires more.
-|
-*/
 
+/* Borders.
+----------------------------------------------------------------------------------------------------------------------*/
+
+// Border widths
+$border-s = 1px
+$border-m = 2px
+$border-l = 3px
+$border-xl = 5px
+
+// Border defaults
+$border-default-style = solid
+$border-default-width = $border-m
+$border-default-color = $light
+
+
+/* Font families
+----------------------------------------------------------------------------------------------------------------------*/
 $primary-font = Nunito, sans-serif
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Font weights
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Two font weights are defined by default.
-|
-*/
 
+/* Font weights
+----------------------------------------------------------------------------------------------------------------------*/
 $font-weight-regular = 400
 $font-weight-bold = 700
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text sizes
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Text sizes
+----------------------------------------------------------------------------------------------------------------------*/
 $font-size-xs = 11px
 $font-size-s = 13px
 $font-size-m = 16px
@@ -208,14 +215,13 @@ $font-size-xl = 24px
 $font-size-2xl = 32px
 $font-size-3xl = 64px
 $font-size-4xl = 140px
+
+// Default font size
 $default-font-size = $font-size-m
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Line height
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Line height
+----------------------------------------------------------------------------------------------------------------------*/
 $tighten-line-height-l = 0.9
 $tighten-line-height-m = 1.1
 $tighten-line-height-s = 1.2
@@ -223,210 +229,108 @@ $default-line-height = 1.4
 $loosen-line-height-s = 1.5
 $loosen-line-height-m = 1.7
 $loosen-line-height-l = 1.9
+
+// Line height for paragraph elements
 $paragraph-line-height = $loosen-line-height-s
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Letter spacing
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Letter spacing
+----------------------------------------------------------------------------------------------------------------------*/
 $extend-letter-spacing-s = 0.05em
 $extend-letter-spacing-m = 0.1em
 $extend-letter-spacing-l = 0.2em
-$default-letter-spacing = $extend-letter-spacing-m
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Links
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+// Default letter spacing
+$default-letter-spacing = $extend-letter-spacing-s
 
+
+/* Links
+----------------------------------------------------------------------------------------------------------------------*/
 $link-color = $primary
 $link-color-hover = $dark
 $link-transition = all .2s cubic-bezier(0,.9,.45,1)
 $link-decoration = none
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Placeholders
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
-$placeholder-color = $pale
+/* Placeholders
+----------------------------------------------------------------------------------------------------------------------*/
+$placeholder-color = $subtle
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Block-Quote
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+// Inverted
+$placeholder-color = $subtle-inverted
 
+/* Blockquotes
+----------------------------------------------------------------------------------------------------------------------*/
 $blockquote-font-family = serif
 $blockquote-font-size = $font-size-2xl
 $blockquote-font-line-height = $loosen-line-height-m
 $blockquote-font-weight = bold
 $blockquote-font-style = italic
 $blockquote-letter-spacing = 0
-$blockquote-color = $soft
+$blockquote-color = $muted
 $blockquote-margin = $offset-2xl 0 $offset-l 0
 $blockquote-padding = 0 0 0 $offset-2xl
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Shadows
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Shadows
+----------------------------------------------------------------------------------------------------------------------*/
 $shadow-s = 0 2px 10px rgba(50, 116, 165, 0.2)
 $shadow-m = 0 5px 30px rgba(50, 116, 165, 0.18)
 $shadow-l = 0 0 150px rgba(50, 116, 165, 0.2)
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Scale on hover
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Scaling
+----------------------------------------------------------------------------------------------------------------------*/
 $scale-s = 1.05
 $scale-m = 1.1
 $scale-l = 1.2
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Transitions
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Transitions
+----------------------------------------------------------------------------------------------------------------------*/
 $transition-xs = .1s
 $transition-s = .2s
 $transition-m = .4s
 $transition-l = .7s
 $transition-xl = 1.5s
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Corner radius
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Corner radius is used for classes that set the border-radius property.
-|
-*/
 
+/* Corner radius
+----------------------------------------------------------------------------------------------------------------------*/
 $rounded-s = 3px
 $rounded-m = 6px
 $rounded-l = 10px
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Horizontal rule
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
-$hr-style = 1px solid rgba(145, 205, 220, .2)
+/* Horizontal rule
+----------------------------------------------------------------------------------------------------------------------*/
+$hr-style = $border-l solid $light
 $hr-s = 1px
 $hr-m = 3px
 $hr-l = 5px
 $hr-short = 60px
-$hr-negative = rgba(255, 255, 255, 0.4)
+$hr-inverted = $light-inverted
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Grid
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Grid
+----------------------------------------------------------------------------------------------------------------------*/
 $grid-separation = 2px solid rgba(53, 73, 94, .08)
 $grid-gap-s = 5px
 $grid-gap-m = 10px
 $grid-gap-l = 20px
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Tables
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
-$table-th-border = 3px solid $pale
+/* Tables
+----------------------------------------------------------------------------------------------------------------------*/
+$table-th-border = 3px solid $subtle
 $table-td-border = 1px solid $light
-$table-row-hover-bg = lighten($light, 3)
+$table-row-hover-bg = lighten($light, 20%)
 $table-th-color = $dark
-$table-zebra-bg = lighten($light, 2)
+$table-zebra-bg = $light
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text styles
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
-/* Hero text */
-$hero-text-font-size = $font-size-4xl
-$hero-text-font-weight = $font-weight-bold
-$hero-text-letter-spacing = $extend-letter-spacing-m
-$hero-text-text-transform = uppercase
-$hero-text-line-height = $tighten-line-height-l
-$hero-text-margin = 0 0 $offset-l 0
-$hero-text-color = $default-color
-
-/* Headline */
-$headline-font-size = $font-size-3xl
-$headline-font-weight = $font-weight-bold
-$headline-letter-spacing = $extend-letter-spacing-m
-$headline-text-transform = uppercase
-$headline-line-height = $tighten-line-height-m
-$headline-margin = 0 0 $offset-l 0
-$headline-color = $default-color
-
-/* Title */
-$title-font-size = $font-size-2xl
-$title-font-weight = $font-weight-bold
-$title-letter-spacing = $extend-letter-spacing-s
-$title-text-transform = none
-$title-line-height = $tighten-line-height-s
-$title-margin = 0 0 $offset-l 0
-$title-color = $default-color
-
-/* Subtitle */
-$subtitle-font-size = $font-size-xl
-$subtitle-font-weight = $font-weight-bold
-$subtitle-letter-spacing = $extend-letter-spacing-s
-$subtitle-text-transform = none
-$subtitle-line-height = $default-line-height
-$subtitle-margin = 0 0 $offset-m 0
-$subtitle-color = $default-color
-
-/* Big text */
-$big-font-size = $font-size-l
-$big-font-weight = $font-weight-regular
-$big-letter-spacing = $extend-letter-spacing-s
-$big-text-transform = none
-$big-line-height = $loosen-line-height-s
-$big-margin = 0 0 $offset-m 0
-$big-color = $default-color
-
-/* Small text */
-$small-font-size = $font-size-s
-$small-font-weight = $font-weight-regular
-$small-letter-spacing = $extend-letter-spacing-s
-$small-text-transform = none
-$small-line-height = $tighten-line-height-s
-$small-margin = 0 0 $offset-m 0
-$small-color = $soft
-
-/* Label */
-$label-font-size = $font-size-s
-$label-font-weight = $font-weight-bold
-$label-letter-spacing = $extend-letter-spacing-l
-$label-text-transform = uppercase
-$label-line-height = $tighten-line-height-s
-$label-margin = 0 0 $offset-xs 0
-$label-color = $soft
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Form inputs
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-
+/* Form inputs
+----------------------------------------------------------------------------------------------------------------------*/
 $input-bg = $white
 $input-border = 3px solid $light
 $input-corner-radius = 6px
@@ -434,76 +338,45 @@ $input-font-size = $default-font-size
 $input-line-height = 1
 $input-padding = 12px 10px
 $input-transition = all 0.2s
-$input-disabled-color = $pale
-$input-disabled-border-color = $light
+$indicator-border = 3px solid $subtle
+$input-disabled-color = $subtle
+$input-disabled-bg = $light
+$input-disabled-border-color = $subtle-forced
 
-/* Form input hover state */
-$input-hover-color = darken($dark, 30)
-$input-hover-border-color = $pale
+// Form input hover state
+$input-hover-color = darken($dark-forced, 30%)
+$input-hover-border-color = $subtle-forced
+$indicator-hover-border-color = $muted
 
-/* Form input focus state */
+// Form input focus state
 $input-focus-color = $dark
 $input-focus-border-color = $primary
+$indicator-focus-border-color = $muted
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Button
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
-/* Base button */
-$btn-corner-radius = 6px
-$btn-font-size = $font-size-s
-$btn-line-height = 1
-$btn-padding-h = 18px
-$btn-transition = all .5s cubic-bezier(0,.9,.45,1)
-$btn-letter-spacing = $extend-letter-spacing-l
-$btn-text-transform = uppercase
+/* Inverted form inputs
+----------------------------------------------------------------------------------------------------------------------*/
+$input-color-inverted = $dark-inverted
+$input-bg-inverted = $light-inverted
+$input-border-color-inverted = $subtle-inverted
+$indicator-border-color-inverted = $muted-inverted
+$input-disabled-color-inverted = $subtle-inverted
+$input-disabled-bg-inverted = $light-inverted
+$input-disabled-border-color-inverted = $muted-forced
 
-/* Base button regular state */
-$btn-color = $white
-$btn-bg = $primary
-$btn-border = 3px solid $primary
-$btn-shadow = none
-$btn-filter = none
+// Form input hover state
+$input-hover-color-inverted = $dark-inverted
+$input-hover-border-color-inverted = $dark-inverted
+$indicator-hover-border-color-inverted = $dark-inverted
 
-/* Base button focus state */
-$btn-focus-color = $white
-$btn-focus-bg = $primary
-$btn-focus-border-color = $dark
-$btn-focus-shadow = none
-$btn-focus-filter = none
+// Form input focus state
+$input-focus-color-inverted = $dark-inverted
+$input-focus-border-color-inverted = $primary
+$indicator-focus-border-color-inverted = $dark-inverted
 
-/* Base button hover state */
-$btn-hover-color = $white
-$btn-hover-bg = $dark
-$btn-hover-border-color = $dark
-$btn-hover-shadow = none
-$btn-hover-filter = none
 
-/* Base button active state */
-$btn-active-color = $white
-$btn-active-bg = $dark
-$btn-active-border-color = $dark
-$btn-active-shadow = none
-$btn-active-filter = contrast(120%) saturate(130%) brightness(80%)
-
-/* Base button disabled */
-$btn-disabled-color = $soft
-$btn-disabled-bg = $pale
-$btn-disabled-border-color = $pale
-$btn-disabled-shadow = none
-$btn-disabled-filter = none
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Size control
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| The following classes give you control over the width and height of buttons and input fields.
-|
-*/
-
+/* Size control
+----------------------------------------------------------------------------------------------------------------------*/
 $size-xs = 2px
 $size-s = 6px
 $size-m = 12px
@@ -512,10 +385,84 @@ $size-xl = 28px
 $size-2xl = 42px
 $size-3xl = 60px
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Transformicons
-|-----------------------------------------------------------------------------------------------------------------------
-*/
 
+/* Button
+----------------------------------------------------------------------------------------------------------------------*/
+
+// Base button
+$btn-corner-radius = $rounded-m
+$btn-font-size = $font-size-s
+$btn-line-height = 1
+$btn-padding-h = $size-l
+$btn-transition = all .5s cubic-bezier(0,.9,.45,1)
+$btn-letter-spacing = $extend-letter-spacing-l
+$btn-text-transform = uppercase
+
+// Base button regular state
+$btn-color = $white
+$btn-bg = $primary
+$btn-border = 3px solid transparent
+$btn-shadow = none
+$btn-filter = none
+
+// Base button focus state
+$btn-focus-color = $white
+$btn-focus-bg = $primary
+$btn-focus-border-color = $dark-forced
+$btn-focus-shadow = none
+$btn-focus-filter = none
+
+// Base button hover state
+$btn-hover-color = $white
+$btn-hover-bg = $dark-forced
+$btn-hover-border-color = transparent
+$btn-hover-shadow = none
+$btn-hover-filter = none
+
+// Base button active state
+$btn-active-color = $white
+$btn-active-bg = $dark-forced
+$btn-active-border-color = $dark-forced
+$btn-active-shadow = none
+$btn-active-filter = contrast(120%) saturate(130%) brightness(80%)
+
+// Base button disabled
+$btn-disabled-color = $muted
+$btn-disabled-bg = $subtle-forced
+$btn-disabled-border-color = $subtle-forced
+$btn-disabled-shadow = none
+$btn-disabled-filter = none
+
+/* Inverted buttons
+----------------------------------------------------------------------------------------------------------------------*/
+
+// Inverted button focus state
+$btn-focus-color-inverted = $white
+$btn-focus-border-color-inverted = $white
+$btn-focus-shadow-inverted = none
+$btn-focus-filter-inverted = none
+
+// Base button hover state
+$btn-hover-color-inverted = $dark-forced
+$btn-hover-bg-inverted = $white
+$btn-hover-border-color-inverted = transparent
+$btn-hover-shadow-inverted = none
+$btn-hover-filter-inverted = none
+
+// Base button active state
+$btn-active-color-inverted = $dark-forced
+$btn-active-border-color-inverted = transparent
+$btn-active-shadow-inverted = none
+$btn-active-filter-inverted = contrast(110%) saturate(110%) brightness(120%)
+
+// Base button disabled
+$btn-disabled-color-inverted = $muted-inverted
+$btn-disabled-bg-inverted = $subtle-inverted
+$btn-disabled-border-color-inverted = transparent
+$btn-disabled-shadow-inverted = none
+$btn-disabled-filter-inverted = none
+
+
+/* Transformicons
+----------------------------------------------------------------------------------------------------------------------*/
 $transformicon-corner-radius = 6px

@@ -161,98 +161,260 @@ vertical counterparts. This is because buttons with more horizontal than vertica
 
 To change the color of your button, simply add the desired background color utility class.
 
-<div class="space-evenly wrap pull-right">
-    <button class="btn push-down-m push-right dark-bg">
+<div class="grid gap-l">
+  <div class="col s12 m6 l4 push-down-m">
+    <button class="btn full primary-bg">
+      .primary-bg
+    </button>
+  </div>
+  <div class="col s12 m6 l4 push-down-m">
+    <button class="btn full secondary-bg">
+      .secondary-bg
+    </button>
+  </div>
+  <div class="col s12 m6 l4 push-down-m">
+    <button class="btn full tertiary-bg">
+      .tertiary-bg
+    </button>
+  </div>
+</div>
+<div class="grid gap-l">
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full dark-bg">
       .dark-bg
     </button>
-    <button class="btn push-down-m push-right soft-bg">
-      .soft-bg
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full muted-bg">
+      .muted-bg
     </button>
-    <button class="btn push-down-m push-right pale-bg">
-      .pale-bg
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full subtle-bg">
+      .subtle-bg
     </button>
-    <button class="btn push-down-m push-right black-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full light-bg">
+      .light-bg
+    </button>
+  </div>
+</div>
+<div class="grid gap-l">
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full black-bg">
       .black-bg
     </button>
-    <button class="btn push-down-m push-right red-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full white-bg">
+      .white-bg
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full red-bg">
       .red-bg
     </button>
-    <button class="btn push-down-m push-right orange-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full orange-bg">
       .orange-bg
     </button>
-    <button class="btn push-down-m push-right green-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full green-bg">
       .green-bg
     </button>
-    <button class="btn push-down-m push-right yellow-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full yellow-bg">
       .yellow-bg
     </button>
-    <button class="btn push-down-m push-right blue-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blue-bg">
       .blue-bg
     </button>
-    <button class="btn push-down-m push-right violet-bg">
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full violet-bg">
       .violet-bg
     </button>
+  </div>
 </div>
 
 ```html
-<button class="btn dark-bg">.dark-bg</button>
-<button class="btn soft-bg">.soft-bg</button>
-<button class="btn pale-bg">.pale-bg</button>
-<button class="btn black-bg">.black-bg</button>
-<button class="btn red-bg">.red-bg</button>
-<button class="btn orange-bg">.orange-bg</button>
-<button class="btn green-bg">.green-bg</button>
-<button class="btn yellow-bg">.yellow-bg</button>
-<button class="btn blue-bg">.blue-bg</button>
-<button class="btn violet-bg">.violet-bg</button>
+<button class="btn primary-bg">Button</button>
+<button class="btn secondary-bg">Button</button>
+<button class="btn tertiary-bg">Button</button>
+<button class="btn dark-bg">Button</button>
+<button class="btn muted-bg">Button</button>
+<button class="btn subtle-bg">Button</button>
+<button class="btn light-bg">Button</button>
+<button class="btn black-bg">Button</button>
+<button class="btn white-bg">Button</button>
+<button class="btn red-bg">Button</button>
+<button class="btn orange-bg">Button</button>
+<button class="btn green-bg">Button</button>
+<button class="btn yellow-bg">Button</button>
+<button class="btn blue-bg">Button</button>
+<button class="btn violet-bg">Button</button>
 ```
 
 <br>
 
-The `.light-bg` and `.white-bg` classes are designed to be used on dark backgrounds.
+If you would like to use buttons on a dark or colored background, don't forget to add the `.inverted` class to the
+parent container in order to ensure the buttons adapt to the background properly:
+
+<div class="dark-bg inverted pad pad-down-0 rounded">
+  <div class="grid gap">
+    <div class="col s12 m6 l4 push-down-m">
+      <button class="btn full primary-bg">
+        .primary-bg
+      </button>
+    </div>
+    <div class="col s12 m6 l4 push-down-m">
+      <button class="btn full secondary-bg">
+        .secondary-bg
+      </button>
+    </div>
+    <div class="col s12 m6 l4 push-down-m">
+      <button class="btn full tertiary-bg">
+        .tertiary-bg
+      </button>
+    </div>
+  </div>
+  <div class="grid gap">
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full dark-bg">
+        .dark-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full muted-bg">
+        .muted-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full subtle-bg">
+        .subtle-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full light-bg">
+        .light-bg
+      </button>
+    </div>
+  </div>
+  <div class="grid gap">
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full black-bg">
+        .black-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg">
+        .white-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full red-bg">
+        .red-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full orange-bg">
+        .orange-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full green-bg">
+        .green-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full yellow-bg">
+        .yellow-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full blue-bg">
+        .blue-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full violet-bg">
+        .violet-bg
+      </button>
+    </div>
+  </div>
+</div>
+
+<br>
+
+The `.white-bg` class is designed to be used on dark backgrounds.
 In addition, `.white-bg` is compatible with text colors.
 
-<div class="dark-bg pad-left pad-up-m push-down rounded-m center">
-  <button class="btn push-down-m push-right light-bg">
-    .light-bg
-  </button>
-  <button class="btn push-down-m push-right white-bg">
-    .white-bg
-  </button>
-  <button class="btn push-down-m push-right white-bg primary">
-    .white-bg.primary
-  </button>
-  <button class="btn push-down-m push-right white-bg soft">
-    .white-bg.soft
-  </button>
-  <button class="btn push-down-m push-right white-bg black">
-    .white-bg.black
-  </button>
-  <button class="btn push-down-m push-right white-bg red">
-    .white-bg.red
-  </button>
-  <button class="btn push-down-m push-right white-bg orange">
-    .white-bg.orange
-  </button>
-  <button class="btn push-down-m push-right white-bg green">
-    .white-bg.green
-  </button>
-  <button class="btn push-down-m push-right white-bg yellow">
-    .white-bg.yellow
-  </button>
-  <button class="btn push-down-m push-right white-bg blue">
-    .white-bg.blue
-  </button>
-  <button class="btn push-down-m push-right white-bg violet">
-    .white-bg.violet
-  </button>
+<div class="dark-bg inverted pad pad-down-0 rounded">
+  <div class="grid gap">
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg">
+        .white-bg
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg primary">
+        .white-bg.primary
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg muted">
+        .white-bg.muted
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg black">
+        .white-bg.black
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg red">
+        .white-bg.red
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg orange">
+        .white-bg.orange
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg green">
+        .white-bg.green
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg yellow">
+        .white-bg.yellow
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg blue">
+        .white-bg.blue
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg violet">
+        .white-bg.violet
+      </button>
+    </div>
+  </div>
 </div>
 
 ```html
 <button class="btn light-bg">.light-bg</button>
 <button class="btn white-bg">.white-bg</button>
 <button class="btn white-bg primary">.white-bg.primary</button>
-<button class="btn white-bg soft">.white-bg.soft</button>
+<button class="btn white-bg muted">.white-bg.muted</button>
 <button class="btn white-bg black">.white-bg.black</button>
 <button class="btn white-bg red">.white-bg.red</button>
 <button class="btn white-bg orange">.white-bg.orange</button>
@@ -288,8 +450,8 @@ to achieve this effect:
 ```
 
 <div class="pad-left pad-up-m push-down rounded-m center">
-  <button class="btn push-down-m push-right blank soft">
-    .blank.soft
+  <button class="btn push-down-m push-right blank muted">
+    .blank.muted
   </button>
   <button class="btn push-down-m push-right blank black">
     .blank.black
@@ -321,7 +483,7 @@ to achieve this effect:
 
 If you either add the `.disabled` class or the `disabled` property to your button, it will be styled accordingly:
 
-<button class="btn push-down-xl" disabled>
+<button class="btn push-down" disabled>
   Disabled button
 </button>
 
@@ -333,6 +495,16 @@ If you either add the `.disabled` class or the `disabled` property to your butto
 
 <br>
 
+A disabled button when used on a dark inverted background:
+
+<div class="dark-bg inverted pad rounded push-down-xl">
+  <button class="btn" disabled>
+    Disabled button
+  </button>
+</div>
+
+<br>
+
 ## Ghost buttons
 
 Due to their unobtrusive look, Ghost buttons convey a comparatively subtle call to action. Nevertheless, they
@@ -341,56 +513,143 @@ with more clarity while navigating your site.
 
 Naturally, it's possible to also apply all available colors to ghost buttons:
 
-<div class="pad-up-m push-down center">
-  <button class="btn ghost push-down-m push-h-m">
-    .btn.ghost
-  </button><br>
-  <button class="btn ghost dark push-down-m push-h-m">
-    .btn.ghost.dark
-  </button><br>
-  <button class="btn ghost soft push-down-m push-h-m">
-    .btn.ghost.soft
-  </button><br>
-  <button class="btn ghost pale push-down-m push-h-m">
-    .btn.ghost.pale
-  </button><br>
-  <button class="btn ghost black push-down-m push-h-m">
-    .btn.ghost.black
-  </button><br>
-  <button class="btn ghost red push-down-m push-h-m">
-    .btn.ghost.red
-  </button><br>
-  <button class="btn ghost orange push-down-m push-h-m">
-    .btn.ghost.orange
-  </button><br>
-  <button class="btn ghost green push-down-m push-h-m">
-    .btn.ghost.green
-  </button><br>
-  <button class="btn ghost yellow push-down-m push-h-m">
-    .btn.ghost.yellow
-  </button><br>
-  <button class="btn ghost blue push-down-m push-h-m">
-    .btn.ghost.blue
-  </button><br>
-  <button class="btn ghost violet push-down-m push-h-m">
-    .btn.ghost.violet
-  </button>
+<div class="grid gap">
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost">
+      .btn.ghost
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost dark">
+      .btn.ghost.dark
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost muted">
+      .btn.ghost.muted
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost subtle">
+      .btn.ghost.subtle
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost light">
+      .btn.ghost.light
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost black">
+      .btn.ghost.black
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost red">
+      .btn.ghost.red
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost orange">
+      .btn.ghost.orange
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost green">
+      .btn.ghost.green
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost yellow">
+      .btn.ghost.yellow
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost blue">
+      .btn.ghost.blue
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost violet">
+      .btn.ghost.violet
+    </button>
+  </div>
 </div>
 
-<div class="dark-bg pad-left pad-up-m push-down rounded-m center">
-  <button class="btn ghost light push-down-m push-right">
-    .btn.ghost.light
-  </button><br>
-  <button class="btn ghost white push-down-m push-right">
-    .btn.ghost.white
-  </button>
+<br>
+
+When used on a dark inverted background:
+
+<div class="dark-bg inverted pad pad-down-0 rounded">
+  <div class="grid gap">
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost">
+        .btn.ghost
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost dark">
+        .btn.ghost.dark
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost muted">
+        .btn.ghost.muted
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost subtle">
+        .btn.ghost.subtle
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost light">
+        .btn.ghost.light
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost white">
+        .btn.ghost.white
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost red">
+        .btn.ghost.red
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost orange">
+        .btn.ghost.orange
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost green">
+        .btn.ghost.green
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost yellow">
+        .btn.ghost.yellow
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost blue">
+        .btn.ghost.blue
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost violet">
+        .btn.ghost.violet
+      </button>
+    </div>
+  </div>
 </div>
 
 ```html
 <button class="btn ghost">.btn.ghost</button>
 <button class="btn ghost dark">.btn.ghost.dark</button>
-<button class="btn ghost soft">.btn.ghost.soft</button>
-<button class="btn ghost pale">.btn.ghost.pale</button>
+<button class="btn ghost muted">.btn.ghost.muted</button>
+<button class="btn ghost subtle">.btn.ghost.subtle</button>
 <button class="btn ghost black">.btn.ghost.black</button>
 <button class="btn ghost red">.btn.ghost.red</button>
 <button class="btn ghost orange">.btn.ghost.orange</button>
@@ -406,22 +665,32 @@ Naturally, it's possible to also apply all available colors to ghost buttons:
 
 You can add the `border` utility classes in order to control the width and style of the border.
 
-<div class="pad-up-m push-down center">
-  <button class="btn ghost border-0 push-down-m push-h-m ">
-    .btn.ghost.border-0
-  </button>
-  <button class="btn ghost border-s push-down-m push-h-m ">
-    .btn.ghost.border-s
-  </button>
-  <button class="btn ghost border-m push-down-m push-h-m">
-    .btn.ghost.border-m
-  </button>
-  <button class="btn ghost border-l push-down-m push-h-m">
-    .btn.ghost.border-l
-  </button>
-  <button class="btn ghost border-xl push-down-m push-h-m">
-    .btn.ghost.border-xl
-  </button>
+<div class="grid gap">
+  <div class="col s12 push-down-m">
+    <button class="btn full ghost border-0">
+      .btn.ghost.border-0
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost border-s">
+      .btn.ghost.border-s
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost border-m">
+      .btn.ghost.border-m
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost border-l">
+      .btn.ghost.border-l
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost border-xl">
+      .btn.ghost.border-xl
+    </button>
+  </div>
 </div>
 
 ```html

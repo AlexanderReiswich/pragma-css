@@ -39,9 +39,10 @@ And even further:
 
 | Name | Consists of  | Sizes      |
 |:----:|:------------:|:----------:|
-| sml  | s & m & l    | 0-1200px   |
-| mlx  | m & l & x    | 601-1500px |
-| lxp  | l & x & p    | 901-~      |
+| sml  | s - l        | 0-1200px   |
+| mlx  | m - x        | 601-1500px |
+| mlxp | m - p        | 601-~      |
+| lxp  | l - p        | 901-~      |
 
 <br>
 

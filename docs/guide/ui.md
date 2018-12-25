@@ -140,8 +140,9 @@ in order to ensure that the secondary border does not get affected when we apply
 .spinner.my-custom-spinner-1
   width 100px
   height 100px
-  border-width 16px
+  border-width 10px
   border-color #00d9c1 !important
+  border-bottom-color transparent !important
   border-top-color transparent !important
 
 .spinner.my-custom-spinner-2
@@ -171,7 +172,7 @@ the available utility classes. Here are a few examples:
 
 ### Regular navbar
 
-<ul class="inline-list space-between rounded border-s border-pale pad-s">
+<ul class="inline-list space-between rounded border-s border-subtle pad-s">
   <li>
     <a class="inline pad dark" href="#">Page 1</a>
   </li>
@@ -187,7 +188,7 @@ the available utility classes. Here are a few examples:
 </ul>
 
 ```html
-<ul class="inline-list space-between rounded border-s border-pale pad-s">
+<ul class="inline-list space-between rounded border-s border-subtle pad-s">
   <li>
     <a class="inline pad dark" href="#">Page 1</a>
   </li>
@@ -207,7 +208,7 @@ the available utility classes. Here are a few examples:
 
 ### Navbar with logo
 
-<ul class="inline-list space-around rounded border-s border-pale pad-s">
+<ul class="inline-list space-around rounded border-s border-subtle pad-s">
   <li class="push-right-auto">
     <a class="inline pad size-l bold primary" href="#">LOGO</a>
   </li>
@@ -223,7 +224,7 @@ the available utility classes. Here are a few examples:
 </ul>
 
 ```html
-<ul class="inline-list space-around rounded border-s border-pale pad-s">
+<ul class="inline-list space-around rounded border-s border-subtle pad-s">
   <li class="push-right-auto">
     <a class="inline pad size-l bold primary" href="#">LOGO</a>
   </li>

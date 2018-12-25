@@ -4,7 +4,7 @@ layout: HomeLayout
 
 <img :src="$withBase('/hero.svg')" alt="PragmaCSS logo" class="block centered max-width-600">
 
-<div class="soft size-xl center centered max-width-600 push-v-xl">
+<div class="muted size-xl center centered max-width-600 push-v-xl">
   A pragmatic CSS framework for the rapid creation of custom UI and style systems
 </div>
 
@@ -36,13 +36,13 @@ layout: HomeLayout
     <p>All common UI elements such as buttons, form inputs, grids, loaders and much more are included.</p>
   </div>
   <div class="col s12 m6 l4 center">
-    <h3 class="push-down-m size-l">Light-weight</h3>
+    <h3 class="push-down-m size-l">faint-weight</h3>
     <p>No JavaScript. No unnecessary fat. Only the most useful features are included.</p>
   </div>
 </div>
 
 <hr>
 
-<div class="center small bold soft push-down-xl">
+<div class="center small bold muted push-down-xl">
   MIT Licensed
 </div>

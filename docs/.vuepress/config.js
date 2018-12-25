@@ -32,7 +32,10 @@ module.exports = {
     // Icons for MS devices
     ['link', { rel: 'mask-icon', href: '/icons/favicon-16x16.png', color: '#41b883' }],
     ['meta', { name: 'msapplication-TileImage', content: '/icons/ms-icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#35495e' }]
+    ['meta', { name: 'msapplication-TileColor', content: '#35495e' }],
+
+    // Google font
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nunito:400,600' }]
   ],
   themeConfig: {
     repo: 'AlexanderReiswich/pragma-css',

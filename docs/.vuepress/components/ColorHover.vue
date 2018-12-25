@@ -8,20 +8,16 @@
           .primary-on-hover
         </div>
 
-        <div class="tween pale dark-on-hover push-v cursor-default bold">
+        <div class="tween subtle dark-on-hover push-v cursor-default bold">
           .dark-on-hover
         </div>
 
-        <div class="tween dark soft-on-hover push-v cursor-default bold">
-          .soft-on-hover
+        <div class="tween dark muted-on-hover push-v cursor-default bold">
+          .muted-on-hover
         </div>
 
-        <div class="tween dark pale-on-hover push-v cursor-default bold">
-          .pale-on-hover
-        </div>
-
-        <div class="tween dark light-on-hover push-v cursor-default bold">
-          .light-on-hover
+        <div class="tween dark subtle-on-hover push-v cursor-default bold">
+          .subtle-on-hover
         </div>
       </div>
       <div class="col s12 m6">
@@ -29,7 +25,7 @@
           .white-on-hover
         </div>
 
-        <div class="tween soft black-on-hover push-v cursor-default bold">
+        <div class="tween muted black-on-hover push-v cursor-default bold">
           .black-on-hover
         </div>
 
@@ -60,23 +56,23 @@
     </div>
 
 
-    <div class="tween dark light-on-hover light-bg primary-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg primary-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .primary-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg dark-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg dark-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .dark-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg soft-bg-on-hover push-v pad-m rounded-m cursor-default bold">
-      .soft-bg-on-hover
+    <div class="tween dark white-on-hover light-bg muted-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+      .muted-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg pale-bg-on-hover push-v pad-m rounded-m cursor-default bold">
-      .pale-bg-on-hover
+    <div class="tween dark white-on-hover light-bg subtle-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+      .subtle-bg-on-hover
     </div>
 
-    <div class="tween light dark-on-hover dark-bg light-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween white dark-on-hover dark-bg light-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .light-bg-on-hover
     </div>
 
@@ -84,23 +80,23 @@
       .white-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg black-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg black-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .black-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg red-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg red-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .red-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg orange-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg orange-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .orange-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg violet-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg violet-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .violet-bg-on-hover
     </div>
 
-    <div class="tween dark light-on-hover light-bg blue-bg-on-hover push-v pad-m rounded-m cursor-default bold">
+    <div class="tween dark white-on-hover light-bg blue-bg-on-hover push-v pad-m rounded-m cursor-default bold">
       .blue-bg-on-hover
     </div>
 

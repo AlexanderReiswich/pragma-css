@@ -2,11 +2,11 @@
 
   <div>
 
-    <div class="inline pale-bg push-right-m push-down-m rounded-s va-top"
+    <div class="inline subtle-bg push-right-m push-down-m rounded-s va-top"
          :class="outer"
          v-for="(variant, key) in variants"
          :key="key">
-      <div class="primary-bg light rounded-s pad-s tight-l" :class="prefix + ' ' + name + variant + suffix">
+      <div class="primary-bg white rounded-s pad-s tight-l" :class="prefix + ' ' + name + variant + suffix">
         {{ prefix ? '.' + prefix : ''}}.{{ name + variant + suffix }}
       </div>
     </div>

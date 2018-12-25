@@ -119,8 +119,8 @@ use **.separated-on-s**.
 
 ```html
 <div class="grid gap-s">
-  <div class="col s12 m6 separated-on-mlx separated-on-p">
-    col s12 m6 separated-on-mlx separated-on-p
+  <div class="col s12 m6 separated-on-mlxp">
+    col s12 m6 separated-on-mlxp
   </div>
   <div class="col s12 m6">
     col s12 m6
@@ -170,7 +170,7 @@ Use push classes to add margins to your elements.
 
 These classes are meant to be used as overrides for already assigned push classes.
 For example, if you want to add margin to all sides except to the left, you can add the following class combo:
-**push push-left-0**
+`.push.push-left-0`
 
 <spacing name="push" :pad="true" prefix="push" suffix="-0"/>
 

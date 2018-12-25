@@ -1,23 +1,15 @@
-/*======================================================================================================================
-| PragmaCSS. Prototype fast, scale with confidence.
-|=======================================================================================================================
-|
-| base.css
-| --------
-|
-| This stylesheet offers solid base classes for the most essential ui elements, such as form elements and buttons.
-| Classes from style.css can be used to further customize them.
-|
-`---------------------------------------------------------------------------------------------------------------------*/
-
 /*
-|-----------------------------------------------------------------------------------------------------------------------
-| HTML
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| This section takes care of the default appearance of all common HTML tags.
-|
-*/
+ * PragmaCSS / base.styl
+ * =====================
+ *
+ * This stylesheet offers solid base classes for the most essential ui elements, such as form elements and buttons.
+ * Classes from style.css can be used to further customize them.
+ *
+ */
+
+
+/* HTML
+----------------------------------------------------------------------------------------------------------------------*/
 div
   box-sizing border-box
 
@@ -159,35 +151,6 @@ template
 [hidden]
   display none
 
-/* Placeholders
-----------------------------------------------------------------------------------------------------------------------*/
-::-webkit-input-placeholder
-  color $placeholder-color
-
-:-moz-placeholder
-  color $placeholder-color
-
-::-moz-placeholder
-  color $placeholder-color
-
-:-ms-input-placeholder
-  color $placeholder-color
-
-/* Field sets
-----------------------------------------------------------------------------------------------------------------------*/
-fieldset
-  border none
-  padding 0
-  margin 0
-  legend
-    width 100%
-    box-sizing border-box
-    color inherit
-    display table
-    max-width 100%
-    padding 0
-    white-space normal
-
 /* Block-Quote
 ----------------------------------------------------------------------------------------------------------------------*/
 blockquote {
@@ -232,11 +195,9 @@ dd, li
 dd > *, li > *
   margin-top 0
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Horizontal rule
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Horizontal rule
+----------------------------------------------------------------------------------------------------------------------*/
 hr
   background none
   border none
@@ -257,14 +218,13 @@ hr
     border-width $hr-l
   &.short
     width $hr-short
-  &.negative
-    border-bottom-color $hr-negative
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Tables
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+.inverted hr
+  border-bottom-color $hr-inverted
+
+
+/* Tables
+----------------------------------------------------------------------------------------------------------------------*/
 table
   display table
   border-collapse collapse
@@ -299,11 +259,38 @@ table tr td:last-of-type,
 table tr th:last-of-type
   padding-right 0
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Form inputs
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Forms
+----------------------------------------------------------------------------------------------------------------------*/
+
+// Placeholders
+::-webkit-input-placeholder
+  color $placeholder-color
+
+:-moz-placeholder
+  color $placeholder-color
+
+::-moz-placeholder
+  color $placeholder-color
+
+:-ms-input-placeholder
+  color $placeholder-color
+
+// Fieldsets
+fieldset
+  border none
+  padding 0
+  margin 0
+  legend
+    width 100%
+    box-sizing border-box
+    color inherit
+    display table
+    max-width 100%
+    padding 0
+    white-space normal
+
+// Inputs
 input,
 textarea,
 select
@@ -336,19 +323,67 @@ select:focus
   color $input-focus-color
   border-color $input-focus-border-color
 
-/* Disabled states */
 input:disabled,
 textarea:disabled,
 select:disabled
-  background-color $input-disabled-border-color
+  background-color $input-disabled-bg
   color $input-disabled-color
   border-color $input-disabled-border-color
+  opacity .5
 
 input:disabled:hover,
 textarea:disabled:hover,
 select:disabled:hover
   color $input-disabled-color
   border-color $input-disabled-border-color
+
+// Inverted inputs
+.inverted input,
+.inverted textarea,
+.inverted select
+  color $input-color-inverted
+  background-color $input-bg-inverted
+  border-color $input-border-color-inverted
+
+.inverted input:hover,
+.inverted textarea:hover,
+.inverted select:hover
+  color $input-hover-color-inverted
+  border-color $input-hover-border-color-inverted
+
+.inverted input:focus,
+.inverted textarea:focus,
+.inverted select:focus
+  color $input-focus-color-inverted
+  border-color $input-focus-border-color-inverted
+
+.inverted input:disabled,
+.inverted textarea:disabled,
+.inverted select:disabled
+  background-color $input-disabled-bg-inverted
+  color $input-disabled-color-inverted
+  border-color $input-disabled-border-color-inverted
+
+.inverted select option
+  color $default-color
+
+.inverted input:disabled:hover,
+.inverted textarea:disabled:hover,
+.inverted select:disabled:hover
+  color $input-disabled-color-inverted
+  border-color $input-disabled-border-color-inverted
+
+.inverted ::-webkit-input-placeholder
+  color $placeholder-color
+
+.inverted :-moz-placeholder
+  color $placeholder-color
+
+.inverted ::-moz-placeholder
+  color $placeholder-color
+
+.inverted :-ms-input-placeholder
+  color $placeholder-color
 
 /* Input icon
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -371,20 +406,31 @@ select:disabled:hover
 .input-icon input + div > [class*='tico-'] span,
 .input-icon input + div > [class*='tico-'] span:before
 .input-icon input + div > [class*='tico-'] span:after
-  color $soft
-  border-color $soft
-  background-color $soft
+  color $muted-forced
+  border-color $muted-forced
+  background-color $muted-forced
 
 .input-icon input:hover + div > [class*='tico-'] span,
 .input-icon input:hover + div > [class*='tico-'] span:before
 .input-icon input:hover + div > [class*='tico-'] span:after
-  color $dark
-  border-color $dark
-  background-color $dark
+  color $dark-forced
+  border-color $dark-forced
+  background-color $dark-forced
+
+// Inverted inputs
+.inverted .input-icon input:hover + div > [class*='tico-'] span,
+.inverted .input-icon input:hover + div > [class*='tico-'] span:before
+.inverted .input-icon input:hover + div > [class*='tico-'] span:after
+  color $light-forced
+  border-color $light-forced
+  background-color $light-forced
 
 .input-icon input:focus + div > [class*='tico-'] span,
 .input-icon input:focus + div > [class*='tico-'] span:before
-.input-icon input:focus + div > [class*='tico-'] span:after
+.input-icon input:focus + div > [class*='tico-'] span:after,
+.inverted .input-icon input:focus + div > [class*='tico-'] span,
+.inverted .input-icon input:focus + div > [class*='tico-'] span:before
+.inverted .input-icon input:focus + div > [class*='tico-'] span:after
   color $primary
   border-color $primary
   background-color $primary
@@ -392,6 +438,7 @@ select:disabled:hover
 .input-icon [class^='spinner'],
 .input-icon [class*=' spinner']
   top 0
+
 
 /* Checkbox and Radio
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -412,7 +459,8 @@ select:disabled:hover
   z-index -9
 
 .checkbox-indicator,
-.radio-indicator
+.radio-indicator,
+.switch-indicator
   position relative
   display inline-block
   top -2px
@@ -420,11 +468,11 @@ select:disabled:hover
   height 20px
   margin-right 5px
   background-color $input-bg
-  border $input-border
+  border $indicator-border
   border-radius $input-corner-radius
   transition $input-transition
 
-/* Checkbox indicator */
+// Checkbox indicator
 .checkbox-indicator:before,
 .checkbox-indicator:after
   position absolute
@@ -437,13 +485,13 @@ select:disabled:hover
   opacity 0
 
 .checkbox-indicator:before
-  transform rotate(-45deg) scaleY(.2) translate(10px, -5px)
+  transform rotate(-65deg) scaleY(.2) translate(0, 0)
   height 10px
   left 7px
   top 5px
 
 .checkbox-indicator:after
-  transform rotate(45deg) scaleY(.2) translate(-5px, -10px)
+  transform rotate(25deg) scaleY(.2) translate(0, 0)
   height 23px
   left 5px
   top -7px
@@ -458,16 +506,48 @@ select:disabled:hover
 
 .checkbox input[type=checkbox]:hover + .checkbox-indicator,
 .radio input[type=radio]:hover + .radio-indicator
-  border-color $pale
+  border-color $indicator-hover-border-color
 
 .checkbox input[type=checkbox]:focus + .checkbox-indicator,
 .radio input[type=radio]:focus + .radio-indicator
-  border-color $soft
+  border-color $indicator-focus-border-color
 
-.checkbox input[type=checkbox]:checked:focus + .checkbox-indicator
-  border-color $pale
+// Switch indicator
+.switch-indicator
+  top -2px
+  width 36px
+  height 20px
+  border-radius 30px
 
-/* Radio indicator */
+.switch-indicator:before
+  display none
+
+.switch-indicator:after
+  position absolute
+  content ''
+  width 16px
+  height 16px
+  top 2px
+  left 2px
+  border-radius 100%
+  background $subtle-forced
+  transition .4s all cubic-bezier(0,.9,.45,1)
+  transform-origin center
+
+.checkbox input[type=checkbox]:checked + .switch-indicator:after
+  background $primary
+  border-color $primary
+  transform translate(16px, 0)
+
+.checkbox input[type=checkbox]:hover + .switch-indicator,
+.radio input[type=radio]:hover + .radio-indicator
+  border-color $indicator-hover-border-color
+
+.checkbox input[type=checkbox]:focus + .switch-indicator,
+.radio input[type=radio]:focus + .radio-indicator
+  border-color $indicator-focus-border-color
+
+// Radio indicator
 .radio-indicator
   border-radius 100%
 
@@ -488,180 +568,107 @@ select:disabled:hover
   opacity 1
   transform scale(1)
 
-/* Checkbox and Radio size-controls */
+// Checkbox and Radio size-controls
 .checkbox-indicator.size-xs,
-.radio-indicator.size-xs
+.radio-indicator.size-xs,
+.switch-indicator.size-xs
   transform scale(0.6)
   margin -3px 0 -3px -4px
 
 .checkbox-indicator.size-s,
-.radio-indicator.size-s
+.radio-indicator.size-s,
+.switch-indicator.size-s
   transform scale(0.77)
   margin -2px 0 -2px -2px
 
 .checkbox-indicator.size-m,
-.radio-indicator.size-m
+.radio-indicator.size-m,
+.switch-indicator.size-m
   transform scale(1)
 
 .checkbox-indicator.size-l,
-.radio-indicator.size-l
+.radio-indicator.size-l,
+.switch-indicator.size-l
   transform scale(1.23)
   margin 5px 12px 5px 3px
 
 .checkbox-indicator.size-xl,
-.radio-indicator.size-xl
+.radio-indicator.size-xl,
+.switch-indicator.size-xl
   transform scale(1.6)
   margin 10px 18px 10px 7px
 
-/* Disabled states */
+// Disabled states
 .checkbox input[type=checkbox]:disabled + .checkbox-indicator,
+.checkbox input[type=checkbox]:disabled + .switch-indicator,
 .radio input[type=radio]:disabled + .radio-indicator
   pointer-events none
+  background $input-disabled-bg
+  opacity .5
 
 .checkbox input[type=checkbox]:disabled + .checkbox-indicator:before,
 .radio input[type=radio]:disabled + .radio-indicator:before
-  background $light
+  background $input-disabled-border-color
 
 .checkbox input[type=checkbox]:disabled + .checkbox-indicator:after,
+.checkbox input[type=checkbox]:disabled + .switch-indicator:after,
 .radio input[type=radio]:disabled + .radio-indicator:after
-  background $light
+  background $input-disabled-border-color
 
 .checkbox input[type=checkbox]:disabled:hover + .checkbox-indicator,
+.checkbox input[type=checkbox]:disabled:hover + .switch-indicator,
 .radio input[type=radio]:disabled:hover + .radio-indicator
-  border-color $light
+  border-color $input-disabled-border-color
+
+// Inverted inputs
+.inverted .checkbox-indicator,
+.inverted .radio-indicator,
+.inverted .switch-indicator
+  background-color $input-bg-inverted
+  border-color $indicator-border-color-inverted
+
+.inverted .checkbox input[type=checkbox]:hover + .checkbox-indicator,
+.inverted .radio input[type=radio]:hover + .radio-indicator
+  border-color $indicator-hover-border-color-inverted
+
+.inverted .checkbox input[type=checkbox]:focus + .checkbox-indicator,
+.inverted .radio input[type=radio]:focus + .radio-indicator
+  border-color $indicator-focus-border-color-inverted
+
+.inverted .switch-indicator:after
+  background $subtle-forced
+
+.inverted .checkbox input[type=checkbox]:hover + .switch-indicator,
+.inverted .radio input[type=radio]:hover + .radio-indicator
+  border-color $indicator-hover-border-color-inverted
+
+.inverted .checkbox input[type=checkbox]:focus + .switch-indicator,
+.inverted .radio input[type=radio]:focus + .radio-indicator
+  border-color $indicator-focus-border-color-inverted
+
+.inverted .checkbox input[type=checkbox]:disabled + .checkbox-indicator,
+.inverted .checkbox input[type=checkbox]:disabled + .switch-indicator,
+.inverted .radio input[type=radio]:disabled + .radio-indicator
+  border-color $input-disabled-border-color-inverted
+  background $input-disabled-bg-inverted
+
+.inverted .checkbox input[type=checkbox]:disabled + .checkbox-indicator:before,
+.inverted .radio input[type=radio]:disabled + .radio-indicator:before
+  background $input-disabled-border-color-inverted
+
+.inverted .checkbox input[type=checkbox]:disabled + .checkbox-indicator:after,
+.inverted .checkbox input[type=checkbox]:disabled + .switch-indicator:after,
+.inverted .radio input[type=radio]:disabled + .radio-indicator:after
+  background $input-disabled-border-color-inverted
+
+.inverted .checkbox input[type=checkbox]:disabled:hover + .checkbox-indicator,
+.inverted .checkbox input[type=checkbox]:disabled:hover + .switch-indicator,
+.inverted .radio input[type=radio]:disabled:hover + .radio-indicator
+  border-color $input-disabled-border-color-inverted
 
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text styles
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| PragmaCSS provides you with a small number of commonly used font styles for your convenience.
-| You can easily extend them via utility classes.
-|
-*/
-.hero-text
-  font-size $hero-text-font-size
-  font-weight $hero-text-font-weight
-  letter-spacing $hero-text-letter-spacing
-  text-transform $hero-text-text-transform
-  line-height $hero-text-line-height
-  margin $hero-text-margin
-  color $hero-text-color
-
-.headline
-  font-size $headline-font-size
-  font-weight $headline-font-weight
-  letter-spacing $headline-letter-spacing
-  text-transform $headline-text-transform
-  line-height $headline-line-height
-  margin $headline-margin
-  color $headline-color
-
-.title
-  font-size $title-font-size
-  font-weight $title-font-weight
-  letter-spacing $title-letter-spacing
-  text-transform $title-text-transform
-  line-height $title-line-height
-  margin $title-margin
-  color $title-color
-
-.subtitle
-  font-size $subtitle-font-size
-  font-weight $subtitle-font-weight
-  letter-spacing $subtitle-letter-spacing
-  text-transform $subtitle-text-transform
-  line-height $subtitle-line-height
-  margin $subtitle-margin
-  color $subtitle-color
-
-.big
-  font-size $big-font-size
-  font-weight $big-font-weight
-  letter-spacing $big-letter-spacing
-  text-transform $big-text-transform
-  line-height $big-line-height
-  margin $big-margin
-  color $big-color
-
-.small
-  font-size $small-font-size
-  font-weight $small-font-weight
-  letter-spacing $small-letter-spacing
-  text-transform $small-text-transform
-  line-height $small-line-height
-  margin $small-margin
-  color $small-color
-
-.label, label
-  font-size $label-font-size
-  font-weight $label-font-weight
-  letter-spacing $label-letter-spacing
-  text-transform $label-text-transform
-  line-height $label-line-height
-  margin $label-margin
-  color $label-color
-
-@media only screen and (max-width $breakpoint-xl)
-  .hero-text
-    font-size round($font-size-4xl * .9)
-
-  .headline
-    font-size round($font-size-3xl * .95)
-
-@media only screen and (max-width $breakpoint-l)
-  .hero-text
-    font-size round($font-size-4xl * .85)
-
-  .headline
-    font-size round($font-size-3xl * .9)
-
-  .title
-    font-size round($font-size-2xl * .95)
-
-@media only screen and (max-width $breakpoint-m)
-  .hero-text
-    font-size round($font-size-4xl * .75)
-
-  .headline
-    font-size round($font-size-3xl * .85)
-
-  .title
-    font-size round($font-size-2xl * .9)
-
-  .subtitle
-    font-size round($font-size-xl * .95)
-
-@media only screen and (max-width $breakpoint-s)
-  .hero-text
-    font-size round($font-size-4xl * .65)
-
-  .headline
-    font-size round($font-size-3xl * .8)
-
-  .title
-    font-size round($font-size-2xl * .85)
-
-  .subtitle
-    font-size round($font-size-xl * .9)
-
-  .big
-    font-size round($font-size-l * .95)
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Buttons
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Utility classes allow you to create all sorts of buttons, but chances are that you don't want to individually
-| define the appearance of every single button in your project. Most likely, the majority of buttons in your project
-| will have one particular look and feel, with a few modifications for specific situations.
-|
-| The .btn class aims to give you an easy way to do exactly that. You can configure most of the buttons appearance
-| through global variables.
-|
-*/
+/* Buttons
+----------------------------------------------------------------------------------------------------------------------*/
 .btn, a.btn
   display inline-flex
   align-self center
@@ -706,159 +713,159 @@ select:disabled:hover
     border-color $btn-active-border-color
     box-shadow $btn-active-shadow
     filter $btn-active-filter
-  &.dark-bg
-    color white
-    background $dark
-    border-color $dark
-    &:focus
-      border-color $dark-hover
-    &:hover
-      background $dark-hover
-      border-color $dark-hover
-  &.soft-bg
-    color white
-    background $soft
-    border-color $soft
-    &:hover
-      background $soft-hover
-      border-color $soft-hover
-    &:focus
-      border-color $soft-hover
-  &.pale-bg
-    color $dark
-    background $pale
-    border-color $pale
-    &:hover
-      background $pale-hover
-      border-color $pale-hover
-    &:focus
-      border-color $dark
-  &.light-bg
-    color $dark
-    background $light
-    border-color $light
-    &:hover
-      color $dark
-      background white
-      border-color white
-    &:focus
-      border-color $light-hover
-  &.black-bg
-    color white
-    background $black
-    border-color $black
-    &:hover
-      background $black-hover
-      border-color $black-hover
-    &:focus
-      border-color $black-hover
-  &.red-bg
-    color white
-    background $red
-    border-color $red
-    &:hover
-      background $red-hover
-      border-color $red-hover
-    &:focus
-      border-color $red-hover
-  &.orange-bg
-    color white
-    background $orange
-    border-color $orange
-    &:hover
-      background $orange-hover
-      border-color $orange-hover
-    &:focus
-      border-color $orange-hover
-  &.green-bg
-    color white
-    background $green
-    border-color $green
-    &:hover
-      background $green-hover
-      border-color $green-hover
-    &:focus
-      border-color $green-hover
-  &.yellow-bg
-    color $dark
-    background $yellow
-    border-color $yellow
-    &:hover
-      background $yellow-hover
-      border-color $yellow-hover
-    &:focus
-      border-color $yellow-hover
-  &.blue-bg
-    color white
-    background $blue
-    border-color $blue
-    &:hover
-      background $blue-hover
-      border-color $blue-hover
-    &:focus
-      border-color $blue-hover
-  &.violet-bg
-    color white
-    background $violet
-    border-color $violet
-    &:hover
-      background $violet-hover
-      border-color $violet-hover
-    &:focus
-      border-color $violet-hover
-  &.white-bg
-    color $dark
-    background $white
-    border-color $white
+  if $colors.dark
+    &.dark-bg
+      color white
+      background $dark
+      &:focus
+        border-color $dark-hover
+      &:hover
+        background $dark-hover
+  if $colors.muted
+    &.muted-bg
+      color white
+      background $muted
+      &:hover
+        background $muted-hover
+      &:focus
+        border-color $muted-hover
+  if $colors.subtle
+    &.subtle-bg
+      color $dark-forced
+      background $subtle
+      &:hover
+        background $subtle-hover
+      &:focus
+        border-color $dark-forced
+  if $colors.light
+    &.light-bg
+      color $dark-forced
+      background $light
+      &:hover
+        color $dark-forced
+        background white
+        border-color white
+      &:focus
+        border-color $light-hover
+  if $colors.black
+    &.black-bg
+      color white
+      background $black
+      &:hover
+        background $black-hover
+      &:focus
+        border-color $black-hover
+  if $colors.red
+    &.red-bg
+      color white
+      background $red
+      &:hover
+        background $red-hover
+      &:focus
+        border-color $red-hover
+  if $colors.orange
+    &.orange-bg
+      color white
+      background $orange
+      &:hover
+        background $orange-hover
+      &:focus
+        border-color $orange-hover
+  if $colors.green
+    &.green-bg
+      color white
+      background $green
+      &:hover
+        background $green-hover
+      &:focus
+        border-color $green-hover
+  if $colors.yellow
+    &.yellow-bg
+      color $dark-forced
+      background $yellow
+      &:hover
+        background $yellow-hover
+      &:focus
+        border-color $yellow-hover
+  if $colors.blue
+    &.blue-bg
+      color white
+      background $blue
+      &:hover
+        background $blue-hover
+      &:focus
+        border-color $blue-hover
+  if $colors.violet
+    &.violet-bg
+      color white
+      background $violet
+      &:hover
+        background $violet-hover
+      &:focus
+        border-color $violet-hover
+  if $colors.white
+    &.white-bg
+      color $dark-forced
+      background $white
   &.blank
     color $primary
     &.blank:hover, &.blank:focus
       color $primary-hover
-  &.white-bg.primary, &.blank.primary
-    color $primary
-    &:hover, &.blank.primary:hover
-      color $primary-hover
-  &.white-bg.dark, &.blank.dark
-    color $dark
-    &:hover, &.blank.dark:hover
-      color $dark-hover
-  &.white-bg.soft, &.blank.soft
-    color $soft
-    &:hover, &.blank.soft:hover
-      color $soft-hover
-  &.white-bg.black, &.blank.black
-    color $black
-    &:hover, &.blank.black:hover
-      color $black-hover
-  &.white-bg.red, &.blank.red
-    color $red
-    &:hover, &.blank.red:hover
-      color $red-hover
-  &.white-bg.orange, &.blank.orange
-    color $orange
-    &:hover, &.blank.orange:hover
-      color $orange-hover
-  &.white-bg.green, &.blank.green
-    color $green
-    &:hover, &.blank.green:hover
-      color $green-hover
-  &.white-bg.blue, &.blank.blue
-    color $blue
-    &:hover, &.blank.blue:hover
-      color $blue-hover
-  &.white-bg.violet, &.blank.violet
-    color $violet
-    &:hover, &.blank.violet:hover
-      color $violet-hover
-  &.white-bg:hover, &.blank:hover
-    color $primary
-    background $white-hover
-    border-color $white-hover
-  &.white-bg:focus, &.blank:focus
-    border-color $pale
-  &.blank, &.blank:hover, &.blank:focus
-    border-color transparent
-    background transparent
+  if $colors.white
+    if $colors.primary
+      &.white-bg.primary, &.blank.primary
+        color $primary
+        &:hover, &.blank.primary:hover
+          color $primary-hover
+    if $colors.dark
+      &.white-bg.dark, &.blank.dark
+        color $dark-forced
+        &:hover, &.blank.dark:hover
+          color $dark-hover
+    if $colors.muted
+      &.white-bg.muted, &.blank.muted
+        color $muted-forced
+        &:hover, &.blank.muted:hover
+          color $muted-hover
+    if $colors.black
+      &.white-bg.black, &.blank.black
+        color $black
+        &:hover, &.blank.black:hover
+          color $black-hover
+    if $colors.red
+      &.white-bg.red, &.blank.red
+        color $red
+        &:hover, &.blank.red:hover
+          color $red-hover
+    if $colors.orange
+      &.white-bg.orange, &.blank.orange
+        color $orange
+        &:hover, &.blank.orange:hover
+          color $orange-hover
+    if $colors.green
+      &.white-bg.green, &.blank.green
+        color $green
+        &:hover, &.blank.green:hover
+          color $green-hover
+    if $colors.blue
+      &.white-bg.blue, &.blank.blue
+        color $blue
+        &:hover, &.blank.blue:hover
+          color $blue-hover
+    if $colors.violet
+      &.white-bg.violet, &.blank.violet
+        color $violet
+        &:hover, &.blank.violet:hover
+          color $violet-hover
+    &.white-bg:hover, &.blank:hover
+      color $primary
+      background $white-hover
+      border-color $white-hover
+    &.white-bg:focus, &.blank:focus
+      border-color $subtle-forced
+    &.blank, &.blank:hover, &.blank:focus
+      border-color transparent
+      background transparent
   &.ghost
     color $primary
     background transparent
@@ -867,78 +874,246 @@ select:disabled:hover
       color $primary-hover
       background transparent
       border-color $primary-hover
-    &.dark, &.dark-bg
-      border-color $dark
-      color $dark
-      &:hover, &:focus
-        border-color $dark-hover
-        color $dark-hover
-    &.soft, &.soft-bg
-      border-color $soft
-      color $soft
-      &:hover, &:focus
-        border-color $soft-hover
-        color $soft-hover
-    &.pale, &.pale-bg
-      border-color $pale
-      color $pale
-      &:hover, &:focus
-        border-color $pale-hover
-        color $pale-hover
-    &.light, &.light-bg
-      border-color $light
-      color $light
-      &:hover, &:focus
-        border-color $light-hover
-        color $light-hover
-    &.white, &.white-bg
-      border-color $white
+    if $colors.dark
+      &.dark, &.dark-bg
+        border-color $dark-forced
+        color $dark-forced
+        &:hover, &:focus
+          border-color $dark-hover
+          color $dark-hover
+    if $colors.muted
+      &.muted, &.muted-bg
+        border-color $muted-forced
+        color $muted-forced
+        &:hover, &:focus
+          border-color $muted-hover
+          color $muted-hover
+    if $colors.subtle
+      &.subtle, &.subtle-bg
+        border-color $subtle-forced
+        color $subtle-forced
+        &:hover, &:focus
+          border-color $subtle-hover
+          color $subtle-hover
+    if $colors.light
+      &.light, &.light-bg
+        border-color $light-forced
+        color $light-forced
+        &:hover, &:focus
+          border-color $light-hover
+          color $light-hover
+    if $colors.white
+      &.white, &.white-bg
+        border-color $white
+        color $white
+        &:hover, &:focus
+          border-color $white-hover
+          color $white-hover
+    if $colors.black
+      &.black, &.black-bg
+        border-color $black
+        color $black
+        &:hover, &:focus
+          border-color $black-hover
+          color $black-hover
+    if $colors.red
+      &.red, &.red-bg
+        border-color $red
+        color $red
+        &:hover, &:focus
+          border-color $red-hover
+          color $red-hover
+    if $colors.orange
+      &.orange, &.orange-bg
+        border-color $orange
+        color $orange
+        &:hover, &:focus
+          border-color $orange-hover
+          color $orange-hover
+    if $colors.green
+      &.green, &.green-bg
+        border-color $green
+        color $green
+        &:hover, &:focus
+          border-color $green-hover
+          color $green-hover
+    if $colors.yellow
+      &.yellow, &.yellow-bg
+        border-color $yellow
+        color $yellow
+        &:hover, &:focus
+          border-color $yellow-hover
+          color $yellow-hover
+    if $colors.blue
+      &.blue, &.blue-bg
+        border-color $blue
+        color $blue
+        &:hover, &:focus
+          border-color $blue-hover
+          color $blue-hover
+    if $colors.violet
+      &.violet, &.violet-bg
+        border-color $violet
+        color $violet
+        &:hover, &:focus
+          border-color $violet-hover
+          color $violet-hover
+
+.inverted .btn, .inverted a.btn
+  &:focus
+    color $btn-focus-color-inverted
+    border-color $btn-focus-border-color-inverted
+    box-shadow $btn-focus-shadow-inverted
+    filter $btn-focus-filter-inverted
+  &:hover
+    color $btn-hover-color-inverted
+    background $btn-hover-bg-inverted
+    border-color $btn-hover-border-color-inverted
+    box-shadow $btn-hover-shadow-inverted
+    filter $btn-hover-filter-inverted
+  &:active
+    color $btn-active-color-inverted
+    border-color $btn-active-border-color-inverted
+    box-shadow $btn-active-shadow-inverted
+    filter $btn-active-filter-inverted
+  if $colors.violet
+    &.dark-bg
+      color $dark-forced
+  if $colors.muted
+    &.muted-bg
+      color $dark-forced
+  if $colors.subtle
+    &.subtle-bg
+      color white
+      &:hover
+        color $dark-forced
+  if $colors.light
+    &.light-bg
+      color white
+      &:hover
+        color $dark-forced
+  if $colors.white
+    &.white-bg
+      &:focus
+        color $dark-forced
+        border-color $subtle-forced
+  if $colors.black
+    &.black-bg
+      &:hover
+        color $black
+      &:focus
+        border-color $black-hover-inverted
+  if $colors.red
+    &.red-bg
+      &:hover
+        color $red
+      &:focus
+        border-color $red-hover-inverted
+  if $colors.orange
+    &.orange-bg
+      &:hover
+        color $orange
+      &:focus
+        border-color $orange-hover-inverted
+  if $colors.green
+    &.green-bg
+      &:hover
+        color $dark
+      &:focus
+        border-color $green-hover-inverted
+  if $colors.yellow
+    &.yellow-bg
+      &:hover
+        color $dark
+        border-color $yellow-hover-inverted
+      &:focus
+        color $dark-forced
+        border-color $yellow-hover-inverted
+  if $colors.blue
+    &.blue-bg
+      &:hover
+        color $blue
+      &:focus
+        border-color $blue-hover-inverted
+  if $colors.violet
+    &.violet-bg
+      &:hover
+        color $violet
+      &:focus
+        border-color $violet-hover-inverted
+  &.ghost
+    &:hover, &:focus
       color $white
-      &:hover, &:focus
-        border-color $white-hover
-        color $white-hover
-    &.black, &.black-bg
-      border-color $black
-      color $black
-      &:hover, &:focus
-        border-color $black-hover
-        color $black-hover
-    &.red, &.red-bg
-      border-color $red
-      color $red
-      &:hover, &:focus
-        border-color $red-hover
-        color $red-hover
-    &.orange, &.orange-bg
-      border-color $orange
-      color $orange
-      &:hover, &:focus
-        border-color $orange-hover
-        color $orange-hover
-    &.green, &.green-bg
-      border-color $green
-      color $green
-      &:hover, &:focus
-        border-color $green-hover
-        color $green-hover
-    &.yellow, &.yellow-bg
-      border-color $yellow
-      color $yellow
-      &:hover, &:focus
-        border-color $yellow-hover
-        color $yellow-hover
-    &.blue, &.blue-bg
-      border-color $blue
-      color $blue
-      &:hover, &:focus
-        border-color $blue-hover
-        color $blue-hover
-    &.violet, &.violet-bg
-      border-color $violet
-      color $violet
-      &:hover, &:focus
-        border-color $violet-hover
-        color $violet-hover
+      border-color $white
+      background transparent
+    if $colors.dark
+      &.dark, &.dark-bg
+        border-color $dark-inverted
+        color $dark-inverted
+        &:hover, &:focus
+          border-color $white
+          color $white
+    if $colors.muted
+      &.muted, &.muted-bg
+        border-color $muted-inverted
+        color $muted-inverted
+        &:hover, &:focus
+          border-color $dark-inverted
+          color $dark-inverted
+    if $colors.subtle
+      &.subtle, &.subtle-bg
+        border-color $subtle-inverted
+        color $subtle-inverted
+        &:hover, &:focus
+          border-color $muted-inverted
+          color $muted-inverted
+    if $colors.light
+      &.light, &.light-bg
+        border-color $light-inverted
+        color $light-inverted
+        &:hover, &:focus
+          border-color $muted-inverted
+          color $muted-inverted
+    if $colors.white
+      &.white, &.white-bg
+        &:hover, &:focus
+          border-color $muted-inverted
+          color $muted-inverted
+    if $colors.black
+      &.black, &.black-bg
+        &:hover, &:focus
+          border-color $black-hover-inverted
+          color $black-hover-inverted
+    if $colors.red
+      &.red, &.red-bg
+        &:hover, &:focus
+          border-color $red-hover-inverted
+          color $red-hover-inverted
+    if $colors.orange
+      &.orange, &.orange-bg
+        &:hover, &:focus
+          border-color $orange-hover-inverted
+          color $orange-hover-inverted
+    if $colors.green
+      &.green, &.green-bg
+        &:hover, &:focus
+          border-color $green-hover-inverted
+          color $green-hover-inverted
+    if $colors.yellow
+      &.yellow, &.yellow-bg
+        &:hover, &:focus
+          border-color $yellow-hover-inverted
+          color $yellow-hover-inverted
+    if $colors.blue
+      &.blue, &.blue-bg
+        &:hover, &:focus
+          border-color $blue-hover-inverted
+          color $blue-hover-inverted
+    if $colors.violet
+      &.violet, &.violet-bg
+        &:hover, &:focus
+          border-color $violet-hover-inverted
+          color $violet-hover-inverted
 
 .btn
   &.disabled,
@@ -952,6 +1127,18 @@ select:disabled:hover
     filter $btn-disabled-filter
     cursor default
 
+.inverted .btn
+  &.disabled,
+  &:disabled,
+  &.disabled:hover,
+  &:disabled:hover
+    background-color $btn-disabled-bg-inverted !important
+    color $btn-disabled-color-inverted !important
+    border-color $btn-disabled-border-color-inverted !important
+    box-shadow $btn-disabled-shadow-inverted
+    filter $btn-disabled-filter-inverted
+    cursor default
+
 .btn
   &.disabled *,
   &:disabled *
@@ -961,14 +1148,9 @@ select:disabled:hover
 .btn [class*=' spinner']
   top 0
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Size control
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| The following classes give you control over the width and height of buttons and input fields.
-|
-*/
+
+/* Size control
+----------------------------------------------------------------------------------------------------------------------*/
 .v-0, .vh-0
   min-height $default-font-size + ($size-xs * 2)
   padding-top 0
@@ -1031,6 +1213,7 @@ select:disabled:hover
   padding-left $size-3xl
   padding-right $size-3xl
 
+
 /* Size control for input icon
 ----------------------------------------------------------------------------------------------------------------------*/
 .input-icon input.v-0,
@@ -1081,11 +1264,9 @@ select:disabled:hover
 .input-icon input.vh-xl + :not(input)
   width $default-font-size + ($size-xl * 2)
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Spinner loader
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Spinner loader
+----------------------------------------------------------------------------------------------------------------------*/
 [class^='spinner'],
 [class*=' spinner']
   position relative
@@ -1139,11 +1320,9 @@ select:disabled:hover
   to
     transform rotate(2turn)
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Transformicons
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Transformicons
+----------------------------------------------------------------------------------------------------------------------*/
 [class*='tico-']
   position relative
   display inline-block
@@ -1159,8 +1338,8 @@ select:disabled:hover
 [class*='tico-'] span:after
   position absolute
   content ''
-  background $dark
-  border-color $dark
+  background $dark-forced
+  border-color $dark-forced
   border-radius $transformicon-corner-radius
   border-width 4px
   border-style none
@@ -1221,8 +1400,8 @@ select:disabled:hover
   width 60px
   height 60px
 
-/* Hamburger icon
-----------------------------------------------------------------------------------------------------------------------*/
+
+// Hamburger icon
 .tico-hamburger span,
 .tico-hamburger span:before,
 .tico-hamburger span:after
@@ -1237,8 +1416,7 @@ select:disabled:hover
 .tico-hamburger span:after
   transform translateX(-16px)
 
-/* Search icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Search icon
 .tico-search span,
 .tico-search span:before,
 .tico-search span:after
@@ -1262,8 +1440,7 @@ select:disabled:hover
 .tico-search.tico-thin span:before
   transform translate(3px, 9px)
 
-/* Edit icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Edit icon
 .tico-edit span,
 .tico-edit span:before,
 .tico-edit span:after
@@ -1299,8 +1476,7 @@ select:disabled:hover
   height 3px
   width 1px
 
-/* Close icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Close icon
 .tico-close span,
 .tico-close span:before,
 .tico-close span:after
@@ -1313,8 +1489,7 @@ select:disabled:hover
 .tico-close span:after
   opacity 0
 
-/* Plus icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Plus icon
 .tico-plus span,
 .tico-plus span:before,
 .tico-plus span:after
@@ -1330,8 +1505,7 @@ select:disabled:hover
 .tico-plus span:after
   opacity 0
 
-/* Minus icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Minus icon
 .tico-minus span,
 .tico-minus span:before,
 .tico-minus span:after
@@ -1346,8 +1520,7 @@ select:disabled:hover
 .tico-minus span:after
   opacity 0
 
-/* Options icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Options icon
 .tico-options span,
 .tico-options span:before,
 .tico-options span:after
@@ -1370,8 +1543,7 @@ select:disabled:hover
 .tico-options.tico-thin span:after
   height 3px
 
-/* Alert icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Alert icon
 .tico-alert span,
 .tico-alert span:before,
 .tico-alert span:after
@@ -1391,8 +1563,7 @@ select:disabled:hover
 .tico-alert.tico-thin span:before
   height 3px
 
-/* Info icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Info icon
 .tico-info span,
 .tico-info span:before,
 .tico-info span:after
@@ -1419,8 +1590,7 @@ select:disabled:hover
 .tico-info.tico-thin span:after
   transform rotate(90deg) translate(4px, 1.5px)
 
-/* Check icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Check icon
 .tico-check span,
 .tico-check span:before,
 .tico-check span:after
@@ -1440,8 +1610,7 @@ select:disabled:hover
 .tico-check.tico-thin span:before
   transform rotate(-90deg) translate(-13px, -4px)
 
-/* Chevron icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Chevron icon
 [class*='tico-chevron'] span,
 [class*='tico-chevron'] span:before,
 [class*='tico-chevron'] span:after
@@ -1461,8 +1630,7 @@ select:disabled:hover
   transform rotate(-90deg) translate(6px, -6px)
 
 
-/* Arrow icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Arrow icon
 [class*='tico-arrow'] span,
 [class*='tico-arrow'] span:before,
 [class*='tico-arrow'] span:after
@@ -1490,26 +1658,20 @@ select:disabled:hover
   height 10px
   transform rotate(45deg) translate(-3.5px, 0.5px)
 
-/* Rotation adjustments
-----------------------------------------------------------------------------------------------------------------------*/
-
-/* Right */
+// Rotation adjustments
 .tico-chevron-right,
 .tico-arrow-right
   transform rotate(90deg)
 
-/* Down */
 .tico-chevron-down
 .tico-arrow-down
   transform rotate(180deg)
 
-/*Left */
 .tico-chevron-left,
 .tico-arrow-left
   transform rotate(-90deg)
 
-/* Transformicon colors
-----------------------------------------------------------------------------------------------------------------------*/
+// Transformicon colors
 [class*='tico-'].primary span,
 [class*='tico-'].primary span:before,
 [class*='tico-'].primary span:after
@@ -1519,26 +1681,26 @@ select:disabled:hover
 [class*='tico-'].dark span,
 [class*='tico-'].dark span:before,
 [class*='tico-'].dark span:after
-  background $dark
-  border-color $dark
+  background $dark-forced
+  border-color $dark-forced
 
-[class*='tico-'].soft span,
-[class*='tico-'].soft span:before,
-[class*='tico-'].soft span:after
-  background $soft
-  border-color $soft
+[class*='tico-'].muted span,
+[class*='tico-'].muted span:before,
+[class*='tico-'].muted span:after
+  background $muted-forced
+  border-color $muted-forced
 
-[class*='tico-'].pale span,
-[class*='tico-'].pale span:before,
-[class*='tico-'].pale span:after
-  background $pale
-  border-color $pale
+[class*='tico-'].subtle span,
+[class*='tico-'].subtle span:before,
+[class*='tico-'].subtle span:after
+  background $subtle-forced
+  border-color $subtle-forced
 
 [class*='tico-'].light span,
 [class*='tico-'].light span:before,
 [class*='tico-'].light span:after
-  background $light
-  border-color $light
+  background $light-forced
+  border-color $light-forced
 
 [class*='tico-'].white span,
 [class*='tico-'].white span:before,

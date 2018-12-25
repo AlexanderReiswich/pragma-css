@@ -1,5 +1,6 @@
 @import '~src/global.styl'
 @import '~src/base.styl'
+@import '~src/custom.styl'
 @import '~src/utilities.styl'
 
 h1
@@ -88,7 +89,7 @@ a.sidebar-link
   margin-left 0
 
 a.sidebar-link.active
-  border-left-color pale
+  border-left-color subtle
 
 a.sidebar-link
   position relative
@@ -97,7 +98,7 @@ a.sidebar-link
   padding 0
 
 .sidebar-sub-headers a.sidebar-link
-  color $soft
+  color $muted
   font-size $font-size-s
   padding-left $offset-l
 
@@ -132,8 +133,12 @@ ul li li a.sidebar-link.active:before
   border 2px $light solid
 
 .content hr
-  border-top 3px solid $light
+  border-bottom $hr-style
+  border-top 0
   margin 30px 0
+
+.content .inverted hr
+  border-bottom-color $hr-inverted
 
 .content a.header-anchor
   padding-right 0
@@ -149,6 +154,9 @@ table
 
 table tr
   border-top none
+
+tr:nth-child(2n)
+  background-color $table-zebra-bg
 
 table th,
 table td

@@ -1,12 +1,12 @@
 <template>
 
-  <div>
+  <div class="push-down-xl">
 
-    <div class="inline border-primary border dashed push-right-m push-down-m rounded-s va-top"
+    <div class="border-primary border-s dashed center push-down-l rounded-s va-top"
          v-for="(variant, key) in variants"
          :key="key">
-      <div class="pale-bg rounded-s tight-l" :class="prefix + ' ' + name + variant + suffix + (pad ? ' pad-s' : '')">
-        <div class="dark rounded-s" :class="outline ? 'light-bg pad-xs' : ''">
+      <div class="subtle-bg rounded-s tight-l" :class="prefix + ' ' + name + variant + suffix + (pad ? ' pad-s' : '')">
+        <div class="dark bold rounded-s" :class="outline ? 'light-bg-forced pad-xs' : ''">
           {{ prefix ? '.' + prefix : ''}}.{{ name + variant + suffix }}
         </div>
       </div>

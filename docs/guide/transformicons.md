@@ -4,22 +4,22 @@
 
 <div class="push-down-xl pad-s light-bg rounded">
   <div class="space-around push-v-xl">
-    <i class="tico-hamburger soft"><span></span></i>
-    <i class="tico-search soft"><span></span></i>
-    <i class="tico-close soft"><span></span></i>
-    <i class="tico-check soft"><span></span></i>
+    <i class="tico-hamburger muted"><span></span></i>
+    <i class="tico-search muted"><span></span></i>
+    <i class="tico-close muted"><span></span></i>
+    <i class="tico-check muted"><span></span></i>
   </div>
   <div class="space-around push-v-xl">
-    <i class="tico-plus soft"><span></span></i>
-    <i class="tico-minus soft"><span></span></i>
-    <i class="tico-alert soft"><span></span></i>
-    <i class="tico-info soft"><span></span></i>
+    <i class="tico-plus muted"><span></span></i>
+    <i class="tico-minus muted"><span></span></i>
+    <i class="tico-alert muted"><span></span></i>
+    <i class="tico-info muted"><span></span></i>
   </div>
   <div class="space-around push-v-xl">
-    <i class="tico-edit soft"><span></span></i>
-    <i class="tico-options soft"><span></span></i>
-    <i class="tico-chevron-down soft"><span></span></i>
-    <i class="tico-arrow-up soft"><span></span></i>
+    <i class="tico-edit muted"><span></span></i>
+    <i class="tico-options muted"><span></span></i>
+    <i class="tico-chevron-down muted"><span></span></i>
+    <i class="tico-arrow-up muted"><span></span></i>
   </div>
 </div>
 
@@ -44,7 +44,7 @@ The HTML structure of a transformicon consists of three elements:
 
 <br>
 
-The default size of transformicons is xl. If you need an icon of this size, you can avoid using the outer div.
+The default size of transformicons is xl. If you need an icon with this size, you can avoid using the outer div.
 This structure will suffice:
 
 ```html
@@ -1062,31 +1062,31 @@ Transformicons support all base colors.
 
 ---
 
-### .soft
+### .muted
 
 <div class="space-around push-v-l">
-  <i class="tico-hamburger soft"><span></span></i>
-  <i class="tico-search soft"><span></span></i>
-  <i class="tico-close soft"><span></span></i>
-  <i class="tico-check soft"><span></span></i>
+  <i class="tico-hamburger muted"><span></span></i>
+  <i class="tico-search muted"><span></span></i>
+  <i class="tico-close muted"><span></span></i>
+  <i class="tico-check muted"><span></span></i>
 </div>
 
 ---
 
-### .pale
+### .subtle
 
 <div class="space-around push-v-l">
-  <i class="tico-hamburger pale"><span></span></i>
-  <i class="tico-search pale"><span></span></i>
-  <i class="tico-close pale"><span></span></i>
-  <i class="tico-check pale"><span></span></i>
+  <i class="tico-hamburger subtle"><span></span></i>
+  <i class="tico-search subtle"><span></span></i>
+  <i class="tico-close subtle"><span></span></i>
+  <i class="tico-check subtle"><span></span></i>
 </div>
 
 ---
 
 ### .light
 
-<div class="push-v pad-v-s dark-bg rounded">
+<div class="push-v pad-v-s rounded">
   <div class="space-around push-v">
     <i class="tico-hamburger light"><span></span></i>
     <i class="tico-search light"><span></span></i>

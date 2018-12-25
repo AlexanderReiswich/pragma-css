@@ -16,10 +16,10 @@ This stylesheet resets and normalizes the look of basic HTML elements and sets r
 the global configuration. It also contains classes for common UI elements such as buttons and form inputs.
 It's important to load this file before utilities.styl so that you can override it with the utility classes.
 
-### your-custom-styles.styl
-This is a placeholder for your own styles. Naturally, it can be a single file or multiple, but this is
-the place where it should be loaded&mdash;after base.styl and before utilities.styl. This way you can easily
-override all base styles and then still use utility classes to customize your own classes from the HTML.
+### custom.styl
+This is an example file for your own custom stylesheet. It should be loaded after base.styl and before utilities.styl.
+This way you can easily override all base styles and then still use utility classes to customize your own classes
+from the HTML.
 
 ### utilities.styl
 This file contains all the generic, single-purpose utility classes that you'll use to style your pages

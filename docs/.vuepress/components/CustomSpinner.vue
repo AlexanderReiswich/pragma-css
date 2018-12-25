@@ -19,8 +19,9 @@
   .spinner.my-custom-spinner-1
     width 100px
     height 100px
-    border-width 16px
+    border-width 10px
     border-color #00d9c1 !important
+    border-bottom-color transparent !important
     border-top-color transparent !important
 
   .spinner.my-custom-spinner-2

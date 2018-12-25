@@ -211,7 +211,7 @@ Line height is defined without a unit by default in order to ensure proportional
 
 ### .tight-s
 
-<div class="tight-s size-s soft extend-s">
+<div class="tight-s size-s muted extend-s">
     Slightly reduced line height tends to work well for short paragraphs of small text, i.e. an image caption.
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
 </div>
@@ -253,7 +253,7 @@ So `.tight-l` creates tighter text blocks than `.tight-s`.
   Reducing line height can be useful...
 </div>
 
-<div class="tight-s size-s soft extend-s">
+<div class="tight-s size-s muted extend-s">
   Slightly reduced line height...
 </div>
 

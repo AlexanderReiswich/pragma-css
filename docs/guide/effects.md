@@ -9,13 +9,13 @@ You can add a basic border on all sides with the following classes.
 
 
 <div class="align-vh space-between wrap push-v-xl pull-right-m">
-  <div class="inline border-s border-primary soft bold center extend-m pad-m push-up-s push-right-m va-top">
+  <div class="inline border-s border-primary muted bold center extend-m pad-m push-up-s push-right-m va-top">
     .border-s
   </div>
-  <div class="inline border border-primary soft bold center extend-m pad-m push-up-s push-right-m va-top">
+  <div class="inline border border-primary muted bold center extend-m pad-m push-up-s push-right-m va-top">
     .border-m<br>(or .border)
   </div>
-  <div class="inline border-l border-primary soft bold center extend-m pad-m push-up-s push-right-m va-top">
+  <div class="inline border-l border-primary muted bold center extend-m pad-m push-up-s push-right-m va-top">
     .border-l
   </div>
   <div class="inline border-xl border-primary dark bold center extend-m pad-m push-up-s push-right-m va-top">
@@ -170,13 +170,13 @@ All available colors can be assigned to borders.
         </div>
     </div>
     <div class="push-down col s12 m12 l4">
-        <div class="border-soft dark bold center extend-m pad-m push-down">
-            .border-soft
+        <div class="border-muted dark bold center extend-m pad-m push-down">
+            .border-muted
         </div>
     </div>
     <div class="push-down col s12 m12 l4">
-        <div class="border-pale dark bold center extend-m pad-m push-down">
-            .border-pale
+        <div class="border-subtle dark bold center extend-m pad-m push-down">
+            .border-subtle
         </div>
     </div>
 </div>
@@ -242,22 +242,22 @@ The default border style is predefined in a global variable, but can be explicit
 via the following classes:
 
 <div class="border-primary solid dark bold center extend-m pad-m push-down">
-    <span class="pale">.border-primary</span>.solid
+    <span class="subtle">.border-primary</span>.solid
 </div>
 
 <div class="border-primary dashed dark bold center extend-m pad-m push-down">
-    <span class="pale">.border-primary</span>.dashed
+    <span class="subtle">.border-primary</span>.dashed
 </div>
 
 <div class="border-primary dotted dark bold center extend-m pad-m push-down">
-    <span class="pale">.border-primary</span>.dotted
+    <span class="subtle">.border-primary</span>.dotted
 </div>
 
 <br>
 
 ## Rounded corners
 
-These classes add roundness to an elements corners.
+This set of classes adds roundness to an elements corners.
 
 <div class="rounded-s inline blue-bg white bold center extend-m pad-m push-down-m push-right-m">
     .rounded-s
@@ -402,13 +402,13 @@ The `.scale-x` classes can be used to "zoom-in" on elements, without actually ch
 the layout around them.
 
 <div class="space-between wrap pull-right-s push-v-xl">
-    <div class="scale-s rounded inline blue-bg light bold pad-m push-up-s push-right-s cursor-default">
+    <div class="scale-s rounded inline blue-bg white bold pad-m push-up-s push-right-s cursor-default">
         .scale-s
     </div>
-    <div class="scale-m rounded inline blue-bg light bold pad-m push-up-s push-right-s cursor-default">
+    <div class="scale-m rounded inline blue-bg white bold pad-m push-up-s push-right-s cursor-default">
         .scale-m
     </div>
-    <div class="scale-l rounded inline blue-bg light bold pad-m push-up-s push-right-s cursor-default">
+    <div class="scale-l rounded inline blue-bg white bold pad-m push-up-s push-right-s cursor-default">
         .scale-l
     </div>
 </div>
@@ -422,13 +422,13 @@ the layout around them.
 You can also apply these classes on mouse-over:<br>
 
 <div class="space-between wrap pull-right-s push-v-xl">
-    <div class="scale-s-on-hover rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+    <div class="scale-s-on-hover rounded inline violet-bg white bold pad-m push-up-s push-right-s cursor-default">
         .scale-s-on-hover
     </div>
-    <div class="scale-m-on-hover rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+    <div class="scale-m-on-hover rounded inline violet-bg white bold pad-m push-up-s push-right-s cursor-default">
         .scale-m-on-hover
     </div>
-    <div class="scale-l-on-hover rounded inline violet-bg light bold pad-m push-up-s push-right-s cursor-default">
+    <div class="scale-l-on-hover rounded inline violet-bg white bold pad-m push-up-s push-right-s cursor-default">
         .scale-l-on-hover
     </div>
 </div>
@@ -449,16 +449,16 @@ The opacity utility classes can be used to add transparency in multiple levels o
     <div class="rounded primary bold pad-m push-up-s cursor-default">
         .opacity-0
     </div>
-    <div class="opacity-25 rounded primary-bg light bold pad-m push-up-s cursor-default">
+    <div class="opacity-25 rounded primary-bg white bold pad-m push-up-s cursor-default">
         .opacity-25
     </div>
-    <div class="opacity-50 rounded primary-bg light bold pad-m push-up-s cursor-default">
+    <div class="opacity-50 rounded primary-bg white bold pad-m push-up-s cursor-default">
         .opacity-50
     </div>
-    <div class="opacity-75 rounded primary-bg light bold pad-m push-up-s cursor-default">
+    <div class="opacity-75 rounded primary-bg white bold pad-m push-up-s cursor-default">
         .opacity-75
     </div>
-    <div class="opacity-100 rounded primary-bg light bold pad-m push-up-s cursor-default">
+    <div class="opacity-100 rounded primary-bg white bold pad-m push-up-s cursor-default">
         .opacity-100
     </div>
 </div>
@@ -476,19 +476,19 @@ The opacity utility classes can be used to add transparency in multiple levels o
 It's also possible to change opacity on hover:
 
 <div class="push-v">
-    <div class="opacity-0-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+    <div class="opacity-0-on-hover rounded primary-bg white bold pad-m push-up-s cursor-default tween">
         .opacity-0-on-hover
     </div>
-    <div class="opacity-25-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+    <div class="opacity-25-on-hover rounded primary-bg white bold pad-m push-up-s cursor-default tween">
         .opacity-25-on-hover
     </div>
-    <div class="opacity-50-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+    <div class="opacity-50-on-hover rounded primary-bg white bold pad-m push-up-s cursor-default tween">
         .opacity-50-on-hover
     </div>
-    <div class="opacity-75-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+    <div class="opacity-75-on-hover rounded primary-bg white bold pad-m push-up-s cursor-default tween">
         .opacity-75-on-hover
     </div>
-    <div class="opacity-100-on-hover rounded primary-bg light bold pad-m push-up-s cursor-default tween">
+    <div class="opacity-100-on-hover rounded primary-bg white bold pad-m push-up-s cursor-default tween">
         .opacity-100-on-hover
     </div>
 </div>
@@ -508,19 +508,19 @@ It's also possible to change opacity on hover:
 `.tween` classes add transitions to your elements.
 
 <div class="space-between wrap pull-right-s">
-    <div class="tween-xs rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
+    <div class="tween-xs rounded inline blue-bg white bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-xs
     </div>
-    <div class="tween-s rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
+    <div class="tween-s rounded inline blue-bg white bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-s
     </div>
-    <div class="tween-m rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
+    <div class="tween-m rounded inline blue-bg white bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-m
     </div>
-    <div class="tween-l rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
+    <div class="tween-l rounded inline blue-bg white bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-l
     </div>
-    <div class="tween-xl rounded inline blue-bg light bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
+    <div class="tween-xl rounded inline blue-bg white bold pad-m push-up-s primary-bg-on-hover scale-m-on-hover push-right-s push-down-m cursor-default">
         .tween-xl
     </div>
 </div>
@@ -594,13 +594,13 @@ Please keep in mind that it's not possible to use the rotation classes in combin
 </div>
 
 ```html
-<div class="rotate-45">.cw-45</div>
-<div class="rotate-90">.cw-90</div>
-<div class="rotate-135">.cw-135</div>
-<div class="rotate-180">.cw-180</div>
-<div class="rotate-225">.cw-225</div>
-<div class="rotate-270">.cw-270</div>
-<div class="rotate-315">.cw-315</div>
+<div class="rotate-45">.rotate-45</div>
+<div class="rotate-90">.rotate-90</div>
+<div class="rotate-135">.rotate-135</div>
+<div class="rotate-180">.rotate-180</div>
+<div class="rotate-225">.rotate-225</div>
+<div class="rotate-270">.rotate-270</div>
+<div class="rotate-315">.rotate-315</div>
 ```
 
 <br>
@@ -609,21 +609,21 @@ Please keep in mind that it's not possible to use the rotation classes in combin
 
 These classes help you enforce certain mouse cursor behaviors.
 
-<div class="pointer tween rounded inline yellow-bg dark light-on-hover bold pad-m push-v-s dark-bg-on-hover">
+<div class="pointer tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
     .pointer
 </div>
 
-<div class="cursor-default tween rounded inline yellow-bg dark light-on-hover bold pad-m push-v-s dark-bg-on-hover">
+<div class="cursor-default tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
     .cursor-default
 </div>
 
-<div class="no-pointer-events tween rounded inline yellow-bg dark light-on-hover bold pad-m push-v-s dark-bg-on-hover">
+<div class="no-pointer-events tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
     .no-pointer-events
 </div>
 
 <br>
 
-<div class="cursor-forbidden tween rounded inline pale-bg white bold pad-m push-v-s">
+<div class="cursor-forbidden tween rounded inline subtle-bg white bold pad-m push-v-s">
     .cursor-forbidden
 </div>
 

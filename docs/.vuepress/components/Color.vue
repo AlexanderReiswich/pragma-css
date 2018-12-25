@@ -1,16 +1,13 @@
 <template>
 
-  <div class="push-v" :class="stage ? stage + '-bg rounded-m pad-m' : ''">
-    <div class="push-down-s bold" :class="textClass">
-      .{{ textClass }}
-    </div>
+  <div class="push-v" :class="stage ? stage + ' rounded-m pad-m' : ''">
     <div class="push-down-s" :class="textClass">
-      <slot/>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.
     </div>
     <div class="block pad-m rounded-s" :class="bgClass" :ref="'color_' + textClass">
       <div class="white">
-        <div class="float-right" :class="stage ? stage : ''">{{ code }}</div>
-        <div :class="stage ? stage : ''">.{{ bgClass }}</div>
+        <div class="float-right" :class="{'dark-forced': darkText}">{{ code }}</div>
+        <div :class="{'dark-forced': darkText}">.{{ bgClass }}</div>
       </div>
     </div>
   </div>
@@ -23,7 +20,8 @@
     props: {
       bgClass: String,
       textClass: String,
-      stage: String
+      stage: String,
+      darkText: Boolean
     },
     data: function () {
       return {
@@ -42,6 +40,7 @@
         return ''
       },
       ensureRGB (value) {
+        if (value.includes('rgba')) return value
         if (value.includes('#')) return value
         return '#' + value
           .substr(4, value.indexOf(')') - 4)

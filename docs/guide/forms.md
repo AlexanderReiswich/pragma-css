@@ -212,11 +212,11 @@ If you would like to add an icon to your input field, simply wrap it inside of a
 ### Disabled state
 
 <div>
-  <textarea placeholder="Type here..." disabled></textarea>
+  <textarea placeholder="Can't type here..." disabled></textarea>
 </div>
 
 ```html
-<textarea placeholder="Type here..." disabled></textarea>
+<textarea placeholder="Can't type here..." disabled></textarea>
 ```
 
 ## Selects
@@ -322,7 +322,7 @@ If you would like to add an icon to your input field, simply wrap it inside of a
 
 ### Disabled state
 
-<select class="v-xs size-s push-down" disabled>
+<select class="push-down" disabled>
   <option>
     -- Select an option --
   </option>
@@ -338,7 +338,7 @@ If you would like to add an icon to your input field, simply wrap it inside of a
 </select>
 
 ```html
-<select class="v-xs size-s" disabled>
+<select disabled>
   <option>...</option>
 </select>
 ```
@@ -375,7 +375,7 @@ If you would like to add an icon to your input field, simply wrap it inside of a
   <label for="disabled-checkbox" class="checkbox">
     <input type="checkbox" id="disabled-checkbox" checked disabled>
     <span class="checkbox-indicator"></span>
-    <span class="size-l pale">
+    <span class="size-l subtle">
       Can't touch this.
     </span>
   </label>
@@ -383,9 +383,9 @@ If you would like to add an icon to your input field, simply wrap it inside of a
 
 ```html
 <label for="disabled-checkbox" class="checkbox">
-  <input type="checkbox" id="disabled-checkbox" disabled>
+  <input type="checkbox" id="disabled-checkbox" checked disabled>
   <span class="checkbox-indicator"></span>
-  <span class="size-l pale">
+  <span class="size-l subtle">
     Can't touch this.
   </span>
 </label>
@@ -513,6 +513,172 @@ Keep in mind that the text size of the label is not affected by this; You'll hav
 
 <br>
 
+### Switch
+
+A switch is a variation to the regular checkbox look, but is based on the same structure.
+
+<div class="push-down">
+  <label for="sample-switch" class="checkbox">
+    <input type="checkbox" id="sample-switch">
+    <span class="switch-indicator"></span>
+    <span class="size-l">
+      Check this!
+    </span>
+  </label>
+</div>
+
+```html
+<label for="sample-switch" class="checkbox">
+  <input type="checkbox" id="sample-switch">
+  <span class="switch-indicator"></span>
+  <span class="size-l">
+    Switch this!
+  </span>
+</label>
+```
+
+<br>
+
+### Disabled state
+
+<div class="push-down">
+  <label for="disabled-switch" class="checkbox">
+    <input type="checkbox" id="disabled-switch" checked disabled>
+    <span class="switch-indicator"></span>
+    <span class="size-l subtle">
+      Can't touch this.
+    </span>
+  </label>
+</div>
+
+```html
+<label for="disabled-switch" class="checkbox">
+  <input type="checkbox" id="disabled-switch" checked disabled>
+  <span class="switch-indicator"></span>
+  <span class="size-l subtle">
+    Can't switch this.
+  </span>
+</label>
+```
+
+<br>
+
+### Size control
+
+#### .size-xs
+
+<div class="push-down">
+  <label for="switch-1" class="checkbox">
+    <input type="checkbox" id="switch-1">
+    <span class="switch-indicator size-xs"></span>
+    <span class="size-s">
+      Check this
+    </span>
+  </label>
+</div>
+
+#### .size-s
+
+<div class="push-down">
+  <label for="switch-2" class="checkbox">
+    <input type="checkbox" id="switch-2">
+    <span class="switch-indicator size-s"></span>
+    <span class="size-m">
+      Check this
+    </span>
+  </label>
+</div>
+
+#### .size-m
+
+<div class="push-down">
+  <label for="switch-3" class="checkbox">
+    <input type="checkbox" id="switch-3">
+    <span class="switch-indicator size-m"></span>
+    <span class="size-l">
+      Check this
+    </span>
+  </label>
+</div>
+
+#### .size-l
+
+<div class="push-down">
+  <label for="switch-4" class="checkbox">
+    <input type="checkbox" id="switch-4">
+    <span class="switch-indicator size-l"></span>
+    <span class="size-xl">
+      Check this
+    </span>
+  </label>
+</div>
+
+#### .size-xl
+
+<div class="push-down">
+  <label for="switch-5" class="checkbox">
+    <input type="checkbox" id="switch-5">
+    <span class="switch-indicator size-xl"></span>
+    <span class="size-2xl">
+      Check this
+    </span>
+  </label>
+</div>
+
+```html
+<div class="push-down">
+  <label for="switch-1" class="checkbox">
+    <input type="checkbox" id="switch-1">
+    <span class="switch-indicator size-xs"></span>
+    <span class="size-s">
+      Check this
+    </span>
+  </label>
+</div>
+
+<div class="push-down">
+  <label for="switch-2" class="checkbox">
+    <input type="checkbox" id="switch-2">
+    <span class="switch-indicator size-s"></span>
+    <span class="size-m">
+      Check this
+    </span>
+  </label>
+</div>
+
+<div class="push-down">
+  <label for="switch-3" class="checkbox">
+    <input type="checkbox" id="switch-3">
+    <span class="switch-indicator size-m"></span>
+    <span class="size-l">
+      Check this
+    </span>
+  </label>
+</div>
+
+<div class="push-down">
+  <label for="switch-4" class="checkbox">
+    <input type="checkbox" id="switch-4">
+    <span class="switch-indicator size-l"></span>
+    <span class="size-xl">
+      Check this
+    </span>
+  </label>
+</div>
+
+<div class="push-down">
+  <label for="switch-5" class="checkbox">
+    <input type="checkbox" id="switch-5">
+    <span class="switch-indicator size-xl"></span>
+    <span class="size-2xl">
+      Check this
+    </span>
+  </label>
+</div>
+```
+
+<br>
+
 ## Radio
 
 <div class="push-down">
@@ -573,14 +739,14 @@ Keep in mind that the text size of the label is not affected by this; You'll hav
   <label for="disabled-radio-1" class="radio push-right-l">
     <input type="radio" name="disabled-radio" value="1" id="disabled-radio-1" disabled checked>
     <span class="radio-indicator"></span>
-    <span class="size-l pale">
+    <span class="size-l subtle">
       Value 1
     </span>
   </label>
   <label for="disabled-radio-2" class="radio push-right-l">
     <input type="radio" name="disabled-radio" value="2" id="disabled-radio-2" disabled>
     <span class="radio-indicator"></span>
-    <span class="size-l pale">
+    <span class="size-l subtle">
       Value 2
     </span>
   </label>
@@ -588,16 +754,16 @@ Keep in mind that the text size of the label is not affected by this; You'll hav
 
 ```html
 <label for="disabled-radio-1" class="radio push-right-l">
-  <input type="radio" name="radios" value="1" id="disabled-radio-1" disabled checked>
+  <input type="radio" name="radios" value="1" id="disabled-radio-1" checked disabled>
   <span class="radio-indicator"></span>
-  <span class="size-l pale">
+  <span class="size-l subtle">
     Value 1
   </span>
 </label>
 <label for="disabled-radio-2" class="radio push-right-l">
-  <input type="radio" name="radios" value="2" id="disabled-radio-2" disabled>
+  <input type="radio" name="radios" value="2" id="disabled-radio-2" checked disabled>
   <span class="radio-indicator"></span>
-  <span class="size-l pale">
+  <span class="size-l subtle">
     Value 2
   </span>
 </label>
@@ -722,3 +888,136 @@ Keep in mind that the text size of the label is not affected by this; You'll hav
   </label>
 </div>
 ```
+
+<br>
+
+### Inverted variants
+
+If you wish to use input elements on a dark background, it's recommended to apply the `.inverted` class to
+the parent container:
+
+<div class="dark-bg inverted pad rounded push-down-xl">
+  <div class="push-down">
+    <label for="text-input-inverted" class="muted">Input label</label>
+    <input placeholder="Text input..." id="text-input-inverted">
+  </div>
+  <div class="push-down">
+    <label for="text-input-disabled-inverted" class="muted">Disabled input label</label>
+    <input placeholder="Can't type here..." id="text-input-disabled-inverted" disabled>
+  </div>
+  <hr>
+  <div class="push-down">
+    <label class="muted">Textarea label</label>
+    <textarea placeholder="Type here..."></textarea>
+  </div>
+  <div>
+    <label class="muted">Disabled textarea label</label>
+    <textarea placeholder="Can't type here..." disabled></textarea>
+  </div>
+  <hr>
+  <label class="muted">Input with icon</label>
+  <div class="input-icon">
+    <input placeholder="Text input...">
+    <div>
+      <div class="tico-l">
+          <i class="tico-edit">
+            <span></span>
+          </i>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <label class="muted">Select input</label>
+  <select>
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <hr>
+  <div class="push-down">
+    <label for="sample-checkbox-inverted" class="checkbox">
+      <input type="checkbox" id="sample-checkbox-inverted">
+      <span class="checkbox-indicator"></span>
+      <span class="size-l muted">
+        Checkbox
+      </span>
+    </label>
+  </div>
+  <div class="push-down">
+    <label for="disabled-checkbox-inverted" class="checkbox">
+      <input type="checkbox" id="disabled-checkbox-inverted" checked disabled>
+      <span class="checkbox-indicator"></span>
+      <span class="size-l subtle">
+        Disabled checkbox
+      </span>
+    </label>
+  </div>
+  <hr>
+  <div class="push-down">
+    <label for="sample-switch-inverted" class="checkbox">
+      <input type="checkbox" id="sample-switch-inverted">
+      <span class="switch-indicator"></span>
+      <span class="size-l muted">
+        Switch
+      </span>
+    </label>
+  </div>
+  <div class="push-down">
+    <label for="disabled-switch-inverted" class="checkbox">
+      <input type="checkbox" id="disabled-switch-inverted" checked disabled>
+      <span class="switch-indicator"></span>
+      <span class="size-l subtle">
+        Disabled switch
+      </span>
+    </label>
+  </div>
+  <hr>
+  <div class="push-down">
+    <label for="radio-1-inverted" class="radio push-right-l">
+      <input type="radio" name="radios-inverted" value="1" id="radio-1-inverted" checked>
+      <span class="radio-indicator"></span>
+      <span class="size-l muted">
+        Value 1
+      </span>
+    </label>
+    <label for="radio-2-inverted" class="radio push-right-l">
+      <input type="radio" name="radios-inverted" value="2" id="radio-2-inverted">
+      <span class="radio-indicator"></span>
+      <span class="size-l muted">
+        Value 2
+      </span>
+    </label>
+    <label for="radio-3-inverted" class="radio push-right-l">
+      <input type="radio" name="radios-inverted" value="3" id="radio-3-inverted">
+      <span class="radio-indicator"></span>
+      <span class="size-l muted">
+        Value 3
+      </span>
+    </label>
+  </div>
+  <div>
+    <label for="disabled-radio-1-inverted" class="radio push-right-l">
+      <input type="radio" name="disabled-radio-inverted" value="1" id="disabled-radio-1-inverted" disabled checked>
+      <span class="radio-indicator"></span>
+      <span class="size-l subtle">
+        Value 1
+      </span>
+    </label>
+    <label for="disabled-radio-2-inverted" class="radio push-right-l">
+      <input type="radio" name="disabled-radio-inverted" value="2" id="disabled-radio-2-inverted" disabled>
+      <span class="radio-indicator"></span>
+      <span class="size-l subtle">
+        Value 2
+      </span>
+    </label>
+  </div>
+</div>

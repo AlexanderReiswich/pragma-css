@@ -85,10 +85,10 @@ This useful class sets the overflow property to **hidden**.
 ### .align-v
 
 <div class="align-v rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-  <div class="centered width-200 rounded dark-bg light pad-s push-s">
+  <div class="centered width-200 rounded dark-bg white pad-s push-s">
     The .align-v class uses flexbox to vertically align the elements within its parent container.
   </div>
-  <div class="centered width-200 rounded primary-bg light pad-s push-s">
+  <div class="centered width-200 rounded primary-bg white pad-s push-s">
     ...Whether one or more.
   </div>
 </div>
@@ -98,10 +98,10 @@ This useful class sets the overflow property to **hidden**.
 ### .align-h
 
 <div class="align-h rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-  <div class="width-200 rounded dark-bg light pad-s push-s">
+  <div class="width-200 rounded dark-bg white pad-s push-s">
     The .align-h class uses flexbox to horizontally align the elements within its parent container.
   </div>
-  <div class="width-200 rounded primary-bg light pad-s push-s">
+  <div class="width-200 rounded primary-bg white pad-s push-s">
     ...Whether one or more.
   </div>
 </div>
@@ -111,10 +111,10 @@ This useful class sets the overflow property to **hidden**.
 ### .align-vh
 
 <div class="align-vh rounded light-bg pad-m push-up-s push-down" style="height: 200px">
-  <div class="width-200 rounded dark-bg light pad-s push-s">
+  <div class="width-200 rounded dark-bg white pad-s push-s">
     The .align-vh class uses flexbox to align the elements within its parent container in both directions.
   </div>
-  <div class="width-200 rounded primary-bg light pad-s push-s">
+  <div class="width-200 rounded primary-bg white pad-s push-s">
     ...Whether one or more.
   </div>
 </div>
@@ -124,13 +124,13 @@ This useful class sets the overflow property to **hidden**.
 ### .space-evenly
 
 <div class="space-evenly rounded light-bg pad-m push-up-s push-down">
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Some Item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Another item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     And a third item item
   </div>
 </div>
@@ -140,13 +140,13 @@ This useful class sets the overflow property to **hidden**.
 ### .space-around
 
 <div class="space-around rounded light-bg pad-m push-up-s push-down">
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Some Item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Another item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     And a third item item
   </div>
 </div>
@@ -156,13 +156,13 @@ This useful class sets the overflow property to **hidden**.
 ### .space-between
 
 <div class="space-between rounded light-bg pad-m push-up-s push-down">
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Some Item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Another item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     And a third item item
   </div>
 </div>
@@ -172,13 +172,13 @@ This useful class sets the overflow property to **hidden**.
 ### .flex-start
 
 <div class="space-between flex-start rounded light-bg pad-m push-up-s push-down">
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Some Item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Another item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     And a third item item
   </div>
 </div>
@@ -188,13 +188,13 @@ This useful class sets the overflow property to **hidden**.
 ### .flex-end
 
 <div class="space-between flex-end rounded light-bg pad-m push-up-s push-down">
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Some Item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     Another item
   </div>
-  <div class="rounded dark-bg light pad-s push-s">
+  <div class="rounded dark-bg white pad-s push-s">
     And a third item item
   </div>
 </div>
@@ -204,10 +204,10 @@ This useful class sets the overflow property to **hidden**.
 ### .column-reverse
 
 <div class="space-between column-reverse rounded light-bg pad-h-m pad-v-s">
-  <div class="full rounded dark-bg light pad-v push-v-s center">
+  <div class="full rounded dark-bg white pad-v push-v-s center">
     Upper column
   </div>
-  <div class="full rounded primary-bg light pad-v push-v-s center">
+  <div class="full rounded primary-bg white pad-v push-v-s center">
     Lower column
   </div>
 </div>
@@ -217,10 +217,10 @@ This useful class sets the overflow property to **hidden**.
 ### .row-reverse
 
 <div class="space-between row-reverse rounded light-bg pad-m push-up-s push-down">
-  <div class="full rounded dark-bg light pad-s push-s center">
+  <div class="full rounded dark-bg white pad-s push-s center">
     Left column
   </div>
-  <div class="full rounded primary-bg light pad-s push-s center">
+  <div class="full rounded primary-bg white pad-s push-s center">
     Right column
   </div>
 </div>
@@ -326,17 +326,31 @@ Height classes are also available, even though fewer are available by default.
 
 Same as the height classes, but for max-height.
 
+### .max-height-30
+
 <div class="max-height-30 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
+
+---
+
+### .max-height-50
 
 <div class="max-height-50 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
 
+---
+
+### .max-height-70
+
 <div class="max-height-70 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>
 </div>
+
+---
+
+### .max-height-100
 
 <div class="max-height-100 rounded light-bg primary pad-s push-v-m bold center no-overflow extend-s">
   <lorem length="5"/>

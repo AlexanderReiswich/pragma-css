@@ -1,234 +1,466 @@
-/*======================================================================================================================
-| PragmaCSS. Prototype fast, scale with confidence.
-|=======================================================================================================================
-|
-| utilities.css
-| -------------
-|
-| Utilities are generic, low-level classes that serve a specific, singular purpose. They can be combined to achieve
-| more complex effects without the need to create custom classes.
-|
-`---------------------------------------------------------------------------------------------------------------------*/
-
 /*
-|-----------------------------------------------------------------------------------------------------------------------
-| Reset
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| PragmaCSS applies default styling to particular elements for your convenience, but sometimes you may need
-| to completely change how a basic element looks like. For these situations, you can use the .reset class in order to
-| set the font size, weight and family, as well as the line-height, color, letter-spacing and text-transformations to
-| their default values. Then you can just use utility or custom classes to customize the element to your liking.
-|
-*/
+ * PragmaCSS / utilities.styl
+ * ==========================
+ *
+ * Utilities are generic, low-level classes that serve a specific, singular purpose. They can be combined to achieve
+ * more complex effects without the need to create custom classes.
+ *
+ */
+
+
+/* Reset text-related CSS properties
+----------------------------------------------------------------------------------------------------------------------*/
 .reset
   font $font-weight-regular $default-font-size / $default-line-height $primary-font
   color $dark
   text-transform none
   letter-spacing $default-letter-spacing
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text colors
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.primary
-  color $primary
 
-.dark
-  color $dark
+/* Text colors
+----------------------------------------------------------------------------------------------------------------------*/
+if $colors.primary
+  .primary
+    color $primary
 
-.soft
-  color $soft
+if $colors.secondary
+  .secondary
+    color $secondary
 
-.pale
-  color $pale
+if $colors.tertiary
+  .tertiary
+    color $tertiary
 
-.light
-  color $light
+if $colors.dark
+  .dark
+    color $dark
 
-.white
-  color $white
+  .dark-forced
+    color $dark-forced
 
-.black
-  color $black
+if $colors.muted
+  .muted
+    color $muted
 
-.red
-  color $red
+  .muted-forced
+    color $muted-forced
 
-.green
-  color $green
+if $colors.subtle
+  .subtle
+    color $subtle
 
-.yellow
-  color $yellow
+  .subtle-forced
+    color $subtle-forced
 
-.orange
-  color $orange
+if $colors.light
+  .light
+    color $light
 
-.blue
-  color $blue
+  .light-forced
+    color $light-forced
 
-.violet
-  color $violet
+if $colors.white
+  .white
+    color $white
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Link colors
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+if $colors.black
+  .black
+    color $black
+
+if $colors.red
+  .red
+    color $red
+
+if $colors.green
+  .green
+    color $green
+
+if $colors.yellow
+  .yellow
+    color $yellow
+
+if $colors.orange
+  .orange
+    color $orange
+
+if $colors.blue
+  .blue
+    color $blue
+
+if $colors.violet
+  .violet
+    color $violet
+
+// Inverted text colors
+if $colors.primary
+  .inverted .primary
+    color $primary-inverted
+
+if $colors.secondary
+  .inverted .secondary
+    color $secondary-inverted
+
+if $colors.tertiary
+  .inverted .tertiary
+    color $tertiary-inverted
+
+if $colors.dark
+  .inverted .dark
+    color $dark-inverted
+
+if $colors.muted
+  .inverted .muted
+    color $muted-inverted
+
+if $colors.subtle
+  .inverted .subtle
+    color $subtle-inverted
+
+if $colors.light
+  .inverted .light
+    color $light-inverted
+
+/* Link colors
+----------------------------------------------------------------------------------------------------------------------*/
 a
-  &.primary:hover
-    color $primary-hover
-  &.dark:hover
-    color $dark-hover
-  &.soft:hover
-    color $soft-hover
-  &.pale:hover
-    color $pale-hover
-  &.light:hover
-    color $light-hover
-  &.white:hover
-    color $white-hover
-  &.black:hover
-    color $black-hover
-  &.red:hover
-    color $red-hover
-  &.green:hover
-    color $green-hover
-  &.yellow:hover
-    color $yellow-hover
-  &.orange:hover
-    color $orange-hover
-  &.blue:hover
-    color $blue-hover
-  &.violet:hover
-    color $violet-hover
+  if $colors.primary
+    &.primary:hover
+      color $primary-hover
+  if $colors.secondary
+    &.secondary:hover
+      color $secondary-hover
+  if $colors.tertiary
+    &.tertiary:hover
+      color $tertiary-hover
+  if $colors.dark
+    &.dark:hover
+      color $dark-hover
+  if $colors.muted
+    &.muted:hover
+      color $muted-hover
+  if $colors.subtle
+    &.subtle:hover
+      color $subtle-hover
+  if $colors.light
+    &.light:hover
+      color $light-hover
+  if $colors.white
+    &.white:hover
+      color $white-hover
+  if $colors.black
+    &.black:hover
+      color $black-hover
+  if $colors.red
+    &.red:hover
+      color $red-hover
+  if $colors.green
+    &.green:hover
+      color $green-hover
+  if $colors.yellow
+    &.yellow:hover
+      color $yellow-hover
+  if $colors.orange
+    &.orange:hover
+      color $orange-hover
+  if $colors.blue
+    &.blue:hover
+      color $blue-hover
+  if $colors.violet
+    &.violet:hover
+      color $violet-hover
 
-/* Hover state overrides for text color */
-.primary-on-hover:hover
-  color $primary !important
+// Inverted link colors
+.inverted a
+  if $colors.primary
+    &.primary
+      color $primary-inverted
+    &.primary:hover
+      color $primary-hover-inverted
+  if $colors.secondary
+    &.secondary
+      color $secondary-inverted
+    &.secondary:hover
+      color $secondary-hover-inverted
+  if $colors.tertiary
+    &.tertiary
+      color $tertiary-inverted
+    &.tertiary:hover
+      color $tertiary-hover-inverted
+  if $colors.dark
+    &.dark
+      color $dark-inverted
+    &.dark:hover
+      color $dark-hover-inverted
+  if $colors.muted
+    &.muted
+      color $muted-inverted
+    &.muted:hover
+      color $muted-hover-inverted
+  if $colors.subtle
+    &.subtle
+      color $subtle-inverted
+    &.subtle:hover
+      color $subtle-hover-inverted
+  if $colors.light
+    &.light
+      color $light-inverted
+    &.light:hover
+      color $light-hover-inverted
+  if $colors.white
+    &.white:hover
+      color $white-hover-inverted
+  if $colors.black
+    &.black:hover
+      color $black-hover-inverted
+  if $colors.red
+    &.red:hover
+      color $red-hover-inverted
+  if $colors.green
+    &.green:hover
+      color $green-hover-inverted
+  if $colors.yellow
+    &.yellow:hover
+      color $yellow-hover-inverted
+  if $colors.orange
+    &.orange:hover
+      color $orange-hover-inverted
+  if $colors.blue
+    &.blue:hover
+      color $blue-hover-inverted
+  if $colors.violet
+    &.violet:hover
+      color $violet-hover-inverted
 
-.dark-on-hover:hover
-  color $dark !important
 
-.soft-on-hover:hover
-  color $soft !important
+// Hover state overrides for text color
+if $colors.primary
+  .primary-on-hover:hover
+    color $primary !important
 
-.pale-on-hover:hover
-  color $pale !important
+if $colors.secondary
+  .secondary-on-hover:hover
+    color $secondary !important
 
-.light-on-hover:hover
-  color $light !important
+if $colors.tertiary
+  .tertiary-on-hover:hover
+    color $tertiary !important
 
-.white-on-hover:hover
-  color $white !important
+if $colors.dark
+  .dark-on-hover:hover
+    color $dark !important
 
-.black-on-hover:hover
-  color $black !important
+if $colors.muted
+  .muted-on-hover:hover
+    color $muted !important
 
-.red-on-hover:hover
-  color $red !important
+if $colors.subtle
+  .subtle-on-hover:hover
+    color $subtle !important
 
-.green-on-hover:hover
-  color $green !important
+if $colors.light
+  .light-on-hover:hover
+    color $light !important
 
-.yellow-on-hover:hover
-  color $yellow !important
+if $colors.white
+  .white-on-hover:hover
+    color $white !important
 
-.orange-on-hover:hover
-  color $orange !important
+if $colors.black
+  .black-on-hover:hover
+    color $black !important
 
-.blue-on-hover:hover
-  color $blue !important
+if $colors.red
+  .red-on-hover:hover
+    color $red !important
 
-.violet-on-hover:hover
-  color c_violet !important
+if $colors.green
+  .green-on-hover:hover
+    color $green !important
 
-/* Background colors */
-.primary-bg
-  background-color $primary
+if $colors.yellow
+  .yellow-on-hover:hover
+    color $yellow !important
 
-.dark-bg
-  background-color $dark
+if $colors.orange
+  .orange-on-hover:hover
+    color $orange !important
 
-.soft-bg
-  background-color $soft
+if $colors.blue
+  .blue-on-hover:hover
+    color $blue !important
 
-.pale-bg
-  background-color $pale
+if $colors.violet
+  .violet-on-hover:hover
+    color $violet !important
 
-.light-bg
-  background-color $light
 
-.white-bg
-  background-color $white
+/* Background colors
+----------------------------------------------------------------------------------------------------------------------*/
+if $colors.primary
+  .primary-bg
+    background-color $primary
 
-.black-bg
-  background-color $black
+if $colors.secondary
+  .secondary-bg
+    background-color $secondary
 
-.red-bg
-  background-color $red
+if $colors.tertiary
+  .tertiary-bg
+    background-color $tertiary
 
-.green-bg
-  background-color $green
+if $colors.dark
+  .dark-bg
+    background-color $dark
 
-.yellow-bg
-  background-color $yellow
+  .dark-bg-forced
+    background-color $dark-forced
 
-.orange-bg
-  background-color $orange
+if $colors.muted
+  .muted-bg
+    background-color $muted
 
-.blue-bg
-  background-color $blue
+  .muted-bg-forced
+    background-color $muted-forced
 
-.violet-bg
-  background-color $violet
+if $colors.subtle
+  .subtle-bg
+    background-color $subtle
 
-/* Hover state overrides for background color */
-.primary-bg-on-hover:hover
-  background-color $primary !important
+  .subtle-bg-forced
+    background-color $subtle-forced
 
-.dark-bg-on-hover:hover
-  background-color $dark !important
+if $colors.light
+  .light-bg
+    background-color $light
 
-.soft-bg-on-hover:hover
-  background-color $soft !important
+  .light-bg-forced
+    background-color $light-forced
 
-.pale-bg-on-hover:hover
-  background-color $pale !important
+if $colors.white
+  .white-bg
+    background-color $white
 
-.light-bg-on-hover:hover
-  background-color $light !important
+if $colors.black
+  .black-bg
+    background-color $black
 
-.white-bg-on-hover:hover
-  background-color $white !important
+if $colors.red
+  .red-bg
+    background-color $red
 
-.black-bg-on-hover:hover
-  background-color $black !important
+if $colors.green
+  .green-bg
+    background-color $green
 
-.red-bg-on-hover:hover
-  background-color $red !important
+if $colors.yellow
+  .yellow-bg
+    background-color $yellow
 
-.green-bg-on-hover:hover
-  background-color $green !important
+if $colors.orange
+  .orange-bg
+    background-color $orange
 
-.yellow-bg-on-hover:hover
-  background-color $yellow !important
+if $colors.blue
+  .blue-bg
+    background-color $blue
 
-.orange-bg-on-hover:hover
-  background-color $orange !important
+if $colors.violet
+  .violet-bg
+    background-color $violet
 
-.blue-bg-on-hover:hover
-  background-color $blue !important
+// Inverted background colors
+if $colors.primary
+  .inverted .primary-bg
+    background-color $primary-inverted
 
-.violet-bg-on-hover:hover
-  background-color $violet !important
+if $colors.secondary
+  .inverted .secondary-bg
+    background-color $secondary-inverted
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Font sizes
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+if $colors.tertiary
+  .inverted .tertiary-bg
+    background-color $tertiary-inverted
+
+if $colors.dark
+  .inverted .dark-bg
+    background-color $dark-inverted
+
+if $colors.muted
+  .inverted .muted-bg
+    background-color $muted-inverted
+
+if $colors.subtle
+  .inverted .subtle-bg
+    background-color $subtle-inverted
+
+if $colors.light
+  .inverted .light-bg
+    background-color $light-inverted
+
+// Hover state overrides for background color
+if $colors.primary
+  .primary-bg-on-hover:hover
+    background-color $primary !important
+
+if $colors.secondary
+  .secondary-bg-on-hover:hover
+    background-color $secondary !important
+
+if $colors.tertiary
+  .tertiary-bg-on-hover:hover
+    background-color $tertiary !important
+
+if $colors.dark
+  .dark-bg-on-hover:hover
+    background-color $dark !important
+
+if $colors.muted
+  .muted-bg-on-hover:hover
+    background-color $muted !important
+
+if $colors.subtle
+  .subtle-bg-on-hover:hover
+    background-color $subtle !important
+
+if $colors.light
+  .light-bg-on-hover:hover
+    background-color $light !important
+
+if $colors.white
+  .white-bg-on-hover:hover
+    background-color $white !important
+
+if $colors.black
+  .black-bg-on-hover:hover
+    background-color $black !important
+
+if $colors.red
+  .red-bg-on-hover:hover
+    background-color $red !important
+
+if $colors.green
+  .green-bg-on-hover:hover
+    background-color $green !important
+
+if $colors.yellow
+  .yellow-bg-on-hover:hover
+    background-color $yellow !important
+
+if $colors.orange
+  .orange-bg-on-hover:hover
+    background-color $orange !important
+
+if $colors.blue
+  .blue-bg-on-hover:hover
+    background-color $blue !important
+
+if $colors.violet
+  .violet-bg-on-hover:hover
+    background-color $violet !important
+
+
+/* Font sizes
+----------------------------------------------------------------------------------------------------------------------*/
 .size-4xl
   font-size $font-size-4xl
 
@@ -280,7 +512,7 @@ a
 
 @media only screen and (max-width $breakpoint-l)
   .size-4xl
-    font-size round($font-size-4xl * .85)
+    font-size round($font-size-4xl * .8)
 
   .size-3xl
     font-size round($font-size-3xl * .9)
@@ -290,26 +522,13 @@ a
 
 @media only screen and (max-width $breakpoint-m)
   .size-4xl
-    font-size round($font-size-4xl * .75)
-
-  .size-3xl
-    font-size round($font-size-3xl * .85)
-
-  .size-2xl
-    font-size round($font-size-2xl * .9)
-
-  .size-xl
-    font-size round($font-size-xl * .95)
-
-@media only screen and (max-width $breakpoint-s)
-  .size-4xl
-    font-size round($font-size-4xl * .65)
+    font-size round($font-size-4xl * .7)
 
   .size-3xl
     font-size round($font-size-3xl * .8)
 
   .size-2xl
-    font-size round($font-size-2xl * .85)
+    font-size round($font-size-2xl * .9)
 
   .size-xl
     font-size round($font-size-xl * .9)
@@ -317,11 +536,43 @@ a
   .size-l
     font-size round($font-size-l * .95)
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text style
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+  .size-m
+    font-size round($font-size-m * .95)
+
+  .size-s
+    font-size round($font-size-s * .95)
+
+  .size-xs
+    font-size round($font-size-xs * .95)
+
+@media only screen and (max-width $breakpoint-s)
+  .size-4xl
+    font-size round($font-size-4xl * .6)
+
+  .size-3xl
+    font-size round($font-size-3xl * .7)
+
+  .size-2xl
+    font-size round($font-size-2xl * .8)
+
+  .size-xl
+    font-size round($font-size-xl * .85)
+
+  .size-l
+    font-size round($font-size-l * .9)
+
+  .size-m
+    font-size round($font-size-m * .9)
+
+  .size-s
+    font-size round($font-size-s * .9)
+
+  .size-xs
+    font-size round($font-size-xs * .9)
+
+
+/* Text style
+----------------------------------------------------------------------------------------------------------------------*/
 .bold
   font-weight $font-weight-bold
 
@@ -347,11 +598,9 @@ a
   font-weight $font-weight-regular
   font-style normal
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Letter spacing
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Letter spacing
+----------------------------------------------------------------------------------------------------------------------*/
 .extend-s
   letter-spacing $extend-letter-spacing-s
 
@@ -364,11 +613,9 @@ a
 .extend-0
   letter-spacing 0
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Display
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Display
+----------------------------------------------------------------------------------------------------------------------*/
 .block
   display block !important
 
@@ -378,14 +625,15 @@ a
 .flex
   display flex !important
 
+.inline-flex
+  display inline-flex !important
+
 .hide, .hidden
   display none !important
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Positioning
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Positioning
+----------------------------------------------------------------------------------------------------------------------*/
 .relative
   position relative
 
@@ -406,11 +654,9 @@ a
 .no-overflow
   overflow hidden
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Text alignment
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Text alignment
+----------------------------------------------------------------------------------------------------------------------*/
 .center
   text-align center
 
@@ -420,11 +666,9 @@ a
 .align-left
   text-align left
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Floats
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Floats
+----------------------------------------------------------------------------------------------------------------------*/
 .float-left
   float left
 
@@ -434,11 +678,9 @@ a
 .clear
   clear both
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Vertical text alignment
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Vertical text alignment
+----------------------------------------------------------------------------------------------------------------------*/
 .va-top
   vertical-align top
 
@@ -463,11 +705,9 @@ a
 .va-super
   vertical-align super
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Block text
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Block text
+----------------------------------------------------------------------------------------------------------------------*/
 .nowrap
   white-space nowrap
 
@@ -477,11 +717,9 @@ a
   overflow: hidden
   text-overflow: ellipsis
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Block alignment
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Block alignment
+----------------------------------------------------------------------------------------------------------------------*/
 .centered
   margin-left auto
   margin-right auto
@@ -530,19 +768,9 @@ a
 .wrap
   flex-wrap wrap
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Container
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| The page-container should be used at the root of your HTML. Its purpose is to ensure that the width of your page
-| doesn't exceed 100%, which would cause undesired horizontal scrolling.
-|
-| The container class on the other hand is optional but recommended for most layouts. It centers the content area
-| and adds the proper amount of spacing on smaller screen sizes.
-| Combine it with max-width classes to limit its width.
-|
-*/
+
+/* Container
+----------------------------------------------------------------------------------------------------------------------*/
 .page-container
   position absolute
   width 100%
@@ -572,60 +800,37 @@ a
   .container
     width $page-width-on-s
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Fixed widths
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| The following classes allow you to set the width of your elements to a particular pixel value.
-| You can configure your own width values in the global configuration.
-|
-*/
+
+/* Fixed widths
+----------------------------------------------------------------------------------------------------------------------*/
 for w in $widths
   .width-{w}
     width unit(w, 'px')
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Max-widths
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Same as fixed widths, but for max-width.
-|
-*/
+
+/* Max-widths
+----------------------------------------------------------------------------------------------------------------------*/
 for mw in $max-widths
   .max-width-{mw}
     max-width unit(mw, 'px')
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Fixed heights
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Same as fixed widths, but for height.
-|
-*/
+
+/* Fixed heights
+----------------------------------------------------------------------------------------------------------------------*/
 for h in $heights
   .height-{h}
     height unit(h, 'px')
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Max-heights
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Same as fixed heights, but for max-height.
-|
-*/
+
+/* Max-heights
+----------------------------------------------------------------------------------------------------------------------*/
 for mh in $max-heights
   .max-height-{mh}
     max-height unit(mh, 'px')
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Width and height utilities
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Width and height utilities
+----------------------------------------------------------------------------------------------------------------------*/
 .full-width, .full
   width 100%
 
@@ -638,28 +843,14 @@ for mh in $max-heights
 .height-auto
   height auto
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Grid
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| The grid system allows you to responsively divide your content into rows of up to 12 columns.
-| PragmaCSS grid does not offer offset classes, since it's preferable to use other (flexbox-)utility classes or
-| custom CSS for complex or unusual layouts.
-|
-*/
+
+/* Grid
+----------------------------------------------------------------------------------------------------------------------*/
 .grid
   display flex
   flex-wrap wrap
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Grid gaps
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| You can control the gap between your grid columns by setting the appropriate gap class.
-|
-*/
+// Grid gaps
 .grid.gap-s
   margin-left - $grid-gap-s
   margin-right - $grid-gap-s
@@ -681,507 +872,1198 @@ for mh in $max-heights
     padding-left $grid-gap-l
     padding-right $grid-gap-l
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Grid column
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-.grid .col
-  align-items stretch
 
 /* Grid columns
 ----------------------------------------------------------------------------------------------------------------------*/
+.grid .col
+  align-items stretch
+
 for i in (1..12)
   .grid .col.s{i}
     width: unit((100 / 12) * i, '%')
 
-/* Grid columns for screen sizes 600px and above
-----------------------------------------------------------------------------------------------------------------------*/
+// Grid columns for screen sizes 600px and above
 @media only screen and (min-width unit($breakpoint-s + 1, 'px'))
   for i in (1..12)
     .grid .col.m{i}
       width: unit((100 / 12) * i, '%')
 
-/* Grid columns for screen sizes 900px and above
-----------------------------------------------------------------------------------------------------------------------*/
+// Grid columns for screen sizes 900px and above
 @media only screen and (min-width unit($breakpoint-m + 1, 'px'))
   for i in (1..12)
     .grid .col.l{i}
       width: unit((100 / 12) * i, '%')
 
-/* Grid columns for screen sizes 1200px and above
-----------------------------------------------------------------------------------------------------------------------*/
+// Grid columns for screen sizes 1200px and above
 @media only screen and (min-width unit($breakpoint-l + 1, 'px'))
   for i in (1..12)
     .grid .col.x{i}
       width: unit((100 / 12) * i, '%')
 
-/* Grid columns for screen sizes 1500px and above
-----------------------------------------------------------------------------------------------------------------------*/
+// Grid columns for screen sizes 1500px and above
 @media only screen and (min-width unit($breakpoint-xl + 1, 'px'))
   for i in (1..12)
     .grid .col.xl{i}
       width: unit((100 / 12) * i, '%')
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Grid column separators
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Sometimes you want an additional visual separation between your columns. This is where the grid column separator
-| comes into play.
-|
-| It adds a vertical border after the column that has the .separated class applied to it.
-|
-*/
+
+/* Grid column separators
+----------------------------------------------------------------------------------------------------------------------*/
 .grid .col.separated
   border-right $grid-separation
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Push offsets
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Push classes allow you to add margins to your elements.
-|
-*/
-.push-xs
-  margin $offset-xs
-
-.push-s
-  margin $offset-s
-
-.push,
-.push-m
-  margin $offset-m
-
-.push-l
-  margin $offset-l
-
-.push-xl
-  margin $offset-xl
-
-.push-2xl
-  margin $offset-2xl
-
-.push-0
-  margin 0
-
-.push-auto
-  margin auto
-
-/* Extra small push */
-.push-up-xs, .push-v-xs
-  margin-top $offset-xs
-
-.push-down-xs,
-.push-v-xs
-  margin-bottom $offset-xs
-
-.push-left-xs,
-.push-h-xs
-  margin-left $offset-xs
-
-.push-right-xs,
-.push-h-xs
-  margin-right $offset-xs
-
-/* Small push */
-.push-up-s,
-.push-v-s
-  margin-top $offset-s
-
-.push-down-s,
-.push-v-s
-  margin-bottom $offset-s
-
-.push-left-s,
-.push-h-s
-  margin-left $offset-s
-
-.push-right-s,
-.push-h-s
-  margin-right $offset-s
-
-/* Medium push */
-.push-up,
-.push-v,
-.push-up-m,
-.push-v-m
-  margin-top $offset-m
-
-.push-down,
-.push-v,
-.push-down-m,
-.push-v-m
-  margin-bottom $offset-m
-
-.push-left,
-.push-h,
-.push-left-m,
-.push-h-m
-  margin-left $offset-m
-
-.push-right,
-.push-h,
-.push-right-m,
-.push-h-m
-  margin-right $offset-m
-
-/* Large push, default */
-.push-up-l,
-.push-v-l
-  margin-top $offset-l
-
-.push-down-l,
-.push-v-l
-  margin-bottom $offset-l
-
-.push-left-l,
-.push-h-l
-  margin-left $offset-l
-
-.push-right-l,
-.push-h-l
-  margin-right $offset-l
-
-/* Very large push */
-.push-up-xl,
-.push-v-xl
-  margin-top $offset-xl
-
-.push-down-xl,
-.push-v-xl
-  margin-bottom $offset-xl
-
-.push-left-xl,
-.push-h-xl
-  margin-left $offset-xl
-
-.push-right-xl,
-.push-h-xl
-  margin-right $offset-xl
-
-/* Super large push */
-.push-up-2xl,
-.push-v-2xl
-  margin-top $offset-2xl
-
-.push-down-2xl,
-.push-v-2xl
-  margin-bottom $offset-2xl
-
-.push-left-2xl,
-.push-h-2xl
-  margin-left $offset-2xl
-
-.push-right-2xl,
-.push-h-2xl
-  margin-right $offset-2xl
-
-/* No push */
-.push-up-0, .push-v-0
-  margin-top 0
-
-.push-down-0, .push-v-0
-  margin-bottom 0
-
-.push-left-0, .push-h-0
-  margin-left 0
-
-.push-right-0, .push-h-0
-  margin-right 0
-
-/* Margin auto */
-.push-up-auto,
-.push-v-auto
-  margin-top auto
-
-.push-down-auto,
-.push-v-auto
-  margin-bottom auto
-
-.push-left-auto,
-.push-h-auto
-  margin-left auto
-
-.push-right-auto,
-.push-h-auto
-  margin-right auto
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Pull offsets
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Pull classes add negative margins to elements, allowing you to offset padding when necessary.
-|
-*/
-
-/* Extra small pull */
-.pull-up-xs
-  margin-top - $offset-xs
-
-.pull-down-xs
-  margin-bottom - $offset-xs
-
-.pull-left-xs,
-.pull-h-xs
-  margin-left - $offset-xs
-
-.pull-right-xs,
-.pull-h-xs
-  margin-right - $offset-xs
-
-/* Small pull */
-.pull-up-s
-  margin-top - $offset-s
-
-.pull-down-s
-  margin-bottom - $offset-s
-
-.pull-left-s,
-.pull-h-s
-  margin-left - $offset-s
-
-.pull-right-s,
-.pull-h-s
-  margin-right - $offset-s
-
-/* Medium pull */
-.pull-up
-.pull-up-m
-  margin-top - $offset-m
-
-.pull-down
-.pull-down-m
-  margin-bottom - $offset-m
-
-.pull-left,
-.pull-h,
-.pull-left-m,
-.pull-h-m
-  margin-left - $offset-m
-
-.pull-right,
-.pull-h,
-.pull-right-m,
-.pull-h-m
-  margin-right - $offset-m
-
-/* Large pull, default */
-.pull-up-l
-  margin-top - $offset-l
-
-.pull-down-l
-  margin-bottom - $offset-l
-
-.pull-left-l,
-.pull-h-l
-  margin-left - $offset-l
-
-.pull-right-l,
-.pull-h-l
-  margin-right - $offset-l
-
-/* Very large pull */
-.pull-up-xl
-  margin-top - $offset-xl
-
-.pull-down-xl
-  margin-bottom - $offset-xl
-
-.pull-left-xl,
-.pull-h-xl
-  margin-left - $offset-xl
-
-.pull-right-xl,
-.pull-h-xl
-  margin-right - $offset-xl
-
-/* Super large pull */
-.pull-up-2xl
-  margin-top - $offset-2xl
-
-.pull-down-2xl
-  margin-bottom - $offset-2xl
-
-.pull-left-2xl,
-.pull-h-2xl
-  margin-left - $offset-2xl
-
-.pull-right-2xl,
-.pull-h-2xl
-  margin-right - $offset-2xl
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Padding offsets
-|-----------------------------------------------------------------------------------------------------------------------
-|
-| Pad classes can - unsurprisingly - be used to add padding to your elements.
-|
-*/
-.pad-xs
-  padding $offset-xs
-
-.pad-s
-  padding $offset-s
-
-.pad,
-.pad-m
-  padding $offset-m
-
-.pad-l
-  padding $offset-l
-
-.pad-xl
-  padding $offset-xl
-
-.pad-2xl
-  padding $offset-2xl
-
-.pad-0
-  padding 0
-
-/* Extra small padding */
-.pad-up-xs,
-.pad-v-xs
-  padding-top $offset-xs
-
-.pad-down-xs,
-.pad-v-xs
-  padding-bottom $offset-xs
-
-.pad-left-xs,
-.pad-h-xs
-  padding-left $offset-xs
-
-.pad-right-xs,
-.pad-h-xs
-  padding-right $offset-xs
-
-/* Small padding */
-.pad-up-s,
-.pad-v-s
-  padding-top $offset-s
-
-.pad-down-s,
-.pad-v-s
-  padding-bottom $offset-s
-
-.pad-left-s,
-.pad-h-s
-  padding-left $offset-s
-
-.pad-right-s,
-.pad-h-s
-  padding-right $offset-s
-
-/* Medium padding */
-.pad-up,
-.pad-v,
-.pad-up-m,
-.pad-v-m
-  padding-top $offset-m
-
-.pad-down,
-.pad-v,
-.pad-down-m,
-.pad-v-m
-  padding-bottom $offset-m
-
-.pad-left,
-.pad-h,
-.pad-left-m,
-.pad-h-m
-  padding-left $offset-m
-
-.pad-right,
-.pad-h,
-.pad-right-m,
-.pad-h-m
-  padding-right $offset-m
-
-/* Large padding, default */
-.pad-up-l,
-.pad-v-l
-  padding-top $offset-l
-
-.pad-down-l,
-.pad-v-l
-  padding-bottom $offset-l
-
-.pad-left-l,
-.pad-h-l
-  padding-left $offset-l
-
-.pad-right-l,
-.pad-h-l
-  padding-right $offset-l
-
-/* Very large padding */
-.pad-up-xl,
-.pad-v-xl
-  padding-top $offset-xl
-
-.pad-down-xl,
-.pad-v-xl
-  padding-bottom $offset-xl
-
-.pad-left-xl,
-.pad-h-xl
-  padding-left $offset-xl
-
-.pad-right-xl,
-.pad-h-xl
-  padding-right $offset-xl
-
-/* Super large padding */
-.pad-up-2xl,
-.pad-v-2xl
-  padding-top $offset-2xl
-
-.pad-down-2xl,
-.pad-v-2xl
-  padding-bottom $offset-2xl
-
-.pad-left-2xl,
-.pad-h-2xl
-  padding-left $offset-2xl
-
-.pad-right-2xl,
-.pad-h-2xl
-  padding-right $offset-2xl
-
-/* No padding */
-.pad-up-0,
-.pad-v-0
-  padding-top 0
-
-.pad-down-0,
-.pad-v-0
-  padding-bottom 0
-
-.pad-left-0,
-.pad-h-0
-  padding-left 0
-
-.pad-right-0,
-.pad-h-0
-  padding-right 0
-
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Border
-|-----------------------------------------------------------------------------------------------------------------------
-*/
-
-/* Border color defaults */
+
+/* Push offsets
+----------------------------------------------------------------------------------------------------------------------*/
+if $offsets.push
+  .push-xs
+    margin $offset-xs
+
+  .push-s
+    margin $offset-s
+
+  .push,
+  .push-m
+    margin $offset-m
+
+  .push-l
+    margin $offset-l
+
+  .push-xl
+    margin $offset-xl
+
+  .push-2xl
+    margin $offset-2xl
+
+  .push-0
+    margin 0
+
+  .push-auto
+    margin auto
+
+  // Extra small push
+  .push-up-xs, .push-v-xs
+    margin-top $offset-xs
+
+  .push-down-xs,
+  .push-v-xs
+    margin-bottom $offset-xs
+
+  .push-left-xs,
+  .push-h-xs
+    margin-left $offset-xs
+
+  .push-right-xs,
+  .push-h-xs
+    margin-right $offset-xs
+
+  // Small push
+  .push-up-s,
+  .push-v-s
+    margin-top $offset-s
+
+  .push-down-s,
+  .push-v-s
+    margin-bottom $offset-s
+
+  .push-left-s,
+  .push-h-s
+    margin-left $offset-s
+
+  .push-right-s,
+  .push-h-s
+    margin-right $offset-s
+
+  // Medium push
+  .push-up,
+  .push-v,
+  .push-up-m,
+  .push-v-m
+    margin-top $offset-m
+
+  .push-down,
+  .push-v,
+  .push-down-m,
+  .push-v-m
+    margin-bottom $offset-m
+
+  .push-left,
+  .push-h,
+  .push-left-m,
+  .push-h-m
+    margin-left $offset-m
+
+  .push-right,
+  .push-h,
+  .push-right-m,
+  .push-h-m
+    margin-right $offset-m
+
+  // Large push, default
+  .push-up-l,
+  .push-v-l
+    margin-top $offset-l
+
+  .push-down-l,
+  .push-v-l
+    margin-bottom $offset-l
+
+  .push-left-l,
+  .push-h-l
+    margin-left $offset-l
+
+  .push-right-l,
+  .push-h-l
+    margin-right $offset-l
+
+  // Very large push
+  .push-up-xl,
+  .push-v-xl
+    margin-top $offset-xl
+
+  .push-down-xl,
+  .push-v-xl
+    margin-bottom $offset-xl
+
+  .push-left-xl,
+  .push-h-xl
+    margin-left $offset-xl
+
+  .push-right-xl,
+  .push-h-xl
+    margin-right $offset-xl
+
+  // Super large push
+  .push-up-2xl,
+  .push-v-2xl
+    margin-top $offset-2xl
+
+  .push-down-2xl,
+  .push-v-2xl
+    margin-bottom $offset-2xl
+
+  .push-left-2xl,
+  .push-h-2xl
+    margin-left $offset-2xl
+
+  .push-right-2xl,
+  .push-h-2xl
+    margin-right $offset-2xl
+
+  // No push
+  .push-up-0, .push-v-0
+    margin-top 0
+
+  .push-down-0, .push-v-0
+    margin-bottom 0
+
+  .push-left-0, .push-h-0
+    margin-left 0
+
+  .push-right-0, .push-h-0
+    margin-right 0
+
+  // Margin auto
+  .push-up-auto,
+  .push-v-auto
+    margin-top auto
+
+  .push-down-auto,
+  .push-v-auto
+    margin-bottom auto
+
+  .push-left-auto,
+  .push-h-auto
+    margin-left auto
+
+  .push-right-auto,
+  .push-h-auto
+    margin-right auto
+
+if $offsets.push-on-m
+  @media only screen and (max-width $breakpoint-m)
+    .push-xs
+      margin $offset-xs-on-m
+
+    .push-s
+      margin $offset-s-on-m
+
+    .push,
+    .push-m
+      margin $offset-m-on-m
+
+    .push-l
+      margin $offset-l-on-m
+
+    .push-xl
+      margin $offset-xl-on-m
+
+    .push-2xl
+      margin $offset-2xl-on-m
+
+    // Extra small push
+    .push-up-xs, .push-v-xs
+      margin-top $offset-xs-on-m
+
+    .push-down-xs,
+    .push-v-xs
+      margin-bottom $offset-xs-on-m
+
+    .push-left-xs,
+    .push-h-xs
+      margin-left $offset-xs-on-m
+
+    .push-right-xs,
+    .push-h-xs
+      margin-right $offset-xs-on-m
+
+    // Small push
+    .push-up-s,
+    .push-v-s
+      margin-top $offset-s-on-m
+
+    .push-down-s,
+    .push-v-s
+      margin-bottom $offset-s-on-m
+
+    .push-left-s,
+    .push-h-s
+      margin-left $offset-s-on-m
+
+    .push-right-s,
+    .push-h-s
+      margin-right $offset-s-on-m
+
+    // Medium push
+    .push-up,
+    .push-v,
+    .push-up-m,
+    .push-v-m
+      margin-top $offset-m-on-m
+
+    .push-down,
+    .push-v,
+    .push-down-m,
+    .push-v-m
+      margin-bottom $offset-m-on-m
+
+    .push-left,
+    .push-h,
+    .push-left-m,
+    .push-h-m
+      margin-left $offset-m-on-m
+
+    .push-right,
+    .push-h,
+    .push-right-m,
+    .push-h-m
+      margin-right $offset-m-on-m
+
+    // Large push, default
+    .push-up-l,
+    .push-v-l
+      margin-top $offset-l-on-m
+
+    .push-down-l,
+    .push-v-l
+      margin-bottom $offset-l-on-m
+
+    .push-left-l,
+    .push-h-l
+      margin-left $offset-l-on-m
+
+    .push-right-l,
+    .push-h-l
+      margin-right $offset-l-on-m
+
+    // Very large push
+    .push-up-xl,
+    .push-v-xl
+      margin-top $offset-xl-on-m
+
+    .push-down-xl,
+    .push-v-xl
+      margin-bottom $offset-xl-on-m
+
+    .push-left-xl,
+    .push-h-xl
+      margin-left $offset-xl-on-m
+
+    .push-right-xl,
+    .push-h-xl
+      margin-right $offset-xl-on-m
+
+    // Super large push
+    .push-up-2xl,
+    .push-v-2xl
+      margin-top $offset-2xl-on-m
+
+    .push-down-2xl,
+    .push-v-2xl
+      margin-bottom $offset-2xl-on-m
+
+    .push-left-2xl,
+    .push-h-2xl
+      margin-left $offset-2xl-on-m
+
+    .push-right-2xl,
+    .push-h-2xl
+      margin-right $offset-2xl-on-m
+
+if $offsets.push-on-s
+  @media only screen and (max-width $breakpoint-s)
+    .push-xs
+      margin $offset-xs-on-s
+
+    .push-s
+      margin $offset-s-on-s
+
+    .push,
+    .push-m
+      margin $offset-m-on-s
+
+    .push-l
+      margin $offset-l-on-s
+
+    .push-xl
+      margin $offset-xl-on-s
+
+    .push-2xl
+      margin $offset-2xl-on-s
+
+    // Extra small push
+    .push-up-xs, .push-v-xs
+      margin-top $offset-xs-on-s
+
+    .push-down-xs,
+    .push-v-xs
+      margin-bottom $offset-xs-on-s
+
+    .push-left-xs,
+    .push-h-xs
+      margin-left $offset-xs-on-s
+
+    .push-right-xs,
+    .push-h-xs
+      margin-right $offset-xs-on-s
+
+    // Small push
+    .push-up-s,
+    .push-v-s
+      margin-top $offset-s-on-s
+
+    .push-down-s,
+    .push-v-s
+      margin-bottom $offset-s-on-s
+
+    .push-left-s,
+    .push-h-s
+      margin-left $offset-s-on-s
+
+    .push-right-s,
+    .push-h-s
+      margin-right $offset-s-on-s
+
+    // Medium push
+    .push-up,
+    .push-v,
+    .push-up-m,
+    .push-v-m
+      margin-top $offset-m-on-s
+
+    .push-down,
+    .push-v,
+    .push-down-m,
+    .push-v-m
+      margin-bottom $offset-m-on-s
+
+    .push-left,
+    .push-h,
+    .push-left-m,
+    .push-h-m
+      margin-left $offset-m-on-s
+
+    .push-right,
+    .push-h,
+    .push-right-m,
+    .push-h-m
+      margin-right $offset-m-on-s
+
+    // Large push, default
+    .push-up-l,
+    .push-v-l
+      margin-top $offset-l-on-s
+
+    .push-down-l,
+    .push-v-l
+      margin-bottom $offset-l-on-s
+
+    .push-left-l,
+    .push-h-l
+      margin-left $offset-l-on-s
+
+    .push-right-l,
+    .push-h-l
+      margin-right $offset-l-on-s
+
+    // Very large push
+    .push-up-xl,
+    .push-v-xl
+      margin-top $offset-xl-on-s
+
+    .push-down-xl,
+    .push-v-xl
+      margin-bottom $offset-xl-on-s
+
+    .push-left-xl,
+    .push-h-xl
+      margin-left $offset-xl-on-s
+
+    .push-right-xl,
+    .push-h-xl
+      margin-right $offset-xl-on-s
+
+    // Super large push
+    .push-up-2xl,
+    .push-v-2xl
+      margin-top $offset-2xl-on-s
+
+    .push-down-2xl,
+    .push-v-2xl
+      margin-bottom $offset-2xl-on-s
+
+    .push-left-2xl,
+    .push-h-2xl
+      margin-left $offset-2xl-on-s
+
+    .push-right-2xl,
+    .push-h-2xl
+      margin-right $offset-2xl-on-s
+
+
+/* Pull offsets
+----------------------------------------------------------------------------------------------------------------------*/
+
+if $offsets.pull
+  // Extra small pull
+  .pull-up-xs
+    margin-top - $offset-xs
+
+  .pull-down-xs
+    margin-bottom - $offset-xs
+
+  .pull-left-xs,
+  .pull-h-xs
+    margin-left - $offset-xs
+
+  .pull-right-xs,
+  .pull-h-xs
+    margin-right - $offset-xs
+
+  // Small pull
+  .pull-up-s
+    margin-top - $offset-s
+
+  .pull-down-s
+    margin-bottom - $offset-s
+
+  .pull-left-s,
+  .pull-h-s
+    margin-left - $offset-s
+
+  .pull-right-s,
+  .pull-h-s
+    margin-right - $offset-s
+
+  // Medium pull
+  .pull-up
+  .pull-up-m
+    margin-top - $offset-m
+
+  .pull-down
+  .pull-down-m
+    margin-bottom - $offset-m
+
+  .pull-left,
+  .pull-h,
+  .pull-left-m,
+  .pull-h-m
+    margin-left - $offset-m
+
+  .pull-right,
+  .pull-h,
+  .pull-right-m,
+  .pull-h-m
+    margin-right - $offset-m
+
+  // Large pull, default
+  .pull-up-l
+    margin-top - $offset-l
+
+  .pull-down-l
+    margin-bottom - $offset-l
+
+  .pull-left-l,
+  .pull-h-l
+    margin-left - $offset-l
+
+  .pull-right-l,
+  .pull-h-l
+    margin-right - $offset-l
+
+  // Very large pull
+  .pull-up-xl
+    margin-top - $offset-xl
+
+  .pull-down-xl
+    margin-bottom - $offset-xl
+
+  .pull-left-xl,
+  .pull-h-xl
+    margin-left - $offset-xl
+
+  .pull-right-xl,
+  .pull-h-xl
+    margin-right - $offset-xl
+
+  // Super large pull
+  .pull-up-2xl
+    margin-top - $offset-2xl
+
+  .pull-down-2xl
+    margin-bottom - $offset-2xl
+
+  .pull-left-2xl,
+  .pull-h-2xl
+    margin-left - $offset-2xl
+
+  .pull-right-2xl,
+  .pull-h-2xl
+    margin-right - $offset-2xl
+
+if $offsets.pull-on-m
+  @media only screen and (max-width $breakpoint-m)
+    // Extra small pull
+    .pull-up-xs
+      margin-top - $offset-xs-on-m
+
+    .pull-down-xs
+      margin-bottom - $offset-xs-on-m
+
+    .pull-left-xs,
+    .pull-h-xs
+      margin-left - $offset-xs-on-m
+
+    .pull-right-xs,
+    .pull-h-xs
+      margin-right - $offset-xs-on-m
+
+    // Small pull
+    .pull-up-s
+      margin-top - $offset-s-on-m
+
+    .pull-down-s
+      margin-bottom - $offset-s-on-m
+
+    .pull-left-s,
+    .pull-h-s
+      margin-left - $offset-s-on-m
+
+    .pull-right-s,
+    .pull-h-s
+      margin-right - $offset-s-on-m
+
+    // Medium pull
+    .pull-up
+    .pull-up-m
+      margin-top - $offset-m-on-m
+
+    .pull-down
+    .pull-down-m
+      margin-bottom - $offset-m-on-m
+
+    .pull-left,
+    .pull-h,
+    .pull-left-m,
+    .pull-h-m
+      margin-left - $offset-m-on-m
+
+    .pull-right,
+    .pull-h,
+    .pull-right-m,
+    .pull-h-m
+      margin-right - $offset-m-on-m
+
+    // Large pull, default
+    .pull-up-l
+      margin-top - $offset-l-on-m
+
+    .pull-down-l
+      margin-bottom - $offset-l-on-m
+
+    .pull-left-l,
+    .pull-h-l
+      margin-left - $offset-l-on-m
+
+    .pull-right-l,
+    .pull-h-l
+      margin-right - $offset-l-on-m
+
+    // Very large pull
+    .pull-up-xl
+      margin-top - $offset-xl-on-m
+
+    .pull-down-xl
+      margin-bottom - $offset-xl-on-m
+
+    .pull-left-xl,
+    .pull-h-xl
+      margin-left - $offset-xl-on-m
+
+    .pull-right-xl,
+    .pull-h-xl
+      margin-right - $offset-xl-on-m
+
+    // Super large pull
+    .pull-up-2xl
+      margin-top - $offset-2xl-on-m
+
+    .pull-down-2xl
+      margin-bottom - $offset-2xl-on-m
+
+    .pull-left-2xl,
+    .pull-h-2xl
+      margin-left - $offset-2xl-on-m
+
+    .pull-right-2xl,
+    .pull-h-2xl
+      margin-right - $offset-2xl-on-m
+
+if $offsets.pull-on-s
+  @media only screen and (max-width $breakpoint-s)
+    // Extra small pull
+    .pull-up-xs
+      margin-top - $offset-xs-on-s
+
+    .pull-down-xs
+      margin-bottom - $offset-xs-on-s
+
+    .pull-left-xs,
+    .pull-h-xs
+      margin-left - $offset-xs-on-s
+
+    .pull-right-xs,
+    .pull-h-xs
+      margin-right - $offset-xs-on-s
+
+    // Small pull
+    .pull-up-s
+      margin-top - $offset-s-on-s
+
+    .pull-down-s
+      margin-bottom - $offset-s-on-s
+
+    .pull-left-s,
+    .pull-h-s
+      margin-left - $offset-s-on-s
+
+    .pull-right-s,
+    .pull-h-s
+      margin-right - $offset-s-on-s
+
+    // Medium pull
+    .pull-up
+    .pull-up-m
+      margin-top - $offset-m-on-s
+
+    .pull-down
+    .pull-down-m
+      margin-bottom - $offset-m-on-s
+
+    .pull-left,
+    .pull-h,
+    .pull-left-m,
+    .pull-h-m
+      margin-left - $offset-m-on-s
+
+    .pull-right,
+    .pull-h,
+    .pull-right-m,
+    .pull-h-m
+      margin-right - $offset-m-on-s
+
+    // Large pull, default
+    .pull-up-l
+      margin-top - $offset-l-on-s
+
+    .pull-down-l
+      margin-bottom - $offset-l-on-s
+
+    .pull-left-l,
+    .pull-h-l
+      margin-left - $offset-l-on-s
+
+    .pull-right-l,
+    .pull-h-l
+      margin-right - $offset-l-on-s
+
+    // Very large pull
+    .pull-up-xl
+      margin-top - $offset-xl-on-s
+
+    .pull-down-xl
+      margin-bottom - $offset-xl-on-s
+
+    .pull-left-xl,
+    .pull-h-xl
+      margin-left - $offset-xl-on-s
+
+    .pull-right-xl,
+    .pull-h-xl
+      margin-right - $offset-xl-on-s
+
+    // Super large pull
+    .pull-up-2xl
+      margin-top - $offset-2xl-on-s
+
+    .pull-down-2xl
+      margin-bottom - $offset-2xl-on-s
+
+    .pull-left-2xl,
+    .pull-h-2xl
+      margin-left - $offset-2xl-on-s
+
+    .pull-right-2xl,
+    .pull-h-2xl
+      margin-right - $offset-2xl-on-s
+
+
+/* Padding offsets
+----------------------------------------------------------------------------------------------------------------------*/
+
+if $offsets.pad
+  .pad-xs
+    padding $offset-xs
+
+  .pad-s
+    padding $offset-s
+
+  .pad,
+  .pad-m
+    padding $offset-m
+
+  .pad-l
+    padding $offset-l
+
+  .pad-xl
+    padding $offset-xl
+
+  .pad-2xl
+    padding $offset-2xl
+
+  .pad-0
+    padding 0
+
+  // Extra small padding
+  .pad-up-xs,
+  .pad-v-xs
+    padding-top $offset-xs
+
+  .pad-down-xs,
+  .pad-v-xs
+    padding-bottom $offset-xs
+
+  .pad-left-xs,
+  .pad-h-xs
+    padding-left $offset-xs
+
+  .pad-right-xs,
+  .pad-h-xs
+    padding-right $offset-xs
+
+  // Small padding
+  .pad-up-s,
+  .pad-v-s
+    padding-top $offset-s
+
+  .pad-down-s,
+  .pad-v-s
+    padding-bottom $offset-s
+
+  .pad-left-s,
+  .pad-h-s
+    padding-left $offset-s
+
+  .pad-right-s,
+  .pad-h-s
+    padding-right $offset-s
+
+  // Medium padding, default
+  .pad-up,
+  .pad-v,
+  .pad-up-m,
+  .pad-v-m
+    padding-top $offset-m
+
+  .pad-down,
+  .pad-v,
+  .pad-down-m,
+  .pad-v-m
+    padding-bottom $offset-m
+
+  .pad-left,
+  .pad-h,
+  .pad-left-m,
+  .pad-h-m
+    padding-left $offset-m
+
+  .pad-right,
+  .pad-h,
+  .pad-right-m,
+  .pad-h-m
+    padding-right $offset-m
+
+  // Large padding
+  .pad-up-l,
+  .pad-v-l
+    padding-top $offset-l
+
+  .pad-down-l,
+  .pad-v-l
+    padding-bottom $offset-l
+
+  .pad-left-l,
+  .pad-h-l
+    padding-left $offset-l
+
+  .pad-right-l,
+  .pad-h-l
+    padding-right $offset-l
+
+  // Very large padding
+  .pad-up-xl,
+  .pad-v-xl
+    padding-top $offset-xl
+
+  .pad-down-xl,
+  .pad-v-xl
+    padding-bottom $offset-xl
+
+  .pad-left-xl,
+  .pad-h-xl
+    padding-left $offset-xl
+
+  .pad-right-xl,
+  .pad-h-xl
+    padding-right $offset-xl
+
+  // Super large padding
+  .pad-up-2xl,
+  .pad-v-2xl
+    padding-top $offset-2xl
+
+  .pad-down-2xl,
+  .pad-v-2xl
+    padding-bottom $offset-2xl
+
+  .pad-left-2xl,
+  .pad-h-2xl
+    padding-left $offset-2xl
+
+  .pad-right-2xl,
+  .pad-h-2xl
+    padding-right $offset-2xl
+
+  // No padding
+  .pad-up-0,
+  .pad-v-0
+    padding-top 0
+
+  .pad-down-0,
+  .pad-v-0
+    padding-bottom 0
+
+  .pad-left-0,
+  .pad-h-0
+    padding-left 0
+
+  .pad-right-0,
+  .pad-h-0
+    padding-right 0
+
+if $offsets.pad-on-m
+  @media only screen and (max-width $breakpoint-m)
+    .pad-xs
+      padding $offset-xs-on-m
+
+    .pad-s
+      padding $offset-s-on-m
+
+    .pad,
+    .pad-m
+      padding $offset-m-on-m
+
+    .pad-l
+      padding $offset-l-on-m
+
+    .pad-xl
+      padding $offset-xl-on-m
+
+    .pad-2xl
+      padding $offset-2xl-on-m
+
+    // Extra small padding
+    .pad-up-xs,
+    .pad-v-xs
+      padding-top $offset-xs-on-m
+
+    .pad-down-xs,
+    .pad-v-xs
+      padding-bottom $offset-xs-on-m
+
+    .pad-left-xs,
+    .pad-h-xs
+      padding-left $offset-xs-on-m
+
+    .pad-right-xs,
+    .pad-h-xs
+      padding-right $offset-xs-on-m
+
+    // Small padding
+    .pad-up-s,
+    .pad-v-s
+      padding-top $offset-s-on-m
+
+    .pad-down-s,
+    .pad-v-s
+      padding-bottom $offset-s-on-m
+
+    .pad-left-s,
+    .pad-h-s
+      padding-left $offset-s-on-m
+
+    .pad-right-s,
+    .pad-h-s
+      padding-right $offset-s-on-m
+
+    // Medium padding, default
+    .pad-up,
+    .pad-v,
+    .pad-up-m,
+    .pad-v-m
+      padding-top $offset-m-on-m
+
+    .pad-down,
+    .pad-v,
+    .pad-down-m,
+    .pad-v-m
+      padding-bottom $offset-m-on-m
+
+    .pad-left,
+    .pad-h,
+    .pad-left-m,
+    .pad-h-m
+      padding-left $offset-m-on-m
+
+    .pad-right,
+    .pad-h,
+    .pad-right-m,
+    .pad-h-m
+      padding-right $offset-m-on-m
+
+    // Large padding
+    .pad-up-l,
+    .pad-v-l
+      padding-top $offset-l-on-m
+
+    .pad-down-l,
+    .pad-v-l
+      padding-bottom $offset-l-on-m
+
+    .pad-left-l,
+    .pad-h-l
+      padding-left $offset-l-on-m
+
+    .pad-right-l,
+    .pad-h-l
+      padding-right $offset-l-on-m
+
+    // Very large padding
+    .pad-up-xl,
+    .pad-v-xl
+      padding-top $offset-xl-on-m
+
+    .pad-down-xl,
+    .pad-v-xl
+      padding-bottom $offset-xl-on-m
+
+    .pad-left-xl,
+    .pad-h-xl
+      padding-left $offset-xl-on-m
+
+    .pad-right-xl,
+    .pad-h-xl
+      padding-right $offset-xl-on-m
+
+    // Super large padding
+    .pad-up-2xl,
+    .pad-v-2xl
+      padding-top $offset-2xl-on-m
+
+    .pad-down-2xl,
+    .pad-v-2xl
+      padding-bottom $offset-2xl-on-m
+
+    .pad-left-2xl,
+    .pad-h-2xl
+      padding-left $offset-2xl-on-m
+
+    .pad-right-2xl,
+    .pad-h-2xl
+      padding-right $offset-2xl-on-m
+
+if $offsets.pad-on-s
+  @media only screen and (max-width $breakpoint-s)
+    .pad-xs
+      padding $offset-xs-on-s
+
+    .pad-s
+      padding $offset-s-on-s
+
+    .pad,
+    .pad-m
+      padding $offset-m-on-s
+
+    .pad-l
+      padding $offset-l-on-s
+
+    .pad-xl
+      padding $offset-xl-on-s
+
+    .pad-2xl
+      padding $offset-2xl-on-s
+
+    // Extra small padding
+    .pad-up-xs,
+    .pad-v-xs
+      padding-top $offset-xs-on-s
+
+    .pad-down-xs,
+    .pad-v-xs
+      padding-bottom $offset-xs-on-s
+
+    .pad-left-xs,
+    .pad-h-xs
+      padding-left $offset-xs-on-s
+
+    .pad-right-xs,
+    .pad-h-xs
+      padding-right $offset-xs-on-s
+
+    // Small padding
+    .pad-up-s,
+    .pad-v-s
+      padding-top $offset-s-on-s
+
+    .pad-down-s,
+    .pad-v-s
+      padding-bottom $offset-s-on-s
+
+    .pad-left-s,
+    .pad-h-s
+      padding-left $offset-s-on-s
+
+    .pad-right-s,
+    .pad-h-s
+      padding-right $offset-s-on-s
+
+    // Medium padding, default
+    .pad-up,
+    .pad-v,
+    .pad-up-m,
+    .pad-v-m
+      padding-top $offset-m-on-s
+
+    .pad-down,
+    .pad-v,
+    .pad-down-m,
+    .pad-v-m
+      padding-bottom $offset-m-on-s
+
+    .pad-left,
+    .pad-h,
+    .pad-left-m,
+    .pad-h-m
+      padding-left $offset-m-on-s
+
+    .pad-right,
+    .pad-h,
+    .pad-right-m,
+    .pad-h-m
+      padding-right $offset-m-on-s
+
+    // Large padding
+    .pad-up-l,
+    .pad-v-l
+      padding-top $offset-l-on-s
+
+    .pad-down-l,
+    .pad-v-l
+      padding-bottom $offset-l-on-s
+
+    .pad-left-l,
+    .pad-h-l
+      padding-left $offset-l-on-s
+
+    .pad-right-l,
+    .pad-h-l
+      padding-right $offset-l-on-s
+
+    // Very large padding
+    .pad-up-xl,
+    .pad-v-xl
+      padding-top $offset-xl-on-s
+
+    .pad-down-xl,
+    .pad-v-xl
+      padding-bottom $offset-xl-on-s
+
+    .pad-left-xl,
+    .pad-h-xl
+      padding-left $offset-xl-on-s
+
+    .pad-right-xl,
+    .pad-h-xl
+      padding-right $offset-xl-on-s
+
+    // Super large padding
+    .pad-up-2xl,
+    .pad-v-2xl
+      padding-top $offset-2xl-on-s
+
+    .pad-down-2xl,
+    .pad-v-2xl
+      padding-bottom $offset-2xl-on-s
+
+    .pad-left-2xl,
+    .pad-h-2xl
+      padding-left $offset-2xl-on-s
+
+    .pad-right-2xl,
+    .pad-h-2xl
+      padding-right $offset-2xl-on-s
+
+
+/* Border
+----------------------------------------------------------------------------------------------------------------------*/
+
+// Border color defaults
 .border-primary,
+.border-secondary,
+.border-tertiary,
 .border-dark,
-.border-soft,
-.border-pale,
+.border-muted,
+.border-subtle,
 .border-light,
 .border-white,
 .border-black,
@@ -1193,7 +2075,7 @@ for i in (1..12)
 .border-violet
   border-style $border-default-style
 
-/* Border width defaults */
+// Border defaults
 [class^='border-top'],
 [class*=' border-top'],
 [class^='border-right'],
@@ -1206,7 +2088,7 @@ for i in (1..12)
   border-style $border-default-style
   border-width 0
 
-/* Border defaults */
+// Border width defaults
 .border
 .border-s,
 .border-m,
@@ -1214,7 +2096,7 @@ for i in (1..12)
 .border-xl
   border-width $border-default-width
 
-/* Border widths */
+// Border widths
 .border-0
   border-width 0
 
@@ -1230,7 +2112,7 @@ for i in (1..12)
 .border-xl
   border-width $border-xl
 
-/* Border top */
+// Border top
 .border-top-s
   border-top-width $border-s
 
@@ -1244,7 +2126,7 @@ for i in (1..12)
 .border-top-xl
   border-top-width $border-xl
 
-/* Border right */
+// Border right
 .border-right-s
   border-right-width $border-s
 
@@ -1258,7 +2140,7 @@ for i in (1..12)
 .border-right-xl
   border-right-width $border-xl
 
-/* Border bottom */
+// Border bottom
 .border-bottom-s
   border-bottom-width $border-s
 
@@ -1272,7 +2154,7 @@ for i in (1..12)
 .border-bottom-xl
   border-bottom-width $border-xl
 
-/* Border left */
+// Border left
 .border-left-s
   border-left-width $border-s
 
@@ -1286,7 +2168,7 @@ for i in (1..12)
 .border-left-xl
   border-left-width $border-xl
 
-/* Border zero */
+// Border zero
 .border-top-0
   border-top-width 0
 
@@ -1299,47 +2181,68 @@ for i in (1..12)
 .border-left-0
   border-left-width 0
 
-/* Border colors */
-.border-primary
-  border-color $primary
+// Border colors
+if $colors.primary
+  .border-primary
+    border-color $primary
 
-.border-dark
-  border-color $dark
+if $colors.secondary
+  .border-secondary
+    border-color $secondary
 
-.border-soft
-  border-color $soft
+if $colors.tertiary
+  .border-tertiary
+    border-color $tertiary
 
-.border-pale
-  border-color $pale
+if $colors.dark
+  .border-dark
+    border-color $dark
 
-.border-light
-  border-color $light
+if $colors.muted
+  .border-muted
+    border-color $muted
 
-.border-white
-  border-color $white
+if $colors.subtle
+  .border-subtle
+    border-color $subtle
 
-.border-black
-  border-color $black
+if $colors.light
+  .border-light
+    border-color $light
 
-.border-red
-  border-color $red
+if $colors.white
+  .border-white
+    border-color $white
 
-.border-green
-  border-color $green
+if $colors.black
+  .border-black
+    border-color $black
 
-.border-yellow
-  border-color $yellow
+if $colors.red
+  .border-red
+    border-color $red
 
-.border-orange
-  border-color $orange
+if $colors.green
+  .border-green
+    border-color $green
 
-.border-blue
-  border-color $blue
+if $colors.yellow
+  .border-yellow
+    border-color $yellow
 
-.border-violet
-  border-color $violet
+if $colors.orange
+  .border-orange
+    border-color $orange
 
-/* Border styles */
+if $colors.blue
+  .border-blue
+    border-color $blue
+
+if $colors.violet
+  .border-violet
+    border-color $violet
+
+// Border styles
 .solid
   border-style solid
 
@@ -1349,11 +2252,9 @@ for i in (1..12)
 .dotted
   border-style dotted
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Rounded corners
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Rounded corners
+----------------------------------------------------------------------------------------------------------------------*/
 .rounded-s
   border-radius $rounded-s
 
@@ -1385,11 +2286,9 @@ for i in (1..12)
 .rounded-0-bottom-left
   border-bottom-left-radius 0
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Shadows
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Shadows
+----------------------------------------------------------------------------------------------------------------------*/
 .shadow-s
   box-shadow $shadow-s
 
@@ -1408,11 +2307,9 @@ for i in (1..12)
 .shadow-l-on-hover:hover
   box-shadow $shadow-l
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Transitions
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Transitions
+----------------------------------------------------------------------------------------------------------------------*/
 .tween-xs
   transition cubic-bezier(0,.9,.45,1) all $transition-xs
 
@@ -1428,11 +2325,9 @@ for i in (1..12)
 .tween-xl
   transition cubic-bezier(0,.9,.45,1) all $transition-xl
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Scaling
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Scaling
+----------------------------------------------------------------------------------------------------------------------*/
 .scale-s
   transform scale($scale-s)
 
@@ -1451,11 +2346,9 @@ for i in (1..12)
 .scale-l-on-hover:hover
   transform scale($scale-l)
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Opacity
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Opacity
+----------------------------------------------------------------------------------------------------------------------*/
 .opacity-0
   opacity 0
 
@@ -1486,11 +2379,9 @@ for i in (1..12)
 .opacity-100-on-hover:hover
   opacity 1
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Rotation
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Rotation
+----------------------------------------------------------------------------------------------------------------------*/
 .rotate-45
   transform rotate(45deg)
 
@@ -1512,11 +2403,9 @@ for i in (1..12)
 .rotate-315
   transform rotate(315deg)
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Mouse cursors
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Mouse cursors
+----------------------------------------------------------------------------------------------------------------------*/
 .pointer
   cursor pointer
 
@@ -1529,11 +2418,9 @@ for i in (1..12)
 .no-pointer-events
   pointer-events none
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Images
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Images
+----------------------------------------------------------------------------------------------------------------------*/
 .responsive
   max-width 100%
   height auto
@@ -1545,11 +2432,9 @@ for i in (1..12)
 .pixelate
   image-rendering pixelated
 
-/*
-|-----------------------------------------------------------------------------------------------------------------------
-| Responsive modifiers
-|-----------------------------------------------------------------------------------------------------------------------
-*/
+
+/* Responsive modifiers
+----------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (max-width $breakpoint-s)
   .hide-on-s,
   .hide-on-sm,
@@ -1606,77 +2491,88 @@ for i in (1..12)
   .hide-on-sm,
   .hide-on-ml,
   .hide-on-sml,
-  .hide-on-mlx
+  .hide-on-mlx,
+  .hide-on-mlxp
     display none !important
 
   .inline-on-m,
   .inline-on-sm,
   .inline-on-ml,
   .inline-on-sml,
-  .inline-on-mlx
+  .inline-on-mlx,
+  .inline-on-mlxp
     display inline-block !important
 
   .block-on-m,
   .block-on-sm,
   .block-on-ml,
   .block-on-sml,
-  .block-on-mlx
+  .block-on-mlx,
+  .block-on-mlxp
     display block !important
 
   .flex-on-m,
   .flex-on-sm,
   .flex-on-ml,
   .flex-on-sml,
-  .flex-on-mlx
+  .flex-on-mlx,
+  .flex-on-mlxp
     display flex !important
 
   .float-left-on-m,
   .float-left-on-sm,
   .float-left-on-ml,
   .float-left-on-sml,
-  .float-left-on-mlx
+  .float-left-on-mlx,
+  .float-left-on-mlxp
     float left
 
   .float-right-on-m,
   .float-right-on-sm,
   .float-right-on-ml,
   .float-right-on-sml,
-  .float-right-on-mlx
+  .float-right-on-mlx,
+  .float-right-on-mlxp
     float right
 
   .center-on-m,
   .center-on-sm,
   .center-on-ml,
   .center-on-sml,
-  .center-on-mlx
+  .center-on-mlx,
+  .center-on-mlxp
     text-align center
 
   .align-left-on-m,
   .align-left-on-sm,
   .align-left-on-ml,
   .align-left-on-sml,
-  .align-left-on-mlx
+  .align-left-on-mlx,
+  .align-left-on-mlxp
     text-align left
 
   .align-right-on-m,
   .align-right-on-sm,
   .align-right-on-ml,
   .align-right-on-sml,
-  .align-right-on-mlx
+  .align-right-on-mlx,
+  .align-right-on-mlxp
     text-align right
 
   .wrap-on-m,
   .wrap-on-sm,
   .wrap-on-ml,
   .wrap-on-sml,
-  .wrap-on-mlx
+  .wrap-on-mlx,
+  .wrap-on-mlxp
     flex-wrap wrap
 
   .separated-on-m,
   .separated-on-sm,
   .separated-on-ml,
   .separated-on-sml,
-  .separated-on-mlx
+  .separated-on-mlx,
+  .separated-on-mlxp
     border-right $grid-separation
 
 @media only screen and (min-width unit($breakpoint-m + 1, 'px')) and (max-width $breakpoint-l)
@@ -1685,6 +2581,7 @@ for i in (1..12)
   .hide-on-lx,
   .hide-on-sml,
   .hide-on-mlx,
+  .hide-on-mlxp,
   .hide-on-lxp
     display none !important
 
@@ -1693,6 +2590,7 @@ for i in (1..12)
   .inline-on-lx,
   .inline-on-sml,
   .inline-on-mlx,
+  .inline-on-mlxp,
   .inline-on-lxp
     display inline-block !important
 
@@ -1701,6 +2599,7 @@ for i in (1..12)
   .block-on-lx,
   .block-on-sml,
   .block-on-mlx,
+  .block-on-mlxp,
   .block-on-lxp
     display block !important
 
@@ -1709,6 +2608,7 @@ for i in (1..12)
   .flex-on-lx,
   .flex-on-sml,
   .flex-on-mlx,
+  .flex-on-mlxp,
   .flex-on-lxp
     display flex !important
 
@@ -1717,6 +2617,7 @@ for i in (1..12)
   .float-left-on-lx,
   .float-left-on-sml,
   .float-left-on-mlx,
+  .float-left-on-mlxp,
   .float-left-on-lxp
     float left
 
@@ -1725,6 +2626,7 @@ for i in (1..12)
   .float-right-on-lx,
   .float-right-on-sml,
   .float-right-on-mlx,
+  .float-right-on-mlxp,
   .float-right-on-lxp
     float right
 
@@ -1733,6 +2635,7 @@ for i in (1..12)
   .center-on-lx,
   .center-on-sml,
   .center-on-mlx,
+  .center-on-mlxp,
   .center-on-lxp
     text-align center
 
@@ -1741,6 +2644,7 @@ for i in (1..12)
   .align-left-on-lx,
   .align-left-on-sml,
   .align-left-on-mlx,
+  .align-left-on-mlxp,
   .align-left-on-lxp
     text-align left
 
@@ -1749,6 +2653,7 @@ for i in (1..12)
   .align-right-on-lx,
   .align-right-on-sml,
   .align-right-on-mlx,
+  .align-right-on-mlxp,
   .align-right-on-lxp
     text-align right
 
@@ -1757,6 +2662,7 @@ for i in (1..12)
   .wrap-on-lx,
   .wrap-on-sml,
   .wrap-on-mlx,
+  .wrap-on-mlxp,
   .wrap-on-lxp
     flex-wrap wrap
 
@@ -1765,6 +2671,7 @@ for i in (1..12)
   .separated-on-lx,
   .separated-on-sml,
   .separated-on-mlx,
+  .separated-on-mlxp,
   .separated-on-lxp
     border-right $grid-separation
 
@@ -1773,6 +2680,7 @@ for i in (1..12)
   .hide-on-lx,
   .hide-on-xp,
   .hide-on-mlx,
+  .hide-on-mlxp,
   .hide-on-lxp
     display none !important
 
@@ -1780,6 +2688,7 @@ for i in (1..12)
   .inline-on-lx,
   .inline-on-xp,
   .inline-on-mlx,
+  .inline-on-mlxp,
   .inline-on-lxp
     display inline-block !important
 
@@ -1787,6 +2696,7 @@ for i in (1..12)
   .block-on-lx,
   .block-on-xp,
   .block-on-mlx,
+  .block-on-mlxp,
   .block-on-lxp
     display block !important
 
@@ -1794,6 +2704,7 @@ for i in (1..12)
   .flex-on-lx,
   .flex-on-xp,
   .flex-on-mlx,
+  .flex-on-mlxp,
   .flex-on-lxp
     display flex !important
 
@@ -1801,6 +2712,7 @@ for i in (1..12)
   .float-left-on-lx,
   .float-left-on-xp,
   .float-left-on-mlx,
+  .float-left-on-mlxp,
   .float-left-on-lxp
     float left
 
@@ -1808,6 +2720,7 @@ for i in (1..12)
   .float-right-on-lx,
   .float-right-on-xp,
   .float-right-on-mlx,
+  .float-right-on-mlxp,
   .float-right-on-lxp
     float right
 
@@ -1815,6 +2728,7 @@ for i in (1..12)
   .center-on-lx,
   .center-on-xp,
   .center-on-mlx,
+  .center-on-mlxp,
   .center-on-lxp
     text-align center
 
@@ -1822,6 +2736,7 @@ for i in (1..12)
   .align-left-on-lx,
   .align-left-on-xp,
   .align-left-on-mlx,
+  .align-left-on-mlxp,
   .align-left-on-lxp
     text-align left
 
@@ -1829,6 +2744,7 @@ for i in (1..12)
   .align-right-on-lx,
   .align-right-on-xp,
   .align-right-on-mlx,
+  .align-right-on-mlxp,
   .align-right-on-lxp
     text-align right
 
@@ -1836,6 +2752,7 @@ for i in (1..12)
   .wrap-on-lx,
   .wrap-on-xp,
   .wrap-on-mlx,
+  .wrap-on-mlxp,
   .wrap-on-lxp
     flex-wrap wrap
 
@@ -1843,62 +2760,74 @@ for i in (1..12)
   .separated-on-lx,
   .separated-on-xp,
   .separated-on-mlx,
+  .separated-on-mlxp,
   .separated-on-lxp
     border-right $grid-separation
 
 @media only screen and (min-width unit($breakpoint-xl + 1, 'px'))
   .hide-on-p,
   .hide-on-xp,
-  .hide-on-lxp
+  .hide-on-lxp,
+  .hide-on-mlxp
     display none !important
 
   .inline-on-p,
   .inline-on-xp,
-  .inline-on-lxp
+  .inline-on-lxp,
+  .inline-on-mlxp
     display inline-block !important
 
   .block-on-p,
   .block-on-xp,
-  .block-on-lxp
+  .block-on-lxp,
+  .block-on-mlxp
     display block !important
 
   .flex-on-p,
   .flex-on-xp,
-  .flex-on-lxp
+  .flex-on-lxp,
+  .flex-on-mlxp
     display flex !important
 
   .float-left-on-p,
   .float-left-on-xp,
-  .float-left-on-lxp
+  .float-left-on-lxp,
+  .float-left-on-mlxp
     float left
 
   .float-right-on-p,
   .float-right-on-xp,
-  .float-right-on-lxp
+  .float-right-on-lxp,
+  .float-right-on-mlxp
     float right
 
   .center-on-p,
   .center-on-xp,
-  .center-on-lxp
+  .center-on-lxp,
+  .center-on-mlxp
     text-align center
 
   .align-left-on-p,
   .align-left-on-xp,
-  .align-left-on-lxp
+  .align-left-on-lxp,
+  .align-left-on-mlxp
     text-align left
 
   .align-right-on-p,
   .align-right-on-xp,
-  .align-right-on-lxp
+  .align-right-on-lxp,
+  .align-right-on-mlxp
     text-align right
 
   .wrap-on-p,
   .wrap-on-xp,
-  .wrap-on-lxp
+  .wrap-on-lxp,
+  .wrap-on-mlxp
     flex-wrap wrap
 
   .separated-on-p,
   .separated-on-xp,
-  .separated-on-lxp
+  .separated-on-lxp,
+  .separated-on-mlxp
     border-right $grid-separation
 
