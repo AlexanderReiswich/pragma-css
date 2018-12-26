@@ -36,7 +36,7 @@ layout: HomeLayout
     <p>All common UI elements such as buttons, form inputs, grids, loaders and much more are included.</p>
   </div>
   <div class="col s12 m6 l4 center">
-    <h3 class="push-down-m size-l">faint-weight</h3>
+    <h3 class="push-down-m size-l">light-weight</h3>
     <p>No JavaScript. No unnecessary fat. Only the most useful features are included.</p>
   </div>
 </div>
