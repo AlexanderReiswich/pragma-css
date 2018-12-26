@@ -221,126 +221,167 @@ If you would like to add an icon to your input field, simply wrap it inside of a
 
 ## Selects
 
-<select class="v-xs size-s push-down">
-  <option>
-    -- Select an option --
-  </option>
-  <option>
-    Option 1
-  </option>
-  <option>
-    Option 2
-  </option>
-  <option>
-    Option 3
-  </option>
-</select>
+<div class="select push-down">
+  <select class="v-xs size-s">
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-s push-down">
-  <option>
-    -- Select an option --
-  </option>
-  <option>
-    Option 1
-  </option>
-  <option>
-    Option 2
-  </option>
-  <option>
-    Option 3
-  </option>
-</select>
+<div class="select push-down">
+  <select class="v-s">
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-m push-down">
-  <option>
-    -- Select an option --
-  </option>
-  <option>
-    Option 1
-  </option>
-  <option>
-    Option 2
-  </option>
-  <option>
-    Option 3
-  </option>
-</select>
+<div class="select push-down">
+  <select class="v-m">
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-l size-l push-down">
-  <option>
-    -- Select an option --
-  </option>
-  <option>
-    Option 1
-  </option>
-  <option>
-    Option 2
-  </option>
-  <option>
-    Option 3
-  </option>
-</select>
+<div class="select push-down">
+  <select class="v-l size-l">
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-xl size-xl push-down">
-  <option>
-    -- Select an option --
-  </option>
-  <option>
-    Option 1
-  </option>
-  <option>
-    Option 2
-  </option>
-  <option>
-    Option 3
-  </option>
-</select>
+<div class="select push-down">
+  <select class="v-xl size-xl">
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
 ```html
-<select class="v-xs size-s">
-  <option>...</option>
-</select>
+<div class="select">
+  <select class="v-xs size-s">
+    <option>...</option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-s">
-  <option>...</option>
-</select>
+<div class="select">
+  <select class="v-s">
+    <option>...</option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-m">
-  <option>...</option>
-</select>
+<div class="select">
+  <select class="v-m">
+    <option>...</option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-l size-l">
-  <option>...</option>
-</select>
+<div class="select">
+  <select class="v-l size-l">
+    <option>...</option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
-<select class="v-xl size-xl">
-  <option>...</option>
-</select>
+<div class="select">
+  <select class="v-xl size-xl">
+    <option>...</option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 ```
+
+::: tip INFO
+It's not mandatory to wrap select elements in a `.select` div or add the `.select-indicator`. The select field
+will work just fine without them, except that the browsers default select input indicator will be used instead.
+:::
 
 <br>
 
 ### Disabled state
 
-<select class="push-down" disabled>
-  <option>
-    -- Select an option --
-  </option>
-  <option>
-    Option 1
-  </option>
-  <option>
-    Option 2
-  </option>
-  <option>
-    Option 3
-  </option>
-</select>
+<div class="select push-down">
+  <select disabled>
+    <option>
+      -- Select an option --
+    </option>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 
 ```html
-<select disabled>
-  <option>...</option>
-</select>
+<div class="select">
+  <select disabled>
+    <option>...</option>
+  </select>
+  <div class="select-indicator"/>
+</div>
 ```
 
 <br>
@@ -928,20 +969,32 @@ the parent container:
   </div>
   <hr>
   <label class="muted">Select input</label>
-  <select>
-    <option>
-      -- Select an option --
-    </option>
-    <option>
-      Option 1
-    </option>
-    <option>
-      Option 2
-    </option>
-    <option>
-      Option 3
-    </option>
-  </select>
+  <div class="select push-down">
+    <select>
+      <option>
+        -- Select an option --
+      </option>
+      <option>
+        Option 1
+      </option>
+      <option>
+        Option 2
+      </option>
+      <option>
+        Option 3
+      </option>
+    </select>
+    <div class="select-indicator"/>
+  </div>
+  <label class="muted">Disabled select input</label>
+  <div class="select">
+    <select disabled>
+      <option>
+        -- Can't select an option --
+      </option>
+    </select>
+    <div class="select-indicator"/>
+  </div>
   <hr>
   <div class="push-down">
     <label for="sample-checkbox-inverted" class="checkbox">

@@ -374,16 +374,75 @@ select:disabled:hover
   border-color $input-disabled-border-color-inverted
 
 .inverted ::-webkit-input-placeholder
-  color $placeholder-color
+  color $placeholder-color-inverted
 
 .inverted :-moz-placeholder
-  color $placeholder-color
+  color $placeholder-color-inverted
 
 .inverted ::-moz-placeholder
-  color $placeholder-color
+  color $placeholder-color-inverted
 
 .inverted :-ms-input-placeholder
-  color $placeholder-color
+  color $placeholder-color-inverted
+
+
+/* Select
+----------------------------------------------------------------------------------------------------------------------*/
+.select
+  position relative
+
+.select select
+  -webkit-appearance none
+  -moz-appearance none
+  appearance none
+
+.select .select-indicator
+  position absolute
+  width 17px
+  height 12px
+  right 16px
+  top 50%
+  margin-top -6px
+  transition cubic-bezier(0,.9,.45,1) all $transition-m
+
+.select .select-indicator:after,
+.select .select-indicator:before
+  content ''
+  position absolute
+  width 4px
+  height 12px
+  left 8px
+  top 0
+  border-radius 4px
+  background $subtle-forced
+  transform-origin bottom
+  transition cubic-bezier(0,.9,.45,1) all $transition-m
+
+.select .select-indicator:before
+  transform rotate(-45deg)
+
+.select .select-indicator:after
+  transform rotate(45deg) translate(-2px, 2px)
+
+.select:hover select:not(:disabled) + .select-indicator:after,
+.select:hover select:not(:disabled) + .select-indicator:before,
+.select:focus select:not(:disabled) + .select-indicator:after,
+.select:focus select:not(:disabled) + .select-indicator:before
+  background-color $muted-forced
+
+.select select:disabled + .select-indicator
+  opacity .5
+
+.inverted .select .select-indicator:after,
+.inverted .select .select-indicator:before
+  background $muted-forced
+
+.inverted .select:hover select:not(:disabled) + .select-indicator:after,
+.inverted .select:hover select:not(:disabled) + .select-indicator:before,
+.inverted .select:focus select:not(:disabled) + .select-indicator:after,
+.inverted .select:focus select:not(:disabled) + .select-indicator:before
+  background $subtle-forced
+
 
 /* Input icon
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -636,7 +695,7 @@ select:disabled:hover
   border-color $indicator-focus-border-color-inverted
 
 .inverted .switch-indicator:after
-  background $subtle-forced
+  background $muted-inverted
 
 .inverted .checkbox input[type=checkbox]:hover + .switch-indicator,
 .inverted .radio input[type=radio]:hover + .radio-indicator
@@ -1211,9 +1270,7 @@ select:disabled:hover
   padding-left $size-3xl
   padding-right $size-3xl
 
-
-/* Size control for input icon
-----------------------------------------------------------------------------------------------------------------------*/
+// Size control for input icon
 .input-icon input.v-0,
 .input-icon input.vh-0
   padding-left $default-font-size + $input-border
@@ -1261,6 +1318,37 @@ select:disabled:hover
 .input-icon input.v-xl + :not(input),
 .input-icon input.vh-xl + :not(input)
   width $default-font-size + ($size-xl * 2)
+
+// Size control for select field
+.v-0 + .select-indicator,
+.vh-0 + .select-indicator
+  transform scale(0.5)
+  right 4px
+
+.v-xs + .select-indicator,
+.vh-xs + .select-indicator
+  transform scale(0.65)
+  right 6px
+
+.v-s + .select-indicator,
+.vh-s + .select-indicator
+  transform scale(0.75)
+  right 8px
+
+.v-m + .select-indicator,
+.vh-m + .select-indicator
+  transform scale(0.85)
+  right 12px
+
+.v-l + .select-indicator,
+.vh-l + .select-indicator
+  transform scale(1) translateY(-1px)
+  right 16px
+
+.v-xl + .select-indicator,
+.vh-xl + .select-indicator
+  transform scale(1.5) translateY(-2px)
+  right 24px
 
 
 /* Spinner loader
