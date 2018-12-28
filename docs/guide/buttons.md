@@ -368,6 +368,16 @@ In addition, `.white-bg` is compatible with text colors.
       </button>
     </div>
     <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg secondary">
+        .white-bg.secondary
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full white-bg tertiary">
+        .white-bg.tertiary
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
       <button class="btn full white-bg muted">
         .white-bg.muted
       </button>
@@ -449,33 +459,63 @@ to achieve this effect:
 </button>
 ```
 
-<div class="pad-left pad-up-m push-down rounded-m center">
-  <button class="btn push-down-m push-right blank muted">
-    .blank.muted
-  </button>
-  <button class="btn push-down-m push-right blank black">
-    .blank.black
-  </button>
-  <button class="btn push-down-m push-right blank red">
-    .blank.red
-  </button>
-  <button class="btn push-down-m push-right blank orange">
-    .blank.orange
-  </button>
-  <button class="btn push-down-m push-right blank green">
-    .blank.green
-  </button>
-  <button class="btn push-down-m push-right blank yellow">
-    .blank.yellow
-  </button>
-  <button class="btn push-down-m push-right blank blue">
-    .blank.blue
-  </button>
-  <button class="btn push-down-m push-right blank violet">
-    .blank.violet
-  </button>
+<div class="grid gap push-up-l">
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank primary">
+      .blank.primary
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank secondary">
+      .blank.secondary
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank tertiary">
+      .blank.tertiary
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank muted">
+      .blank.muted
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank black">
+      .blank.black
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank red">
+      .blank.red
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank orange">
+      .blank.orange
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank green">
+      .blank.green
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank yellow">
+      .blank.yellow
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank blue">
+      .blank.blue
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full blank violet">
+      .blank.violet
+    </button>
+  </div>
 </div>
-
 
 <br>
 
@@ -517,6 +557,16 @@ Naturally, it's possible to also apply all available colors to ghost buttons:
   <div class="col s12 m6 push-down-m">
     <button class="btn full ghost">
       .btn.ghost
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost secondary">
+      .btn.ghost.secondary
+    </button>
+  </div>
+  <div class="col s12 m6 push-down-m">
+    <button class="btn full ghost tertiary">
+      .btn.ghost.tertiary
     </button>
   </div>
   <div class="col s12 m6 push-down-m">
@@ -588,6 +638,16 @@ When used on a dark inverted background:
       </button>
     </div>
     <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost secondary">
+        .btn.ghost.secondary
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
+      <button class="btn full ghost tertiary">
+        .btn.ghost.tertiary
+      </button>
+    </div>
+    <div class="col s12 m6 push-down-m">
       <button class="btn full ghost dark">
         .btn.ghost.dark
       </button>
@@ -647,6 +707,8 @@ When used on a dark inverted background:
 
 ```html
 <button class="btn ghost">.btn.ghost</button>
+<button class="btn ghost dark">.btn.ghost.secondary</button>
+<button class="btn ghost dark">.btn.ghost.tertiary</button>
 <button class="btn ghost dark">.btn.ghost.dark</button>
 <button class="btn ghost muted">.btn.ghost.muted</button>
 <button class="btn ghost subtle">.btn.ghost.subtle</button>

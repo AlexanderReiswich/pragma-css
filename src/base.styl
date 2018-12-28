@@ -740,6 +740,7 @@ select:disabled:hover
   border $btn-border
   border-radius $btn-corner-radius
   font-size $btn-font-size
+  font-weight $btn-font-weight
   line-height  $btn-line-height
   letter-spacing $btn-letter-spacing
   text-transform $btn-text-transform
@@ -772,6 +773,22 @@ select:disabled:hover
     border-color $btn-active-border-color
     box-shadow $btn-active-shadow
     filter $btn-active-filter
+  if $colors.secondary
+    &.secondary-bg
+      color white
+      background $secondary
+      &:focus
+        border-color $secondary-hover
+      &:hover
+        background $secondary-hover
+  if $colors.tertiary
+    &.tertiary-bg
+      color white
+      background $tertiary
+      &:focus
+        border-color $tertiary-hover
+      &:hover
+        background $tertiary-hover
   if $colors.dark
     &.dark-bg
       color white
@@ -868,61 +885,70 @@ select:disabled:hover
     color $primary
     &.blank:hover, &.blank:focus
       color $primary-hover
-  if $colors.white
-    if $colors.primary
-      &.white-bg.primary, &.blank.primary
-        color $primary
-        &:hover, &.blank.primary:hover
-          color $primary-hover
-    if $colors.dark
-      &.white-bg.dark, &.blank.dark
-        color $dark-forced
-        &:hover, &.blank.dark:hover
-          color $dark-hover
-    if $colors.muted
-      &.white-bg.muted, &.blank.muted
-        color $muted-forced
-        &:hover, &.blank.muted:hover
-          color $muted-hover
-    if $colors.black
-      &.white-bg.black, &.blank.black
-        color $black
-        &:hover, &.blank.black:hover
-          color $black-hover
-    if $colors.red
-      &.white-bg.red, &.blank.red
-        color $red
-        &:hover, &.blank.red:hover
-          color $red-hover
-    if $colors.orange
-      &.white-bg.orange, &.blank.orange
-        color $orange
-        &:hover, &.blank.orange:hover
-          color $orange-hover
-    if $colors.green
-      &.white-bg.green, &.blank.green
-        color $green
-        &:hover, &.blank.green:hover
-          color $green-hover
-    if $colors.blue
-      &.white-bg.blue, &.blank.blue
-        color $blue
-        &:hover, &.blank.blue:hover
-          color $blue-hover
-    if $colors.violet
-      &.white-bg.violet, &.blank.violet
-        color $violet
-        &:hover, &.blank.violet:hover
-          color $violet-hover
-    &.white-bg:hover, &.blank:hover
+  if $colors.primary
+    &.white-bg.primary, &.blank.primary
       color $primary
-      background $white-hover
-      border-color $white-hover
-    &.white-bg:focus, &.blank:focus
-      border-color $subtle-forced
-    &.blank, &.blank:hover, &.blank:focus
-      border-color transparent
-      background transparent
+      &:hover, &.blank.primary:hover
+        color $primary-hover
+  if $colors.secondary
+    &.white-bg.secondary, &.blank.secondary
+      color $secondary
+      &:hover, &.blank.secondary:hover
+        color $secondary-hover
+  if $colors.tertiary
+    &.white-bg.tertiary, &.blank.tertiary
+      color $tertiary
+      &:hover, &.blank.tertiary:hover
+        color $tertiary-hover
+  if $colors.dark
+    &.white-bg.dark, &.blank.dark
+      color $dark-forced
+      &:hover, &.blank.dark:hover
+        color $dark-hover
+  if $colors.muted
+    &.white-bg.muted, &.blank.muted
+      color $muted-forced
+      &:hover, &.blank.muted:hover
+        color $muted-hover
+  if $colors.black
+    &.white-bg.black, &.blank.black
+      color $black
+      &:hover, &.blank.black:hover
+        color $black-hover
+  if $colors.red
+    &.white-bg.red, &.blank.red
+      color $red
+      &:hover, &.blank.red:hover
+        color $red-hover
+  if $colors.orange
+    &.white-bg.orange, &.blank.orange
+      color $orange
+      &:hover, &.blank.orange:hover
+        color $orange-hover
+  if $colors.green
+    &.white-bg.green, &.blank.green
+      color $green
+      &:hover, &.blank.green:hover
+        color $green-hover
+  if $colors.blue
+    &.white-bg.blue, &.blank.blue
+      color $blue
+      &:hover, &.blank.blue:hover
+        color $blue-hover
+  if $colors.violet
+    &.white-bg.violet, &.blank.violet
+      color $violet
+      &:hover, &.blank.violet:hover
+        color $violet-hover
+  &.white-bg:hover, &.blank:hover
+    color $primary
+    background $white-hover
+    border-color $white-hover
+  &.white-bg:focus, &.blank:focus
+    border-color $subtle-forced
+  &.blank, &.blank:hover, &.blank:focus
+    border-color transparent
+    background transparent
   &.ghost
     color $primary
     background transparent
@@ -931,6 +957,20 @@ select:disabled:hover
       color $primary-hover
       background transparent
       border-color $primary-hover
+    if $colors.secondary
+      &.secondary, &.secondary-bg
+        border-color $secondary
+        color $secondary
+        &:hover, &:focus
+          border-color $secondary-hover
+          color $secondary-hover
+    if $colors.tertiary
+      &.tertiary, &.tertiary-bg
+        border-color $tertiary
+        color $tertiary
+        &:hover, &:focus
+          border-color $tertiary-hover
+          color $tertiary-hover
     if $colors.dark
       &.dark, &.dark-bg
         border-color $dark-forced
@@ -1103,6 +1143,20 @@ select:disabled:hover
       color $white
       border-color $white
       background transparent
+    if $colors.secondary
+      &.secondary, &.secondary-bg
+        border-color $secondary-inverted
+        color $secondary-inverted
+        &:hover, &:focus
+          border-color $white
+          color $white
+    if $colors.tertiary
+      &.tertiary, &.tertiary-bg
+        border-color $tertiary-inverted
+        color $tertiary-inverted
+        &:hover, &:focus
+          border-color $white
+          color $white
     if $colors.dark
       &.dark, &.dark-bg
         border-color $dark-inverted
