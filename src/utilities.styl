@@ -1056,36 +1056,6 @@ if $offsets.push
   .push-h-2xl
     margin-right $offset-2xl
 
-  // No push
-  .push-up-0, .push-v-0
-    margin-top 0
-
-  .push-down-0, .push-v-0
-    margin-bottom 0
-
-  .push-left-0, .push-h-0
-    margin-left 0
-
-  .push-right-0, .push-h-0
-    margin-right 0
-
-  // Margin auto
-  .push-up-auto,
-  .push-v-auto
-    margin-top auto
-
-  .push-down-auto,
-  .push-v-auto
-    margin-bottom auto
-
-  .push-left-auto,
-  .push-h-auto
-    margin-left auto
-
-  .push-right-auto,
-  .push-h-auto
-    margin-right auto
-
 if $offsets.push-on-m
   @media only screen and (max-width $breakpoint-m)
     .push-xs
@@ -1345,6 +1315,37 @@ if $offsets.push-on-s
     .push-right-2xl,
     .push-h-2xl
       margin-right $offset-2xl-on-s
+
+if $offsets.push
+  // No push
+  .push-up-0, .push-v-0
+    margin-top 0
+
+  .push-down-0, .push-v-0
+    margin-bottom 0
+
+  .push-left-0, .push-h-0
+    margin-left 0
+
+  .push-right-0, .push-h-0
+    margin-right 0
+
+  // Margin auto
+  .push-up-auto,
+  .push-v-auto
+    margin-top auto
+
+  .push-down-auto,
+  .push-v-auto
+    margin-bottom auto
+
+  .push-left-auto,
+  .push-h-auto
+    margin-left auto
+
+  .push-right-auto,
+  .push-h-auto
+    margin-right auto
 
 
 /* Pull offsets
@@ -1780,23 +1781,6 @@ if $offsets.pad
   .pad-h-2xl
     padding-right $offset-2xl
 
-  // No padding
-  .pad-up-0,
-  .pad-v-0
-    padding-top 0
-
-  .pad-down-0,
-  .pad-v-0
-    padding-bottom 0
-
-  .pad-left-0,
-  .pad-h-0
-    padding-left 0
-
-  .pad-right-0,
-  .pad-h-0
-    padding-right 0
-
 if $offsets.pad-on-m
   @media only screen and (max-width $breakpoint-m)
     .pad-xs
@@ -2058,6 +2042,24 @@ if $offsets.pad-on-s
     .pad-right-2xl,
     .pad-h-2xl
       padding-right $offset-2xl-on-s
+
+if $offsets.pad
+  // No padding
+  .pad-up-0,
+  .pad-v-0
+    padding-top 0
+
+  .pad-down-0,
+  .pad-v-0
+    padding-bottom 0
+
+  .pad-left-0,
+  .pad-h-0
+    padding-left 0
+
+  .pad-right-0,
+  .pad-h-0
+    padding-right 0
 
 
 /* Border
