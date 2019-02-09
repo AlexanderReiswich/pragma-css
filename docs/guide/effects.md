@@ -268,7 +268,11 @@ This set of classes adds roundness to an elements corners.
 </div>
 
 <div class="rounded-l inline blue-bg white bold center extend-m pad-m push-down-m push-right-m">
-    .rounded-m
+    .rounded-l
+</div>
+
+<div class="rounded-xl inline blue-bg white bold center extend-m pad-m push-down-m push-right-m">
+    .rounded-xl
 </div>
 
 <br>
@@ -292,6 +296,10 @@ This set of classes adds roundness to an elements corners.
 
 <div class="rounded-l">
   .rounded-l
+</div>
+
+<div class="rounded-xl">
+  .rounded-xl
 </div>
 
 <div class="rounded-full">
@@ -609,22 +617,29 @@ Please keep in mind that it's not possible to use the rotation classes in combin
 
 These classes help you enforce certain mouse cursor behaviors.
 
-<div class="pointer tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
-    .pointer
-</div>
-
-<div class="cursor-default tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
-    .cursor-default
-</div>
-
-<div class="no-pointer-events tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
-    .no-pointer-events
+<div class="space-between">
+    <div class="pointer tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
+        .pointer
+    </div>
+    <div class="cursor-default tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
+        .cursor-default
+    </div>
+    <div class="no-pointer-events tween rounded inline yellow-bg dark white-on-hover bold pad-m push-v-s dark-bg-on-hover">
+        .no-pointer-events
+    </div>
 </div>
 
 <br>
 
 <div class="cursor-forbidden tween rounded inline subtle-bg white bold pad-m push-v-s">
     .cursor-forbidden
+</div>
+
+<br>
+
+<div class="no-select dark push-up-s push-down-l">
+    <b>.no-select</b><br>
+    This text can't be selected
 </div>
 
 
@@ -643,6 +658,10 @@ These classes help you enforce certain mouse cursor behaviors.
 
 <div class="cursor-forbidden">
   .cursor-forbidden
+</div>
+
+<div class="no-select">
+  .no-select
 </div>
 ```
 

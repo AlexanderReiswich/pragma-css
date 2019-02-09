@@ -660,6 +660,12 @@ if $colors.violet
 .no-overflow
   overflow hidden
 
+.no-overflow-x
+  overflow-x hidden
+
+.no-overflow-y
+  overflow-y hidden
+
 
 /* Text alignment
 ----------------------------------------------------------------------------------------------------------------------*/
@@ -791,7 +797,6 @@ if $colors.violet
   margin-right auto
   box-sizing border-box
   width $page-width-on-p
-  overflow-x hidden
 
 @media only screen and (max-width $breakpoint-xl)
   .container
@@ -2276,6 +2281,9 @@ if $colors.violet
 .rounded-l
   border-radius $rounded-l
 
+.rounded-xl
+  border-radius $rounded-xl
+
 .rounded-full
   border-radius 10000px
 
@@ -2428,6 +2436,9 @@ if $colors.violet
 
 .no-pointer-events
   pointer-events none
+
+.no-select
+  user-select none
 
 
 /* Images

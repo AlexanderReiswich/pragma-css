@@ -68,6 +68,8 @@ Sets position to **fixed**. To position it according to your requirements, you c
 ### .no-overflow
 
 This useful class sets the overflow property to **hidden**.
+Additionally, you can use the classes `.no-overflow-x` and `.no-overflow-y` to specifically disable only the
+horizontal or vertical overflow.
 
 <br>
 
@@ -383,7 +385,7 @@ Sets the height of an element to 100%.
 </div>
 
 ::: tip Note
-The need to set height to 100% is quite rare, which is why .full is a shorthand for full width.
+The need to set height to 100% is quite rare, which is why `.full` is a shorthand for full width.
 :::
 
 ```html
