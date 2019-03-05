@@ -563,7 +563,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="sample-switch">
     <span class="switch-indicator"></span>
     <span class="size-l">
-      Check this!
+      Switch this!
     </span>
   </label>
 </div>
@@ -597,7 +597,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
   <input type="checkbox" id="disabled-switch" checked disabled>
   <span class="switch-indicator"></span>
   <span class="size-l subtle">
-    Can't switch this.
+    Can't touch this.
   </span>
 </label>
 ```
@@ -613,7 +613,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-1">
     <span class="switch-indicator size-xs"></span>
     <span class="size-s">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -625,7 +625,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-2">
     <span class="switch-indicator size-s"></span>
     <span class="size-m">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -637,7 +637,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-3">
     <span class="switch-indicator size-m"></span>
     <span class="size-l">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -649,7 +649,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-4">
     <span class="switch-indicator size-l"></span>
     <span class="size-xl">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -661,7 +661,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-5">
     <span class="switch-indicator size-xl"></span>
     <span class="size-2xl">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -672,7 +672,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-1">
     <span class="switch-indicator size-xs"></span>
     <span class="size-s">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -682,7 +682,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-2">
     <span class="switch-indicator size-s"></span>
     <span class="size-m">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -692,7 +692,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-3">
     <span class="switch-indicator size-m"></span>
     <span class="size-l">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -702,7 +702,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-4">
     <span class="switch-indicator size-l"></span>
     <span class="size-xl">
-      Check this
+      Switch this
     </span>
   </label>
 </div>
@@ -712,7 +712,7 @@ A switch is a variation to the regular checkbox look, but is based on the same s
     <input type="checkbox" id="switch-5">
     <span class="switch-indicator size-xl"></span>
     <span class="size-2xl">
-      Check this
+      Switch this
     </span>
   </label>
 </div>

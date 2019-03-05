@@ -301,7 +301,6 @@ select
   width 100%
   font-size $input-font-size
   line-height $input-line-height
-  padding $input-padding
   box-shadow none
   box-sizing border-box
   transition $input-transition
@@ -310,6 +309,7 @@ textarea
   overflow-y hidden
   resize vertical
   transition height 0s, width 0s
+  line-height $default-line-height
 
 input:hover,
 textarea:hover,
@@ -539,28 +539,28 @@ select:disabled:hover
   width 5px
   border-radius $transformicon-corner-radius
   background $primary
-  transition .4s all cubic-bezier(0,.9,.45,1)
+  transition .2s all cubic-bezier(0,.9,.45,1)
   transform-origin bottom
   opacity 0
 
 .checkbox-indicator:before
-  transform rotate(-65deg) scaleY(.2) translate(0, 0)
+  transform rotate(-45deg) scaleY(.2)
   height 10px
   left 7px
   top 5px
 
 .checkbox-indicator:after
-  transform rotate(25deg) scaleY(.2) translate(0, 0)
+  transform rotate(45deg) scaleY(.2)
   height 23px
   left 5px
   top -7px
 
 .checkbox input[type=checkbox]:checked + .checkbox-indicator:before
-  transform rotate(-45deg) scaleY(1) translate(0, 0)
+  transform rotate(-45deg) scaleY(1)
   opacity 1
 
 .checkbox input[type=checkbox]:checked + .checkbox-indicator:after
-  transform rotate(45deg) scaleY(1) translate(0, 0)
+  transform rotate(45deg) scaleY(1)
   opacity 1
 
 .checkbox input[type=checkbox]:hover + .checkbox-indicator,
@@ -1262,65 +1262,148 @@ select:disabled:hover
 
 /* Size control
 ----------------------------------------------------------------------------------------------------------------------*/
-.v-0, .vh-0
-  min-height $default-font-size + ($size-xs * 2)
-  padding-top 0
-  padding-bottom 0
 
-.v-xs, .vh-xs
-  min-height $default-font-size + ($size-xs * 2) + ($input-border * 2) - 2
-  padding-top 1px
-  padding-bottom 1px
-
-.v-s, .vh-s
-  min-height $default-font-size + ($size-s * 2) + ($input-border * 2) - 4
-  padding-top 2px
-  padding-bottom 2px
-
-.v-m, .vh-m
+// Medium and default vertical sizing
+.v-m, .vh-m,
+input:not([type='radio']),
+input:not([type='checkbox']),
+input:not([type='submit']),
+input:not([type='file']),
+input:not([type='range']),
+select,
+textarea
   min-height $default-font-size + ($size-m * 2) + ($input-border * 2) - 8
   padding-top 4px
   padding-bottom 4px
 
-.v-l, .vh-l
+// Minimal vertical sizing
+input.v-0,
+input.vh-0,
+select.v-0,
+select.vh-0,
+textarea.v-0,
+textarea.vh-0
+  min-height $default-font-size + ($size-xs * 2)
+  padding-top 0
+  padding-bottom 0
+
+// Very small vertical sizing
+input.v-xs,
+input.vh-xs,
+select.v-xs,
+select.vh-xs,
+textarea.v-xs,
+textarea.vh-xs
+  min-height $default-font-size + ($size-xs * 2) + ($input-border * 2) - 2
+  padding-top 1px
+  padding-bottom 1px
+
+// Small vertical sizing
+input.v-s,
+input.vh-s,
+select.v-s,
+select.vh-s,
+textarea.v-s,
+textarea.vh-s
+  min-height $default-font-size + ($size-s * 2) + ($input-border * 2) - 4
+  padding-top 2px
+  padding-bottom 2px
+
+// Large vertical sizing
+input.v-l,
+input.vh-l,
+select.v-l,
+select.vh-l,
+textarea.v-l,
+textarea.vh-l
   min-height $default-font-size + ($size-l * 2) + ($input-border * 2) - 8
   padding-top 4px
   padding-bottom 4px
 
-.v-xl, .vh-xl
+// Very large vertical sizing
+input.v-xl,
+input.vh-xl,
+select.v-xl,
+select.vh-xl,
+textarea.v-xl,
+textarea.vh-xl
   min-height $default-font-size + ($size-xl * 2) + ($input-border * 2) - 12
   padding-top 6px
   padding-bottom 6px
 
-.h-0, .vh-0
-  padding-left 0
-  padding-right 0
-
-.h-xs, .vh-xs
-  padding-left $size-xs
-  padding-right $size-xs
-
-.h-s, .vh-s
-  padding-left $size-s
-  padding-right $size-s
-
-.h-m, .vh-m
+// Medium and default horizontal sizing
+.h-m, .vh-m,
+input:not([type='radio']),
+input:not([type='checkbox']),
+input:not([type='submit']),
+input:not([type='file']),
+input:not([type='range']),
+select,
+textarea
   padding-left $size-m
   padding-right $size-m
 
-.h-l, .vh-l
+// Minimal horizontal sizing
+input.h-0,
+input.vh-0,
+select.h-0,
+select.vh-0,
+textarea.h-0,
+textarea.vh-0
+  padding-left 0
+  padding-right 0
+
+// Very small horizontal sizing
+input.h-xs,
+input.vh-xs,
+select.h-xs,
+select.vh-xs,
+textarea.h-xs,
+textarea.vh-xs
+  padding-left $size-xs
+  padding-right $size-xs
+
+// Small horizontal sizing
+input.h-s,
+input.vh-s,
+select.h-s,
+select.vh-s,
+textarea.h-s,
+textarea.vh-s
+  padding-left $size-s
+  padding-right $size-s
+
+// Large horizontal sizing
+input.h-l,
+input.vh-l,
+select.h-l,
+select.vh-l,
+textarea.h-l,
+textarea.vh-l
   padding-left $size-l
   padding-right $size-l
 
-.h-xl, .vh-xl
+// Very large horizontal sizing
+input.h-xl,
+input.vh-xl,
+select.h-xl,
+select.vh-xl,
+textarea.h-xl,
+textarea.vh-xl
   padding-left $size-xl
   padding-right $size-xl
 
-.h-2xl
+// Additional 2xl horizontal sizing
+input.h-2xl,
+select.h-2xl,
+textarea.h-2xl
   padding-left $size-2xl
   padding-right $size-2xl
 
-.h-3xl
+// Additional 3xl horizontal sizing
+input.h-3xl,
+select.h-3xl,
+textarea.h-3xl
   padding-left $size-3xl
   padding-right $size-3xl
 
@@ -1337,6 +1420,7 @@ select:disabled:hover
 .input-icon input.vh-s
   padding-left $default-font-size + $input-border + ($size-s * 2) - 4
 
+.input-icon input,
 .input-icon input.v-m,
 .input-icon input.vh-m
   padding-left $default-font-size + $input-border + ($size-m * 2) - 8
@@ -1362,7 +1446,10 @@ select:disabled:hover
   width $default-font-size + ($size-s * 2)
 
 .input-icon input.v-m + :not(input),
-.input-icon input.vh-m + :not(input)
+.input-icon input.vh-m + :not(input),
+.input-icon input + :not(input),
+.input-icon select + :not(input),
+.input-icon textarea + :not(input)
   width $default-font-size + ($size-m * 2)
 
 .input-icon input.v-l + :not(input),
@@ -1390,7 +1477,8 @@ select:disabled:hover
   right 8px
 
 .v-m + .select-indicator,
-.vh-m + .select-indicator
+.vh-m + .select-indicator,
+select + .select-indicator
   transform scale(0.85)
   right 12px
 
