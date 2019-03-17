@@ -26,6 +26,7 @@
         icons: [
           'hamburger',
           'search',
+          'search-alt',
           'edit',
           'close',
           'plus',
@@ -34,6 +35,7 @@
           'alert',
           'info',
           'check',
+          'square',
           'chevron-up',
           'chevron-right',
           'chevron-down',

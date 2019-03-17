@@ -112,6 +112,9 @@ particular style favors hard corners, you can simply set it to 0 in order to get
 
 ### Search
 
+<i class="tico-search push-right-l"><span></span></i>
+<i class="tico-search-alt"><span></span></i>
+
 <div>
   <div class="tico-s push-right-l">
     <i class="tico-search">
@@ -146,6 +149,9 @@ particular style favors hard corners, you can simply set it to 0 in order to get
 </div>
 
 ```html
+<i class="tico-search"><span></span></i>
+<i class="tico-search-alt"><span></span></i>
+
 <div class="tico-s">
   <i class="tico-search">
     <span></span>
@@ -710,6 +716,76 @@ particular style favors hard corners, you can simply set it to 0 in order to get
 
 <br>
 
+### Square
+
+<div>
+  <div class="tico-s push-right-l">
+    <i class="tico-square">
+      <span></span>
+    </i>
+  </div>
+  <div class="tico-m push-right-l">
+    <i class="tico-square">
+      <span></span>
+    </i>
+  </div>
+  <div class="tico-l push-right-l">
+    <i class="tico-square">
+      <span></span>
+    </i>
+  </div>
+  <div class="tico-xl push-right-l">
+    <i class="tico-square">
+      <span></span>
+    </i>
+  </div>
+  <div class="tico-2xl push-right-l">
+    <i class="tico-square">
+      <span></span>
+    </i>
+  </div>
+  <div class="tico-3xl">
+    <i class="tico-square">
+      <span></span>
+    </i>
+  </div>
+</div>
+
+```html
+<div class="tico-s">
+  <i class="tico-square">
+    <span></span>
+  </i>
+</div>
+<div class="tico-m">
+  <i class="tico-square">
+    <span></span>
+  </i>
+</div>
+<div class="tico-l">
+  <i class="tico-square">
+    <span></span>
+  </i>
+</div>
+<div class="tico-xl">
+  <i class="tico-square">
+    <span></span>
+  </i>
+</div>
+<div class="tico-2xl">
+  <i class="tico-square">
+    <span></span>
+  </i>
+</div>
+<div class="tico-3xl">
+  <i class="tico-square">
+    <span></span>
+  </i>
+</div>
+```
+
+<br>
+
 ### Check
 
 <div>
@@ -1207,7 +1283,13 @@ All transformicons are also available in a thin variant, which can be set via th
     <i class="tico-edit tico-thin"><span></span></i>
     <i class="tico-options tico-thin"><span></span></i>
     <i class="tico-chevron-down tico-thin"><span></span></i>
+    <i class="tico-chevron-up tico-thin"><span></span></i>
+  </div>
+  <div class="space-around push-v-xl">
+    <i class="tico-arrow-down tico-thin"><span></span></i>
     <i class="tico-arrow-up tico-thin"><span></span></i>
+    <i class="tico-square tico-thin"><span></span></i>
+    <i class="tico-search-alt tico-thin"><span></span></i>
   </div>
 </div>
 
@@ -1225,5 +1307,10 @@ All transformicons are also available in a thin variant, which can be set via th
 <i class="tico-edit tico-thin"><span></span></i>
 <i class="tico-options tico-thin"><span></span></i>
 <i class="tico-chevron-down tico-thin"><span></span></i>
+<i class="tico-chevron-up tico-thin"><span></span></i>
+
+<i class="tico-arrow-down tico-thin"><span></span></i>
 <i class="tico-arrow-up tico-thin"><span></span></i>
+<i class="tico-square tico-thin"><span></span></i>
+<i class="tico-search-alt tico-thin"><span></span></i>
 ```

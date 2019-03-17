@@ -522,10 +522,11 @@ select:disabled:hover
 .switch-indicator
   position relative
   display inline-block
+  box-sizing content-box
   top -2px
   width 20px
   height 20px
-  margin-right 5px
+  margin-right $indicator-gap
   background-color $input-bg
   border $indicator-border
   border-radius $input-corner-radius
@@ -1645,28 +1646,35 @@ select + .select-indicator
   transform translateX(-16px)
 
 // Search icon
-.tico-search span,
-.tico-search span:before,
-.tico-search span:after
-  height 10px
-  transform translate(2px, 10px)
-
-.tico-search span
+[class*='tico-search'] span,
+[class*='tico-search'] span:before,
+[class*='tico-search'] span:after
   height 8px
-  width 8px
+  transform translate(4px, 15px)
+
+[class*='tico-search'] span
+  height 12px
+  width 12px
   background transparent !important
   border-style solid
   border-radius 100%
-  transform rotate(45deg) translate(10px, -3px)
+  transform rotate(45deg) translate(7px, -2px)
 
-.tico-search span:after
+.tico-search-alt span
+  transform rotate(-45deg) translate(0.5px, 5.5px)
+
+[class*='tico-search'] span:after
   opacity 0
 
-.tico-search.tico-thin span
-  width 8px
+[class*='tico-search'].tico-thin span
+  width 12px
+  transform rotate(45deg) translate(9px, -3px)
 
-.tico-search.tico-thin span:before
-  transform translate(3px, 9px)
+.tico-search-alt.tico-thin span
+  transform rotate(-45deg) translate(0.5px, 6.5px)
+
+[class*='tico-search'].tico-thin span:before
+  transform translate(5px, 13px)
 
 // Edit icon
 .tico-edit span,
@@ -1838,6 +1846,24 @@ select + .select-indicator
 .tico-check.tico-thin span:before
   transform rotate(-90deg) translate(-13px, -4px)
 
+// Square icon
+.tico-square span
+  height 14px
+  width 14px
+  border-style solid
+  border-width 4px
+  border-radius $transformicon-corner-radius
+  background none !important
+  transform translate(4px, 4px)
+
+.tico-square span:before,
+.tico-square span:after
+  opacity 0
+
+.tico-square.tico-thin span
+  width 14px
+  transform translate(6px, 6px)
+
 // Chevron icon
 [class*='tico-chevron'] span,
 [class*='tico-chevron'] span:before,
@@ -1852,7 +1878,7 @@ select + .select-indicator
   opacity 0
 
 [class*='tico-chevron'].tico-thin span
-  transform rotate(-45deg) translate(9px, 17px)
+  transform rotate(-45deg) translate(8px, 18px)
 
 [class*='tico-chevron'].tico-thin span:before
   transform rotate(-90deg) translate(6px, -6px)
@@ -1876,7 +1902,7 @@ select + .select-indicator
   height 12px
 
 [class*='tico-arrow'].tico-thin span
-  transform translate(13px, 6px)
+  transform translate(14px, 6px)
 
 [class*='tico-arrow'].tico-thin span:before
   height 10px
