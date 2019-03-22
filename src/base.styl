@@ -1278,6 +1278,8 @@ textarea
   padding-bottom 4px
 
 // Minimal vertical sizing
+.btn.v-0,
+.btn.vh-0,
 input.v-0,
 input.vh-0,
 select.v-0,
@@ -1289,6 +1291,8 @@ textarea.vh-0
   padding-bottom 0
 
 // Very small vertical sizing
+.btn.v-xs,
+.btn.vh-xs,
 input.v-xs,
 input.vh-xs,
 select.v-xs,
@@ -1300,6 +1304,8 @@ textarea.vh-xs
   padding-bottom 1px
 
 // Small vertical sizing
+.btn.v-s,
+.btn.vh-s,
 input.v-s,
 input.vh-s,
 select.v-s,
@@ -1311,6 +1317,8 @@ textarea.vh-s
   padding-bottom 2px
 
 // Large vertical sizing
+.btn.v-l,
+.btn.vh-l,
 input.v-l,
 input.vh-l,
 select.v-l,
@@ -1322,6 +1330,8 @@ textarea.vh-l
   padding-bottom 4px
 
 // Very large vertical sizing
+.btn.v-xl,
+.btn.vh-xl,
 input.v-xl,
 input.vh-xl,
 select.v-xl,
@@ -1345,6 +1355,8 @@ textarea
   padding-right $size-m
 
 // Minimal horizontal sizing
+.btn.h-0,
+.btn.vh-0,
 input.h-0,
 input.vh-0,
 select.h-0,
@@ -1355,6 +1367,8 @@ textarea.vh-0
   padding-right 0
 
 // Very small horizontal sizing
+.btn.h-xs,
+.btn.vh-xs,
 input.h-xs,
 input.vh-xs,
 select.h-xs,
@@ -1365,6 +1379,8 @@ textarea.vh-xs
   padding-right $size-xs
 
 // Small horizontal sizing
+.btn.h-s,
+.btn.vh-s,
 input.h-s,
 input.vh-s,
 select.h-s,
@@ -1375,6 +1391,8 @@ textarea.vh-s
   padding-right $size-s
 
 // Large horizontal sizing
+.btn.h-l,
+.btn.vh-l,
 input.h-l,
 input.vh-l,
 select.h-l,
@@ -1385,6 +1403,8 @@ textarea.vh-l
   padding-right $size-l
 
 // Very large horizontal sizing
+.btn.h-xl,
+.btn.vh-xl,
 input.h-xl,
 input.vh-xl,
 select.h-xl,
@@ -1395,6 +1415,7 @@ textarea.vh-xl
   padding-right $size-xl
 
 // Additional 2xl horizontal sizing
+.btn.h-2xl,
 input.h-2xl,
 select.h-2xl,
 textarea.h-2xl
@@ -1402,6 +1423,7 @@ textarea.h-2xl
   padding-right $size-2xl
 
 // Additional 3xl horizontal sizing
+.btn.h-3xl,
 input.h-3xl,
 select.h-3xl,
 textarea.h-3xl
@@ -1757,27 +1779,31 @@ select + .select-indicator
   opacity 0
 
 // Options icon
-.tico-options span,
-.tico-options span:before,
-.tico-options span:after
+[class*='tico-options'] span,
+[class*='tico-options'] span:before,
+[class*='tico-options'] span:after
   transform translate(0, 0)
 
-.tico-options span
+[class*='tico-options'] span
   height 4px
   transform translate(13px, 5.5px)
 
-.tico-options span:before
+[class*='tico-options'] span:before
   height 4px
   transform translate(0, 7.5px)
 
-.tico-options span:after
+[class*='tico-options'] span:after
   height 4px
   transform translate(0, 14.5px)
 
-.tico-options.tico-thin span,
-.tico-options.tico-thin span:before,
-.tico-options.tico-thin span:after
+[class*='tico-options'].tico-thin span,
+[class*='tico-options'].tico-thin span:before,
+[class*='tico-options'].tico-thin span:after
   height 3px
+
+// Alternative options icon
+.tico-options-alt
+  transform rotate(90deg)
 
 // Alert icon
 .tico-alert span,
@@ -1846,8 +1872,43 @@ select + .select-indicator
 .tico-check.tico-thin span:before
   transform rotate(-90deg) translate(-13px, -4px)
 
+// Spinner icon
+.tico-spinner
+  animation tico-spinner-rotation 1.6s cubic-bezier(.41, .26, .2, .62)
+  animation-iteration-count infinite
+
+.tico-spinner span,
+.tico-spinner span:before,
+.tico-spinner span:after
+  height 8px
+  transform translate(3px, 2px)
+
+.tico-spinner span
+  height 18px
+  width 18px
+  background transparent !important
+  border-style solid
+  border-right-color transparent !important
+  border-radius 100%
+  transform translate(2px, 2px)
+
+.tico-spinner span:before,
+.tico-spinner span:after
+  opacity 0
+
+.tico-spinner.tico-thin span
+  width 18px
+  transform translate(4px, 4px)
+
+@keyframes tico-spinner-rotation
+  0%
+    transform rotate(0)
+  to
+    transform rotate(2turn)
+
 // Square icon
-.tico-square span
+.tico-square span,
+.tico-square span:before
   height 14px
   width 14px
   border-style solid
@@ -1856,13 +1917,25 @@ select + .select-indicator
   background none !important
   transform translate(4px, 4px)
 
-.tico-square span:before,
+.tico-square span
+  border-right-color transparent
+  border-bottom-color transparent
+
+.tico-square span:before
+  border-left-color transparent
+  border-top-color transparent
+  transform translate(-4px, -4px)
+
 .tico-square span:after
   opacity 0
 
 .tico-square.tico-thin span
   width 14px
   transform translate(6px, 6px)
+
+.tico-square.tico-thin span:before
+  width 14px
+  transform translate(-2px, -2px)
 
 // Chevron icon
 [class*='tico-chevron'] span,
