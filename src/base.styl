@@ -633,13 +633,13 @@ select:disabled:hover
 .radio-indicator.size-xs,
 .switch-indicator.size-xs
   transform scale(0.6)
-  margin -3px 0 -3px -4px
+  margin -3px $indicator-gap -3px -4px
 
 .checkbox-indicator.size-s,
 .radio-indicator.size-s,
 .switch-indicator.size-s
   transform scale(0.77)
-  margin -2px 0 -2px -2px
+  margin -2px $indicator-gap -2px -2px
 
 .checkbox-indicator.size-m,
 .radio-indicator.size-m,
@@ -650,13 +650,13 @@ select:disabled:hover
 .radio-indicator.size-l,
 .switch-indicator.size-l
   transform scale(1.23)
-  margin 5px 12px 5px 3px
+  margin 5px ($indicator-gap + 20%) 5px 3px
 
 .checkbox-indicator.size-xl,
 .radio-indicator.size-xl,
 .switch-indicator.size-xl
   transform scale(1.6)
-  margin 10px 18px 10px 7px
+  margin 5px ($indicator-gap + 80%) 5px 3px
 
 // Disabled states
 .checkbox input[type=checkbox]:disabled + .checkbox-indicator,
