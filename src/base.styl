@@ -733,7 +733,12 @@ select:disabled:hover
 
 /* Buttons
 ----------------------------------------------------------------------------------------------------------------------*/
-.btn, a.btn
+.btn, .btn a
+  text-decoration none
+  outline 0
+  cursor pointer
+
+.btn
   display inline-flex
   align-self center
   align-content center
@@ -754,11 +759,8 @@ select:disabled:hover
   padding 4px $btn-padding-h
   vertical-align middle
   transition $btn-transition
-  outline 0
   -webkit-tap-highlight-color transparent
-  cursor pointer
   box-shadow $btn-shadow
-  text-decoration none
   filter $btn-filter
   &:focus
     color $btn-focus-color
