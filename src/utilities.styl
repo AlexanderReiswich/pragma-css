@@ -2457,435 +2457,48 @@ if $colors.violet
 
 /* Responsive modifiers
 ----------------------------------------------------------------------------------------------------------------------*/
+$mod_s = ('s' 'sm' 'sml')
+$mod_m = ('m' 'sm' 'ml' 'sml' 'mlx' 'mlxp')
+$mod_l = ('l' 'ml' 'lx' 'sml' 'mlx' 'mlxp' 'lxp')
+$mod_xl = ('x' 'lx' 'xp' 'mlx' 'mlxp' 'lxp')
+$mod_p = ('p' 'xp' 'lxp' 'mlxp')
+
+$modifiers = {
+  '.hide': { display: none !important }
+  '.inline': { display: inline-block !important }
+  '.block': { display: block !important }
+  '.flex': { display: flex !important }
+  '.float-left': { float: left }
+  '.float-right': { float: right }
+  '.float-none': { float: none }
+  '.center': { text-align: center }
+  '.align-left': { text-align: left }
+  '.align-right': { text-align: right }
+  '.separated': { border-right: $grid-separation }
+  '.full': { width: 100% }
+}
+
+modGen(group)
+  for name, cls in $modifiers
+    classList = ()
+    for mod in group
+      push(classList, name + '-on-' + mod)
+    selector = join(', ', classList)
+    {selector}
+      {cls}
+
 @media only screen and (max-width $breakpoint-s)
-  .hide-on-s,
-  .hide-on-sm,
-  .hide-on-sml
-    display none !important
-
-  .inline-on-s,
-  .inline-on-sm,
-  .inline-on-sml
-    display inline-block !important
-
-  .block-on-s,
-  .block-on-sm,
-  .block-on-sml
-    display block !important
-
-  .flex-on-s,
-  .flex-on-sm,
-  .flex-on-sml
-    display flex !important
-
-  .float-left-on-s,
-  .float-left-on-sm,
-  .float-left-on-sml
-    float left
-
-  .float-right-on-s,
-  .float-right-on-sm,
-  .float-right-on-sml
-    float right
-
-  .float-none-on-s,
-  .float-none-on-sm,
-  .float-none-on-sml
-    float none
-
-  .center-on-s,
-  .center-on-sm,
-  .center-on-sml
-    text-align center
-
-  .align-left-on-s,
-  .align-left-on-sm,
-  .align-left-on-sml
-    text-align left
-
-  .align-right-on-s,
-  .align-right-on-sm,
-  .align-right-on-sml
-    text-align right
-
-  .separated-on-s,
-  .separated-on-sm,
-  .separated-on-sml
-    border-right $grid-separation
+  modGen($mod_s)
 
 @media only screen and (min-width unit($breakpoint-s + 1, 'px')) and (max-width $breakpoint-m)
-  .hide-on-m,
-  .hide-on-sm,
-  .hide-on-ml,
-  .hide-on-sml,
-  .hide-on-mlx,
-  .hide-on-mlxp
-    display none !important
-
-  .inline-on-m,
-  .inline-on-sm,
-  .inline-on-ml,
-  .inline-on-sml,
-  .inline-on-mlx,
-  .inline-on-mlxp
-    display inline-block !important
-
-  .block-on-m,
-  .block-on-sm,
-  .block-on-ml,
-  .block-on-sml,
-  .block-on-mlx,
-  .block-on-mlxp
-    display block !important
-
-  .flex-on-m,
-  .flex-on-sm,
-  .flex-on-ml,
-  .flex-on-sml,
-  .flex-on-mlx,
-  .flex-on-mlxp
-    display flex !important
-
-  .float-left-on-m,
-  .float-left-on-sm,
-  .float-left-on-ml,
-  .float-left-on-sml,
-  .float-left-on-mlx,
-  .float-left-on-mlxp
-    float left
-
-  .float-right-on-m,
-  .float-right-on-sm,
-  .float-right-on-ml,
-  .float-right-on-sml,
-  .float-right-on-mlx,
-  .float-right-on-mlxp
-    float right
-
-  .float-none-on-m,
-  .float-none-on-sm,
-  .float-none-on-ml,
-  .float-none-on-sml,
-  .float-none-on-mlx,
-  .float-none-on-mlxp
-    float none
-
-  .center-on-m,
-  .center-on-sm,
-  .center-on-ml,
-  .center-on-sml,
-  .center-on-mlx,
-  .center-on-mlxp
-    text-align center
-
-  .align-left-on-m,
-  .align-left-on-sm,
-  .align-left-on-ml,
-  .align-left-on-sml,
-  .align-left-on-mlx,
-  .align-left-on-mlxp
-    text-align left
-
-  .align-right-on-m,
-  .align-right-on-sm,
-  .align-right-on-ml,
-  .align-right-on-sml,
-  .align-right-on-mlx,
-  .align-right-on-mlxp
-    text-align right
-
-  .wrap-on-m,
-  .wrap-on-sm,
-  .wrap-on-ml,
-  .wrap-on-sml,
-  .wrap-on-mlx,
-  .wrap-on-mlxp
-    flex-wrap wrap
-
-  .separated-on-m,
-  .separated-on-sm,
-  .separated-on-ml,
-  .separated-on-sml,
-  .separated-on-mlx,
-  .separated-on-mlxp
-    border-right $grid-separation
+  modGen($mod_m)
 
 @media only screen and (min-width unit($breakpoint-m + 1, 'px')) and (max-width $breakpoint-l)
-  .hide-on-l,
-  .hide-on-ml,
-  .hide-on-lx,
-  .hide-on-sml,
-  .hide-on-mlx,
-  .hide-on-mlxp,
-  .hide-on-lxp
-    display none !important
-
-  .inline-on-l,
-  .inline-on-ml,
-  .inline-on-lx,
-  .inline-on-sml,
-  .inline-on-mlx,
-  .inline-on-mlxp,
-  .inline-on-lxp
-    display inline-block !important
-
-  .block-on-l,
-  .block-on-ml,
-  .block-on-lx,
-  .block-on-sml,
-  .block-on-mlx,
-  .block-on-mlxp,
-  .block-on-lxp
-    display block !important
-
-  .flex-on-l,
-  .flex-on-ml,
-  .flex-on-lx,
-  .flex-on-sml,
-  .flex-on-mlx,
-  .flex-on-mlxp,
-  .flex-on-lxp
-    display flex !important
-
-  .float-left-on-l,
-  .float-left-on-ml,
-  .float-left-on-lx,
-  .float-left-on-sml,
-  .float-left-on-mlx,
-  .float-left-on-mlxp,
-  .float-left-on-lxp
-    float left
-
-  .float-right-on-l,
-  .float-right-on-ml,
-  .float-right-on-lx,
-  .float-right-on-sml,
-  .float-right-on-mlx,
-  .float-right-on-mlxp,
-  .float-right-on-lxp
-    float right
-
-  .float-none-on-l,
-  .float-none-on-ml,
-  .float-none-on-lx,
-  .float-none-on-sml,
-  .float-none-on-mlx,
-  .float-none-on-mlxp,
-  .float-none-on-lxp
-    float none
-
-  .center-on-l,
-  .center-on-ml,
-  .center-on-lx,
-  .center-on-sml,
-  .center-on-mlx,
-  .center-on-mlxp,
-  .center-on-lxp
-    text-align center
-
-  .align-left-on-l,
-  .align-left-on-ml,
-  .align-left-on-lx,
-  .align-left-on-sml,
-  .align-left-on-mlx,
-  .align-left-on-mlxp,
-  .align-left-on-lxp
-    text-align left
-
-  .align-right-on-l,
-  .align-right-on-ml,
-  .align-right-on-lx,
-  .align-right-on-sml,
-  .align-right-on-mlx,
-  .align-right-on-mlxp,
-  .align-right-on-lxp
-    text-align right
-
-  .wrap-on-l,
-  .wrap-on-ml,
-  .wrap-on-lx,
-  .wrap-on-sml,
-  .wrap-on-mlx,
-  .wrap-on-mlxp,
-  .wrap-on-lxp
-    flex-wrap wrap
-
-  .separated-on-l,
-  .separated-on-ml,
-  .separated-on-lx,
-  .separated-on-sml,
-  .separated-on-mlx,
-  .separated-on-mlxp,
-  .separated-on-lxp
-    border-right $grid-separation
+  modGen($mod_l)
 
 @media only screen and (min-width unit($breakpoint-l + 1, 'px')) and (max-width $breakpoint-xl)
-  .hide-on-x,
-  .hide-on-lx,
-  .hide-on-xp,
-  .hide-on-mlx,
-  .hide-on-mlxp,
-  .hide-on-lxp
-    display none !important
-
-  .inline-on-x,
-  .inline-on-lx,
-  .inline-on-xp,
-  .inline-on-mlx,
-  .inline-on-mlxp,
-  .inline-on-lxp
-    display inline-block !important
-
-  .block-on-x,
-  .block-on-lx,
-  .block-on-xp,
-  .block-on-mlx,
-  .block-on-mlxp,
-  .block-on-lxp
-    display block !important
-
-  .flex-on-x,
-  .flex-on-lx,
-  .flex-on-xp,
-  .flex-on-mlx,
-  .flex-on-mlxp,
-  .flex-on-lxp
-    display flex !important
-
-  .float-left-on-x,
-  .float-left-on-lx,
-  .float-left-on-xp,
-  .float-left-on-mlx,
-  .float-left-on-mlxp,
-  .float-left-on-lxp
-    float left
-
-  .float-right-on-x,
-  .float-right-on-lx,
-  .float-right-on-xp,
-  .float-right-on-mlx,
-  .float-right-on-mlxp,
-  .float-right-on-lxp
-    float right
-
-  .float-none-on-x,
-  .float-none-on-lx,
-  .float-none-on-xp,
-  .float-none-on-mlx,
-  .float-none-on-mlxp,
-  .float-none-on-lxp
-    float none
-
-  .center-on-x,
-  .center-on-lx,
-  .center-on-xp,
-  .center-on-mlx,
-  .center-on-mlxp,
-  .center-on-lxp
-    text-align center
-
-  .align-left-on-x,
-  .align-left-on-lx,
-  .align-left-on-xp,
-  .align-left-on-mlx,
-  .align-left-on-mlxp,
-  .align-left-on-lxp
-    text-align left
-
-  .align-right-on-x,
-  .align-right-on-lx,
-  .align-right-on-xp,
-  .align-right-on-mlx,
-  .align-right-on-mlxp,
-  .align-right-on-lxp
-    text-align right
-
-  .wrap-on-x,
-  .wrap-on-lx,
-  .wrap-on-xp,
-  .wrap-on-mlx,
-  .wrap-on-mlxp,
-  .wrap-on-lxp
-    flex-wrap wrap
-
-  .separated-on-x,
-  .separated-on-lx,
-  .separated-on-xp,
-  .separated-on-mlx,
-  .separated-on-mlxp,
-  .separated-on-lxp
-    border-right $grid-separation
+  modGen($mod_xl)
 
 @media only screen and (min-width unit($breakpoint-xl + 1, 'px'))
-  .hide-on-p,
-  .hide-on-xp,
-  .hide-on-lxp,
-  .hide-on-mlxp
-    display none !important
-
-  .inline-on-p,
-  .inline-on-xp,
-  .inline-on-lxp,
-  .inline-on-mlxp
-    display inline-block !important
-
-  .block-on-p,
-  .block-on-xp,
-  .block-on-lxp,
-  .block-on-mlxp
-    display block !important
-
-  .flex-on-p,
-  .flex-on-xp,
-  .flex-on-lxp,
-  .flex-on-mlxp
-    display flex !important
-
-  .float-left-on-p,
-  .float-left-on-xp,
-  .float-left-on-lxp,
-  .float-left-on-mlxp
-    float left
-
-  .float-right-on-p,
-  .float-right-on-xp,
-  .float-right-on-lxp,
-  .float-right-on-mlxp
-    float right
-
-  .float-none-on-p,
-  .float-none-on-xp,
-  .float-none-on-lxp,
-  .float-none-on-mlxp
-    float none
-
-  .center-on-p,
-  .center-on-xp,
-  .center-on-lxp,
-  .center-on-mlxp
-    text-align center
-
-  .align-left-on-p,
-  .align-left-on-xp,
-  .align-left-on-lxp,
-  .align-left-on-mlxp
-    text-align left
-
-  .align-right-on-p,
-  .align-right-on-xp,
-  .align-right-on-lxp,
-  .align-right-on-mlxp
-    text-align right
-
-  .wrap-on-p,
-  .wrap-on-xp,
-  .wrap-on-lxp,
-  .wrap-on-mlxp
-    flex-wrap wrap
-
-  .separated-on-p,
-  .separated-on-xp,
-  .separated-on-lxp,
-  .separated-on-mlxp
-    border-right $grid-separation
+  modGen($mod_p)
 
